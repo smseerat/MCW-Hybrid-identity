@@ -5,7 +5,7 @@ Hybrid Identity
 </div>
 
 <div class="MCWHeader2">
-Whiteboard design session student guide
+Whiteboard design session trainer guide
 </div>
 
 December 2019
@@ -99,7 +99,7 @@ Contoso is facing some challenges related to increased mobility of its workforce
  
 **Existing Contoso Active Directory environment**
 
-Contoso has a single domain Active Directory forest which was implemented over a decade ago. The domain was assigned a non-routable DNS name contoso.local. While the Directory Services team considered renaming the domain, this has never been implemented due to potential negative implications of such change. Contoso also does not currently owned any publicly routable DNS domain names.
+Contoso has a single domain Active Directory forest which was implemented over a decade ago. The domain was assigned a non-routable DNS name contoso.local. While the Directory Services team considered renaming the domain, this has never been implemented due to potential negative implications of such change. Contoso does own a publicly routable DNS domain name contoso.com.
 
 Contoso has recently upgraded its Active Directory environment to Windows Server 2016 and it is in the process of migrating its desktops from Windows 7 to Windows 10. Majority of servers are running either Windows Server 2012 R2 or Windows Server 2016. 
 
@@ -152,6 +152,8 @@ The management team of Contoso, including its CIO, Andrew Cross emhpasized the n
 -   We have heard that it is not possible to run simultaneously multiple instance of Azure AD Connect. All of components providing identity services in our environmment must provide resiliency and support failover. 
 
 -   If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
+
+-   Synchronizing our Active Directory accounts with Azure AD accounts makes the former vulnerable to malicious or accidental lockouts that affect the latter. This would effectively expose our on-premises environment to external attacks. 
 
 -   A number of critical web applications running in our on-premises environment rely on Kerberos-based Windows Integrated Authentication. Microsoft states that Azure Active Directory does not support Kerberos. Doesn't this mean that remote users authenticating to Azure Active Directory and our business partners will not be able to properly authenticate and access these applications?
 
