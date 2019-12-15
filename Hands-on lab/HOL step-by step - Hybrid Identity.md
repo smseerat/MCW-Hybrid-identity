@@ -45,7 +45,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Task 10: Configure Hybrid Azure AD join](#task-10-Configure-Hybrid-Azure-AD-join)
         - [Task 11: Perform Hybrid Azure AD join](#task-11-Perform-Hybrid-Azure-AD-join)
         - [Summary](#summary-1)
-    - [Exercise 2: Manage Authentication, Authorization, and Access Control in Hybrid Scenarios](#exercise-2-Manage-Authentication,-Authorization,-and-Access-Control-in-Hybrid-Scenarios)
+    - [Exercise 2: Manage Authentication, Authorization, and Access Control in Hybrid Scenarios](#exercise-2-Manage-Authentication-Authorization-and-Access-Control-in-Hybrid-Scenarios)
         - [Overview](#overview-2)
         - [Task 1: Create Active Directory groups](#task-1-Create-Active-Directory-groups)
         - [Task 2: Assign EM+S E5 licenses to Azure AD users](#task-2-Assign-EM+S-E5-licenses-to-Azure-AD-users)
