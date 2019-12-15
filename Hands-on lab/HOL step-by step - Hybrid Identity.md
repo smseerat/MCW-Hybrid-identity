@@ -45,7 +45,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Task 10: Configure Hybrid Azure AD join](#task-10-Configure-Hybrid-Azure-AD-join)
         - [Task 11: Perform Hybrid Azure AD join](#task-11-Perform-Hybrid-Azure-AD-join)
         - [Summary](#summary-1)
-    - [Exercise 2: Manage Authentication, Authorization, and Access Protection in Hybrid Scenarios](#exercise-2-Manage-Authentication,-Authorization,-and-Access-Protection-in-Hybrid-Scenarios)
+    - [Exercise 2: Manage Authentication, Authorization, and Access Control in Hybrid Scenarios](#exercise-2-Manage-Authentication,-Authorization,-and-Access-Control-in-Hybrid-Scenarios)
         - [Overview](#overview-2)
         - [Task 1: Create Active Directory groups](#task-1-Create-Active-Directory-groups)
         - [Task 2: Assign EM+S E5 licenses to Azure AD users](#task-2-Assign-EM+S-E5-licenses-to-Azure-AD-users)
@@ -776,13 +776,13 @@ In this task, you will configure Azure AD Connect device synchronization options
 In this exercise, you integrated an Active Directory forest with an Azure Active Directory tenant by creating an Azure Active Directory tenant and activating an Enterprise Mobility + Security E5 trial, creating and configuring an Azure AD user, purchasing a custom domain name, assigning a custom domain name to the Contoso Azure AD tenant, configuring DNS suffix in the Contoso Active Directory forest, installing Azure AD Connect, enable Active Directory Recycle Bin, configuring Azure AD Connect attribute-level filtering, initiating and verifying directory synchronization, configuring Hybrid Azure AD join, and performing Hybrid Azure AD join of a Windows Server 2016 VM.
 
 
-## Exercise 2: Manage Authentication, Authorization, and Access Protection in Hybrid Scenarios
+## Exercise 2: Manage Authentication, Authorization, and Access Control in Hybrid Scenarios
 
 Duration: 150 minutes
 
 ### Overview 2
 
-In this exercise, you will optimize authentication, authorization, and access protection for Contoso Active Directory environment integrated with the Contoso Azure AD tenant by enabling Azure AD Multi-Factor Authentication, enabling Azure AD password writeback and Self-Service Password Reset, implementing, Azure AD Password Protection, enabling Azure Active Directory Identity Protection, enabling Automatic Intune Enrollment, as well as implementing Azure AD Privileged Identity Management and Azure AD Conditional Access Policies.
+In this exercise, you will optimize authentication, authorization, and access control for Contoso Active Directory environment integrated with the Contoso Azure AD tenant by enabling Azure AD Multi-Factor Authentication, enabling Azure AD password writeback and Self-Service Password Reset, implementing, Azure AD Password Protection, enabling Azure Active Directory Identity Protection, enabling Automatic Intune Enrollment, as well as implementing Azure AD Privileged Identity Management and Azure AD Conditional Access Policies.
 
 
 ### Task 1: Create Active Directory groups
