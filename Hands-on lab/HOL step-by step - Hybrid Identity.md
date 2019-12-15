@@ -51,7 +51,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Task 2: Assign EM+S E5 licenses to Azure AD users](#task-2-Assign-EM+S-E5-licenses-to-Azure-AD-users)
         - [Task 3: Enable Azure AD Multi-Factor Authentication](#task-3-Enable-Azure-AD-Multi-Factor-Authentication)
         - [Task 4: Enable password writeback and Self-Service Password Reset](#task-4-Enable-password-writeback-and-Self-Service-Password-Reset)
-        - [Task 5: Implement Azure AD Password Protection](#task-5-Implement-Azure-AD-Password-Protection)
+        - [Task 5: Implement Azure AD Password Protection for Windows Server Active Directory](#task-5-Implement-Azure-AD-Password-Protection-for-Windows-Server-Active-Directory)
         - [Task 6: Enable Azure Active Directory Identity Protection](#task-6-Enable-Azure-Active-Directory-Identity-Protection)
         - [Task 7: Enable Automatic Intune Enrollment](#task-7-Enable-Automatic-Intune-Enrollment)
         - [Task 8: Enable Enterprise-State-Roaming](#task-8-Enable-enterprise-state-roaming)
@@ -950,9 +950,9 @@ In this task, you will enable password writeback and Self-Service Password Reset
 1. On the **Password reset - Registration** blade, click **On-premises integration** and verify that the **Write back passwords to your on-premises directory** setting is set to **Yes**. Note that you have the option to **Allow users to unlock accounts without resetting their passwords**.
 
 
-### Task 5: Implement Azure AD Password Protection
+### Task 5: Implement Azure AD Password Protection for Windows Server Active Directory
 
-In this task, you will implement Azure AD password Protection
+In this task, you will implement Azure AD password Protection for Windows Server Active Directory
 
 1. Within the Remote Desktop session to **DC1**, from the **Server Manager** window, start **Group Policy Management** console. 
 
@@ -986,7 +986,7 @@ In this task, you will implement Azure AD password Protection
 
     - Mode: **Audit**
 
-1. Switch to the Remote Desktop session to **APP1** virtual machine, where you are signed in as the user **AGAyers\@contoso120419.com** with the **demo@pass123** password. 
+1. Switch to the Remote Desktop session to **APP1** virtual machine, where you are signed in as the user **AGAyers** with the **demo@pass123** password. 
 
 1. Within the Remote Desktop session to **APP1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at <https://www.microsoft.com/download/details.aspx?id=57071> and download **AzureADPasswordProtectionProxySetup.exe** 
 
