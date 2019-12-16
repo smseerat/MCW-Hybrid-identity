@@ -35,9 +35,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
         - [Additional references](#additional-references)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-        - [Architecting an authentication solution](#Architecting-an-authentication-solution)
-        - [Implementing a hybrid identity integration approach](#Implementing-a-hybrid-identity-integration-approach)
-        - [Designing and implementing resilient hybrid identity solution](#Designing-and-implementing-resilient-hybrid-identity-solution)
+        - [Architecting a hybrid authentication solution](#Architecting-a-hybrid-authentication-solution)
+        - [Implementing a hybrid identity solution](#Implementing-a-hybrid-identity-solution)
+        - [Assessing resiliency aspects of a hybrid identity solution](#Assessing-resiliency-aspects-of-a-hybrid-identity-solution)
         - [Optimizing authentication configuration](#Optimizing-authentication-configuration)
         - [Optimizing authorization configuration](#Optimizing-authorization-configuration)
         - [Optimizing access control and management of applications and devices](#Optimizing-access-control-and-management-of-applications-and-devices)
@@ -117,7 +117,7 @@ In addition, Contoso needs to expand its customer base through partnership with 
  
 To facilitate the expansion of customer base, Contoso started developing a number of applications intended to be available both via web and from mobile devices. Historically, such applications were hosted in on-premises data centers and relied on an internally developed identity management product. Going forward, Contoso wants to minimize the effort managing customer identities.
 
-The management team of Contoso, including its CIO, Andrew Cross emhpasized the need for resiliency and Service Level Agreements associated with each of the identity-related components that are part of the target design. At the same time, they are also interested in minimizing additional infrastructure requirements to implement the design.
+The management team of Contoso, including its CIO, Andrew Cross emphasized the need for resiliency and Service Level Agreements associated with each of the identity-related components that are part of the target design. At the same time, they are also interested in minimizing additional infrastructure requirements to implement the design.
 
 ### Customer needs 
 
@@ -147,9 +147,9 @@ The management team of Contoso, including its CIO, Andrew Cross emhpasized the n
 
 ### Customer objections 
 
--   Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with an Azure Active Directory.  
+-   Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory.  
 
--   We have heard that it is not possible to run simultaneously multiple instance of Azure AD Connect. All of components providing identity services in our environmment must provide resiliency and support failover. 
+-   We have heard that it is not possible to run simultaneously multiple instance of Azure AD Connect. All identity services components in our environment must provide resiliency and support failover.
 
 -   If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
 
@@ -205,17 +205,17 @@ Using the features of Azure Active Directory and the requirements from the custo
 
 Make sure that your design accounts for customer objectives and objections and includes the following items:
 
-### Architecting an authentication solution
+### Architecting a hybrid authentication solution
 
-**Task:** Design an authentication solution that will allow you to meet all the customer requirements.
+**Task:** Design a hybrid authentication solution that will allow you to meet all the customer requirements.
 
-### Implementing a hybrid identity integration approach
+### Implementing a hybrid identity solution
 
-**Task:** Describe steps to implement a hybrid identity integration solution that will allow you to meet all the customer requirements.
+**Task:** Describe steps to implement a hybrid identity solution that will allow you to meet all the customer requirements.
 
-### Designing and implementing resilient hybrid identity solution
+### Assessing resiliency aspects of a hybrid identity solution
 
-**Task:** Design a resilient hybrid identity solution for the customer. 
+**Task:** Assess resiliency aspects of a hybrid identity solution for the customer. 
 
 -   Describe provisions that eliminate single points of failure in your design
 
@@ -303,6 +303,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 |----------|:-------------:|
 | **Description** | **Links** |
 | What is hybrid identity with Azure Active Directory? | <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-hybrid-identity>  |
+| Choose the right authentication method for your Azure Active Directory hybrid identity solution | <https://docs.microsoft.com/en-us/azure/security/fundamentals/choose-ad-authn>  |
 | Azure AD Connect sync: Understand and customize synchronization |  <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-whatis> |
 | Buy a custom domain name for Azure App Service | <https://docs.microsoft.com/en-us/azure/app-service/manage-custom-dns-buy-domain>  |
 | What is Conditional Access? | <https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview>  |
