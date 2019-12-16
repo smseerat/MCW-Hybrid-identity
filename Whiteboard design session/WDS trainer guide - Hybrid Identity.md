@@ -177,29 +177,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 ## Abstract and learning objectives 
 
-In this whiteboard design session, you will learn how to implement different components of a Hybrid Identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features, including:
-
--   Passthrough authentication with Seamless Single Sign-On
-
--   Multi-Factor Authentication
-
--   Self-Service Password Reset
-
--   Azure AD Password Protection
-
--   Hybrid Azure AD join
-
--   Windows Hello for Business
-
--   Microsoft Intune automatic enrollment
-
--   Azure AD Conditional Access
-
--   Azure AD Application Proxy
-
--   Azure AD B2B
-
--   Azure AD B2C
+In this whiteboard design session, you will learn how to implement different components of a Hybrid Identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features, including pass-through authentication with Seamless Single Sign-On, Multi-Factor Authentication, Self-Service Password Reset, Azure AD Password Protection for Windows Server Active Directory, Hybrid Azure AD join, Windows Hello for Business, Microsoft Intune automatic enrollment, Azure AD Conditional Access,    Azure AD Application Proxy, Azure AD B2B, and Azure AD B2C.
 
 ## Step 1: Review the customer case study 
 
