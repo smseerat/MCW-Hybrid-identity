@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-� 2019 Microsoft Corporation. All rights reserved.
+2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -45,13 +45,13 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Task 10: Configure Hybrid Azure AD join](#task-10-Configure-Hybrid-Azure-AD-join)
         - [Task 11: Perform Hybrid Azure AD join](#task-11-Perform-Hybrid-Azure-AD-join)
         - [Summary](#summary-1)
-    - [Exercise 2: Manage Authentication, Authorization, and Access Protection in Hybrid Scenarios](#exercise-2-Manage-Authentication,-Authorization,-and-Access-Protection-in-Hybrid-Scenarios)
+    - [Exercise 2: Manage Authentication, Authorization, and Access Control in Hybrid Scenarios](#exercise-2-Manage-Authentication-Authorization-and-Access-Control-in-Hybrid-Scenarios)
         - [Overview](#overview-2)
         - [Task 1: Create Active Directory groups](#task-1-Create-Active-Directory-groups)
         - [Task 2: Assign EM+S E5 licenses to Azure AD users](#task-2-Assign-EM+S-E5-licenses-to-Azure-AD-users)
         - [Task 3: Enable Azure AD Multi-Factor Authentication](#task-3-Enable-Azure-AD-Multi-Factor-Authentication)
         - [Task 4: Enable password writeback and Self-Service Password Reset](#task-4-Enable-password-writeback-and-Self-Service-Password-Reset)
-        - [Task 5: Implement Azure AD Password Protection](#task-5-Implement-Azure-AD-Password-Protection)
+        - [Task 5: Implement Azure AD Password Protection for Windows Server Active Directory](#task-5-Implement-Azure-AD-Password-Protection-for-Windows-Server-Active-Directory)
         - [Task 6: Enable Azure Active Directory Identity Protection](#task-6-Enable-Azure-Active-Directory-Identity-Protection)
         - [Task 7: Enable Automatic Intune Enrollment](#task-7-Enable-Automatic-Intune-Enrollment)
         - [Task 8: Enable Enterprise-State-Roaming](#task-8-Enable-enterprise-state-roaming)
@@ -385,10 +385,10 @@ In this task, you will configure the DNS suffix of the Contoso Active Directory 
 
 1. In the **Active Directory Users and Computers** console, expand the **contoso.local** node and examine the organizational unit hierarchy of the domain and the group membership of the domain groups. 
 
-1. Within the Remote Desktop session to **DC1**, start Windows PowerShell ISE and, from the Script pane, run the following to replace the UPN suffix of all users who are members of the **Engineering** group with the one matching the custom verified domain name of the Contoso Azure AD tenant. 
+1. Within the Remote Desktop session to **DC1**, start Windows PowerShell ISE and, from the Script pane, run the following to replace the UPN suffix of all users who are members of the **Engineering** group with the one matching the custom verified domain name of the Contoso Azure AD tenant (replace the placeholder `<custom_domain_name>` with the actual name of the custom verified domain name you assigned to the Contoso Azure AD tenant). 
 
     ```pwsh
-    $domainName = 'contoso120419.com'
+    $domainName = '<custom_domain_name>'
     $users = Get-ADGroupMember -Identity 'Engineering' -Recursive | Where-Object {$_.objectClass -eq 'user'}
 
     foreach ($user in $users) {
@@ -776,13 +776,13 @@ In this task, you will configure Azure AD Connect device synchronization options
 In this exercise, you integrated an Active Directory forest with an Azure Active Directory tenant by creating an Azure Active Directory tenant and activating an Enterprise Mobility + Security E5 trial, creating and configuring an Azure AD user, purchasing a custom domain name, assigning a custom domain name to the Contoso Azure AD tenant, configuring DNS suffix in the Contoso Active Directory forest, installing Azure AD Connect, enable Active Directory Recycle Bin, configuring Azure AD Connect attribute-level filtering, initiating and verifying directory synchronization, configuring Hybrid Azure AD join, and performing Hybrid Azure AD join of a Windows Server 2016 VM.
 
 
-## Exercise 2: Manage Authentication, Authorization, and Access Protection in Hybrid Scenarios
+## Exercise 2: Manage Authentication, Authorization, and Access Control in Hybrid Scenarios
 
 Duration: 150 minutes
 
 ### Overview 2
 
-In this exercise, you will optimize authentication, authorization, and access protection for Contoso Active Directory environment integrated with the Contoso Azure AD tenant by enabling Azure AD Multi-Factor Authentication, enabling Azure AD password writeback and Self-Service Password Reset, implementing, Azure AD Password Protection, enabling Azure Active Directory Identity Protection, enabling Automatic Intune Enrollment, as well as implementing Azure AD Privileged Identity Management and Azure AD Conditional Access Policies.
+In this exercise, you will optimize authentication, authorization, and access control for Contoso Active Directory environment integrated with the Contoso Azure AD tenant by enabling Azure AD Multi-Factor Authentication, enabling Azure AD password writeback and Self-Service Password Reset, implementing, Azure AD Password Protection, enabling Azure Active Directory Identity Protection, enabling Automatic Intune Enrollment, as well as implementing Azure AD Privileged Identity Management and Azure AD Conditional Access Policies.
 
 
 ### Task 1: Create Active Directory groups
@@ -805,10 +805,10 @@ In this task, you will create and configure Active Directory groups that will be
 
 1. Open the **Properties** window of the **Engineering - Mandatory MFA** group, in the **Description** text box, type **Engineering users with user state-based MFA enforcement (without Conditional Access)**
 
-1. Within the Remote Desktop session to **DC1**, from the Script pane of the Windows PowerShell ISE window, run the following to add designated users to the newly created group.
+1. Within the Remote Desktop session to **DC1**, from the Script pane of the Windows PowerShell ISE window, run the following to add designated users to the newly created group (replace the placeholder `<custom_domain_name>` with the actual name of the custom verified domain name you assigned to the Contoso Azure AD tenant).
 
     ```pwsh
-    $domainName = 'contoso120419.com'
+    $domainName = '<custom_domain_name>'
     $users = Get-ADGroupMember -Identity 'Engineering' -Recursive | Where-Object {($_.objectClass -eq 'user') -and ($_.distinguishedName -like "*OU=NY,OU=US,OU=Users,OU=Demo Accounts,DC=contoso,DC=local")}
     foreach ($user in $users) {
         $user = Get-ADUser -Identity $User.SamAccountName
@@ -950,9 +950,9 @@ In this task, you will enable password writeback and Self-Service Password Reset
 1. On the **Password reset - Registration** blade, click **On-premises integration** and verify that the **Write back passwords to your on-premises directory** setting is set to **Yes**. Note that you have the option to **Allow users to unlock accounts without resetting their passwords**.
 
 
-### Task 5: Implement Azure AD Password Protection
+### Task 5: Implement Azure AD Password Protection for Windows Server Active Directory
 
-In this task, you will implement Azure AD password Protection
+In this task, you will implement Azure AD password Protection for Windows Server Active Directory
 
 1. Within the Remote Desktop session to **DC1**, from the **Server Manager** window, start **Group Policy Management** console. 
 
@@ -986,7 +986,7 @@ In this task, you will implement Azure AD password Protection
 
     - Mode: **Audit**
 
-1. Switch to the Remote Desktop session to **APP1** virtual machine, where you are signed in as the user **AGAyers\@contoso120419.com** with the **demo@pass123** password. 
+1. Switch to the Remote Desktop session to **APP1** virtual machine, where you are signed in as the user **AGAyers** with the **demo@pass123** password. 
 
 1. Within the Remote Desktop session to **APP1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at <https://www.microsoft.com/download/details.aspx?id=57071> and download **AzureADPasswordProtectionProxySetup.exe** 
 
