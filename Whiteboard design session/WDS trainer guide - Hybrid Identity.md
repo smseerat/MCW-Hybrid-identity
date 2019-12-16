@@ -594,7 +594,7 @@ In order to provide access to on-premises applications to business partners, Con
 
    - In order to minimize infrastructure footprint required for integration, streamline user experience, and, at the same time, ensure that any on-premises Active Directory user account restrictions, such as allowed sign-in hours must be honored, the proposed solution leverages pass-through authentication with seamless single sign-on (SSO). 
 
-     ![A diagram representing high level architecture components of pass-through authentication model.](images\Whiteboarddesignsessiontrainerguide-HybridIdentityimages\media\azure-ad-authn-image3.png)
+     ![A diagram representing high level architecture components of pass-through authentication model.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image3.png)
 
    - The need for preserving on-premises Active Directory user account restrictions eliminates the possibility of relying exclusively on Azure AD password hash synchronization, even though this is the simplest way to enable authentication for on-premises directory objects in Azure AD (which also supports seamless SSO), with minimum infrastructure requirements. It is worth noting that the password hash synchronization also does not include expired and locked-out states of Active Directory user accounts.
 
