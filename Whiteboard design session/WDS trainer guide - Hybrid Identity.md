@@ -1,7 +1,7 @@
 ﻿![Microsoft Cloud Workshops icon](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-Hybrid Identity
+Hybrid identity
 </div>
 
 <div class="MCWHeader2">
@@ -30,7 +30,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Whiteboard design session flow](#whiteboard-design-session-flow)
     - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
     - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
-- [Hybrid Identity whiteboard design session student guide](#hybrid-identity-whiteboard-design-session-student-guide)
+- [Hybrid identity whiteboard design session student guide](#hybrid-identity-whiteboard-design-session-student-guide)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
         - [Customer situation](#customer-situation)
@@ -49,7 +49,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Step 3: Present the solution](#step-3-present-the-solution)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
-- [Hybrid Identity whiteboard design session trainer guide](#hybrid-identity-whiteboard-design-session-trainer-guide)
+- [Hybrid identity whiteboard design session trainer guide](#hybrid-identity-whiteboard-design-session-trainer-guide)
     - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
     - [Step 3: Present the solution](#step-3-present-the-solution-1)
@@ -173,11 +173,11 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
-#  Hybrid Identity whiteboard design session student guide
+#  Hybrid identity whiteboard design session student guide
 
 ## Abstract and learning objectives 
 
-In this whiteboard design session, you will learn how to implement different components of a Hybrid Identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features, including pass-through authentication with Seamless Single Sign-On, Multi-Factor Authentication, Self-Service Password Reset, Azure AD Password Protection for Windows Server Active Directory, Hybrid Azure AD join, Windows Hello for Business, Microsoft Intune automatic enrollment, Azure AD Conditional Access,    Azure AD Application Proxy, Azure AD B2B, and Azure AD B2C.
+In this whiteboard design session, you will learn how to implement different components of a hybrid identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features, including pass-through authentication with Seamless Single Sign-On, Multi-Factor Authentication, Self-Service Password Reset, Azure AD Password Protection for Windows Server Active Directory, Hybrid Azure AD join, Windows Hello for Business, Microsoft Intune automatic enrollment, Azure AD Conditional Access,    Azure AD Application Proxy, Azure AD B2B, and Azure AD B2C.
 
 ## Step 1: Review the customer case study 
 
@@ -263,7 +263,7 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 ### Key design considerations
 
--   the choice of the authentication method supported in Hybrid Identity scenarios
+-   the choice of the authentication method supported in hybrid identity scenarios
 
 -   the choice of scope synchronization between Active Directory and Azure AD
 
@@ -303,7 +303,7 @@ Directions:  With all participants at your table, answer the following questions
 
 Directions: With all participants at your table, respond to the following questions on a flip chart:
 
-*Architecting a Hybrid Identity solution*
+*Architecting a hybrid identity solution*
 
 Using the features of Azure Active Directory and the requirements from the customer, design a Hybrid Idenitity solution. 
 
@@ -415,7 +415,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Azure Active Directory B2C documentation | <https://docs.microsoft.com/en-us/azure/active-directory-b2c/>  |
 
 
-# Hybrid Identity whiteboard design session trainer guide
+# Hybrid identity whiteboard design session trainer guide
 
 ## Step 1: Review the customer case study
 
@@ -508,13 +508,13 @@ Have the table attendees reconvene with the larger session group to hear a subje
 
 *High-level overview of the preferred solution*
 
-The solution illustrates a wide range of benefits of implementing the Hybrid Identity model. In the current state:
+The solution illustrates a wide range of benefits of implementing the hybrid identity model. In the current state:
 
 -   Contoso is using a single-domain Active Directory forest using a non-routable DNS domain name
 
 -   Contoso has not implemented any cloud-based services, including an Azure AD tenant and an Azure subscription
 
-Implementing the Hybrid Identity model will allows Contoso to take advantage of such technologies and capabilities as: 
+Implementing the hybrid identity model will allows Contoso to take advantage of such technologies and capabilities as: 
 
 -   Passthrough authentication with Seamless Single Sign-On
 
@@ -588,7 +588,7 @@ In order to provide access to on-premises applications to business partners, Con
 
 1. Azure AD tenant
 
-   In order to implement the Hybrid Identity model, Contoso will create an Azure AD tenant and purchase licenses Enterprise Mobility + Security E5 licenses for its users. To account for the integration and single sign-on requirements, Contoso will also leverage its ownership of a publicly routable DNS domain name and assign it as a verified, custom DNS domain name to the newly provisioned Azure AD tenant. 
+   In order to implement the hybrid identity model, Contoso will create an Azure AD tenant and purchase licenses Enterprise Mobility + Security E5 licenses for its users. To account for the integration and single sign-on requirements, Contoso will also leverage its ownership of a publicly routable DNS domain name and assign it as a verified, custom DNS domain name to the newly provisioned Azure AD tenant. 
 
 1. Active Directory configuration
 
@@ -616,7 +616,7 @@ In order to provide access to on-premises applications to business partners, Con
 
         - In inbound filtering, the scope determines which objects to synchronize or not synchronize. The scope has a group and a clause to determine when a sync rule is in scope. A group contains one or many clauses. There is a logical *AND* between multiple clauses, and a logical *OR* between multiple groups. Objects which are supposed to be synchronized to Azure AD must have the metaverse attribute **cloudFiltered** not set to a value to be synchronized. If this attribute's value is set to **TRUE**, then the object is not synchronized. It is important to note that, in general, this attribute should not be set to **FALSE**. To make sure that multiple rules can affect its value, the attribute is supposed to have the value of either **TRUE** or **NULL** (not set). There are, however, scenarios where the choice of **FALSE** is appropriate, such as, so called *positive* filtering, where you do specify which objects to include (rather than exclude) based on the value of their designated attribute. 
 
-        - Contoso will use a combination of the organizational unit-based filtering and the *positive* filtering based on the value of the userPrincipalName attribute. In particular, user objects to be synchronized will need to have the domain suffix portion of their userPrincipalName attribute match the custom, verified DNS domain name of the Azure AD tenant. This value can be set individually on per user object level as part of staged implementation of the proposed Hybrid Identity solution.  
+        - Contoso will use a combination of the organizational unit-based filtering and the *positive* filtering based on the value of the userPrincipalName attribute. In particular, user objects to be synchronized will need to have the domain suffix portion of their userPrincipalName attribute match the custom, verified DNS domain name of the Azure AD tenant. This value can be set individually on per user object level as part of staged implementation of the proposed hybrid identity solution.  
 
 1. Azure AD Conditional Access
 
@@ -752,7 +752,7 @@ In order to provide access to on-premises applications to business partners, Con
 
 1.  Describe provisions that eliminate single points of failure in your design
 
-    - The potential single points of failure to consider in a Hybrid Identity design based on the components incorporated into the proposed solution include the following:
+    - The potential single points of failure to consider in a hybrid identity design based on the components incorporated into the proposed solution include the following:
 
         - Network connectivity between Active Directory and Azure Active Directory
 

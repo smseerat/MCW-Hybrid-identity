@@ -1,7 +1,7 @@
 ﻿![Microsoft Cloud Workshops icon](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-Hybrid Identity
+Hybrid identity
 </div>
 
 <div class="MCWHeader2">
@@ -25,7 +25,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 **Contents**
 <!-- TOC -->
 
-- [Hybrid Identity whiteboard design session student guide](#hybrid-identity-whiteboard-design-session-student-guide)
+- [Hybrid identity whiteboard design session student guide](#hybrid-identity-whiteboard-design-session-student-guide)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
         - [Customer situation](#customer-situation)
@@ -47,11 +47,11 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- /TOC -->
 
-#  Hybrid Identity whiteboard design session student guide
+#  Hybrid identity whiteboard design session student guide
 
 ## Abstract and learning objectives 
 
-In this whiteboard design session, you will learn how to implement different components of a Hybrid Identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features, including pass-through authentication with Seamless Single Sign-On, Multi-Factor Authentication, Self-Service Password Reset, Azure AD Password Protection for Windows Server Active Directory, Hybrid Azure AD join, Windows Hello for Business, Microsoft Intune automatic enrollment, Azure AD Conditional Access,    Azure AD Application Proxy, Azure AD B2B, and Azure AD B2C.
+In this whiteboard design session, you will learn how to implement different components of a hybrid identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features, including pass-through authentication with Seamless Single Sign-On, Multi-Factor Authentication, Self-Service Password Reset, Azure AD Password Protection for Windows Server Active Directory, Hybrid Azure AD join, Windows Hello for Business, Microsoft Intune automatic enrollment, Azure AD Conditional Access,    Azure AD Application Proxy, Azure AD B2B, and Azure AD B2C.
 
 ## Step 1: Review the customer case study 
 
@@ -137,7 +137,7 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 ### Key design considerations
 
--   the choice of the authentication method supported in Hybrid Identity scenarios
+-   the choice of the authentication method supported in hybrid identity scenarios
 
 -   the choice of scope synchronization between Active Directory and Azure AD
 
@@ -177,7 +177,7 @@ Directions:  With all participants at your table, answer the following questions
 
 Directions: With all participants at your table, respond to the following questions on a flip chart:
 
-*Architecting a Hybrid Identity solution*
+*Architecting a hybrid identity solution*
 
 Using the features of Azure Active Directory and the requirements from the customer, design a Hybrid Idenitity solution. 
 
