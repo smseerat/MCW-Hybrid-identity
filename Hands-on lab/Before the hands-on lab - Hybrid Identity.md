@@ -27,7 +27,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [Hybrid Identity before the hands-on lab setup guide](#\hybrid-identity-before-the-hands-on-lab-setup-guide)
+- [Hybrid identity before the hands-on lab setup guide](#\hybrid-identity-before-the-hands-on-lab-setup-guide)
     - [Requirements](#requirements)
     - [Before the hands-on lab](#before-the-hands-on-lab)
         - [Task 1: Review the relevant Microsoft documentation](#task-1-review-the-relevant-microsoft-documentation)
@@ -40,7 +40,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- /TOC -->
 
-# Hybrid Identity before the hands-on lab setup guide
+# Hybrid identity before the hands-on lab setup guide
 
 ## Requirements
 
@@ -156,7 +156,7 @@ Timeframe: 150 minutes
 
     -   Vm Size: **Standard_D8s_v3**
 
-    -   Dns Label Prefix: any valid, globally unique DNS name
+    -   Dns Label Prefix: any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long)
 
     -   _artifacts Location: accept the default
 
@@ -173,7 +173,7 @@ Timeframe: 150 minutes
 
     -   Password: **demo\@pass123**
 
-1.  Within the Remote Desktop session to **DC1**, start **Windows PowerShell ISE**, add the following script to the script pane, and run it to disable Internet Explorer enhanced security configuration and User Access Control on both **DC1* and **APP1** Azure VMs:
+1.  Within the Remote Desktop session to **DC1**, start **Windows PowerShell ISE**, add the following script to the script pane, and run it to disable Internet Explorer enhanced security configuration and User Access Control on both **DC1** and **APP1** Azure VMs:
 
     ```pwsh
 
@@ -213,15 +213,41 @@ Timeframe: 150 minutes
     Invoke-Command -ComputerName $vmNames {Set-WebConfigurationProperty -Filter "/system.webServer/security/authentication/windowsAuthentication" -Name Enabled -Value True -PSPath IIS:\ -Location "Default Web Site"}
     ```
 
-### Task 6: Configure contoso.local Active Directory
+### Task 6: Restart the Azure VMs
+
+1. Within the **Windows PowerShell ISE** window, from the console pane, run the following to restart **APP1**:
+
+    ```pwsh
+
+    Restart-Computer -ComputerName 'APP1'
+    ```
+
+1. Within the **Windows PowerShell ISE** window, from the console pane, run the following to restart **DC1**:
+
+    ```pwsh
+
+    Restart-Computer -ComputerName 'DC1'
+    ```
+
+### Task 7: Configure contoso.local Active Directory
+
+1. Connect again to **DC1** Azure VM via Remote Desktop. When prompted, sign in by using the following credentials:
+
+    -   Username: **CONTOSO\\demouser**
+
+    -   Password: **demo\@pass123**
 
 1.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the TechNet Script Center page titled **Create Users/Group for Active Directory Demo/Test Environment** at <https://gallery.technet.microsoft.com/scriptcenter/Create-UsersGroup-for-9ee1de26>.
 
 1. On the **Create Users/Group for Active Directory Demo/Test Environment** page, click the **CreateDemoUsers.ps1** link, accept the licensing terms, and save the corresponding script to the local file system.
 
-1. On the **Create Users/Group for Active Directory Demo/Test Environment** page, click the **CreateDemoUsers.csv** link and save the corresponding csv file to the same location as the **CreateDemoUsers.ps1** file.
+1. On the **Create Users/Group for Active Directory Demo/Test Environment** page, click the **CreateDemoUsers.csv** link (directly above the PowerShell code section) and save the corresponding csv file to the same location as the **CreateDemoUsers.ps1** file.
 
-1. In the **Windows PowerShell ISE** window, open the **CreateDemoUsers.ps1** file and run it to create a lab environment organizational unit hierarchy and populate it with test user accounts. 
+1. Within the Remote Desktop session to **DC1**, start File Explorer, navigate to the folder where you downloaded both files, right-click on the file **CreateDemoUsers.ps1**, click **Properties**, in the **CreateDemoUsers.ps1 Properties** dialog box, check the **Unblock** checkbox and click **OK.
+
+1. Within the File Explorer window, right-click on the file **CreateDemoUsers.ps1** again and click **Edit**. 
+
+1. In the **Windows PowerShell ISE** window, run the **CreateDemoUsers.ps1** script it to create a lab environment organizational unit hierarchy and populate it with test user accounts. 
 
 1. Within the **Windows PowerShell ISE** window, add the following script to the script pane, and run it to modify settins of the AD user accounts you will use in this lab to **demo@pass123**:
 
@@ -243,20 +269,6 @@ Timeframe: 150 minutes
     Move-ADObject -Identity 'CN=APP1,CN=Computers,DC=contoso,DC=local' -TargetPath 'OU=Servers,OU=Demo Accounts,DC=contoso,DC=local'
     ```
 
-### Task 7: Restart the Azure VMs
-
-1. Within the **Windows PowerShell ISE** window, from the console pane, run the following to restart **APP1**:
-
-    ```pwsh
-
-    Restart-Computer -ComputerName 'APP1'
-    ```
-
-1. Within the **Windows PowerShell ISE** window, from the console pane, run the following to restart **DC1**:
-
-    ```pwsh
-
-    Restart-Computer -ComputerName 'DC1'
-    ```
+1. Sign out from **DC1**.
 
 You should follow all steps provided *before* performing the Hands-on lab.
