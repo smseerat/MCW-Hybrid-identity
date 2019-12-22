@@ -181,9 +181,11 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
 1. On the **Contoso - Overview** blade, click **Licenses**.
 
-1. On the **Contoso - Licenses**, blade, click **+ Try/Buy**.
+1. On the **Contoso - Licenses**, blade, select **All Products** and click **+ Try/Buy**.
 
 1. On the **Activate** blade, in the **ENTERPRISE MOBILITY + SECURITY E5** section, click **Free trial** and then click **Activate**
+
+   > **Note**: Activation typically takes about 5 minutes.
 
 
 ### Task 2: Create and configure Azure AD users
@@ -403,7 +405,7 @@ In this task, you will configure the DNS suffix of the Contoso Active Directory 
 
 In this task, you will install Azure AD Connect.
 
-1. Within the Remote Desktop session to **DC1**, in Server Manager, click **Local Server**, then click the **On** link next to the **IE Enhanced Security Configuration**, set the **Administrators** settings to **Off**, and click **OK**.
+1. Within the Remote Desktop session to **DC1**, in Server Manager, click **Local Server**, and ensure that **IE Enhanced Security Configuration** is disabled. If not, then click the **On** link next to the **IE Enhanced Security Configuration**, set the **Administrators** settings to **Off**, and click **OK**.
 
 1. Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the Azure portal at <https://portal.azure.com>.
 
@@ -417,7 +419,7 @@ In this task, you will install Azure AD Connect.
 
 1. If presented with the **Welcome to Microsoft Azure** dialog box, click **Maybe later**. 
 
-1. in the Azure portal, navigate to the **Contoso - Overview** blade.
+1. in the Azure portal, search for **Azure Directory** and use the search results to navigate to the **Contoso - Overview** blade.
 
 1. On the **Contoso - Overview** blade, click **Azure AD Connect**.
 
@@ -980,7 +982,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
     - Enforce custom list: **Yes**
 
-    - Custom banned password list: **Contoso**, **password**, **pass**
+    - Custom banned password list: **Contoso**, **password**, **pass** (type each word on a separate line without commas)
 
     - Enable password protection on Windows Server Active Directory: **Yes**
 
@@ -992,7 +994,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 1. Within the Remote Desktop session to **APP1**, start File Explorer, navigate to the download location, and run the installation of the **Azure AD Password Protection Proxy Bundle** with the default options.
 
-1. Within the Remote Desktop session to **APP1**, start Windows PowerShell ISE, and, from the console pane, run the following to register the proxy (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant):
+1. Within the Remote Desktop session to **APP1**, start Windows PowerShell ISE as Administrator , and, from the console pane, run the following to register the proxy (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant):
 
     ```pwsh
     Import-Module AzureADPasswordProtection
@@ -1001,7 +1003,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 1. When prompted, sign in to the Contoso Azure AD tenant using credentials of the **john.doe** user account. 
 
-1. From the Windows PowerShell ISE console, run the following to register the Active Directory forest (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant):
+1. From the Administrator: Windows PowerShell ISE console, run the following to register the Active Directory forest (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant):
 
     ```pwsh
     Register-AzureADPasswordProtectionForest -AccountUpn 'john.doe@<domain_name>.onmicrosoft.com'
@@ -1433,7 +1435,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 
 1. In the **DC1 Properties** window, switch to the **Delegation** tab and select the option **Trust this computer for delegation to specified services only**.
 
-1. Select the option **Use any authentication protocol**, click **Add**, in the **Add Services** window, click **Users or Computers**, in the **Select Users or Computers** dialog box, in the **Enter the object names to select, type **APP1** and click **OK**. 
+1. Select the option **Use any authentication protocol**, click **Add**, in the **Add Services** window, click **Users or Computers**, in the **Select Users or Computers** dialog box, in the **Enter the object names to select**, type **APP1** and click **OK**. 
 
 1. Back in the **Add Services** window, select the **http** entry and click **OK**. 
 
@@ -1483,9 +1485,9 @@ In this task, you will create another Azure Active Directory tenant representing
 
 1. In the Azure portal, navigate to the blade of the newly created Azure Active Directory tenant.
 
-1. On the **Contoso - Overview** blade, click **Licenses**.
+1. On the **Fabrikam - Overview** blade, click **Licenses**.
 
-1. On the **Contoso - Licenses**, blade, click **+ Try/Buy**.
+1. On the **Fabrikam - Licenses**, blade, click **All Products** and then click **+ Try/Buy**.
 
 1. On the **Activate** blade, in the **ENTERPRISE MOBILITY + SECURITY E5** section, click **Free trial** and then click **Activate**
 
@@ -1777,4 +1779,4 @@ Duration: 20 Minutes
 
 ### Task 1: Delete resources
 
-1.  Now that the HOL is complete, go ahead and delete all of the Resource Groups created for this HOL. You will no longer need those resources, and it will be beneficial to clean up your Azure Subscription.
+1. Now that the HOL is complete, go ahead and delete all of the Resource Groups created for this HOL. You will no longer need those resources, and it will be beneficial to clean up your Azure Subscription. In addition, remove the verified domain from the Contoso Azure AD tenant. 

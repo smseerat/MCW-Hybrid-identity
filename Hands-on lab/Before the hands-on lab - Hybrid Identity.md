@@ -225,7 +225,6 @@ Timeframe: 150 minutes
 1. Within the **Windows PowerShell ISE** window, from the console pane, run the following to restart **DC1**:
 
     ```pwsh
-
     Restart-Computer -ComputerName 'DC1'
     ```
 
@@ -247,13 +246,37 @@ Timeframe: 150 minutes
 
 1. Within the File Explorer window, right-click on the file **CreateDemoUsers.ps1** again and click **Edit**. 
 
-1. In the **Windows PowerShell ISE** window, run the **CreateDemoUsers.ps1** script it to create a lab environment organizational unit hierarchy and populate it with test user accounts. 
+1. In the **Administrator: Windows PowerShell ISE** window, change line **148** from:
 
-1. Within the **Windows PowerShell ISE** window, add the following script to the script pane, and run it to modify settins of the AD user accounts you will use in this lab to **demo@pass123**:
+    ```pwsh
+    $UserCount = 1000 #Up to 2500 can be created
+    ```
+
+   to
+    ```pwsh
+    $UserCount = 2500 #Up to 2500 can be created
+    ```
+
+1. In the **Windows PowerShell ISE** window, save the change and run the **CreateDemoUsers.ps1** script it to create a lab environment organizational unit hierarchy and populate it with test user accounts. 
+
+1. Within the **Windows PowerShell ISE** window, add the following script to the script pane, and run it to modify settings of the AD user accounts you will use in this lab to **demo@pass123**:
 
     ```pwsh
 
+    $adUser1 = Get-ADUser -Filter {samAccountName -eq "AGAyers"}
+    $adUser1groups = $adUser1 | Get-ADPrincipalGroupMembership 
+    $adUser1groups | foreach { if ($_.name -ne 'Domain Users') {Remove-ADPrincipalGroupMembership -MemberOf $_.name -Identity $adUser1.DistinguishedName} }
+    Add-ADPrincipalGroupMembership -MemberOf 'Engineering' -Identity $adUser1.DistinguishedName
+    Move-ADObject -Identity $adUser1.DistinguishedName -TargetPath 'OU=NJ,OU=US,OU=Users,OU=Demo Accounts,DC=contoso,DC=local'
+
     Set-ADAccountPassword -Identity 'CN=Ayers\, Ann,OU=NJ,OU=US,OU=Users,OU=Demo Accounts,DC=contoso,DC=local' -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "demo@pass123" -Force)
+
+    $adUser2 = Get-ADUser -Filter {samAccountName -eq "TFBell"}
+    $adUser2groups = $adUser2 | Get-ADPrincipalGroupMembership 
+    $adUser2groups | foreach { if ($_.name -ne 'Domain Users') {Remove-ADPrincipalGroupMembership -MemberOf $_.name -Identity $adUser2.DistinguishedName} }
+    Add-ADPrincipalGroupMembership -MemberOf 'Engineering' -Identity $adUser2.DistinguishedName
+    Move-ADObject -Identity $adUser2.DistinguishedName -TargetPath 'OU=VT,OU=US,OU=Users,OU=Demo Accounts,DC=contoso,DC=local'
+
     Set-ADAccountPassword -Identity 'CN=Bell\, Teresa,OU=VT,OU=US,OU=Users,OU=Demo Accounts,DC=contoso,DC=local' -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "demo@pass123" -Force)
     Get-ADGroup -Identity 'Domain Admins' | Add-ADGroupMember -Members 'CN=Ayers\, Ann,OU=NJ,OU=US,OU=Users,OU=Demo Accounts,DC=contoso,DC=local'
     Get-ADGroup -Identity 'Enterprise Admins' | Add-ADGroupMember -Members 'CN=Ayers\, Ann,OU=NJ,OU=US,OU=Users,OU=Demo Accounts,DC=contoso,DC=local'
