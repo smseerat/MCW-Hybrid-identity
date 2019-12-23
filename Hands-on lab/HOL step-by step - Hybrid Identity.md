@@ -1109,7 +1109,7 @@ In this task, you will enable automatic enrollment of hybrid Azure AD devices in
 
 In this task, you will implement Azure AD Conditional Access Policies 
 
-1. Within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Contoso - Overview ** blade of the Contoso Azure AD tenant.
+1. Within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Contoso - Overview** blade of the Contoso Azure AD tenant.
 
 1. On the **Contoso - Overview** blade, click **Security**.
 

@@ -568,6 +568,8 @@ In order to provide access to on-premises applications to business partners, Con
 
         - Self-service password reset/change/unlock with on-premises writeback (available starting with Azure AD Premium P1). 
 
+     ![A diagram representing high level design.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/preferred-solution-high-level.png)
+
 1. The choice of authentication method: 
 
    - In order to minimize infrastructure footprint required for integration, streamline user experience, and, at the same time, ensure that any on-premises Active Directory user account restrictions, such as allowed sign-in hours must be honored, the proposed solution leverages pass-through authentication with seamless single sign-on (SSO). 
