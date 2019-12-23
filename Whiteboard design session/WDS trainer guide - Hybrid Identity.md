@@ -704,7 +704,7 @@ In order to provide access to on-premises applications to business partners, Con
 
    - Azure AD Password Protection for Windows Server Active Directory allows you to eliminate easily guessed passwords, including customizable password list that you can manage directly from the Azure portal. This feature relies on the Azure AD password protection DC agent software. The agent can only validate passwords when it is installed on a domain controller running Windows Server 2012 or newer, and only for password changes that are sent to that domain controller. It is not possible to control which domain controllers are chosen by Windows client machines for processing user password changes. In order to guarantee consistent behavior and universal password protection security enforcement, the DC agent software must be installed on all domain controllers in a domain.
 
-   - Azure AD Password Protection for Windows Server Active Directory relies additionally on the Azure AD Password Protection Proxy service, which can be installed on runs on any domain-joined Windows Server 2012 R2 or newer, with .NET 4.7 installed and with connectivity to internet. Its primary purpose is to forward password policy download requests from domain controllers to Azure AD and to return the responses from Azure AD to the DC Agent service running on individual domain controllers.
+   - Azure AD Password Protection for Windows Server Active Directory relies additionally on the Azure AD Password Protection Proxy service, which can be installed on any domain-joined Windows Server 2012 R2 or newer, with .NET 4.7 installed and with connectivity to internet. Its primary purpose is to forward password policy download requests from domain controllers to Azure AD and to return the responses from Azure AD to the DC Agent service running on individual domain controllers.
 
 1. Smart Lockout
 
@@ -897,7 +897,7 @@ It is important to provision sufficient number of connectors to handle the expec
 
    - Azure AD B2C
 
-       - Azure Active Directory B2C provides business-to-customer identity as a service. Customers can use their preferred social, enterprise, or local account identities to authenticate in order to access applications and APIs offered by your organization. B2C requires an Azure AD tenant separate from the one used by organization's users and applications (and, consequently, differnent from the one that is used in B2B scenarios). In order to make your applications and APIs available via an Azure AD B2C tenant, you need to register them with that tenant.
+       - Azure Active Directory B2C provides business-to-customer identity as a service. Customers can use their preferred social, enterprise, or local account identities to authenticate in order to access applications and APIs offered by your organization. B2C requires an Azure AD tenant separate from the one used by organization's users and applications (and, consequently, different from the one that is used in B2B scenarios). In order to make your applications and APIs available via an Azure AD B2C tenant, you need to register them with that tenant.
 
          For more information regarding this subject, refer to *Technical and feature overview of Azure Active Directory B2C* at <https://docs.microsoft.com/en-us/azure/active-directory-b2c/technical-overview>
 
