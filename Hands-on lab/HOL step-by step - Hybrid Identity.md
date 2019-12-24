@@ -33,7 +33,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Solution architecture](#solution-architecture)
     - [Exercise 1: Integrate an Active Directory forest with an Azure Active Directory tenant](#exercise-1-integrate-an-active-directory-forest-with-an-azure-active-directory-tenant)
         - [Overview](#overview-1)
-        - [Task 1: Create an Azure Active Directory tenant and activate an Enterprise Mobility + Security E5 trial](#task-1-Create-an-Azure-Active-Directory-tenant-and-activate-an-Enterprise-Mobility-+-Security-E5-trial)
+        - [Task 1: Create an Azure Active Directory tenant and activate an EMS E5 trial](#task-1-Create-an-Azure-Active-Directory-tenant-and-activate-an-EMS-E5-trial)
         - [Task 2: Create and configure Azure AD users](#task-2-Create-and-configure-Azure-AD-users)
         - [Task 3: Purchase a custom domain name](#task-3-Purchase-a-custom-domain-name)
         - [Task 4: Assign a custom domain name to the Contoso Azure AD tenant](#task-4-Assign-a-custom-domain-name-to-the-Contoso-Azure-AD-tenant)
@@ -63,7 +63,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Task 1: Install and configure Azure AD Application Proxy](#task-1-Install-and-configure-Azure-AD-Application-Proxy)
         - [Task 2: Configure an Azure AD Application Proxy application](#task-2-Configure-an-Azure-AD-Application-Proxy-application)
         - [Task 3: Test an Azure AD Application Proxy application](#task-3-Test-an-Azure-AD-Application-Proxy-application)
-        - [Task 4: Create an Azure Active Directory tenant and activate an Enterprise Mobility + Security E5 trial](#task-4-Create-an-Azure-Active-Directory-tenant-and-activate-an-Enterprise-Mobility-+-Security-E5-trial)
+        - [Task 4: Create an Azure Active Directory tenant and activate an EMS E5 trial](#task-4-Create-an-Azure-Active-Directory-tenant-and-activate-an-EMS-E5-trial)
         - [Task 5: Create and configure Azure AD users](#task-5-Create-and-configure-Azure-AD-users)
         - [Task 6: Create and configure Azure AD guest user and group accounts](#task-6-Create-and-configure-Azure-AD-guest-user-and-group-accounts)
         - [Task 7: Configure an Azure AD Application Proxy application for B2B access](#task-7-Configure-an-Azure-AD-Application-Proxy-application-for-B2B-access)
@@ -87,7 +87,7 @@ As you step through the hands-on-lab, you will learn how to perform the followin
 
 -   [Create and configure Azure AD users](#task-2-Create-and-configure-Azure-AD-users)
 
--   [Activate an Enterprise Mobility + Security E5 trial and assign the corresponding product licenses to users](#task-1-Create-an-Azure-Active-Directory-tenant-and-activate-an-Enterprise-Mobility-+-Security-E5-trial)
+-   [Activate an EMS E5 trial and assign the corresponding product licenses to users](#task-1-Create-an-Azure-Active-Directory-tenant-and-activate-an-Enterprise-Mobility-+-Security-E5-trial)
 
 -   [Purchase a custom domain name by leveraging Azure Web App functionality](#task-3-Purchase-a-custom-domain-name)
 
@@ -151,7 +151,7 @@ Duration: 150 minutes
 
 In this exercise, you will integrate an Active Directory forest with an Azure Active Directory tenant by creating an Azure Active Directory tenant and activating an Enterprise Mobility + Security E5 trial, creating and configuring an Azure AD user, purchasing a custom domain name, assigning a custom domain name to the Contoso Azure AD tenant, configuring DNS suffix in the Contoso Active Directory forest, installing Azure AD Connect, enable Active Directory Recycle Bin, configuring Azure AD Connect attribute-level filtering, initiating and verifying directory synchronization, configuring Hybrid Azure AD join, and performing Hybrid Azure AD join of a Windows Server 2016 VM.
 
-### Task 1: Create an Azure Active Directory tenant and activate an Enterprise Mobility + Security E5 trial
+### Task 1: Create an Azure Active Directory tenant and activate an EMS E5 trial
 
 In this task, you will create an Azure Active Directory tenant with the following settings: 
 
@@ -833,7 +833,7 @@ In this task, you will create and configure Active Directory groups that will be
 1. On the **Contoso - All groups** blade, verify that there is an entry representing the **Engineering - Mandatory MFA** group containing the Azure AD user accounts matching Active Directory uesr accounts which are members of the Active Directory **Engineering - Mandatory MFA** group.
 
 
-### Task 2: Assign EM+S E5 licenses to Azure AD users
+### Task 2: Assign EMS E5 licenses to Azure AD users
 
 In this task, you assign a value to the **UsageLocation** attribute of each user account and assign an Azure AD Premium license to each user. This is necessary in order to implement Azure AD-based Multi-Factor Authentication for these users.
 
@@ -1457,7 +1457,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 1. On the **Apps** page of the **Application Access Panel**, click the **APP1 Default Web Site** icon. This will automatically open a new browser tab displaying the Default Web Site page on APP1.
 
 
-### Task 4: Create an Azure Active Directory tenant and activate an Enterprise Mobility + Security E5 trial
+### Task 4: Create an Azure Active Directory tenant and activate an EMS E5 trial
 
 In this task, you will create another Azure Active Directory tenant representing the Fabrikam organization, with the following settings: 
 
