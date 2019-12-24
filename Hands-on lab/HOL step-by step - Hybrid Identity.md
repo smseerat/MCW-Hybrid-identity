@@ -129,7 +129,7 @@ As you step through the hands-on-lab, you will learn how to perform the followin
 
 ## Overview
 
-Contoso has asked you to integrate their on-premises Active Directory single-domain forest named contoso.local with Azure AD and implement all necessary prerequisites to allow them to benefit from such Azure AD features as single sign-on to cloud and on-premises applications, enhanced sing-in security with Multi-Factor Authentication and Windows Hello for Business, Hybrid Azure AD join, Self-Service Password Reset and Password Protection, automatic enrollment of Windows 10 devices into Microsoft Intune, and Azure AD Privileged Identity Protection. They want to also provide secure access to their on-premises, Windows Integrated Authentication-based applications from Internet for both organizational users and users who are members of partner organizations, although they also want to be able to loosen restrictions when access originates from Hybrid Azure AD joined computers residing in their on-premises data centers. The same applications need to also be made avaialble to Contoso's business partners. 
+Contoso has asked you to integrate their on-premises Active Directory single-domain forest named contoso.local with Azure AD and implement all necessary prerequisites to allow them to benefit from such Azure AD features as single sign-on to cloud and on-premises applications, enhanced sing-in security with Multi-Factor Authentication and Windows Hello for Business, Hybrid Azure AD join, Self-Service Password Reset and Password Protection, automatic enrollment of Windows 10 devices into Microsoft Intune, and Azure AD Privileged Identity Protection. They want to also provide secure access to their on-premises, Windows Integrated Authentication-based applications from Internet for both organizational users and users who are members of partner organizations, although they also want to be able to loosen restrictions when access originates from Hybrid Azure AD joined computers residing in their on-premises data centers. The same applications need to also be made available to Contoso's business partners. 
 
 ## Solution architecture
 
@@ -648,7 +648,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
 1. In the Azure portal, navigate to the **Groups - All groups** blade and note that all of the contoso.local domain groups have been synchronized as well. 
 
-1. In the Azure portal, navigate to the **Contoso - Azure AD Connect** blade and review its settings. Verify Azure AD Connect Sync Status (enabled), Last Sync timestamp, Password Hash Sync (disabled), as well as the user sign-in configuration (Federation disabled, Seamless single sign-on enabled for 1 domain , and Pass-through authentication enabled with 1 agent).
+1. In the Azure portal, navigate to the **Contoso - Azure AD Connect** blade and review its settings. Verify Azure AD Connect Sync Status (enabled), Last Sync timestamp, Password Hash Sync (disabled), as well as the user sign-in configuration (Federation disabled, Seamless single sign-on enabled for 1 domain, and Pass-through authentication enabled with 1 agent).
 
    > **Note**: In a production environment, you would install additional agents for redundancy. For more information, refer to <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-pta-quick-start>
 
@@ -663,7 +663,7 @@ In this task, you will configure Azure AD Connect device synchronization options
 
 1. On the **Additional tasks** page, click **Configure device options** and click **Next**.
 
-1. On the **Oveview** page, review the information regarding **Hybrid Azure AD join** and **Device writeback**, and click **Next**.
+1. On the **Overview** page, review the information regarding **Hybrid Azure AD join** and **Device writeback**, and click **Next**.
 
 1. On the **Connect to Azure AD** page, sign in by using the credentials of the **john.doe** account and click **Next**.
 
@@ -696,7 +696,7 @@ In this task, you will configure Azure AD Connect device synchronization options
 
 1. Within Remote Desktop session to **APP1**, from the **Server Manager** window, start **Task Scheduler**. 
 
-1. In the **Task Scheduler** console, naviagate to the **Task Scheduler Library**, **Microsoft**, **Windows**, and **Workplace Join**. From there, enable and start the **Automatic-Device-Join** task. 
+1. In the **Task Scheduler** console, navigate to the **Task Scheduler Library**, **Microsoft**, **Windows**, and **Workplace Join**. From there, enable and start the **Automatic-Device-Join** task. 
 
 1. Switch to the Remote Desktop session to **DC1** and, from the console pane of the Windows PowerShell ISE window, start Azure AD Connect delta synchronization by running the following:
 
@@ -906,7 +906,7 @@ In this task, you will configure user state-based Azure AD Multi-Factor Authenti
 
 1. To verify the outcome, within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Users - All users** blade of the Contoso Azure AD tenant and click **Multi-Factor Authentication** (you might need to click **More...** first). This will open a new tab in the Internet Explorer window displaying the **multi-factor authentication** portal.
 
-1. In the the **multi-factor authentication** portal, on the **users** tab, ensure that all users have the **MULTI-FACTOR AUTH STATUS** set to **Enabled**.
+1. In the **multi-factor authentication** portal, on the **users** tab, ensure that all users have the **MULTI-FACTOR AUTH STATUS** set to **Enabled**.
 
 
 ### Task 4: Enable password writeback and Self-Service Password Reset
@@ -947,9 +947,9 @@ In this task, you will enable password writeback and Self-Service Password Reset
 
 1. Set **Number of security questions required to register** and **Number of questions required to reset** to **3**. 
 
-1. Click **Select securitiy questions**, on the **Select security questions** blade, click **+ Predefined**, on the **Add predefined security questions** blade, select any 5 questions, click **OK** twice, and, back on the **Password reset - Authentication methods** blade, click **Save**.
+1. Click **Select security questions**, on the **Select security questions** blade, click **+ Predefined**, on the **Add predefined security questions** blade, select any 5 questions, click **OK** twice, and, back on the **Password reset - Authentication methods** blade, click **Save**.
 
-1. On the **Password reset - Authentication methods**, click **Registration** and ensure that **Require users to register when signing in** is set to **Yes** and that **Number of days before usres are asked to re-confirm their authentication information** is set to **180**.
+1. On the **Password reset - Authentication methods**, click **Registration** and ensure that **Require users to register when signing in** is set to **Yes** and that **Number of days before users are asked to re-confirm their authentication information** is set to **180**.
 
 1. On the **Password reset - Registration** blade, click **On-premises integration** and verify that the **Write back passwords to your on-premises directory** setting is set to **Yes**. Note that you have the option to **Allow users to unlock accounts without resetting their passwords**.
 
@@ -996,7 +996,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 1. Within the Remote Desktop session to **APP1**, start File Explorer, navigate to the download location, and run the installation of the **Azure AD Password Protection Proxy Bundle** with the default options.
 
-1. Within the Remote Desktop session to **APP1**, start Windows PowerShell ISE as Administrator , and, from the console pane, run the following to register the proxy (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant):
+1. Within the Remote Desktop session to **APP1**, start Windows PowerShell ISE as Administrator and, from the console pane, run the following to register the proxy (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant):
 
     ```pwsh
     Import-Module AzureADPasswordProtection
@@ -1085,7 +1085,7 @@ In this task, you will enable automatic enrollment of hybrid Azure AD devices in
 
 1. Within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the **All services** blade.
 
-1. On the **All services** blade, search for **Intue** and, in the list of results, click **Intune**.
+1. On the **All services** blade, search for **Intune** and, in the list of results, click **Intune**.
 
 1. On the **Microsoft Intune - Overview** blade, click **Device enrollment**.
 
@@ -1161,7 +1161,7 @@ In this task, you will implement Azure AD Conditional Access Policies
 
     ![In the Azure portal, on the Cloud apps or actions blade, on the Include tab, the selected app is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_CloudppsandActionsInclude.png)
 
-   > **Note**: Review the warning stating **Don't lock yourself out! This policy impacts the Azure portal. Before you continue, ensure that you or someone else will be able to get back into the portal. Disregard this warning if you are conifguring persistent browser session policy that works correctly only if "All cloud apps" are selected.**
+   > **Note**: Review the warning stating **Don't lock yourself out! This policy impacts the Azure portal. Before you continue, ensure that you or someone else will be able to get back into the portal. Disregard this warning if you are configuring persistent browser session policy that works correctly only if "All cloud apps" are selected.**
 
 1. On the **New** blade, in the **Assignments** section, click **Conditions**.
 
@@ -1242,7 +1242,7 @@ In this task, you will implement Azure AD Privileged Identity Management
 
 1. On the **Privileged Identity Management - Consent to PIM** blade, click **Verify my identity**. 
 
-1. When prompted to provide additional information, click **Next**, on the **Aditional security verification** page, specify the following settings:
+1. When prompted to provide additional information, click **Next**, on the **Additional security verification** page, specify the following settings:
 
     - **Step 1: How should we contact you?**
 
@@ -1276,7 +1276,7 @@ In this task, you will implement Azure AD Privileged Identity Management
 
 1. Switch to the Remote Desktop session to **APP1**, where you are signed in by using Active Directory user account of **Ann G. Ayers**, start Internet Explorer, and browse to the Azure portal at [**http://portal.azure.com**](http://portal.azure.com). 
 
-1. When prompted to provide additional information, click **Next**, on the **Aditional security verification** page, specify the following settings:
+1. When prompted to provide additional information, click **Next**, on the **Additional security verification** page, specify the following settings:
 
     - **Step 1: How should we contact you?**
 
@@ -1284,7 +1284,7 @@ In this task, you will implement Azure AD Privileged Identity Management
 
         - Method: **Send me a code by text message**
 
-    - **Step 2: We've send a text message to your phone**
+    - **Step 2: We've sent a text message to your phone**
 
         - Use the code in the text message you received, click **Verify**
 
@@ -1421,7 +1421,7 @@ In this task, you will configure an Azure AD Application Proxy application.
     setspn -S http/APP1.contoso.local APP1
     setspn -S http/APP1 APP1
     ```
-1. Review the output, switch back to the Internet Explorer window displaying the Azure portal, and, on the **APP1 Default Web Site - Configure Integrated Windows Authentiation (IWA)**, specify the following settings and click **Save**.
+1. Review the output, switch back to the Internet Explorer window displaying the Azure portal, and, on the **APP1 Default Web Site - Configure Integrated Windows Authentication (IWA)**, specify the following settings and click **Save**.
 
     - Internal Application SPN: **HTTP/APP1.contoso.local**
 
@@ -1595,7 +1595,7 @@ In this task, you will create and configure Azure AD guest accounts in the Conto
 
     -  Last name: **Doe**
 
-    -  Personal message : **Welcome to the Contoso Azure AD tenant**
+    -  Personal message: **Welcome to the Contoso Azure AD tenant**
 
     -  Groups: not set
 

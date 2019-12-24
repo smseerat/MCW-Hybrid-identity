@@ -211,9 +211,9 @@ Contoso has recently upgraded its Active Directory environment to Windows Server
 
 Contoso is exploring the option of transitioning its operations into a more Internet-open model which would facilitate support for mobile workforce and integration with business partners, while, at the same time, support current security and manageability controls. Given its current environment, which is heavily dependent on Active Directory and undergoes migration to Windows 10 devices, Contoso intends to evaluate Azure Active Directory and Microsoft Intune as potential identity and management components of the target design.
 
-The identity component of the target design should facilitate step-up authentication and per-application permissions based not only on the properties of users' accounts but also on the state of these users' devices. To maximize security, Contoso wants to minimize or even eliminate persistent assignments of privileged roles for identity management, but, at the same time, such arrangement must account for break-glass scenarios, allowing for a non-gated emergency use of privileged accounts. For obvious reasons, such accounts needs to be closely monitored and audited.
+The identity component of the target design should facilitate step-up authentication and per-application permissions based not only on the properties of users' accounts but also on the state of these users' devices. To maximize security, Contoso wants to minimize or even eliminate persistent assignments of privileged roles for identity management, but, at the same time, such arrangement must account for break-glass scenarios, allowing for a non-gated emergency use of privileged accounts. For obvious reasons, such accounts need to be closely monitored and audited.
  
-Another Information Security concern is accidental exposure of users passwords. Contoso would like to minimize their use in lieu of more secure authentication methods. In situations where passwords are required, users should also be able to both change and reset them without having to rely on HelpDesk services. At the same time, any on-premises Active Directory user account restrictions, such as allowed sign-in hours must be honored. Similarly, the existing Active Directory password policies must apply, although the head of Information Security would like to enhance them by preventing use of common terms within password values.
+Another Information Security concern is accidental exposure of users' passwords. Contoso would like to minimize their use in lieu of more secure authentication methods. In situations where passwords are required, users should also be able to both change and reset them without having to rely on HelpDesk services. At the same time, any on-premises Active Directory user account restrictions, such as allowed sign-in hours must be honored. Similarly, the existing Active Directory password policies must apply, although the head of Information Security would like to enhance them by preventing use of common terms within password values.
  
 Besides enhancing self-service user capabilities, Contoso wants to optimize end-user experience, especially in environment where users might be using several different devices. The user-defined settings, such as accessibility or app customization should be consistent across all devices.
  
@@ -233,7 +233,7 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 -   Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
 
--   Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
+-   Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users' devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
 
 -   Users must be allowed to reset their own passwords. 
 
@@ -271,9 +271,9 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 -   the Service Level Agreements associated with the choice of the Azure AD edition 
 
--   requirements necessary to minimize dependency on passwords in lieu of more secure autentication methods
+-   requirements necessary to minimize dependency on passwords in lieu of more secure authentication methods
 
--   the approach to allowing different authentication requirements, depending on users group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry
+-   the approach to allowing different authentication requirements, depending on users' group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry
 
 -   the approach to providing Contoso and Fabrikam users access to on-premises web applications that rely on Kerberos-based Windows Integrated Authentication.
 
@@ -305,7 +305,7 @@ Directions: With all participants at your table, respond to the following questi
 
 *Architecting a hybrid identity solution*
 
-Using the features of Azure Active Directory and the requirements from the customer, design a Hybrid Idenitity solution. 
+Using the features of Azure Active Directory and the requirements from the customer, design a Hybrid Identity solution. 
 
 Make sure that your design accounts for customer objectives and objections and includes the following items:
 
@@ -490,7 +490,7 @@ Have the table attendees reconvene with the larger session group to hear a subje
 
 -   Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
 
--   Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
+-   Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users' devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
 
 -   Users must be allowed to reset their own passwords. 
 
@@ -558,13 +558,13 @@ In order to provide access to on-premises applications to business partners, Con
 
         - Azure AD Identity Protection. This will allow controlling access to applications and resources by relying on dynamically evaluated risk based on heuristics and globally collected security-related telemetry.
 
-        - Conditional Access (available starting with Azure AD Premium P1). This will allow controlling access to applications and resources by relying on a combination of multiple conditions, including users group membership and state of the users devices.
+        - Conditional Access (available starting with Azure AD Premium P1). This will allow controlling access to applications and resources by relying on a combination of multiple conditions, including users group membership and state of the users' devices.
 
         - Multi-Factor Authentication (available starting with Azure AD Premium P1), including integration of MFA into Conditional Access scenarios through step up authentication.
 
         - Azure AD Application Proxy (available starting with Azure AD Premium P1). This will allow providing access to remote users and business partners to on-premises web applications.
 
-        - Password Protection for Windows Server Active Directory (available starting with Azure AD Premium P1). This will allow imposing restirictions on allowed password values. 
+        - Password Protection for Windows Server Active Directory (available starting with Azure AD Premium P1). This will allow imposing restrictions on allowed password values. 
 
         - Self-service password reset/change/unlock with on-premises writeback (available starting with Azure AD Premium P1). 
 
@@ -612,9 +612,9 @@ In order to provide access to on-premises applications to business partners, Con
 
    - Filtering 
 
-        - Azure AD Connect offers a number of different filtering options that determine the scope of synchronized Active Directory objects. While organizational unit based filtering is the most straightforward to configure option, the scope can be based on a value of individual Active Directory attributes, which offers object-level granularity. 
+        - Azure AD Connect offers a number of different filtering options that determine the scope of synchronized Active Directory objects. While organizational unit-based filtering is the most straightforward to configure option, the scope can be based on a value of individual Active Directory attributes, which offers object-level granularity. 
 
-        - Configuring attribute-based filtering relies on declarative provisioning, which is configurable by using Synchronization Rules Editor, included in the installation of Azure AD Connect. It can be applied when importing objects from Active Directory into to the metaverse (inbound) or when exporting objects from the metaverse to Azure AD (outbound). The recommended approach involves inbound filtering because this is easiest to maintain. Outbound fitlering might be required in some scenarios, such as, for example, joining objects from more than one Active Directory forest before applying the filtering logic. 
+        - Configuring attribute-based filtering relies on declarative provisioning, which is configurable by using Synchronization Rules Editor, included in the installation of Azure AD Connect. It can be applied when importing objects from Active Directory into to the metaverse (inbound) or when exporting objects from the metaverse to Azure AD (outbound). The recommended approach involves inbound filtering because this is easiest to maintain. Outbound filtering might be required in some scenarios, such as, for example, joining objects from more than one Active Directory forest before applying the filtering logic. 
 
         - In inbound filtering, the scope determines which objects to synchronize or not synchronize. The scope has a group and a clause to determine when a sync rule is in scope. A group contains one or many clauses. There is a logical *AND* between multiple clauses, and a logical *OR* between multiple groups. Objects which are supposed to be synchronized to Azure AD must have the metaverse attribute **cloudFiltered** not set to a value to be synchronized. If this attribute's value is set to **TRUE**, then the object is not synchronized. It is important to note that, in general, this attribute should not be set to **FALSE**. To make sure that multiple rules can affect its value, the attribute is supposed to have the value of either **TRUE** or **NULL** (not set). There are, however, scenarios where the choice of **FALSE** is appropriate, such as, so called *positive* filtering, where you do specify which objects to include (rather than exclude) based on the value of their designated attribute. 
 
@@ -828,7 +828,7 @@ It is important to provision sufficient number of connectors to handle the expec
 
          While Windows Hello for Business can be implemented exclusively in on-premises environments, its deployment can be simplified by leveraging Azure AD and Azure AD Connect in hybrid scenarios. Considering that one of design objectives in our proposed solution was minimizing infrastructure footprint, the recommended approach in this case is to use Hybrid Azure AD joined Key Trust Deployment, which can be implemented in combination with Azure AD pass-through authentication (eliminating the need for federation servers). 
 
-         Note that Windows Hello for Business with a key does not support RDP. RDP does not support authentication with a key or a self signed certificate. RDP with Windows Hello for Business is supported with certificate based deployments.
+         Note that Windows Hello for Business with a key does not support RDP. RDP does not support authentication with a key or a self-signed certificate. RDP with Windows Hello for Business is supported with certificate-based deployments.
 
          One of the prerequisites for implementing Hybrid Azure AD joined Key Trust Deployment of Windows Hello for Business is registration of Windows 10 client devices in Azure Active Directory. In the proposed solution, this is performed by leveraging the functionality of Azure AD Connect, which starting with version 1.1.819.0, includes a wizard that significantly simplifies the registration process. The wizard configures the Active Directory service connection points (SCPs) for device registration.
 
@@ -883,7 +883,7 @@ It is important to provision sufficient number of connectors to handle the expec
 
    - Azure AD B2B
 
-       - Azure Azure AD business-to-business (B2B) functionality allows customers to grant access to applications and services integrated with their individual Azure AD tenants to guest users from other organizations. The capabilities available to guest accounts mirror, for the most part, those available to users that belong to the same Azure AD tenant. Guest accounts are provisioned via a straightforward invitation and redemption process, allowing invitees use their own credentials to authenticate. Since the partner organizations continue to rely on their own identity management solutions, additional administrative overhead is minimized. 
+       - Azure AD business-to-business (B2B) functionality allows customers to grant access to applications and services integrated with their individual Azure AD tenants to guest users from other organizations. The capabilities available to guest accounts mirror, for the most part, those available to users that belong to the same Azure AD tenant. Guest accounts are provisioned via a straightforward invitation and redemption process, allowing invitees use their own credentials to authenticate. Since the partner organizations continue to rely on their own identity management solutions, additional administrative overhead is minimized. 
 
          While the partner guest accounts are stored in the same Azure AD tenant as the user accounts of members of the organizations that provide access to its resources, they are easy to distinguish since their **userType** attribute is set to **Guest**. However, the process of granting access to cloud-based apps is the same. In addition, you have the option of granting guest accounts access to on-premises apps. Details depend on the authentication capabilities of the apps. 
 
@@ -915,7 +915,7 @@ It is important to provision sufficient number of connectors to handle the expec
 
 1.  If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
 
-    **Potential Answer:** Azure AD Connect supports a number of different filtering options that determine the scope of synchronized Active Directory objects. While organizational unit based filtering is the most straightforward to configure option, the scope can be based on a value of individual Active Directory attributes, which offers object-level granularity. 
+    **Potential Answer:** Azure AD Connect supports a number of different filtering options that determine the scope of synchronized Active Directory objects. While organizational unit-based filtering is the most straightforward to configure option, the scope can be based on a value of individual Active Directory attributes, which offers object-level granularity. 
 
 1. Synchronizing our Active Directory accounts with Azure AD accounts makes the former vulnerable to malicious or accidental lockouts that affect the latter. This would effectively expose our on-premises environment to external attacks. 
 
