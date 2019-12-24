@@ -83,49 +83,49 @@ In this hands-on lab you will setup and configure a number of different hybrid i
 
 As you step through the hands-on-lab, you will learn how to perform the following tasks:
 
--   Create an Azure Active Directory tenant
+-   [Create an Azure Active Directory tenant](#task-1-create-an-azure-active-directory-tenant-and-activate-an-enterprise-mobility-+-security-e5-trial)
 
--   Create and configure Azure AD users
+-   [Create and configure Azure AD users](#task-2-Create-and-configure-Azure-AD-users)
 
--   Activate an Enterprise Mobility + Security E5 trial and assign the corresponding product licenses to users
+-   [Activate an Enterprise Mobility + Security E5 trial and assign the corresponding product licenses to users](#task-1-create-an-azure-active-directory-tenant-and-activate-an-enterprise-mobility-+-security-e5-trial)
 
--   Purchase a custom domain name by leveraging Azure Web App functionality
+-   [Purchase a custom domain name by leveraging Azure Web App functionality](#task-3-Purchase-a-custom-domain-name)
 
--   Assign a custom domain name to an Azure AD tenant
+-   [Assign a custom domain name to an Azure AD tenant](#task-4-Assign-a-custom-domain-name-to-the-Contoso-Azure-AD-tenant)
 
--   Configure a custom DNS suffix in an Active Directory forest
+-   [Configure a custom DNS suffix in an Active Directory forest](#task-5-Configure-DNS-suffix-in-the-Contoso-Active-Directory-forest)
 
--   Install Azure AD Connect
+-   [Install Azure AD Connect](#task-6-Install-Azure-AD-Connect)
 
--   Enable Active Directory Recycle Bin
+-   [Enable Active Directory Recycle Bin](#task-7-Enable-Active-Directory-Recycle-Bin)
 
--   Configure Azure AD Connect attribute-level filtering
+-   [Configure Azure AD Connect attribute-level filtering](#task-8-Configure-Azure-AD-Connect-attribute-level-filtering)
 
--   Initiate and verify directory synchronization
+-   [Initiate and verify directory synchronization](#task-9-Initiate-and-verify-directory-synchronization)
 
--   Configure and perform Hybrid Azure AD join 
+-   [Configure and perform Hybrid Azure AD join](#task-10-Configure-Hybrid-Azure-AD-join)
 
--   Enable Azure AD Multi-Factor Authentication
+-   [Enable Azure AD Multi-Factor Authentication](#task-3-Enable-Azure-AD-Multi-Factor-Authentication)
 
--   Enable Azure AD password writeback and Self-Service Password Reset
+-   [Enable Azure AD password writeback and Self-Service Password Reset](#task-4-Enable-password-writeback-and-Self-Service-Password-Reset)
 
--   Implement Azure AD Password Protection
+-   [Implement Azure AD Password Protection](#task-5-Implement-Azure-AD-Password-Protection-for-Windows-Server-Active-Directory)
 
--   Enable Azure Active Directory Identity Protection
+-   [Enable Azure Active Directory Identity Protection](#task-6-Enable-Azure-Active-Directory-Identity-Protection)
 
--   Enable Automatic Intune Enrollment
+-   [Enable Automatic Intune Enrollment](#task-7-Enable-Automatic-Intune-Enrollment)
 
--   Implement Azure AD Conditional Access Policies
+-   [Implement Azure AD Conditional Access Policies](#task-9-Implement-Azure-AD-Conditional-Access-Policies)
 
--   Implement Azure AD Privileged Identity Management
+-   [Implement Azure AD Privileged Identity Management](#task-10-Implement-Azure-AD-Privileged-Identity-Management)
 
--   Install and configure Azure AD Application Proxy
+-   [Install and configure Azure AD Application Proxy](#task-1-Install-and-configure-Azure-AD-Application-Proxy)
 
--   Configure and test Azure AD Application Proxy applications
+-   [Configure and test Azure AD Application Proxy applications](#task-2-Configure-an-Azure-AD-Application-Proxy-application)
 
--   Create and configure Azure AD guest user and group accounts
+-   [Create and configure Azure AD guest user and group accounts](#task-6-Create-and-configure-Azure-AD-guest-user-and-group-accounts)
 
--   Configure and test Azure AD Application Proxy applications for B2B access
+-   [Configure and test Azure AD Application Proxy applications for B2B access](#task-7-Configure-an-Azure-AD-Application-Proxy-application-for-B2B-access)
 
 ## Overview
 
@@ -140,6 +140,8 @@ From the architectural standpoint, the deployment will consist of the following 
 -   Contoso Azure AD tenant.
 
 -   Fabrikam Azure AD tenant.
+
+    ![High level architecture.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/HOL_Architecture_Overview.png)
 
 ## Exercise 1: Integrate an Active Directory forest with an Azure Active Directory tenant
 
