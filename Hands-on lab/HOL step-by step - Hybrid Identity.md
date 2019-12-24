@@ -48,7 +48,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Exercise 2: Manage Authentication, Authorization, and Access Control in Hybrid Scenarios](#exercise-2-Manage-Authentication-Authorization-and-Access-Control-in-Hybrid-Scenarios)
         - [Overview](#overview-2)
         - [Task 1: Create Active Directory groups](#task-1-Create-Active-Directory-groups)
-        - [Task 2: Assign EM+S E5 licenses to Azure AD users](#task-2-Assign-EM+S-E5-licenses-to-Azure-AD-users)
+        - [Task 2: Assign EM+S E5 licenses to Azure AD users](#task-2-Assign-EMS-E5-licenses-to-Azure-AD-users)
         - [Task 3: Enable Azure AD Multi-Factor Authentication](#task-3-Enable-Azure-AD-Multi-Factor-Authentication)
         - [Task 4: Enable password writeback and Self-Service Password Reset](#task-4-Enable-password-writeback-and-Self-Service-Password-Reset)
         - [Task 5: Implement Azure AD Password Protection for Windows Server Active Directory](#task-5-Implement-Azure-AD-Password-Protection-for-Windows-Server-Active-Directory)
@@ -83,11 +83,11 @@ In this hands-on lab you will setup and configure a number of different hybrid i
 
 As you step through the hands-on-lab, you will learn how to perform the following tasks:
 
--   [Create an Azure Active Directory tenant](#task-1-Create-an-Azure-Active-Directory-tenant-and-activate-an-Enterprise-Mobility-+-Security-E5-trial)
+-   [Create an Azure Active Directory tenant](#task-1-Create-an-Azure-Active-Directory-tenant-and-activate-an-EMS-E5-trial)
 
 -   [Create and configure Azure AD users](#task-2-Create-and-configure-Azure-AD-users)
 
--   [Activate an EMS E5 trial and assign the corresponding product licenses to users](#task-1-Create-an-Azure-Active-Directory-tenant-and-activate-an-Enterprise-Mobility-+-Security-E5-trial)
+-   [Activate an EMS E5 trial and assign the corresponding product licenses to users](#task-1-Create-an-Azure-Active-Directory-tenant-and-activate-an-EMS-E5-trial)
 
 -   [Purchase a custom domain name by leveraging Azure Web App functionality](#task-3-Purchase-a-custom-domain-name)
 
