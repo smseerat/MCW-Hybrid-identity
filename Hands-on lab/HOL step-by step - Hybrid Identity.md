@@ -33,7 +33,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Solution architecture](#solution-architecture)
     - [Exercise 1: Integrate an Active Directory forest with an Azure Active Directory tenant](#exercise-1-integrate-an-active-directory-forest-with-an-azure-active-directory-tenant)
         - [Overview](#overview-1)
-        - [Task 1: Create an Azure Active Directory tenant and activate an Enterprise Mobility + Security E5 trial](#task-1-create-an-azure-active-directory-tenant-and-activate-an-enterprise-mobility-+-security-e5-trial)
+        - [Task 1: Create an Azure Active Directory tenant and activate an Enterprise Mobility + Security E5 trial](#task-1-create-an-azure-active-directory-tenant-and-activate-an-enterprise-mobility-security-e5-trial)
         - [Task 2: Create and configure Azure AD users](#task-2-Create-and-configure-Azure-AD-users)
         - [Task 3: Purchase a custom domain name](#task-3-Purchase-a-custom-domain-name)
         - [Task 4: Assign a custom domain name to the Contoso Azure AD tenant](#task-4-Assign-a-custom-domain-name-to-the-Contoso-Azure-AD-tenant)
@@ -83,11 +83,11 @@ In this hands-on lab you will setup and configure a number of different hybrid i
 
 As you step through the hands-on-lab, you will learn how to perform the following tasks:
 
--   [Create an Azure Active Directory tenant](#task-1-create-an-azure-active-directory-tenant-and-activate-an-enterprise-mobility-+-security-e5-trial)
+-   [Create an Azure Active Directory tenant](#task-1-create-an-azure-active-directory-tenant-and-activate-an-enterprise-mobility-security-e5-trial)
 
 -   [Create and configure Azure AD users](#task-2-Create-and-configure-Azure-AD-users)
 
--   [Activate an Enterprise Mobility + Security E5 trial and assign the corresponding product licenses to users](#task-1-create-an-azure-active-directory-tenant-and-activate-an-enterprise-mobility-+-security-e5-trial)
+-   [Activate an Enterprise Mobility + Security E5 trial and assign the corresponding product licenses to users](#task-1-create-an-azure-active-directory-tenant-and-activate-an-enterprise-mobility-security-e5-trial)
 
 -   [Purchase a custom domain name by leveraging Azure Web App functionality](#task-3-Purchase-a-custom-domain-name)
 
