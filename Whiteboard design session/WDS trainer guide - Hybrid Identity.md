@@ -575,7 +575,7 @@ In order to provide access to on-premises applications to business partners, Con
 
      ![A diagram representing high level design.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/preferred-solution-high-level.png)
 
-1. The choice of authentication method: 
+2. The choice of authentication method: 
 
    - In order to minimize infrastructure footprint required for integration, streamline user experience, and, at the same time, ensure that any on-premises Active Directory user account restrictions, such as allowed sign-in hours must be honored, the proposed solution leverages pass-through authentication with seamless single sign-on (SSO). 
 
@@ -597,7 +597,7 @@ In order to provide access to on-premises applications to business partners, Con
 
    In order to implement the hybrid identity model, Contoso will create an Azure AD tenant and purchase licenses Enterprise Mobility + Security E5 licenses for its users. To account for the integration and single sign-on requirements, Contoso will also leverage its ownership of a publicly routable DNS domain name and assign it as a verified, custom DNS domain name to the newly provisioned Azure AD tenant. 
 
-1. Active Directory configuration
+2. Active Directory configuration
 
    - UPN suffix
 
@@ -609,7 +609,7 @@ In order to provide access to on-premises applications to business partners, Con
 
         - If you do not have on-premises AD Recycle Bin feature enabled, you may be required to create an AD user object to replace the deleted object. If Azure AD Connect Synchronization Service is configured to use system-generated AD attribute (such as ObjectGuid) for the Source Anchor attribute, the newly created AD user object will not have the same Source Anchor value as the deleted AD user object. When the newly created AD user object is synchronized to Azure AD, Azure AD creates a new Azure AD user object instead of restoring the soft-deleted Azure AD user object.
 
-1. Azure AD Connect configuration
+3. Azure AD Connect configuration
 
    - Authentication method
 
@@ -625,7 +625,7 @@ In order to provide access to on-premises applications to business partners, Con
 
         - Contoso will use a combination of the organizational unit-based filtering and the *positive* filtering based on the value of the userPrincipalName attribute. In particular, user objects to be synchronized will need to have the domain suffix portion of their userPrincipalName attribute match the custom, verified DNS domain name of the Azure AD tenant. This value can be set individually on per user object level as part of staged implementation of the proposed hybrid identity solution.  
 
-1. Azure AD Conditional Access
+4. Azure AD Conditional Access
 
    - A Conditional Access policy is configurable directly from the Azure portal and is intended for granting or blocking access to Azure AD integrated applications and services based on a number of criteria such as:
 
@@ -649,7 +649,7 @@ In order to provide access to on-premises applications to business partners, Con
 
    -  Other options include stepping up authentication by enforcing Multi-Factor Authentication and applying session-level (rather than gated) restrictions.
 
-1. Azure AD Multi-Factor Authentication
+5. Azure AD Multi-Factor Authentication
 
    - Implementing Azure AD Multi-Factor Authentication involves three distinct configuration steps:
 
@@ -687,7 +687,7 @@ In order to provide access to on-premises applications to business partners, Con
 
         - Text message to phone
 
-1. Azure AD Self-Service Password Reset (SSPR) and Azure AD Connect password writeback
+6. Azure AD Self-Service Password Reset (SSPR) and Azure AD Connect password writeback
 
    - SSPR allows users to reset their password in a secure way using the some of the same methods they use for Azure AD Multi-Factor Authentication (there are a few additional options not available with MFA). Enabling SSPR requires selecting at least one of the following options for the authentication methods (it is recommended to choose two or more authentication methods so provide users with more flexibility):
 
@@ -707,13 +707,13 @@ In order to provide access to on-premises applications to business partners, Con
 
    - Customers can enable password writeback by using Azure AD Connect, which allows users to reset passwords of their Active Directory accounts by leveraging Azure AD Self-Service Password Reset.
 
-1. Azure AD password protection for Windows Server Active Directory
+7. Azure AD password protection for Windows Server Active Directory
 
    - Azure AD Password Protection for Windows Server Active Directory allows you to eliminate easily guessed passwords, including customizable password list that you can manage directly from the Azure portal. This feature relies on the Azure AD password protection DC agent software. The agent can only validate passwords when it is installed on a domain controller running Windows Server 2012 or newer, and only for password changes that are sent to that domain controller. It is not possible to control which domain controllers are chosen by Windows client machines for processing user password changes. In order to guarantee consistent behavior and universal password protection security enforcement, the DC agent software must be installed on all domain controllers in a domain.
 
    - Azure AD Password Protection for Windows Server Active Directory relies additionally on the Azure AD Password Protection Proxy service, which can be installed on any domain-joined Windows Server 2012 R2 or newer, with .NET 4.7 installed and with connectivity to internet. Its primary purpose is to forward password policy download requests from domain controllers to Azure AD and to return the responses from Azure AD to the DC Agent service running on individual domain controllers.
 
-1. Smart Lockout
+8. Smart Lockout
 
    - Smart lockout can be integrated with hybrid deployments, using password hash sync or pass-through authentication to protect on-premises Active Directory accounts from being locked out by attackers. By setting smart lockout policies in Azure AD appropriately, attacks can be filtered out before they reach on-premises Active Directory.
 
@@ -725,7 +725,7 @@ In order to provide access to on-premises applications to business partners, Con
 
    - When combined with password hash synchronization, smart lockout keeps track of the last three bad password hashes to avoid incrementing the lockout counter for the same password. This way, if someone enters the same bad password multiple times, this behavior will not cause the account to lockout. However, hash tracking functionality is not available for customers with pass-through authentication enabled as authentication happens on-premises not in the cloud.
 
-1. Azure AD Application Proxy: 
+9.  Azure AD Application Proxy: 
 
    - Azure AD provides the ability to access to on-premises web applications by relying on Azure AD Application Proxy via an external URL or an internal application portal. Azure AD Application Proxy offers a single sign-on experience and consistent user interface regardless of the location of the target app. For example, Application Proxy can facilitate access to on-premises line of business (LOB) applications, Office 365, or any other SaaS-based application integrated with Azure AD. Application Proxy works with:
 
@@ -914,19 +914,19 @@ It is important to provision sufficient number of connectors to handle the expec
 
     **Potential Answer:** Contoso does not have to rename their Active Directory domain in order to integrate with an Azure Active Directory tenant. Such integration is possible regardless of the DNS name of the Active Directory domain. What's important in order to ensure single sign-on experience for Active Directory users accessing cloud-based resources is to ensure that there is a match between the userPrincipalName in Active Directory and Azure AD. This is the Microsoft's recommended approach. It is also possible to configure **Alternate Login ID**, which makes it possible to choose another attribute to designate the sign-in user names. The impact of this choice differs depending on the authentication method. For more information regarding **Alternate Login ID**, refer to Microsoft Docs at <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configuring-alternate-login-id>
 
-1.  We have heard that it is not possible to run simultaneously multiple instance of Azure AD Connect. All identity services components in our environment must provide resiliency and support failover.
+2.  We have heard that it is not possible to run simultaneously multiple instance of Azure AD Connect. All identity services components in our environment must provide resiliency and support failover.
 
     **Potential Answer:** While Azure AD Connect cannot operate in the active/active mode, it is possible to setup an additional server hosting the sync engine operating in the staging mode. In this mode, the sync engine imports and synchronizes data the same way as the active instance, but it does not export anything to Azure AD or AD. Password sync and password writeback features of Azure AD Connect are disabled while in staging mode. Since a server in the staging mode continues to receive changes from Active Directory and Azure AD, it can quickly take over the responsibilities of a failed active server. The switch involves simply re-running the Azure AD Connect installation wizard.
 
-1.  If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
+3.  If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
 
     **Potential Answer:** Azure AD Connect supports a number of different filtering options that determine the scope of synchronized Active Directory objects. While organizational unit-based filtering is the most straightforward to configure option, the scope can be based on a value of individual Active Directory attributes, which offers object-level granularity. 
 
-1. Synchronizing our Active Directory accounts with Azure AD accounts makes the former vulnerable to malicious or accidental lockouts that affect the latter. This would effectively expose our on-premises environment to external attacks. 
+4. Synchronizing our Active Directory accounts with Azure AD accounts makes the former vulnerable to malicious or accidental lockouts that affect the latter. This would effectively expose our on-premises environment to external attacks. 
 
     **Potential Answer:** Azure AD offers the Smart Lockout functionality, which can be integrated with hybrid deployments, using password hash sync or pass-through authentication to protect on-premises Active Directory accounts from being locked out by attackers. By setting smart lockout policies in Azure AD appropriately, attacks can be filtered out before they reach on-premises Active Directory.
 
-1.  A number of critical web applications running in our on-premises environment rely on Kerberos-based Windows Integrated Authentication. Microsoft states that Azure Active Directory does not support Kerberos. Doesn't this mean that remote users authenticating to Azure Active Directory and our business partners will not be able to properly authenticate and access these applications?
+5.  A number of critical web applications running in our on-premises environment rely on Kerberos-based Windows Integrated Authentication. Microsoft states that Azure Active Directory does not support Kerberos. Doesn't this mean that remote users authenticating to Azure Active Directory and our business partners will not be able to properly authenticate and access these applications?
 
     **Potential Answer:** Azure AD provides the ability to access to on-premises web applications by relying on Azure AD Application Proxy via an external URL or an internal application portal. Azure AD Application Proxy offers a single sign-on experience and consistent user interface regardless of the location of the target app. For example, Application Proxy can facilitate access to on-premises line of business (LOB) applications, Office 365, or any other SaaS-based application integrated with Azure AD. This eliminates the need for VPN infrastructure and integrates with other Azure AD features, such as Conditional Access and Multi-Factor Authentication. At the same time, there is no need to open any inbound ports on perimeter firewalls. 
 

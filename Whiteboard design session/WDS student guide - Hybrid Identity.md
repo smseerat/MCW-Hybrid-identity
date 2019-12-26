@@ -5,7 +5,7 @@ Hybrid identity
 </div>
 
 <div class="MCWHeader2">
-Whiteboard design session trainer guide
+Whiteboard design session student guide
 </div>
 
 December 2019
@@ -144,7 +144,7 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 -   the Service Level Agreements associated with the choice of the Azure AD edition 
 
--   requirements necessary to minimize dependency on passwords in lieu of more secure autentication methods
+-   requirements necessary to minimize dependency on passwords in lieu of more secure authentication methods
 
 -   the approach to allowing different authentication requirements, depending on users group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry
 
@@ -178,7 +178,7 @@ Directions: With all participants at your table, respond to the following questi
 
 *Architecting a hybrid identity solution*
 
-Using the features of Azure Active Directory and the requirements from the customer, design a Hybrid Idenitity solution. 
+Using the features of Azure Active Directory and the requirements from the customer, design a Hybrid Identity solution. 
 
 Make sure that your design accounts for customer objectives and objections and includes the following items:
 
