@@ -1,4 +1,4 @@
-﻿![Microsoft Cloud Workshops icon](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+﻿![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Hybrid identity
@@ -23,6 +23,7 @@ The names of manufacturers, products, or URLs are provided for informational pur
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
 **Contents**
+
 <!-- TOC -->
 
 - [Hybrid identity whiteboard design session student guide](#hybrid-identity-whiteboard-design-session-student-guide)
@@ -34,15 +35,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Key design considerations](#key-design-considerations)
     - [Infographic for common scenarios](#infographic-for-common-scenarios)
   - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Architecting a hybrid authentication solution](#architecting-a-hybrid-authentication-solution)
-    - [Implementing a hybrid identity solution](#implementing-a-hybrid-identity-solution)
-    - [Assessing resiliency aspects of a hybrid identity solution](#assessing-resiliency-aspects-of-a-hybrid-identity-solution)
-    - [Optimizing authentication configuration](#optimizing-authentication-configuration)
-    - [Optimizing authorization configuration](#optimizing-authorization-configuration)
-    - [Optimizing access control and management of applications and devices](#optimizing-access-control-and-management-of-applications-and-devices)
   - [Step 3: Present the solution](#step-3-present-the-solution)
   - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
+  - [Additional references](#additional-references)
 
 <!-- /TOC -->
 
@@ -98,41 +93,41 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 ### Customer needs 
 
--   Remote users must be able to sign in to their devices by using their Active Directory credentials.
+1. Remote users must be able to sign in to their devices by using their Active Directory credentials.
 
--   Existing Active Directory user sign-in hours and password policies must be preserved (although allowed password values could be further restricted). 
+2. Existing Active Directory user sign-in hours and password policies must be preserved (although allowed password values could be further restricted). 
 
--   User sing-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
+3. User sing-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
 
--   Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
+4. Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
 
--   Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
+5. Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
 
--   Users must be allowed to reset their own passwords. 
+6. Users must be allowed to reset their own passwords. 
 
--   Designated users should be able to temporarily elevate their privileges to manage other user accounts. All elevation events must be edited.
+7. Designated users should be able to temporarily elevate their privileges to manage other user accounts. All elevation events must be edited.
 
--   Contoso remote users must be able to access on-premises Windows Integrated Authentication-based applications.
+8. Contoso remote users must be able to access on-premises Windows Integrated Authentication-based applications.
 
--   Fabrikam users must be able to access on-premises Windows Integrated Authentication-based applications.
+9. Fabrikam users must be able to access on-premises Windows Integrated Authentication-based applications.
 
--   Commercial applications developed by Contoso programmers must be made available to external customers with minimum overhead associated with identity management.
+10. Commercial applications developed by Contoso programmers must be made available to external customers with minimum overhead associated with identity management.
 
--   Resiliency must be maximized whenever possible.
+11. Resiliency must be maximized whenever possible.
 
--   Infrastructure requirements must be minimized
+12. Infrastructure requirements must be minimized
 
 ### Customer objections 
 
--   Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory.  
+1. Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory.  
 
--   We have heard that it is not possible to run simultaneously multiple instance of Azure AD Connect. All identity services components in our environment must provide resiliency and support failover.
+2. We have heard that it is not possible to run simultaneously multiple instance of Azure AD Connect. All identity services components in our environment must provide resiliency and support failover.
 
--   If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
+3. If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
 
--   Synchronizing our Active Directory accounts with Azure AD accounts makes the former vulnerable to malicious or accidental lockouts that affect the latter. This would effectively expose our on-premises environment to external attacks. 
+4. Synchronizing our Active Directory accounts with Azure AD accounts makes the former vulnerable to malicious or accidental lockouts that affect the latter. This would effectively expose our on-premises environment to external attacks. 
 
--   A number of critical web applications running in our on-premises environment rely on Kerberos-based Windows Integrated Authentication. Microsoft states that Azure Active Directory does not support Kerberos. Doesn't this mean that remote users authenticating to Azure Active Directory and our business partners will not be able to properly authenticate and access these applications?
+5. A number of critical web applications running in our on-premises environment rely on Kerberos-based Windows Integrated Authentication. Microsoft states that Azure Active Directory does not support Kerberos. Doesn't this mean that remote users authenticating to Azure Active Directory and our business partners will not be able to properly authenticate and access these applications?
 
 ### Key design considerations
 
