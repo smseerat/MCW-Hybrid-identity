@@ -45,7 +45,7 @@ In this hands-on lab you will setup and configure a number of different hybrid i
 - Azure AD B2C
 
 ## Related references
-- [Microsoft Cloud Workshop](https://microsoftcloudworkshop.com/index.html)
+- [Microsoft Cloud Workshops](https://microsoftcloudworkshop.com/index.html)
 - [Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/)
 - [What is hybrid identity with Azure Active Directory?](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-hybrid-identity)
 - [What is Conditional Access?](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview)
