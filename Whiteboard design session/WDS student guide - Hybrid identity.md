@@ -1,4 +1,4 @@
-﻿![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Hybrid identity
@@ -8,6 +8,7 @@ Hybrid identity
 Whiteboard design session student guide
 </div>
 
+<div class="MCWHeader3">
 December 2019
 </div>
 
@@ -18,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+� 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -27,17 +28,17 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Hybrid identity whiteboard design session student guide](#hybrid-identity-whiteboard-design-session-student-guide)
-  - [Abstract and learning objectives](#abstract-and-learning-objectives)
-  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-    - [Customer situation](#customer-situation)
-    - [Customer needs](#customer-needs)
-    - [Customer objections](#customer-objections)
-    - [Key design considerations](#key-design-considerations)
-    - [Infographic for common scenarios](#infographic-for-common-scenarios)
-  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-  - [Step 3: Present the solution](#step-3-present-the-solution)
-  - [Wrap-up](#wrap-up)
-  - [Additional references](#additional-references)
+    - [Abstract and learning objectives](#abstract-and-learning-objectives)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+        - [Customer situation](#customer-situation)
+        - [Customer needs](#customer-needs)
+        - [Customer objections](#customer-objections)
+        - [Key design considerations](#key-design-considerations)
+        - [Infographic for common scenarios](#infographic-for-common-scenarios)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3-present-the-solution)
+    - [Wrap-up](#wrap-up)
+    - [Additional references](#additional-references)
 
 <!-- /TOC -->
 
@@ -45,7 +46,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Abstract and learning objectives 
 
-In this whiteboard design session, you will learn how to implement different components of a hybrid identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features, including pass-through authentication with Seamless Single Sign-On, Multi-Factor Authentication, Self-Service Password Reset, Azure AD Password Protection for Windows Server Active Directory, Hybrid Azure AD join, Windows Hello for Business, Microsoft Intune automatic enrollment, Azure AD Conditional Access,    Azure AD Application Proxy, Azure AD B2B, and Azure AD B2C.
+In this whiteboard design session, you will learn how to implement different components of a hybrid identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features, including pass-through authentication with Seamless Single Sign-On, Multi-Factor Authentication, Self-Service Password Reset, Azure AD Password Protection for Windows Server Active Directory, Hybrid Azure AD join, Windows Hello for Business, Microsoft Intune automatic enrollment, Azure AD Conditional Access, Azure AD Application Proxy, Azure AD B2B, and Azure AD B2C.
 
 ## Step 1: Review the customer case study 
 
@@ -55,7 +56,7 @@ Analyze your customer's needs.
 
 Timeframe: 15 minutes
 
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
+Directions:  With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
 
 1.  Meet your table participants and trainer.
 
@@ -81,7 +82,7 @@ Contoso is exploring the option of transitioning its operations into a more Inte
 
 The identity component of the target design should facilitate step-up authentication and per-application permissions based not only on the properties of users' accounts but also on the state of these users' devices. To maximize security, Contoso wants to minimize or even eliminate persistent assignments of privileged roles for identity management, but, at the same time, such arrangement must account for break-glass scenarios, allowing for a non-gated emergency use of privileged accounts. For obvious reasons, such accounts need to be closely monitored and audited.
  
-Another Information Security concern is accidental exposure of users passwords. Contoso would like to minimize their use in lieu of more secure authentication methods. In situations where passwords are required, users should also be able to both change and reset them without having to rely on HelpDesk services. At the same time, any on-premises Active Directory user account restrictions, such as allowed sign-in hours must be honored. Similarly, the existing Active Directory password policies must apply, although the head of Information Security would like to enhance them by preventing use of common terms within password values.
+Another Information Security concern is accidental exposure of users' passwords. Contoso would like to minimize their use in lieu of more secure authentication methods. In situations where passwords are required, users should also be able to both change and reset them without having to rely on HelpDesk services. At the same time, any on-premises Active Directory user account restrictions, such as allowed sign-in hours must be honored. Similarly, the existing Active Directory password policies must apply, although the head of Information Security would like to enhance them by preventing use of common terms within password values.
  
 Besides enhancing self-service user capabilities, Contoso wants to optimize end-user experience, especially in environment where users might be using several different devices. The user-defined settings, such as accessibility or app customization should be consistent across all devices.
  
@@ -93,67 +94,70 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 ### Customer needs 
 
-1. Remote users must be able to sign in to their devices by using their Active Directory credentials.
+1.  Remote users must be able to sign in to their devices by using their Active Directory credentials.
 
-2. Existing Active Directory user sign-in hours and password policies must be preserved (although allowed password values could be further restricted). 
+2.  Existing Active Directory user sign-in hours and password policies must be preserved (although allowed password values could be further restricted). 
 
-3. User sing-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
+3.  User sing-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
 
-4. Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
+4.  Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
 
-5. Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
+5.  Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users' devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
 
-6. Users must be allowed to reset their own passwords. 
+6.  Users must be allowed to reset their own passwords. 
 
-7. Designated users should be able to temporarily elevate their privileges to manage other user accounts. All elevation events must be edited.
+7.  Designated users should be able to temporarily elevate their privileges to manage other user accounts. All elevation events must be edited.
 
-8. Contoso remote users must be able to access on-premises Windows Integrated Authentication-based applications.
+8.  Contoso remote users must be able to access on-premises Windows Integrated Authentication-based applications.
 
-9. Fabrikam users must be able to access on-premises Windows Integrated Authentication-based applications.
+9.  Fabrikam users must be able to access on-premises Windows Integrated Authentication-based applications.
 
-10. Commercial applications developed by Contoso programmers must be made available to external customers with minimum overhead associated with identity management.
+10.  Commercial applications developed by Contoso programmers must be made available to external customers with minimum overhead associated with identity management.
 
-11. Resiliency must be maximized whenever possible.
+11.  Resiliency must be maximized whenever possible.
 
-12. Infrastructure requirements must be minimized
+12.  Infrastructure requirements must be minimized
+
 
 ### Customer objections 
 
-1. Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory.  
+1.  Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory.
 
-2. We have heard that it is not possible to run simultaneously multiple instance of Azure AD Connect. All identity services components in our environment must provide resiliency and support failover.
+2.  We have heard that it is not possible to run simultaneously multiple instance of Azure AD Connect. All identity services components in our environment must provide resiliency and support failover.
 
-3. If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
+3.  If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
 
-4. Synchronizing our Active Directory accounts with Azure AD accounts makes the former vulnerable to malicious or accidental lockouts that affect the latter. This would effectively expose our on-premises environment to external attacks. 
+4.  Synchronizing our Active Directory accounts with Azure AD accounts makes the former vulnerable to malicious or accidental lockouts that affect the latter. This would effectively expose our on-premises environment to external attacks. 
 
-5. A number of critical web applications running in our on-premises environment rely on Kerberos-based Windows Integrated Authentication. Microsoft states that Azure Active Directory does not support Kerberos. Doesn't this mean that remote users authenticating to Azure Active Directory and our business partners will not be able to properly authenticate and access these applications?
+5.  A number of critical web applications running in our on-premises environment rely on Kerberos-based Windows Integrated Authentication. Microsoft states that Azure Active Directory does not support Kerberos. Doesn't this mean that remote users authenticating to Azure Active Directory and our business partners will not be able to properly authenticate and access these applications?
+
 
 ### Key design considerations
 
--   the choice of the authentication method supported in hybrid identity scenarios
+1.  The choice of the authentication method supported in hybrid identity scenarios
 
--   the choice of scope synchronization between Active Directory and Azure AD
+2.  The choice of scope synchronization between Active Directory and Azure AD
 
--   the choice of Azure AD edition required to satisfy Contoso's requirements
+3.  The choice of Azure AD edition required to satisfy Contoso's requirements
 
--   the Service Level Agreements associated with the choice of the Azure AD edition 
+4.  The Service Level Agreements associated with the choice of the Azure AD edition 
 
--   requirements necessary to minimize dependency on passwords in lieu of more secure authentication methods
+5.  Requirements necessary to minimize dependency on passwords in lieu of more secure authentication methods
 
--   the approach to allowing different authentication requirements, depending on users group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry
+6.  The approach to allowing different authentication requirements, depending on users' group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry
 
--   the approach to providing Contoso and Fabrikam users access to on-premises web applications that rely on Kerberos-based Windows Integrated Authentication.
+7.  The approach to providing Contoso and Fabrikam users access to on-premises web applications that rely on Kerberos-based Windows Integrated Authentication
 
--   the approach to providing external customers access to custom-developed applications with minimum overhead associated with identity management.
+8.  The approach to providing external customers access to custom-developed applications with minimum overhead associated with identity management.
 
--   the method of implementing redundancy in your solution
+9.  The method of implementing redundancy in your solution
+
 
 ### Infographic for common scenarios
 
-![Azure AD hybrid identity password-hash synchronization.](images/Whiteboarddesignsessionstudentguide-HybridIdentityimages/media/azure-ad-authn-image2.png) "Azure AD hybrid identity password-hash synchronization")
-![Azure AD hybrid identity pass-through authentication.](images/Whiteboarddesignsessionstudentguide-HybridIdentityimages/media/azure-ad-authn-image3.png) "Azure AD hybrid identity pass-through authentication")
-![Azure AD hybrid identity federation.](images/Whiteboarddesignsessionstudentguide-HybridIdentityimages/media/azure-ad-authn-image4.png) "Azure AD hybrid identity federation")
+![Azure AD hybrid identity password-hash synchronization.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image2.png) "Azure AD hybrid identity password-hash synchronization")
+![Azure AD hybrid identity pass-through authentication.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image3.png) "Azure AD hybrid identity pass-through authentication")
+![Azure AD hybrid identity federation.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image4.png) "Azure AD hybrid identity federation")
 
 ## Step 2: Design a proof of concept solution
 
@@ -165,7 +169,7 @@ Timeframe: 60 minutes
 
 **Business needs**
 
-Directions:  With all participants at your table, answer the following questions and list the answers on a flip chart:
+Directions: With all participants at your table, answer the following questions and list the answers on a flip chart:
 
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
 
@@ -177,29 +181,27 @@ Directions: With all participants at your table, respond to the following questi
 
 *Architecting a hybrid identity solution*
 
-Using the features of Azure Active Directory and the requirements from the customer, design a Hybrid Identity solution. 
+1.  Using the features of Azure Active Directory and the requirements from the customer, how would you design a Hybrid Identity solution?
 
-Make sure that your design accounts for customer objectives and objections and includes the following items:
+2.  How does your design accounts for customer objectives and objections?
 
-### Architecting a hybrid authentication solution
+*Architecting a hybrid authentication solution*
 
-**Task:** Design a hybrid authentication solution that will allow you to meet all the customer requirements.
+1.  How does your solution address all the customer requirements in regard to authentication?
 
-### Implementing a hybrid identity solution
+*Implementing a hybrid identity solution*
 
-**Task:** Describe steps to implement a hybrid identity solution that will allow you to meet all the customer requirements.
+1.  What are the steps to implement a hybrid identity solution that will allow you to meet all the customer requirements?
 
-### Assessing resiliency aspects of a hybrid identity solution
+*Assessing resiliency aspects of a hybrid identity solution*
 
-**Task:** Assess resiliency aspects of a hybrid identity solution for the customer. 
+1.  What are provisions that eliminate single points of failure in your design?
 
--   Describe provisions that eliminate single points of failure in your design
+2.  What is the failover process for components that operate in the active/passive mode?
 
--   Describe failover process for components that operate in the active/passive mode.
+*Optimizing authentication configuration*
 
-### Optimizing authentication configuration
-
-**Task:** Identify features that will allow you to optimize authentication in your solution to satisfy the customer requirements, including:
+1.  What features will allow to optimize authentication in your solution to satisfy the following customer requirements?
 
 -   multi-factor authentication
 
@@ -207,17 +209,17 @@ Make sure that your design accounts for customer objectives and objections and i
 
 -   replacing password-based authentication with biometrics-based sign-in
 
-### Optimizing authorization configuration
+*Optimizing authorization configuration*
 
-**Task:** Identify features that will allow you to optimize authorization in your solution to satisfy the customer requirements, including:
+1.  What features will allow to optimize authorization in your solution to satisfy the following customer requirements?
 
 -   privileged identity management
 
 -   identity protection
 
-### Optimizing access control and management of applications and devices
+*Optimizing access control and management of applications and devices*
 
-**Task:** Identify features that will allow you to optimize access control and management of applications and devices, including:
+1.  What features will allow to optimize access control and management of applications and devices to satisfy the following customer requirements?
 
 -   mobile device management
 
@@ -228,6 +230,7 @@ Make sure that your design accounts for customer objectives and objections and i
 -   B2B
 
 -   B2C
+
 
 **Prepare**
 
@@ -273,15 +276,12 @@ Timeframe: 15 minutes
 
 Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
-### Additional references 
+##  Additional references
 
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
-| What is hybrid identity with Azure Active Directory? | <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-hybrid-identity>  |
-| Choose the right authentication method for your Azure Active Directory hybrid identity solution | <https://docs.microsoft.com/en-us/azure/security/fundamentals/choose-ad-authn>  |
-| Azure AD Connect sync: Understand and customize synchronization |  <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-whatis> |
-| Buy a custom domain name for Azure App Service | <https://docs.microsoft.com/en-us/azure/app-service/manage-custom-dns-buy-domain>  |
-| What is Conditional Access? | <https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview>  |
-| Azure Active Directory B2B documentation | <https://docs.microsoft.com/en-us/azure/active-directory/b2b/>  |
-| Azure Active Directory B2C documentation | <https://docs.microsoft.com/en-us/azure/active-directory-b2c/>  |
+|   |   |
+|   |   |
+|   |   |
+|   |   |

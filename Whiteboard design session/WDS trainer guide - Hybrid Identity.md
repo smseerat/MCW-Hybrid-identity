@@ -1,4 +1,4 @@
-﻿![Microsoft Cloud Workshops icon](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Hybrid identity
@@ -8,6 +8,7 @@ Hybrid identity
 Whiteboard design session trainer guide
 </div>
 
+<div class="MCWHeader3">
 December 2019
 </div>
 
@@ -18,51 +19,40 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+� 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
 **Contents**
+
 <!-- TOC -->
 
 - [Trainer information](#trainer-information)
-  - [Role of the trainer](#role-of-the-trainer)
-  - [Whiteboard design session flow](#whiteboard-design-session-flow)
-  - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
-  - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
+    - [Role of the trainer](#role-of-the-trainer)
+    - [Whiteboard design session flow](#whiteboard-design-session-flow)
+    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Hybrid identity whiteboard design session student guide](#hybrid-identity-whiteboard-design-session-student-guide)
-  - [Abstract and learning objectives](#abstract-and-learning-objectives)
-  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-    - [Customer situation](#customer-situation)
-    - [Customer needs](#customer-needs)
-    - [Customer objections](#customer-objections)
-    - [Key design considerations](#key-design-considerations)
-    - [Infographic for common scenarios](#infographic-for-common-scenarios)
-  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Architecting a hybrid authentication solution](#architecting-a-hybrid-authentication-solution)
-    - [Implementing a hybrid identity solution](#implementing-a-hybrid-identity-solution)
-    - [Assessing resiliency aspects of a hybrid identity solution](#assessing-resiliency-aspects-of-a-hybrid-identity-solution)
-    - [Optimizing authentication configuration](#optimizing-authentication-configuration)
-    - [Optimizing authorization configuration](#optimizing-authorization-configuration)
-    - [Optimizing access control and management of applications and devices](#optimizing-access-control-and-management-of-applications-and-devices)
-  - [Step 3: Present the solution](#step-3-present-the-solution)
-  - [Wrap-up](#wrap-up)
+    - [Abstract and learning objectives](#abstract-and-learning-objectives)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+        - [Customer situation](#customer-situation)
+        - [Customer needs](#customer-needs)
+        - [Customer objections](#customer-objections)
+        - [Key design considerations](#key-design-considerations)
+        - [Infographic for common scenarios](#infographic-for-common-scenarios)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3-present-the-solution)
+    - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 - [Hybrid identity whiteboard design session trainer guide](#hybrid-identity-whiteboard-design-session-trainer-guide)
-  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
-  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
-  - [Step 3: Present the solution](#step-3-present-the-solution-1)
-  - [Wrap-up](#wrap-up-1)
-  - [Preferred target audience](#preferred-target-audience)
-  - [Preferred solution](#preferred-solution)
-    - [Architecting a hybrid authentication solution](#architecting-a-hybrid-authentication-solution-1)
-    - [Implementing a hybrid identity solution](#implementing-a-hybrid-identity-solution-1)
-    - [Assessing resiliency aspects of a hybrid identity solution](#assessing-resiliency-aspects-of-a-hybrid-identity-solution-1)
-    - [Optimizing authentication configuration](#optimizing-authentication-configuration-1)
-    - [Optimizing authorization configuration](#optimizing-authorization-configuration-1)
-    - [Optimizing access control and management of applications and devices](#optimizing-access-control-and-management-of-applications-and-devices-1)
-  - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
-  - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
+    - [Step 3: Present the solution](#step-3-present-the-solution-1)
+    - [Wrap-up](#wrap-up-1)
+    - [Preferred target audience](#preferred-target-audience)
+    - [Preferred solution](#preferred-solution)
+    - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
+    - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
 
 <!-- /TOC -->
 
@@ -182,7 +172,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 ## Abstract and learning objectives 
 
-In this whiteboard design session, you will learn how to implement different components of a hybrid identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features, including pass-through authentication with Seamless Single Sign-On, Multi-Factor Authentication, Self-Service Password Reset, Azure AD Password Protection for Windows Server Active Directory, Hybrid Azure AD join, Windows Hello for Business, Microsoft Intune automatic enrollment, Azure AD Conditional Access,    Azure AD Application Proxy, Azure AD B2B, and Azure AD B2C.
+In this whiteboard design session, you will learn how to implement different components of a hybrid identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features, including pass-through authentication with Seamless Single Sign-On, Multi-Factor Authentication, Self-Service Password Reset, Azure AD Password Protection for Windows Server Active Directory, Hybrid Azure AD join, Windows Hello for Business, Microsoft Intune automatic enrollment, Azure AD Conditional Access, Azure AD Application Proxy, Azure AD B2B, and Azure AD B2C.
 
 ## Step 1: Review the customer case study 
 
@@ -192,7 +182,7 @@ Analyze your customer's needs.
 
 Timeframe: 15 minutes
 
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
+Directions:  With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
 
 1.  Meet your table participants and trainer.
 
@@ -230,61 +220,64 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 ### Customer needs 
 
--   Remote users must be able to sign in to their devices by using their Active Directory credentials.
+1.  Remote users must be able to sign in to their devices by using their Active Directory credentials.
 
--   Existing Active Directory user sign-in hours and password policies must be preserved (although allowed password values could be further restricted). 
+2.  Existing Active Directory user sign-in hours and password policies must be preserved (although allowed password values could be further restricted). 
 
--   User sing-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
+3.  User sing-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
 
--   Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
+4.  Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
 
--   Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users' devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
+5.  Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users' devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
 
--   Users must be allowed to reset their own passwords. 
+6.  Users must be allowed to reset their own passwords. 
 
--   Designated users should be able to temporarily elevate their privileges to manage other user accounts. All elevation events must be edited.
+7.  Designated users should be able to temporarily elevate their privileges to manage other user accounts. All elevation events must be edited.
 
--   Contoso remote users must be able to access on-premises Windows Integrated Authentication-based applications.
+8.  Contoso remote users must be able to access on-premises Windows Integrated Authentication-based applications.
 
--   Fabrikam users must be able to access on-premises Windows Integrated Authentication-based applications.
+9.  Fabrikam users must be able to access on-premises Windows Integrated Authentication-based applications.
 
--   Commercial applications developed by Contoso programmers must be made available to external customers with minimum overhead associated with identity management.
+10.  Commercial applications developed by Contoso programmers must be made available to external customers with minimum overhead associated with identity management.
 
--   Resiliency must be maximized whenever possible.
+11.  Resiliency must be maximized whenever possible.
 
--   Infrastructure requirements must be minimized
+12.  Infrastructure requirements must be minimized
+
 
 ### Customer objections 
 
--   Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory.  
+1.  Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory.
 
--   We have heard that it is not possible to run simultaneously multiple instance of Azure AD Connect. All identity services components in our environment must provide resiliency and support failover.
+2.  We have heard that it is not possible to run simultaneously multiple instance of Azure AD Connect. All identity services components in our environment must provide resiliency and support failover.
 
--   If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
+3.  If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
 
--   Synchronizing our Active Directory accounts with Azure AD accounts makes the former vulnerable to malicious or accidental lockouts that affect the latter. This would effectively expose our on-premises environment to external attacks. 
+4.  Synchronizing our Active Directory accounts with Azure AD accounts makes the former vulnerable to malicious or accidental lockouts that affect the latter. This would effectively expose our on-premises environment to external attacks. 
 
--   A number of critical web applications running in our on-premises environment rely on Kerberos-based Windows Integrated Authentication. Microsoft states that Azure Active Directory does not support Kerberos. Doesn't this mean that remote users authenticating to Azure Active Directory and our business partners will not be able to properly authenticate and access these applications?
+5.  A number of critical web applications running in our on-premises environment rely on Kerberos-based Windows Integrated Authentication. Microsoft states that Azure Active Directory does not support Kerberos. Doesn't this mean that remote users authenticating to Azure Active Directory and our business partners will not be able to properly authenticate and access these applications?
+
 
 ### Key design considerations
 
--   the choice of the authentication method supported in hybrid identity scenarios
+1.  The choice of the authentication method supported in hybrid identity scenarios
 
--   the choice of scope synchronization between Active Directory and Azure AD
+2.  The choice of scope synchronization between Active Directory and Azure AD
 
--   the choice of Azure AD edition required to satisfy Contoso's requirements
+3.  The choice of Azure AD edition required to satisfy Contoso's requirements
 
--   the Service Level Agreements associated with the choice of the Azure AD edition 
+4.  The Service Level Agreements associated with the choice of the Azure AD edition 
 
--   requirements necessary to minimize dependency on passwords in lieu of more secure authentication methods
+5.  Requirements necessary to minimize dependency on passwords in lieu of more secure authentication methods
 
--   the approach to allowing different authentication requirements, depending on users' group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry
+6.  The approach to allowing different authentication requirements, depending on users' group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry
 
--   the approach to providing Contoso and Fabrikam users access to on-premises web applications that rely on Kerberos-based Windows Integrated Authentication.
+7.  The approach to providing Contoso and Fabrikam users access to on-premises web applications that rely on Kerberos-based Windows Integrated Authentication
 
--   the approach to providing external customers access to custom-developed applications with minimum overhead associated with identity management.
+8.  The approach to providing external customers access to custom-developed applications with minimum overhead associated with identity management.
 
--   the method of implementing redundancy in your solution
+9.  The method of implementing redundancy in your solution
+
 
 ### Infographic for common scenarios
 
@@ -302,7 +295,7 @@ Timeframe: 60 minutes
 
 **Business needs**
 
-Directions:  With all participants at your table, answer the following questions and list the answers on a flip chart:
+Directions: With all participants at your table, answer the following questions and list the answers on a flip chart:
 
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
 
@@ -314,29 +307,27 @@ Directions: With all participants at your table, respond to the following questi
 
 *Architecting a hybrid identity solution*
 
-Using the features of Azure Active Directory and the requirements from the customer, design a Hybrid Identity solution. 
+1.  Using the features of Azure Active Directory and the requirements from the customer, how would you design a Hybrid Identity solution?
 
-Make sure that your design accounts for customer objectives and objections and includes the following items:
+2.  How does your design accounts for customer objectives and objections?
 
-### Architecting a hybrid authentication solution
+*Architecting a hybrid authentication solution*
 
-**Task:** Design a hybrid authentication solution that will allow you to meet all the customer requirements.
+1.  How does your solution address all the customer requirements in regard to authentication?
 
-### Implementing a hybrid identity solution
+*Implementing a hybrid identity solution*
 
-**Task:** Describe steps to implement a hybrid identity solution that will allow you to meet all the customer requirements.
+1.  What are the steps to implement a hybrid identity solution that will allow you to meet all the customer requirements?
 
-### Assessing resiliency aspects of a hybrid identity solution
+*Assessing resiliency aspects of a hybrid identity solution*
 
-**Task:** Assess resiliency aspects of a hybrid identity solution for the customer. 
+1.  What are provisions that eliminate single points of failure in your design?
 
--   Describe provisions that eliminate single points of failure in your design
+2.  What is the failover process for components that operate in the active/passive mode?
 
--   Describe failover process for components that operate in the active/passive mode.
+*Optimizing authentication configuration*
 
-### Optimizing authentication configuration
-
-**Task:** Identify features that will allow you to optimize authentication in your solution to satisfy the customer requirements, including:
+1.  What features will allow to optimize authentication in your solution to satisfy the following customer requirements?
 
 -   multi-factor authentication
 
@@ -344,17 +335,17 @@ Make sure that your design accounts for customer objectives and objections and i
 
 -   replacing password-based authentication with biometrics-based sign-in
 
-### Optimizing authorization configuration
+*Optimizing authorization configuration*
 
-**Task:** Identify features that will allow you to optimize authorization in your solution to satisfy the customer requirements, including:
+1.  What features will allow to optimize authorization in your solution to satisfy the following customer requirements?
 
 -   privileged identity management
 
 -   identity protection
 
-### Optimizing access control and management of applications and devices
+*Optimizing access control and management of applications and devices*
 
-**Task:** Identify features that will allow you to optimize access control and management of applications and devices, including:
+1.  What features will allow to optimize access control and management of applications and devices to satisfy the following customer requirements?
 
 -   mobile device management
 
@@ -365,6 +356,7 @@ Make sure that your design accounts for customer objectives and objections and i
 -   B2B
 
 -   B2C
+
 
 **Prepare**
 
@@ -410,21 +402,17 @@ Timeframe: 15 minutes
 
 Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
-### Additional references 
+##  Additional references
 
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
-| What is hybrid identity with Azure Active Directory? | <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-hybrid-identity>  |
-| Choose the right authentication method for your Azure Active Directory hybrid identity solution | <https://docs.microsoft.com/en-us/azure/security/fundamentals/choose-ad-authn>  |
-| Azure AD Connect sync: Understand and customize synchronization |  <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-whatis> |
-| Buy a custom domain name for Azure App Service | <https://docs.microsoft.com/en-us/azure/app-service/manage-custom-dns-buy-domain>  |
-| What is Conditional Access? | <https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview>  |
-| Azure Active Directory B2B documentation | <https://docs.microsoft.com/en-us/azure/active-directory/b2b/>  |
-| Azure Active Directory B2C documentation | <https://docs.microsoft.com/en-us/azure/active-directory-b2c/>  |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
 
-
-# Hybrid identity whiteboard design session trainer guide
+# Hybrid Identity whiteboard design session trainer guide
 
 ## Step 1: Review the customer case study
 
@@ -484,284 +472,281 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   Interested in exploring the functionality offered by public cloud
 
-
 ## Preferred solution
 
 Have the table attendees reconvene with the larger session group to hear a subject matter expert (SME) share the following preferred solution:
 
 *Requirements Recap*
 
--   Remote users must be able to sign in to their devices by using their Active Directory credentials.
+1.  Remote users must be able to sign in to their devices by using their Active Directory credentials.
 
--   Existing Active Directory user sign-in hours and password policies must be preserved (although allowed password values could be further restricted). 
+2.  Existing Active Directory user sign-in hours and password policies must be preserved (although allowed password values could be further restricted). 
 
--   User sing-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
+3.  User sing-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
 
--   Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
+4.  Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
 
--   Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users' devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
+5.  Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users' devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
 
--   Users must be allowed to reset their own passwords. 
+6.  Users must be allowed to reset their own passwords. 
 
--   Designated users should be able to temporarily elevate their privileges to manage other user accounts. All elevation events must be edited.
+7.  Designated users should be able to temporarily elevate their privileges to manage other user accounts. All elevation events must be edited.
 
--   Contoso remote users must be able to access on-premises Windows Integrated Authentication-based applications.
+8.  Contoso remote users must be able to access on-premises Windows Integrated Authentication-based applications.
 
--   Fabrikam users must be able to access on-premises Windows Integrated Authentication-based applications.
+9.  Fabrikam users must be able to access on-premises Windows Integrated Authentication-based applications.
 
--   Commercial applications developed by Contoso programmers must be made available to external customers with minimum overhead associated with identity management.
+10.  Commercial applications developed by Contoso programmers must be made available to external customers with minimum overhead associated with identity management.
 
--   Resiliency must be maximized whenever possible.
+11.  Resiliency must be maximized whenever possible.
 
--   Infrastructure requirements must be minimized
+12.  Infrastructure requirements must be minimized
 
-*High-level overview of the preferred solution*
 
-The solution illustrates a wide range of benefits of implementing the hybrid identity model. In the current state:
+*Architecting a hybrid identity solution*
 
--   Contoso is using a single-domain Active Directory forest using a non-routable DNS domain name
+1.  Using the features of Azure Active Directory and the requirements from the customer, how would you design a Hybrid Identity solution?
 
--   Contoso has not implemented any cloud-based services, including an Azure AD tenant and an Azure subscription
+    The solution illustrates a wide range of benefits of implementing the hybrid identity model. In the current state:
 
-Implementing the hybrid identity model will allows Contoso to take advantage of such technologies and capabilities as: 
+      - Contoso is using a single-domain Active Directory forest using a non-routable DNS domain name
 
--   Passthrough authentication with Seamless Single Sign-On
+      - Contoso has not implemented any cloud-based services, including an Azure AD tenant and an Azure subscription
 
--   Multi-Factor Authentication
+    Implementing the hybrid identity model will allows Contoso to take advantage of such technologies and capabilities as: 
 
--   Self-Service Password Reset
+      - Passthrough authentication with Seamless Single Sign-On
 
--   Azure AD Password Protection
+      - Multi-Factor Authentication
 
--   Hybrid Azure AD join
+      - Self-Service Password Reset
 
--   Windows Hello for Business
+      - Azure AD Password Protection
 
--   Microsoft Intune automatic enrollment
+      - Hybrid Azure AD join
 
--   Azure AD Conditional Access
+      - Windows Hello for Business
 
--   Azure AD Application Proxy
+      - Microsoft Intune automatic enrollment
 
--   Azure AD B2B
+      - Azure AD Conditional Access
 
--   Azure AD B2C
+      - Azure AD Application Proxy
 
-The preferred solution relies on pass-through authentication with seamless single sign-on to provide integration between on-premises Active Directory environment and an Azure AD tenant. That integration, implemented by virtue of installing Azure AD Connect on an on-premises Windows Server with direct connectivity to Active Direct domain controllers and Azure AD, drives a number of other configuration choices, including Hybrid Azure AD join, Self-Service Password Reset with password writeback, Azure AD Password Protection for Windows Server Active Directory, Azure AD Multi-Factor Authentication, Azure AD Privileged Identity Management, Azure AD Conditional Access with Azure AD Identity Protection-based risk assessment, as well as Azure AD Application Proxy. Hybrid Azure AD join will additionally allow implementing Hybrid Key trust-based Windows Hello for Business on Windows 10 domain member computers, although this will require additional infrastructure changes, including installation of an internal Certification Authority. 
+      - Azure AD B2B
 
-In order to provide access to on-premises applications to business partners, Contoso will leverage Azure AD B2B capabilities and Azure AD Application Proxy. For in-house developed customer apps, Contoso will implement an Azure AD B2C tenant. 
+      - Azure AD B2C
 
-### Architecting a hybrid authentication solution
+2.  How does your design accounts for customer objectives and objections?
 
-**Task:** Design a hybrid authentication solution that will allow you to meet all the customer requirements.
+    The preferred solution relies on pass-through authentication with seamless single sign-on to provide integration between on-premises Active Directory environment and an Azure AD tenant. That integration, implemented by virtue of installing Azure AD Connect on an on-premises Windows Server with direct connectivity to Active Direct domain controllers and Azure AD, drives a number of other configuration choices, including Hybrid Azure AD join, Self-Service Password Reset with password writeback, Azure AD Password Protection for Windows Server Active Directory, Azure AD Multi-Factor Authentication, Azure AD Privileged Identity Management, Azure AD Conditional Access with Azure AD Identity Protection-based risk assessment, as well as Azure AD Application Proxy. Hybrid Azure AD join will additionally allow implementing Hybrid Key trust-based Windows Hello for Business on Windows 10 domain member computers, although this will require additional infrastructure changes, including installation of an internal Certification Authority. 
 
-**Answer:** 
+    In order to provide access to on-premises applications to business partners, Contoso will leverage Azure AD B2B capabilities and Azure AD Application Proxy. For in-house developed customer apps, Contoso will implement an Azure AD B2C tenant. 
+    
+*Architecting a hybrid authentication solution*
 
-1. The prerequisites: 
+1.  How does your solution address all the customer requirements in regard to authentication?
 
-   - Contoso will provision a new Azure Active Directory tenant with a custom, publicly routable domain name and use Azure AD Connect in order to integrate it with on-premises Active Directory environment. 
+    The prerequisites: 
 
-   - Contoso will purchase Azure AD Premium P2 licenses for its users, in order to provide the ability to implement: 
+      - Contoso will provision a new Azure Active Directory tenant with a custom, publicly routable domain name and use Azure AD Connect in order to integrate it with on-premises Active Directory environment. 
 
-        - Azure AD Privileged Identity Management. This will allow designated users temporarily elevate their privileges to manage other user accounts with auditing automatically enabled for all elevation events.
+      - Contoso will purchase Azure AD Premium P2 licenses for its users, in order to provide the ability to implement: 
 
-        - Azure AD Identity Protection. This will allow controlling access to applications and resources by relying on dynamically evaluated risk based on heuristics and globally collected security-related telemetry.
+           - Azure AD Privileged Identity Management. This will allow designated users temporarily elevate their privileges to manage other user accounts with auditing automatically enabled for all elevation events.
 
-        - Conditional Access (available starting with Azure AD Premium P1). This will allow controlling access to applications and resources by relying on a combination of multiple conditions, including users group membership and state of the users' devices.
+           - Azure AD Identity Protection. This will allow controlling access to applications and resources by relying on dynamically evaluated risk based on heuristics and globally collected security-related telemetry.
 
-        - Multi-Factor Authentication (available starting with Azure AD Premium P1), including integration of MFA into Conditional Access scenarios through step up authentication.
+           - Conditional Access (available starting with Azure AD Premium P1). This will allow controlling access to applications and resources by relying on a combination of multiple conditions, including users group membership and state of the users' devices.
 
-        - Azure AD Application Proxy (available starting with Azure AD Premium P1). This will allow providing access to remote users and business partners to on-premises web applications.
+           - Multi-Factor Authentication (available starting with Azure AD Premium P1), including integration of MFA into Conditional Access scenarios through step up authentication.
 
-        - Password Protection for Windows Server Active Directory (available starting with Azure AD Premium P1). This will allow imposing restrictions on allowed password values. 
+           - Azure AD Application Proxy (available starting with Azure AD Premium P1). This will allow providing access to remote users and business partners to on-premises web applications.
 
-        - Self-service password reset/change/unlock with on-premises writeback (available starting with Azure AD Premium P1). 
+           - Password Protection for Windows Server Active Directory (available starting with Azure AD Premium P1). This will allow imposing restrictions on allowed password values. 
+
+           - Self-service password reset/change/unlock with on-premises writeback (available starting with Azure AD Premium P1). 
 
      ![A diagram representing high level design.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/preferred-solution-high-level.png)
 
-2. The choice of authentication method: 
+    The choice of authentication method: 
 
-   - In order to minimize infrastructure footprint required for integration, streamline user experience, and, at the same time, ensure that any on-premises Active Directory user account restrictions, such as allowed sign-in hours must be honored, the proposed solution leverages pass-through authentication with seamless single sign-on (SSO). 
+      - In order to minimize infrastructure footprint required for integration, streamline user experience, and, at the same time, ensure that any on-premises Active Directory user account restrictions, such as allowed sign-in hours must be honored, the proposed solution leverages pass-through authentication with seamless single sign-on (SSO). 
 
      ![A diagram representing high level architecture components of pass-through authentication model.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image3.png)
 
-   - The need for preserving on-premises Active Directory user account restrictions eliminates the possibility of relying exclusively on Azure AD password hash synchronization, even though this is the simplest way to enable authentication for on-premises directory objects in Azure AD (which also supports seamless SSO), with minimum infrastructure requirements. It is worth noting that the password hash synchronization also does not include expired and locked-out states of Active Directory user accounts.
+      - The need for preserving on-premises Active Directory user account restrictions eliminates the possibility of relying exclusively on Azure AD password hash synchronization, even though this is the simplest way to enable authentication for on-premises directory objects in Azure AD (which also supports seamless SSO), with minimum infrastructure requirements. It is worth noting that the password hash synchronization also does not include expired and locked-out states of Active Directory user accounts.
 
-   - Another authentication option facilitated by Azure AD Connect is based on federation, which allows for enforcing on-premises AD password policies and restrictions when authenticating Azure AD accounts, but it has significantly larger infrastructure footprint and it is relatively complex to configure and operate. Unlike the first two, it also supports third-party multifactor authentication (including smartcards), but that was not stipulated as one of Contoso's requirements.
+      - Another authentication option facilitated by Azure AD Connect is based on federation, which allows for enforcing on-premises AD password policies and restrictions when authenticating Azure AD accounts, but it has significantly larger infrastructure footprint and it is relatively complex to configure and operate. Unlike the first two, it also supports third-party multifactor authentication (including smartcards), but that was not stipulated as one of Contoso's requirements.
 
-   - In order to minimize the use of passwords, Contoso will implement Windows Hello for Business. Windows Hello for Business replaces passwords with strong two-factor authentication on Windows 10 devices. This authentication consists of a new type of user credential that is tied to a device and uses a biometric or PIN. Windows Hello for Business lets user authenticate to an Active Directory or Azure Active Directory account. In hybrid deployments, Windows Hello for Business can leverage Hybrid Azure AD joined computers, so Contoso will start by configuring Hybrid Azure AD join for its on-premises computers. Considering that Contoso is not planning on using federated authentication, this implies the choice of Windows Hello for Business hybrid key trust deployment model. For more information regarding this topic, refer to *Configure Device Registration for Hybrid key trust Windows Hello for Business* at <https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-key-trust-devreg>
+      - In order to minimize the use of passwords, Contoso will implement Windows Hello for Business. Windows Hello for Business replaces passwords with strong two-factor authentication on Windows 10 devices. This authentication consists of a new type of user credential that is tied to a device and uses a biometric or PIN. Windows Hello for Business lets user authenticate to an Active Directory or Azure Active Directory account. In hybrid deployments, Windows Hello for Business can leverage Hybrid Azure AD joined computers, so Contoso will start by configuring Hybrid Azure AD join for its on-premises computers. Considering that Contoso is not planning on using federated authentication, this implies the choice of Windows Hello for Business hybrid key trust deployment model. For more information regarding this topic, refer to *Configure Device Registration for Hybrid key trust Windows Hello for Business* at <https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-key-trust-devreg>
 
-### Implementing a hybrid identity solution
+*Implementing a hybrid identity solution*
 
-**Task:** Describe steps to implement a hybrid identity solution that will allow you to meet all the customer requirements.
+1.  What are the steps to implement a hybrid identity solution that will allow you to meet all the customer requirements?
 
-**Answer:** 
+    Azure AD tenant: in order to implement the hybrid identity model, Contoso will create an Azure AD tenant and purchase licenses Enterprise Mobility + Security     E5 licenses for its users. To account for the integration and single sign-on requirements, Contoso will also leverage its ownership of a publicly routable     DNS domain name and assign it as a verified, custom DNS domain name to the newly provisioned Azure AD tenant. 
 
-1. Azure AD tenant
+    Active Directory configuration
 
-   In order to implement the hybrid identity model, Contoso will create an Azure AD tenant and purchase licenses Enterprise Mobility + Security E5 licenses for its users. To account for the integration and single sign-on requirements, Contoso will also leverage its ownership of a publicly routable DNS domain name and assign it as a verified, custom DNS domain name to the newly provisioned Azure AD tenant. 
+      - UPN suffix
 
-2. Active Directory configuration
+           - The publicly routable DNS domain name will be assigned as the suffix of the userPrincipalName attribute of all Active Directory user accounts that will be integrated with Azure AD by using Azure AD Connect. 
 
-   - UPN suffix
+      - Recycle Bin
 
-        - The publicly routable DNS domain name will be assigned as the suffix of the userPrincipalName attribute of all Active Directory user accounts that will be integrated with Azure AD by using Azure AD Connect. 
+           - Contoso will also enable Active Directory Recycle Bin. It is recommended that you enable the AD Recycle Bin feature for your on-premises Active Directory domains which are synchronized to Azure AD. If you accidentally deleted an on-premises AD user object and restore it using the feature, Azure AD restores the corresponding Azure AD user object. By default, Azure AD keeps the deleted Azure AD user object in soft-deleted state for 30 days.
 
-   - Recycle Bin
+           - If you do not have on-premises AD Recycle Bin feature enabled, you may be required to create an AD user object to replace the deleted object. If Azure AD Connect Synchronization Service is configured to use system-generated AD attribute (such as ObjectGuid) for the Source Anchor attribute, the newly created AD user object will not have the same Source Anchor value as the deleted AD user object. When the newly created AD user object is synchronized to Azure AD, Azure AD creates a new Azure AD user object instead of restoring the soft-deleted Azure AD user object.
 
-        - Contoso will also enable Active Directory Recycle Bin. It is recommended that you enable the AD Recycle Bin feature for your on-premises Active Directory domains which are synchronized to Azure AD. If you accidentally deleted an on-premises AD user object and restore it using the feature, Azure AD restores the corresponding Azure AD user object. By default, Azure AD keeps the deleted Azure AD user object in soft-deleted state for 30 days.
+    Azure AD Connect configuration
 
-        - If you do not have on-premises AD Recycle Bin feature enabled, you may be required to create an AD user object to replace the deleted object. If Azure AD Connect Synchronization Service is configured to use system-generated AD attribute (such as ObjectGuid) for the Source Anchor attribute, the newly created AD user object will not have the same Source Anchor value as the deleted AD user object. When the newly created AD user object is synchronized to Azure AD, Azure AD creates a new Azure AD user object instead of restoring the soft-deleted Azure AD user object.
+      - Authentication method
 
-3. Azure AD Connect configuration
+           - For pass-through authentication, you need to install at least one or more (three are recommended) lightweight Authentication Agents on your on-premises computers running Windows Servers 2012 R2 or newer with TLS 1.2 enabled. The computers hosting the agents must have direct access to Active Directory domain controllers and outbound access to internet. The first agent is installed automatically on the computer hosting Azure AD Connect once you choose to use pass-through authentication. To install additional agents, you can download their setup files from the **Pass-through authentication** blade (accessible via **Azure AD Connect** blade in the **Azure Active Directory** section of the Azure portal). Installation can be performed interactively (you will be prompted to sign in with an account that has been assigned the Azure AD Global Administrator role) or via an unattended deployment script. 
 
-   - Authentication method
+      - Filtering 
 
-        - For pass-through authentication, you need to install at least one or more (three are recommended) lightweight Authentication Agents on your on-premises computers running Windows Servers 2012 R2 or newer with TLS 1.2 enabled. The computers hosting the agents must have direct access to Active Directory domain controllers and outbound access to internet. The first agent is installed automatically on the computer hosting Azure AD Connect once you choose to use pass-through authentication. To install additional agents, you can download their setup files from the **Pass-through authentication** blade (accessible via **Azure AD Connect** blade in the **Azure Active Directory** section of the Azure portal). Installation can be performed interactively (you will be prompted to sign in with an account that has been assigned the Azure AD Global Administrator role) or via an unattended deployment script. 
+           - Azure AD Connect offers a number of different filtering options that determine the scope of synchronized Active Directory objects. While organizational unit-based filtering is the most straightforward to configure option, the scope can be based on a value of individual Active Directory attributes, which offers object-level granularity. 
 
-   - Filtering 
+           - Configuring attribute-based filtering relies on declarative provisioning, which is configurable by using Synchronization Rules Editor, included in the installation of Azure AD Connect. It can be applied when importing objects from Active Directory into to the metaverse (inbound) or when exporting objects from the metaverse to Azure AD (outbound). The recommended approach involves inbound filtering because this is easiest to maintain. Outbound filtering might be required in some scenarios, such as, for example, joining objects from more than one Active Directory forest before applying the filtering logic. 
 
-        - Azure AD Connect offers a number of different filtering options that determine the scope of synchronized Active Directory objects. While organizational unit-based filtering is the most straightforward to configure option, the scope can be based on a value of individual Active Directory attributes, which offers object-level granularity. 
+           - In inbound filtering, the scope determines which objects to synchronize or not synchronize. The scope has a group and a clause to determine when a sync rule is in scope. A group contains one or many clauses. There is a logical *AND* between multiple clauses, and a logical *OR* between multiple groups. Objects which are supposed to be synchronized to Azure AD must have the metaverse attribute **cloudFiltered** not set to a value to be synchronized. If this attribute's value is set to **TRUE**, then the object is not synchronized. It is important to note that, in general, this attribute should not be set to **FALSE**. To make sure that multiple rules can affect its value, the attribute is supposed to have the value of either **TRUE** or **NULL** (not set). There are, however, scenarios where the choice of **FALSE** is appropriate, such as, so called *positive* filtering, where you do specify which objects to include (rather than exclude) based on the value of their designated attribute. 
 
-        - Configuring attribute-based filtering relies on declarative provisioning, which is configurable by using Synchronization Rules Editor, included in the installation of Azure AD Connect. It can be applied when importing objects from Active Directory into to the metaverse (inbound) or when exporting objects from the metaverse to Azure AD (outbound). The recommended approach involves inbound filtering because this is easiest to maintain. Outbound filtering might be required in some scenarios, such as, for example, joining objects from more than one Active Directory forest before applying the filtering logic. 
+           - Contoso will use a combination of the organizational unit-based filtering and the *positive* filtering based on the value of the userPrincipalName attribute. In particular, user objects to be synchronized will need to have the domain suffix portion of their userPrincipalName attribute match the custom, verified DNS domain name of the Azure AD tenant. This value can be set individually on per user object level as part of staged implementation of the proposed hybrid identity solution.  
 
-        - In inbound filtering, the scope determines which objects to synchronize or not synchronize. The scope has a group and a clause to determine when a sync rule is in scope. A group contains one or many clauses. There is a logical *AND* between multiple clauses, and a logical *OR* between multiple groups. Objects which are supposed to be synchronized to Azure AD must have the metaverse attribute **cloudFiltered** not set to a value to be synchronized. If this attribute's value is set to **TRUE**, then the object is not synchronized. It is important to note that, in general, this attribute should not be set to **FALSE**. To make sure that multiple rules can affect its value, the attribute is supposed to have the value of either **TRUE** or **NULL** (not set). There are, however, scenarios where the choice of **FALSE** is appropriate, such as, so called *positive* filtering, where you do specify which objects to include (rather than exclude) based on the value of their designated attribute. 
+    Azure AD Conditional Access
 
-        - Contoso will use a combination of the organizational unit-based filtering and the *positive* filtering based on the value of the userPrincipalName attribute. In particular, user objects to be synchronized will need to have the domain suffix portion of their userPrincipalName attribute match the custom, verified DNS domain name of the Azure AD tenant. This value can be set individually on per user object level as part of staged implementation of the proposed hybrid identity solution.  
+      - A Conditional Access policy is configurable directly from the Azure portal and is intended for granting or blocking access to Azure AD integrated applications and services based on a number of criteria such as:
 
-4. Azure AD Conditional Access
+           - All users, a specific user, member of a group, or assigned role
 
-   - A Conditional Access policy is configurable directly from the Azure portal and is intended for granting or blocking access to Azure AD integrated applications and services based on a number of criteria such as:
+           - Specific cloud application being accessed
 
-        - All users, a specific user, member of a group, or assigned role
+           - Device platform
 
-        - Specific cloud application being accessed
+           - Device state or compliance
 
-        - Device platform
+           - Network location or geo-located IP address (customers have the ability to define trusted networks by using named locations)
 
-        - Device state or compliance
+           - Client applications 
 
-        - Network location or geo-located IP address (customers have the ability to define trusted networks by using named locations)
+           - Sign-in risk (Requires Identity Protection)
 
-        - Client applications 
+           - Hybrid Azure AD joined device
 
-        - Sign-in risk (Requires Identity Protection)
+           - Approved client application
 
-        - Hybrid Azure AD joined device
+      -  Other options include stepping up authentication by enforcing Multi-Factor Authentication and applying session-level (rather than gated) restrictions.
 
-        - Approved client application
+    Azure AD Multi-Factor Authentication
 
-   -  Other options include stepping up authentication by enforcing Multi-Factor Authentication and applying session-level (rather than gated) restrictions.
+      - Implementing Azure AD Multi-Factor Authentication involves three distinct configuration steps:
 
-5. Azure AD Multi-Factor Authentication
+           - configuring the MFA registration method
 
-   - Implementing Azure AD Multi-Factor Authentication involves three distinct configuration steps:
+           - configuring the MFA authentication method
 
-        - configuring the MFA registration method
+           - configuring scenarios in which MFA is required
 
-        - configuring the MFA authentication method
+      - Customers must determine how users will register their authentication methods. This can be accomplished by using Conditional Access, since this approach offers more flexibility. Conditional Access policies enforce registration, requiring unregistered users to complete registration at first sign-in. While it is possible to enable Multi-Factor Authentication by modifying the user state, this effectively forces users to perform two-step verification every time they sign in and overrides Conditional Access policies. However, there are scenarios in which this approach might be preferred or required. It is, for example, necessary, if the customer's current licensing arrangements do not include Conditional Access.
 
-        - configuring scenarios in which MFA is required
+      - Additionally, with Azure AD Premium P2 licensing, customers have the option of leveraging Azure AD Identity Protection to further enhance MFA capabilities by implementing an automatic MFA registration policy, as well as incorporating automated risk detection into MFA-based Conditional Access policies. Creating an MFA registration policy will prompt users to register the next time they sign in interactively. Conditional Access policies can be configured to force password changes when there is a threat of compromised identity or require MFA when a sign-in is deemed risky in response to detection of such events as: 
 
-   - Customers must determine how users will register their authentication methods. This can be accomplished by using Conditional Access, since this approach offers more flexibility. Conditional Access policies enforce registration, requiring unregistered users to complete registration at first sign-in. While it is possible to enable Multi-Factor Authentication by modifying the user state, this effectively forces users to perform two-step verification every time they sign in and overrides Conditional Access policies. However, there are scenarios in which this approach might be preferred or required. It is, for example, necessary, if the customer's current licensing arrangements do not include Conditional Access.
+           - Leaked credentials
 
-   - Additionally, with Azure AD Premium P2 licensing, customers have the option of leveraging Azure AD Identity Protection to further enhance MFA capabilities by implementing an automatic MFA registration policy, as well as incorporating automated risk detection into MFA-based Conditional Access policies. Creating an MFA registration policy will prompt users to register the next time they sign in interactively. Conditional Access policies can be configured to force password changes when there is a threat of compromised identity or require MFA when a sign-in is deemed risky in response to detection of such events as: 
+           - Sign-ins from anonymous IP addresses
 
-        - Leaked credentials
+           - Impossible travel to atypical locations
 
-        - Sign-ins from anonymous IP addresses
+           - Sign-ins from unfamiliar locations
 
-        - Impossible travel to atypical locations
+           - Sign-ins from infected devices
 
-        - Sign-ins from unfamiliar locations
-
-        - Sign-ins from infected devices
-
-        - Sign-ins from IP addresses with suspicious activities
+           - Sign-ins from IP addresses with suspicious activities
 
      Some of the risk detections detected by Azure Active Directory Identity Protection occur in real time and some require offline processing. Administrators can choose to block users who exhibit risky behaviors and remediate manually, require a password change, or require a multi-factor authentication as part of their Conditional Access policies.
 
-   - Customers also need to choose the authentication methods that they want to make available for users. It is important to allow more than a single authentication method so that users have a backup method available in case their primary method is unavailable. The methods include: 
+      - Customers also need to choose the authentication methods that they want to make available for users. It is important to allow more than a single authentication method so that users have a backup method available in case their primary method is unavailable. The methods include: 
 
-        - Notification through mobile app
+           - Notification through mobile app
 
-        - Verification code from mobile app
+           - Verification code from mobile app
 
-        - Call to phone
+           - Call to phone
 
-        - Text message to phone
+           - Text message to phone
 
-6. Azure AD Self-Service Password Reset (SSPR) and Azure AD Connect password writeback
+    Azure AD Self-Service Password Reset (SSPR) and Azure AD Connect password writeback
 
-   - SSPR allows users to reset their password in a secure way using the some of the same methods they use for Azure AD Multi-Factor Authentication (there are a few additional options not available with MFA). Enabling SSPR requires selecting at least one of the following options for the authentication methods (it is recommended to choose two or more authentication methods so provide users with more flexibility):
+      - SSPR allows users to reset their password in a secure way using the some of the same methods they use for Azure AD Multi-Factor Authentication (there are a few additional options not available with MFA). Enabling SSPR requires selecting at least one of the following options for the authentication methods (it is recommended to choose two or more authentication methods so provide users with more flexibility):
 
-        - Mobile app notification
+           - Mobile app notification
 
-        - Mobile app code
+           - Mobile app code
 
-        - Email
+           - Email
 
-        - Mobile phone
+           - Mobile phone
 
-        - Office phone
+           - Office phone
 
-        - Security questions
+           - Security questions
 
      Users can only reset their password if they successfully complete required authentication challenges. A new functionality (currently in preview) offers combined registration for Azure MFA and self-service password reset (SSPR).
 
-   - Customers can enable password writeback by using Azure AD Connect, which allows users to reset passwords of their Active Directory accounts by leveraging Azure AD Self-Service Password Reset.
+      - Customers can enable password writeback by using Azure AD Connect, which allows users to reset passwords of their Active Directory accounts by leveraging Azure AD Self-Service Password Reset.
 
-7. Azure AD password protection for Windows Server Active Directory
+    Azure AD password protection for Windows Server Active Directory
 
-   - Azure AD Password Protection for Windows Server Active Directory allows you to eliminate easily guessed passwords, including customizable password list that you can manage directly from the Azure portal. This feature relies on the Azure AD password protection DC agent software. The agent can only validate passwords when it is installed on a domain controller running Windows Server 2012 or newer, and only for password changes that are sent to that domain controller. It is not possible to control which domain controllers are chosen by Windows client machines for processing user password changes. In order to guarantee consistent behavior and universal password protection security enforcement, the DC agent software must be installed on all domain controllers in a domain.
+      - Azure AD Password Protection for Windows Server Active Directory allows you to eliminate easily guessed passwords, including customizable password list that you can manage directly from the Azure portal. This feature relies on the Azure AD password protection DC agent software. The agent can only validate passwords when it is installed on a domain controller running Windows Server 2012 or newer, and only for password changes that are sent to that domain controller. It is not possible to control which domain controllers are chosen by Windows client machines for processing user password changes. In order to guarantee consistent behavior and universal password protection security enforcement, the DC agent software must be installed on all domain controllers in a domain.
 
-   - Azure AD Password Protection for Windows Server Active Directory relies additionally on the Azure AD Password Protection Proxy service, which can be installed on any domain-joined Windows Server 2012 R2 or newer, with .NET 4.7 installed and with connectivity to internet. Its primary purpose is to forward password policy download requests from domain controllers to Azure AD and to return the responses from Azure AD to the DC Agent service running on individual domain controllers.
+      - Azure AD Password Protection for Windows Server Active Directory relies additionally on the Azure AD Password Protection Proxy service, which can be installed on any domain-joined Windows Server 2012 R2 or newer, with .NET 4.7 installed and with connectivity to internet. Its primary purpose is to forward password policy download requests from domain controllers to Azure AD and to return the responses from Azure AD to the DC Agent service running on individual domain controllers.
 
-8. Smart Lockout
+    Smart Lockout
 
-   - Smart lockout can be integrated with hybrid deployments, using password hash sync or pass-through authentication to protect on-premises Active Directory accounts from being locked out by attackers. By setting smart lockout policies in Azure AD appropriately, attacks can be filtered out before they reach on-premises Active Directory.
+      - Smart lockout can be integrated with hybrid deployments, using password hash sync or pass-through authentication to protect on-premises Active Directory accounts from being locked out by attackers. By setting smart lockout policies in Azure AD appropriately, attacks can be filtered out before they reach on-premises Active Directory.
 
-   - When using smart lockout in pass-through authentication scenarios, you need to make sure that:
+      - When using smart lockout in pass-through authentication scenarios, you need to make sure that:
 
-        - The Azure AD lockout threshold is less than the Active Directory account lockout threshold. Set the values so that the Active Directory account lockout threshold is at least two or three times longer than the Azure AD lockout threshold.
+           - The Azure AD lockout threshold is less than the Active Directory account lockout threshold. Set the values so that the Active Directory account lockout threshold is at least two or three times longer than the Azure AD lockout threshold.
 
-        - The Azure AD lockout duration must be set longer than the Active Directory reset account lockout counter after duration. Note that, when using graphical interface tools (Group Policy Management Editor for Active Directory account lockout policy settings and the Azure portal for Smart Lockout settings), the Azure AD duration is set in seconds, while the AD duration is set in minutes.
+           - The Azure AD lockout duration must be set longer than the Active Directory reset account lockout counter after duration. Note that, when using graphical interface tools (Group Policy Management Editor for Active Directory account lockout policy settings and the Azure portal for Smart Lockout settings), the Azure AD duration is set in seconds, while the AD duration is set in minutes.
 
-   - When combined with password hash synchronization, smart lockout keeps track of the last three bad password hashes to avoid incrementing the lockout counter for the same password. This way, if someone enters the same bad password multiple times, this behavior will not cause the account to lockout. However, hash tracking functionality is not available for customers with pass-through authentication enabled as authentication happens on-premises not in the cloud.
+      - When combined with password hash synchronization, smart lockout keeps track of the last three bad password hashes to avoid incrementing the lockout counter for the same password. This way, if someone enters the same bad password multiple times, this behavior will not cause the account to lockout. However, hash tracking functionality is not available for customers with pass-through authentication enabled as authentication happens on-premises not in the cloud.
 
-9.  Azure AD Application Proxy: 
+    Azure AD Application Proxy: 
 
-   - Azure AD provides the ability to access to on-premises web applications by relying on Azure AD Application Proxy via an external URL or an internal application portal. Azure AD Application Proxy offers a single sign-on experience and consistent user interface regardless of the location of the target app. For example, Application Proxy can facilitate access to on-premises line of business (LOB) applications, Office 365, or any other SaaS-based application integrated with Azure AD. Application Proxy works with:
+      - Azure AD provides the ability to access to on-premises web applications by relying on Azure AD Application Proxy via an external URL or an internal application portal. Azure AD Application Proxy offers a single sign-on experience and consistent user interface regardless of the location of the target app. For example, Application Proxy can facilitate access to on-premises line of business (LOB) applications, Office 365, or any other SaaS-based application integrated with Azure AD. Application Proxy works with:
 
-        - Web applications that use Integrated Windows Authentication for authentication
+           - Web applications that use Integrated Windows Authentication for authentication
 
-        - Web applications that use form-based or header-based access
+           - Web applications that use form-based or header-based access
 
-        - Web APIs that you want to expose to rich applications on different devices
+           - Web APIs that you want to expose to rich applications on different devices
 
-        - Applications hosted behind a Remote Desktop Gateway
+           - Applications hosted behind a Remote Desktop Gateway
 
-        - Rich client apps that are integrated with the Active Directory Authentication Library (ADAL)
+           - Rich client apps that are integrated with the Active Directory Authentication Library (ADAL)
 
-   - Azure AD Application Proxy consists of the following components: 
+      - Azure AD Application Proxy consists of the following components: 
 
-        - **Endpoint** represents a URL or an end-user portal via which remote users access the on-premises applications. Such access is first authenticated by Azure AD and then are routed through the Azure AD Application Proxy connector to the on-premises application.
+           - **Endpoint** represents a URL or an end-user portal via which remote users access the on-premises applications. Such access is first authenticated by Azure AD and then are routed through the Azure AD Application Proxy connector to the on-premises application.
 
-        - **Azure AD tenant** performs the authentication of remote users attempting to access on-premises applications.
+           - **Azure AD tenant** performs the authentication of remote users attempting to access on-premises applications.
 
-        - **Application Proxy service** hosted by Azure AD passes the sign-in token from the user to on-premises instances of Application Proxy Connector. 
+           - **Application Proxy service** hosted by Azure AD passes the sign-in token from the user to on-premises instances of Application Proxy Connector. 
 
-        - **Application Proxy Connector** is a lightweight, stateless agent running on an on-premises Windows Server 2012 R2 or newer with direct connectivity to the target application. The server needs to have TLS 1.2 enabled before you install the Application Proxy connector. The connector manages communication between the on-premises application and the Application Proxy service via an outbound, persistent connection, which eliminates dependency on a perimeter network or open inbound ports on perimeter firewalls. In general, connectors can run on a Windows server that is not domain-joined. However, scenarios that require single sign-on (SSO) to applications which rely on Integrated Windows Authentication (IWA), it is necessary to use a domain-joined machine. In such scenarios, the connector machines must be domain-joined in order to perform Kerberos Constrained Delegation on behalf of the users of the published applications. This is one of the requirements that applies to the proposed solution. 
+           - **Application Proxy Connector** is a lightweight, stateless agent running on an on-premises Windows Server 2012 R2 or newer with direct connectivity to the target application. The server needs to have TLS 1.2 enabled before you install the Application Proxy connector. The connector manages communication between the on-premises application and the Application Proxy service via an outbound, persistent connection, which eliminates dependency on a perimeter network or open inbound ports on perimeter firewalls. In general, connectors can run on a Windows server that is not domain-joined. However, scenarios that require single sign-on (SSO) to applications which rely on Integrated Windows Authentication (IWA), it is necessary to use a domain-joined machine. In such scenarios, the connector machines must be domain-joined in order to perform Kerberos Constrained Delegation on behalf of the users of the published applications. This is one of the requirements that applies to the proposed solution. 
 
-        - **Active Directory** performs authentication required to access on-premises applications. In single sign-on scenarios, the connector communicates with Active Directory to authenticate incoming access requests.
+           - **Active Directory** performs authentication required to access on-premises applications. In single sign-on scenarios, the connector communicates with Active Directory to authenticate incoming access requests.
 
-        - **On-premises applications** deliver required functionality to users once their access requests are authenticated.
+           - **On-premises applications** deliver required functionality to users once their access requests are authenticated.
 
-### Assessing resiliency aspects of a hybrid identity solution
 
-**Task:** Assess resiliency aspects of a hybrid identity solution for the customer. 
+*Assessing resiliency aspects of a hybrid identity solution*
 
-1.  Describe provisions that eliminate single points of failure in your design
+1.  What are provisions that eliminate single points of failure in your design?
 
     - The potential single points of failure to consider in a hybrid identity design based on the components incorporated into the proposed solution include the following:
 
@@ -796,7 +781,7 @@ It is important to provision sufficient number of connectors to handle the expec
 
               Note that Azure AD Password Protection Proxy and Application Proxy install different versions of the Microsoft Azure AD Connect Agent Updater service. These different versions are incompatible when installed side by side, so it is not recommended to install Azure AD Password Protection Proxy and Application Proxy side by side on the same machine.
 
-1. Describe failover process for components that operate in the active/passive mode.
+2.  What is the failover process for components that operate in the active/passive mode?
 
    - Network connectivity between Active Directory and Azure Active Directory
 
@@ -818,10 +803,15 @@ It is important to provision sufficient number of connectors to handle the expec
 
        - Application connection requests are dynamically load balanced across all available connectors, so no explicit failover is required. The connectors and the Azure AD Application Proxy service automatically handle all high availability tasks. They can be added or removed dynamically. Each time a new request arrives it is routed to one of currently available connectors. If a connector is temporarily unavailable, it is excluded from request distribution. Connectors also poll the service to determine whether there is a newer version of the connector software and, if one is found, they trigger an automatic update.
 
+*Optimizing authentication configuration*
 
-### Optimizing authentication configuration
+1.  What features will allow to optimize authentication in your solution to satisfy the following customer requirements?
 
-**Task:** Identify features that will allow you to optimize authentication in your solution to satisfy the customer requirements, including:
+-   multi-factor authentication
+
+-   self-service password reset
+
+-   replacing password-based authentication with biometrics-based sign-in
 
    - Multi-Factor Authentication
 
@@ -843,9 +833,13 @@ It is important to provision sufficient number of connectors to handle the expec
 
          For the information regarding other prerequisites and the process of implementing Hybrid Azure AD joined Key Trust Deployment of Windows Hello for Business, refer to *Hybrid Azure AD joined Key Trust Deployment* at <https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-key-trust>.
 
-### Optimizing authorization configuration
+*Optimizing authorization configuration*
 
-**Task:** Identify features that will allow you to optimize authorization in your solution to satisfy the customer requirements, including:
+1.  What features will allow to optimize authorization in your solution to satisfy the following customer requirements?
+
+-   privileged identity management
+
+-   identity protection
 
    - Privileged Identity Management
 
@@ -871,10 +865,19 @@ It is important to provision sufficient number of connectors to handle the expec
 
           Note that Privileged Identity Management requires Azure AD Premium P2 licensing. 
 
+*Optimizing access control and management of applications and devices*
 
-### Optimizing access control and management of applications and devices
+1.  What features will allow to optimize access control and management of applications and devices to satisfy the following customer requirements?
 
-**Task:** Identify features that will allow you to optimize access control and management of applications and devices, including:
+-   mobile device management
+
+-   conditional access
+
+-   remote access to on-premises applications integrated with Active Directory
+
+-   B2B
+
+-   B2C
 
    - Mobile Device Management
 
@@ -912,6 +915,7 @@ It is important to provision sufficient number of connectors to handle the expec
 
          For more information regarding this subject, refer to *Technical and feature overview of Azure Active Directory B2C* at <https://docs.microsoft.com/en-us/azure/active-directory-b2c/technical-overview>
 
+
 ## Checklist of preferred objection handling
 
 1.  Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory. 
@@ -945,7 +949,7 @@ It is important to provision sufficient number of connectors to handle the expec
    - Applications hosted behind a Remote Desktop Gateway
 
    - Rich client apps that are integrated with the Active Directory Authentication Library (ADAL)
-
+ 
 ## Customer quote (to be read back to the attendees at the end)
 
 "Azure AD offers a wide range of new opportunities that will allow us to extend our identity and access management far beyond our existing on-premises Active Directory environment, facilitating support for our remote users and providing secure and easy to manage integration platform for our business partners and customers."
