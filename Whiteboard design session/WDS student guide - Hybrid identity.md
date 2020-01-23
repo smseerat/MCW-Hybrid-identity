@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+﻿![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Hybrid identity
@@ -100,7 +100,7 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 3.  User sing-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
 
-4.  Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
+4.  User device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
 
 5.  Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users' devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
 
@@ -144,7 +144,7 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 5.  Requirements necessary to minimize dependency on passwords in lieu of more secure authentication methods
 
-6.  The approach to allowing different authentication requirements, depending on users' group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry
+6.  The approach to allowing different authentication requirements, depending on users' group membership, state of the user devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry
 
 7.  The approach to providing Contoso and Fabrikam users access to on-premises web applications that rely on Kerberos-based Windows Integrated Authentication
 

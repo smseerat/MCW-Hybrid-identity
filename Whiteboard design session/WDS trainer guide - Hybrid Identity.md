@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+﻿![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Hybrid identity
@@ -226,7 +226,7 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 3.  User sing-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
 
-4.  Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
+4.  User device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
 
 5.  Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users' devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
 
@@ -270,7 +270,7 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 5.  Requirements necessary to minimize dependency on passwords in lieu of more secure authentication methods
 
-6.  The approach to allowing different authentication requirements, depending on users' group membership, state of the users devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry
+6.  The approach to allowing different authentication requirements, depending on users' group membership, state of the user devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry
 
 7.  The approach to providing Contoso and Fabrikam users access to on-premises web applications that rely on Kerberos-based Windows Integrated Authentication
 
@@ -488,7 +488,7 @@ Have the table attendees reconvene with the larger session group to hear a subje
 
 3.  User sing-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
 
-4.  Users device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
+4.  User device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
 
 5.  Control access of users to applications and resources by relying on a combination of multiple conditions, including users group membership, state of the users' devices, and dynamically evaluated risk based on heuristics and globally collected security related telemetry.
 
@@ -774,7 +774,7 @@ In this mode, the sync engine imports and synchronizes data the same way as the 
 
         - Azure AD Password Protection for Windows Server Active Directory
 
-            - The main availability concern for password protection is the availability of proxy servers when the domain controllers in a forest try to download new policies or other data from Azure. Each DC Agent uses a simple round-robin-style algorithm when deciding which proxy server to call. The Agent skips proxy servers that are not responding. For most fully connected Active Directory deployments that have healthy replication of both directory and sysvol folder state, two proxy servers is enough to ensure availability. This results in timely download of new policies and other data. However, you have the option of deploying additional proxy servers.
+            - The main availability concern for password protection is the availability of proxy servers when the domain controllers in a forest try to download new policies or other data from Azure. Each DC Agent uses a simple round-robin-style algorithm when deciding which proxy server to call. The Agent skips proxy servers that are not responding. For most fully connected Active Directory deployments that have healthy replication of both directory and sysvol folder state, two proxy servers are enough to ensure availability. This results in timely download of new policies and other data. However, you have the option of deploying additional proxy servers.
 
               The design of the DC Agent software mitigates the usual problems that are associated with high availability. The DC Agent maintains a local cache of the most recently downloaded password policy. Even if all registered proxy servers become unavailable, the DC Agents continue to enforce their cached password policy. A reasonable update frequency for password policies in a large deployment is usually days, not hours or less. Effectively, brief outages of the proxy servers do not significantly impact Azure AD password protection.
 

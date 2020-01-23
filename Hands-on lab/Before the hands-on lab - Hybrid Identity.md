@@ -64,11 +64,11 @@ Timeframe: 150 minutes
 
 ### Task 2: Validate the role in the Azure subscription
 
-1. Login to the Azure portal at <http://portal.azure.com>, click on **All services** and, in the list of services, click **Subscriptions**.
+1. Login to the Azure portal at <http://portal.azure.com>, select on **All services** and, in the list of services, select **Subscriptions**.
 
-2. On the **Subscriptions** blade, click the name of the subscription you intend to use for this lab.
+2. On the **Subscriptions** blade, select the name of the subscription you intend to use for this lab.
 
-3. On the subscription blade, click **Access control (IAM)**.
+3. On the subscription blade, select **Access control (IAM)**.
 
 4. Review the list of user accounts, and verify that your user account has the Owner or Contributor role assigned to it.
 
@@ -89,11 +89,11 @@ Timeframe: 150 minutes
    
 3. Review the output of the command executed in the previous step and ensure that you have at least 18 available vCPUs in the **Standard DSv3 Family** in the target Azure region.
 
-4. If the number of vCPUs is not sufficient, in the Azure portal, navigate back to the subscription blade, and click **Usage + quotas**. 
+4. If the number of vCPUs is not sufficient, in the Azure portal, navigate back to the subscription blade, and select **Usage + quotas**. 
 
-5. On the subscription's **Usage + quotas** blade, click **Request Increase**.
+5. On the subscription's **Usage + quotas** blade, select **Request Increase**.
 
-6. On the **Basic** blade, specify the following and click **Next**:
+6. On the **Basic** blade, specify the following and select **Next**:
 
     -   Issue type: **Service and subscription limits (quotas)**
 
@@ -103,9 +103,9 @@ Timeframe: 150 minutes
 
     -   Support plan: the name of the support plan associated with the target subscription
 
-7. On the **Details** blade, click the **Provide details** blade. 
+7. On the **Details** blade, select the **Provide details** blade. 
 
-8. On the **Quota details** blade, specify the following and click **Save and continue**:
+8. On the **Quota details** blade, specify the following and select **Save and continue**:
 
     -   Severity: **C - Minimal impact**
 
@@ -117,9 +117,9 @@ Timeframe: 150 minutes
 
     -   SKU family: **DSv3 Series**
 
-9.  On the **Problem** blade, specify the following and click **Next**:
+9.  On the **Problem** blade, specify the following and select **Next**:
 
-10. On the **Contact Information** blade, provide your contact details and click **Create**
+10. On the **Contact Information** blade, provide your contact details and select **Create**
 
    > **Note**: Quota increase requests are typically completed during the same business day.
 
@@ -128,11 +128,11 @@ Timeframe: 150 minutes
 
 1. In the browser window displaying the Azure portal, navigate to <https://github.com/maxskunkworks/TLG/tree/master/tlg-base-config_3-vm>
 
-2. On the **TLG (Test Lab Guide) - 3 VM Base Configuration (v1.0)** page, click **Deploy to Azure**.
+2. On the **TLG (Test Lab Guide) - 3 VM Base Configuration (v1.0)** page, select **Deploy to Azure**.
 
    > **Note**: The 3 VM Base Configuration provisions a Windows Server 2016 Active Directory domain controller named DC1 using the domain name you specify and a domain member server named APP1 running Windows Server 2016. It also offers an option to provision a client VM running Windows 10, however we will not be using it in our lab (primarily due to licensing requirements applicable when running Windows 10 VMs in Azure). The domain member server (APP1) has automatically installed .NET 4.5 and IIS.
 
-3. On the **Custom deployment** blade, specify the following settings, select the checkbox **I agree to the terms and conditions stated above** and click **Purchase**:
+3. On the **Custom deployment** blade, specify the following settings, select the checkbox **I agree to the terms and conditions stated above** and select **Purchase**:
 
     -   Subscription: the name of the target Azure subscription where you want to provision the lab environment Azure VMs
 
@@ -238,13 +238,13 @@ Timeframe: 150 minutes
 
 2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the TechNet Script Center page titled **Create Users/Group for Active Directory Demo/Test Environment** at <https://gallery.technet.microsoft.com/scriptcenter/Create-UsersGroup-for-9ee1de26>.
 
-3. On the **Create Users/Group for Active Directory Demo/Test Environment** page, click the **CreateDemoUsers.ps1** link, accept the licensing terms, and save the corresponding script to the local file system.
+3. On the **Create Users/Group for Active Directory Demo/Test Environment** page, select the **CreateDemoUsers.ps1** link, accept the licensing terms, and save the corresponding script to the local file system.
 
-4. On the **Create Users/Group for Active Directory Demo/Test Environment** page, click the **CreateDemoUsers.csv** link (directly above the PowerShell code section) and save the corresponding csv file to the same location as the **CreateDemoUsers.ps1** file.
+4. On the **Create Users/Group for Active Directory Demo/Test Environment** page, select the **CreateDemoUsers.csv** link (directly above the PowerShell code section) and save the corresponding csv file to the same location as the **CreateDemoUsers.ps1** file.
 
-5. Within the Remote Desktop session to **DC1**, start File Explorer, navigate to the folder where you downloaded both files, right-click on the file **CreateDemoUsers.ps1**, click **Properties**, in the **CreateDemoUsers.ps1 Properties** dialog box, check the **Unblock** checkbox and click **OK.
+5. Within the Remote Desktop session to **DC1**, start File Explorer, navigate to the folder where you downloaded both files, right-click on the file **CreateDemoUsers.ps1**, select **Properties**, in the **CreateDemoUsers.ps1 Properties** dialog box, check the **Unblock** checkbox and select **OK.
 
-6. Within the File Explorer window, right-click on the file **CreateDemoUsers.ps1** again and click **Edit**. 
+6. Within the File Explorer window, right-click on the file **CreateDemoUsers.ps1** again and select **Edit**. 
 
 7. In the **Administrator: Windows PowerShell ISE** window, change line **148** from:
 
