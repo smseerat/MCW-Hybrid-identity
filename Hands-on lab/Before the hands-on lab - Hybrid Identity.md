@@ -1,4 +1,4 @@
-﻿![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+﻿![Microsoft Cloud Workshops logo](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Hybrid identity
@@ -9,7 +9,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-December 2019
+January 2020
 </div>
 
 
@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+© 2020 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -64,7 +64,7 @@ Timeframe: 150 minutes
 
 ### Task 2: Validate the role in the Azure subscription
 
-1. Login to the Azure portal at <http://portal.azure.com>, select on **All services** and, in the list of services, select **Subscriptions**.
+1. Login to the Azure portal at <http://portal.azure.com>, select  **All services** and, in the list of services, select **Subscriptions**.
 
 2. On the **Subscriptions** blade, select the name of the subscription you intend to use for this lab.
 
@@ -97,11 +97,11 @@ Timeframe: 150 minutes
 
     -   Issue type: **Service and subscription limits (quotas)**
 
-    -   Subscription: the name of the Azure subscription you will be using in this lab
+    -   Subscription: the name of the Azure subscription you will be using in this lab.
 
     -   Quota type: **Compute/VM (cores/vCPUs) subscription limit increases**
 
-    -   Support plan: the name of the support plan associated with the target subscription
+    -   Support plan: the name of the support plan associated with the target subscription.
 
 7. On the **Details** blade, select the **Provide details** blade. 
 
@@ -109,24 +109,24 @@ Timeframe: 150 minutes
 
     -   Severity: **C - Minimal impact**
 
-    -   Preferred contact method: choose your preferred option
+    -   Preferred contact method: choose your preferred option.
 
     -   Deployment model: **Resource Manager**
 
-    -   Location: the target Azure region you intend to use in this lab
+    -   Location: the target Azure region you intend to use in this lab.
 
     -   SKU family: **DSv3 Series**
 
 9.  On the **Problem** blade, specify the following and select **Next**:
 
-10. On the **Contact Information** blade, provide your contact details and select **Create**
+10. On the **Contact Information** blade, provide your contact details and select **Create**.
 
    > **Note**: Quota increase requests are typically completed during the same business day.
 
 
 ### Task 4: Deploy the lab environment Azure VMs
 
-1. In the browser window displaying the Azure portal, navigate to <https://github.com/maxskunkworks/TLG/tree/master/tlg-base-config_3-vm>
+1. In the browser window displaying the Azure portal, navigate to: <https://github.com/maxskunkworks/TLG/tree/master/tlg-base-config_3-vm>.
 
 2. On the **TLG (Test Lab Guide) - 3 VM Base Configuration (v1.0)** page, select **Deploy to Azure**.
 
@@ -134,11 +134,11 @@ Timeframe: 150 minutes
 
 3. On the **Custom deployment** blade, specify the following settings, select the checkbox **I agree to the terms and conditions stated above** and select **Purchase**:
 
-    -   Subscription: the name of the target Azure subscription where you want to provision the lab environment Azure VMs
+    -   Subscription: the name of the target Azure subscription where you want to provision the lab environment Azure VMs.
 
     -   Resource group: **hybrididentity-RG**
 
-    -   Location: the name of the Azure region that will host the lab environment Azure VMs
+    -   Location: the name of the Azure region that will host the lab environment Azure VMs.
 
     -   Config Name: **TlgBaseConfig-01**
 
@@ -156,7 +156,7 @@ Timeframe: 150 minutes
 
     -   Vm Size: **Standard_D8s_v3**
 
-    -   Dns Label Prefix: any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long)
+    -   Dns Label Prefix: any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).
 
     -   _artifacts Location: accept the default
 
@@ -236,7 +236,7 @@ Timeframe: 150 minutes
 
     -   Password: **demo\@pass123**
 
-2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the TechNet Script Center page titled **Create Users/Group for Active Directory Demo/Test Environment** at <https://gallery.technet.microsoft.com/scriptcenter/Create-UsersGroup-for-9ee1de26>.
+2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the TechNet Script Center page titled **Create Users/Group for Active Directory Demo/Test Environment** at: <https://gallery.technet.microsoft.com/scriptcenter/Create-UsersGroup-for-9ee1de26>.
 
 3. On the **Create Users/Group for Active Directory Demo/Test Environment** page, select the **CreateDemoUsers.ps1** link, accept the licensing terms, and save the corresponding script to the local file system.
 
