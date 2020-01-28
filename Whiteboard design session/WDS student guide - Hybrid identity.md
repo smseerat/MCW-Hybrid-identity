@@ -205,34 +205,13 @@ Directions: With all participants at your table, respond to the following questi
 
 1.  What features will allow to optimize authentication in your solution to satisfy the following customer requirements?
 
-    -   multi-factor authentication
-
-    -   self-service password reset
-
-    -   replacing password-based authentication with biometrics-based sign-in
-
 *Optimizing authorization configuration*
 
 1.  What features will allow to optimize authorization in your solution to satisfy the following customer requirements?
 
-    -   privileged identity management
-
-    -   identity protection
-
 *Optimizing access control and management of applications and devices*
 
 1.  What features will allow to optimize access control and management of applications and devices to satisfy the following customer requirements?
-
-    -   mobile device management
-
-    -   conditional access
-
-    -   remote access to on-premises applications integrated with Active Directory
-
-    -   B2B
-
-    -   B2C
-
 
 **Prepare**
 
