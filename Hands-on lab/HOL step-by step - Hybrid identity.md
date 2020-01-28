@@ -784,7 +784,7 @@ In this task, you will create and configure Active Directory groups that will be
 
 In this task, you assign a value to the **UsageLocation** attribute of each user account and assign an Azure AD Premium license to each user. This is necessary in order to implement Azure AD-based Multi-Factor Authentication for these users.
 
-1. Within the Remote Desktop session to **DC1**, from the Script pane of the Windows PowerShell ISE window, run the following to install Azure AD Graph PowerShell module for Graph (click **Yes to All** when prompted whether to proceed with the installation):
+1. Within the Remote Desktop session to **DC1**, from the Script pane of the Windows PowerShell ISE window, run the following to install Azure AD Graph PowerShell module for Graph (select **Yes to All** when prompted whether to proceed with the installation):
 
     ```pwsh
     Install-Module AzureAD
@@ -903,7 +903,7 @@ In this task, you will enable password writeback and Self-Service Password Reset
 
 ### Task 5: Implement Azure AD Password Protection for Windows Server Active Directory
 
-In this task, you will implement Azure AD password Protection for Windows Server Active Directory
+In this task, you will implement Azure AD password Protection for Windows Server Active Directory.
 
 1. Within the Remote Desktop session to **DC1**, from the **Server Manager** window, start **Group Policy Management** console. 
 
@@ -931,7 +931,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
     - Enforce custom list: **Yes**
 
-    - Custom banned password list: **Contoso**, **password**, **pass** (type each word on a separate line without commas)
+    - Custom banned password list: **Contoso**, **password**, **pass** (type each word on a separate line without commas).
 
     - Enable password protection on Windows Server Active Directory: **Yes**
 
@@ -960,7 +960,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 16. Switch to the Remote Desktop session to **DC1** virtual machine, where you are signed in as the user **CONTOSO\demouser** with the **demo@pass123** password. 
 
-17. Within the Remote Desktop session to **DC1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at <https://www.microsoft.com/download/details.aspx?id=57071> and download **AzureADPasswordProtectionDCAgentSetup.exe** 
+17. Within the Remote Desktop session to **DC1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at <https://www.microsoft.com/download/details.aspx?id=57071> and download **AzureADPasswordProtectionDCAgentSetup.exe**.
 
 18. Within the Remote Desktop session to **DC1**, start File Explorer, navigate to the download location, and run **Azure AD Password Protection DC Agent Setup** with the default options.
 
@@ -1056,7 +1056,7 @@ In this task, you will enable automatic enrollment of hybrid Azure AD devices in
 
 ### Task 9: Implement Azure AD Conditional Access Policies
 
-In this task, you will implement Azure AD Conditional Access Policies 
+In this task, you will implement Azure AD Conditional Access Policies.
 
 1. Within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Contoso - Overview** blade of the Contoso Azure AD tenant.
 
@@ -1066,15 +1066,15 @@ In this task, you will implement Azure AD Conditional Access Policies
 
 4. On the **Security - Named locations** blade, select **+ New location**.
 
-5. On the **New named location** blade, specify the following settings and select **Create**
+5. On the **New named location** blade, specify the following settings and select **Create**:
 
     - Name: **Contoso Headquarters**
 
     - Define the location using: **IP ranges**
 
-    - Mark as trusted location: enabled
+    - Mark as trusted location: **enabled**
 
-    - IP ranges: the public IP address assigned the APP1 Azure VM in the CIDR notation (i.e. /32)
+    - IP ranges: the public IP address assigned the APP1 Azure VM in the CIDR notation (i.e. /32).
 
     ![In the Azure portal, named location settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Namedlocations.png)
 
@@ -1090,7 +1090,7 @@ In this task, you will implement Azure AD Conditional Access Policies
 
 10. On the **New** blade, in the **Name** text box, type **Contoso Engineering On-Premises Conditional Access Policy**.
 
-11. On the **New** blade, in the **Assignments** section, select **Users and groups**
+11. On the **New** blade, in the **Assignments** section, select **Users and groups**.
 
 12. On the **Users and groups** blade, on the **Include** tab, choose the **Select users and groups** option, select the **Users and groups** checkbox, on the **Select** blade, type **Engineering**, in the list of results, select **Engineering**, and choose **Select**.
 
@@ -1102,13 +1102,13 @@ In this task, you will implement Azure AD Conditional Access Policies
 
 14. Back on the **Users and groups** blade, select **Done**.
 
-15. On the **New** blade, in the **Assignments** section, select **Cloud apps or actions**
+15. On the **New** blade, in the **Assignments** section, select **Cloud apps or actions**.
 
 16. On the **Cloud apps or actions** blade, on the **Include** tab, choose the **Select apps** option, on the **Select** blade, select the **Microsoft Azure Management** checkbox, choose **Select**, and then select **Done**.
 
     ![In the Azure portal, on the Cloud apps or actions blade, on the Include tab, the selected app is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_CloudppsandActionsInclude.png)
 
-   > **Note**: Review the warning stating **Don't lock yourself out! This policy impacts the Azure portal. Before you continue, ensure that you or someone else will be able to get back into the portal. Disregard this warning if you are configuring persistent browser session policy that works correctly only if "All cloud apps" are selected.**
+   > **Note**: Review the warning stating **Don't lock yourself out! This policy impacts the Azure portal. Before you continue, ensure that you or someone else will be able to get back into the portal**. Disregard this warning if you are configuring persistent browser session policy that works correctly only if "All cloud apps" are selected.
 
 18. On the **New** blade, in the **Assignments** section, select **Conditions**.
 
@@ -1132,7 +1132,7 @@ In this task, you will implement Azure AD Conditional Access Policies
 
     ![In the Azure portal, on the Device state (Preview) blade, the settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Devicestate.png)
 
-24. Back on the **Conditions** blade, select **Done**
+24. Back on the **Conditions** blade, select **Done**.
 
 25. Back on the **New** blade, in the **Access controls** section, select **Grant**.
 
@@ -1158,7 +1158,7 @@ In this task, you will implement Azure AD Conditional Access Policies
 
     - Cloud apps or actions: **Microsoft Azure Management**
 
-    - IP address: the public IP address assigned the APP1 Azure VM
+    - IP address: the public IP address assigned the APP1 Azure VM.
 
     - Country: **United States**
 
@@ -1179,7 +1179,7 @@ In this task, you will implement Azure AD Conditional Access Policies
 
 ### Task 10: Implement Azure AD Privileged Identity Management
 
-In this task, you will implement Azure AD Privileged Identity Management
+In this task, you will implement Azure AD Privileged Identity Management.
 
 1. Within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the **All services** blade.
 
@@ -1193,7 +1193,7 @@ In this task, you will implement Azure AD Privileged Identity Management
 
     - **Step 1: How should we contact you?**
 
-        - Authentication phone: select your country or region and specify a mobile phone number you intend to use in this lab
+        - Authentication phone: select your country or region and specify a mobile phone number you intend to use in this lab.
 
         - Method: **Send me a code by text message**
 
@@ -1227,19 +1227,19 @@ In this task, you will implement Azure AD Privileged Identity Management
 
     - **Step 1: How should we contact you?**
 
-        - Authentication phone: select your country or region and specify a mobile phone number you intend to use in this lab
+        - Authentication phone: select your country or region and specify a mobile phone number you intend to use in this lab.
 
         - Method: **Send me a code by text message**
 
     - **Step 2: We've sent a text message to your phone**
 
-        - Use the code in the text message you received, select **Verify**
+        - Use the code in the text message you received, select **Verify**.
 
     - **Step 3: Keep using your existing application**
 
         - Note that you have the option of using **app password** and select **Done**.
 
-   > **Note**: 
+> **Note**:
 
 16. When prompted again to provide additional information, select **Next**, on the **confirm your current password** page, select **re-enter my password**, and, when prompted, provide the password for the Active Directory user account of **Ann G. Ayers**.
 
@@ -1284,12 +1284,12 @@ Duration: 90 minutes
 
 ### Overview
 
-In this exercise, you will configure access to on-premises Integrated Windows Authentication app (implemented as the default IIS web site) from Internet by installing and configuring Azure AD Application Proxy. You will test access to this application by using a Contoso Azure AD tenant user account as well as by using a Fabrikam Azure AD tenant user account configured as a guest account in the Contoso Azure AD tenant. 
+In this exercise, you will configure access to on-premises Integrated Windows Authentication app (implemented as the default IIS web site) from the internet by installing and configuring Azure AD Application Proxy. You will test access to this application by using a Contoso Azure AD tenant user account as well as by using a Fabrikam Azure AD tenant user account configured as a guest account in the Contoso Azure AD tenant. 
 
 
 ### Task 1: Install and configure Azure AD Application Proxy
 
-In this task, you will install and configure Azure AD Application Proxy
+In this task, you will install and configure Azure AD Application Proxy.
 
 1. Within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Contoso - Overview** blade of the Contoso Azure AD tenant.
 
@@ -1322,7 +1322,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 
     - Internal Url: **http://app1.contoso.local**
 
-    - External Url: accept the default value
+    - External Url: accept the default value.
 
     - Pre Authentication: **Azure Active Directory**
 
@@ -1395,11 +1395,11 @@ In this task, you will configure an Azure AD Application Proxy application.
 
 ### Task 3: Test an Azure AD Application Proxy application
 
-1. From the lab computer, start a browser in Private mode and browse to <https://myapps.microsoft.com>
+1. From the lab computer, start a browser in Private mode and browse to <https://myapps.microsoft.com>.
 
 2. When prompted to sign in, use the **AGAyers\@<custom_domain_name>** user name with the **demo@pass123** password (where **<custom_domain_name>** placeholder represents the custom DNS domain name you assigned to the Contoso Azure AD tenant in the first exercise of this lab.
 
-3. When prompted to enter code, type the code which was texted to the mobile phone number that you provided in the previous exercise.
+3. When prompted to enter a code, type the code which was texted to the mobile phone number that you provided in the previous exercise.
 
 4. On the **Apps** page of the **Application Access Panel**, select the **APP1 Default Web Site** icon. This will automatically open a new browser tab displaying the Default Web Site page on APP1.
 
@@ -1410,7 +1410,7 @@ In this task, you will create another Azure Active Directory tenant representing
 
 -   Organization name: **Fabrikam**
 
--   Initial domain name: any valid, unique domain name
+-   Initial domain name: any valid, unique domain name.
 
 -   Country or region: **United States**
 
@@ -1418,7 +1418,7 @@ In this task, you will create another Azure Active Directory tenant representing
 
 2. When prompted, sign into the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises.
 
-3. On the lab computer, in the Azure portal, select **+ Create a resource**
+3. On the lab computer, in the Azure portal, select **+ Create a resource**.
 
 4. On the **New** blade, in the **Search the Marketplace** text box, type **Azure Active Directory** and, in the list of results, select **Azure Active Directory**.
 
@@ -1428,7 +1428,7 @@ In this task, you will create another Azure Active Directory tenant representing
 
     -   Organization name: **Fabrikam**
 
-    -   Initial domain name: any valid, unique domain name
+    -   Initial domain name: any valid, unique domain name.
 
     -   Country or region: **United States**
 
@@ -1438,7 +1438,7 @@ In this task, you will create another Azure Active Directory tenant representing
 
 9.  On the **Fabrikam - Licenses**, blade, select **All Products** and then select **+ Try/Buy**.
 
-10. On the **Activate** blade, in the **ENTERPRISE MOBILITY + SECURITY E5** section, select **Free trial** and then select **Activate**
+10. On the **Activate** blade, in the **ENTERPRISE MOBILITY + SECURITY E5** section, select **Free trial** and then select **Activate**.
 
 
 ### Task 5: Create and configure Azure AD users
@@ -1477,17 +1477,17 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
 
 5. In the **Settings** section, in the **Usage location** drop-down list, select the **United States** entry and select **Save**.
 
-6. On the **Profile** blade of your user account, select **Licenses**
+6. On the **Profile** blade of your user account, select **Licenses**.
 
 7. On the **Licenses** blade, select **+ Assignments**.
 
 8. On the **Update license assignments** blade, enable the **Enterprise Mobility + Security E5** checkbox, ensure that all the corresponding license options are enabled, and select **Save**.
 
-9.  On the **Users - All users** blade, select **+ New user**
+9.  On the **Users - All users** blade, select **+ New user**.
 
 10. On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, and select **Create**:
 
-    - User name: **jane.doe\@*your Azure AD tenant domain name*** where ***your Azure AD tenant domain name*** is the domain name you specified when creating the Fabrikam Azure AD tenant in the previous task
+    - User name: **jane.doe\@*your Azure AD tenant domain name*** where ***your Azure AD tenant domain name*** is the domain name you specified when creating the Fabrikam Azure AD tenant in the previous task.
 
     - Name: **jane.doe**
 
@@ -1515,7 +1515,7 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
 
 11. On the **Users - All users** blade, select the entry representing the newly created user account.
 
-12. On the **jane.doe - Profile** blade, select **Licenses**
+12. On the **jane.doe - Profile** blade, select **Licenses**.
 
 13. On the **jane.doe - Licenses** blade, select **+ Assignments**.
 
@@ -1536,7 +1536,7 @@ In this task, you will create and configure Azure AD guest accounts in the Conto
 
     -  Name: **fabrikam-jane.doe**
 
-    -  User name: the UPN of the jane.doe Fabrikam Azure AD user you created earlier in this exercise
+    -  User name: the UPN of the jane.doe Fabrikam Azure AD user you created earlier in this exercise.
 
     -  First name: **Jane**
 
@@ -1595,7 +1595,7 @@ In this task, you will create and configure Azure AD guest accounts in the Conto
 
 ### Task 7: Configure an Azure AD Application Proxy application for B2B access
 
-In this task, you will configure an Azure AD Application Proxy application for B2B access
+In this task, you will configure an Azure AD Application Proxy application for B2B access.
 
 1. Within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Contoso - Overview** blade of the Contoso Azure AD tenant.
 
@@ -1627,11 +1627,11 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
     - Redirect URI (Optional): **Web** and **https://loopback**
 
-11. You will be automatically redirected to the **Sync B2B users** blade
+11. You will be automatically redirected to the **Sync B2B users** blade.
 
 12. On the **Sync B2B users** blade, select **API permissions**. 
 
-13. On the **Sync B2B users - API permissions** blade, in the **Configured permissions** section, select **+ Add a permission**
+13. On the **Sync B2B users - API permissions** blade, in the **Configured permissions** section, select **+ Add a permission**.
 
 14. On the **Request API permission** blade, switch to the **APIs my organization uses** tab, in the search text box, type **Windows Azure Active Directory**, in the list of results, select **Windows Azure Active Directory**, and then select **Application permissions**.
 
@@ -1705,7 +1705,7 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
 ### Task 8: Test an Azure AD Application Proxy application
 
-1. From the lab computer, start a browser in Private mode and browse to <https://myapps.microsoft.com>
+1. From the lab computer, start a browser in Private mode and browse to <https://myapps.microsoft.com>.
 
 2. When prompted, sign in by using the **jane.doe** Fabrikam Azure AD user account. 
 
@@ -1716,7 +1716,7 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
 ### Summary
 
-In this exercise, you configured access to on-premises Integrated Windows Authentication app (implemented as the default IIS web site) from Internet by installing and configuring Azure AD Application Proxy. You also tested access to this application by using a Contoso Azure AD tenant user account as well as by using a Fabrikam Azure AD tenant user account configured as a guest account in the Contoso Azure AD tenant. 
+In this exercise, you configured access to on-premises Integrated Windows Authentication app (implemented as the default IIS web site) from the internet by installing and configuring Azure AD Application Proxy. You also tested access to this application by using a Contoso Azure AD tenant user account as well as by using a Fabrikam Azure AD tenant user account configured as a guest account in the Contoso Azure AD tenant. 
 
 ## Lab summary
 
@@ -1728,4 +1728,7 @@ Duration: 20 Minutes
 
 ### Task 1: Delete resources
 
-1. Now that the HOL is complete, go ahead and delete all of the Resource Groups created for this HOL. You will no longer need those resources, and it will be beneficial to clean up your Azure Subscription. In addition, remove the verified domain from the Contoso Azure AD tenant. 
+1. Now that the HOL is complete, go ahead and delete all of the Resource Groups created for this HOL. You will no longer need those resources, and it will be beneficial to clean up your Azure Subscription. In addition, remove the verified domain from the Contoso Azure AD tenant.
+
+You should follow all steps provided *after* attending the Hands-on lab.
+
