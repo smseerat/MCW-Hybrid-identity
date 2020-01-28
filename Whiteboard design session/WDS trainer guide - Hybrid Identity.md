@@ -281,9 +281,9 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 ### Infographic for common scenarios
 
-![Azure AD hybrid identity password-hash synchronization.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image2.png) "Azure AD hybrid identity password-hash synchronization")
-![Azure AD hybrid identity pass-through authentication.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image3.png) "Azure AD hybrid identity pass-through authentication")
-![Azure AD hybrid identity federation.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image4.png) "Azure AD hybrid identity federation")
+![Azure AD hybrid identity password-hash synchronization.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image2.png)
+![Azure AD hybrid identity pass-through authentication.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image3.png)
+![Azure AD hybrid identity federation.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image4.png)
 
 ## Step 2: Design a proof of concept solution
 
