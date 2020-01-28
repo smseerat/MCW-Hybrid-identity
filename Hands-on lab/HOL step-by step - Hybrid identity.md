@@ -1,4 +1,4 @@
-﻿![Microsoft Cloud Workshops icon](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+﻿![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Hybrid identity
@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-December 2019
+January 2020
 </div>
 
 
@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-2019 Microsoft Corporation. All rights reserved.
+2020 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -32,7 +32,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Overview](#overview)
   - [Solution architecture](#solution-architecture)
   - [Exercise 1: Integrate an Active Directory forest with an Azure Active Directory tenant](#exercise-1-integrate-an-active-directory-forest-with-an-azure-active-directory-tenant)
-    - [Overview](#overview-1)
     - [Task 1: Create an Azure Active Directory tenant and activate an EMS E5 trial](#task-1-create-an-azure-active-directory-tenant-and-activate-an-ems-e5-trial)
     - [Task 2: Create and configure Azure AD users](#task-2-create-and-configure-azure-ad-users)
     - [Task 3: Purchase a custom domain name](#task-3-purchase-a-custom-domain-name)
@@ -44,9 +43,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 9: Initiate and verify directory synchronization](#task-9-initiate-and-verify-directory-synchronization)
     - [Task 10: Configure Hybrid Azure AD join](#task-10-configure-hybrid-azure-ad-join)
     - [Task 11: Perform Hybrid Azure AD join](#task-11-perform-hybrid-azure-ad-join)
-    - [Summary](#summary)
   - [Exercise 2: Manage Authentication, Authorization, and Access Control in Hybrid Scenarios](#exercise-2-manage-authentication-authorization-and-access-control-in-hybrid-scenarios)
-    - [Overview](#overview-2)
     - [Task 1: Create Active Directory groups](#task-1-create-active-directory-groups)
     - [Task 2: Assign EMS E5 licenses to Azure AD users](#task-2-assign-ems-e5-licenses-to-azure-ad-users)
     - [Task 3: Enable Azure AD Multi-Factor Authentication](#task-3-enable-azure-ad-multi-factor-authentication)
@@ -57,9 +54,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 8: Enable Enterprise-State-Roaming](#task-8-enable-enterprise-state-roaming)
     - [Task 9: Implement Azure AD Conditional Access Policies](#task-9-implement-azure-ad-conditional-access-policies)
     - [Task 10: Implement Azure AD Privileged Identity Management](#task-10-implement-azure-ad-privileged-identity-management)
-    - [Summary](#summary-1)
   - [Exercise 3: Configure application access in hybrid scenarios](#exercise-3-configure-application-access-in-hybrid-scenarios)
-    - [Overview](#overview-3)
     - [Task 1: Install and configure Azure AD Application Proxy](#task-1-install-and-configure-azure-ad-application-proxy)
     - [Task 2: Configure an Azure AD Application Proxy application](#task-2-configure-an-azure-ad-application-proxy-application)
     - [Task 3: Test an Azure AD Application Proxy application](#task-3-test-an-azure-ad-application-proxy-application)
@@ -68,8 +63,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 6: Create and configure Azure AD guest user and group accounts](#task-6-create-and-configure-azure-ad-guest-user-and-group-accounts)
     - [Task 7: Configure an Azure AD Application Proxy application for B2B access](#task-7-configure-an-azure-ad-application-proxy-application-for-b2b-access)
     - [Task 8: Test an Azure AD Application Proxy application](#task-8-test-an-azure-ad-application-proxy-application)
-    - [Summary](#summary-2)
-  - [Lab summary](#lab-summary)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Delete resources](#task-1-delete-resources)
 
@@ -91,9 +84,9 @@ From the architectural standpoint, the deployment will consist of the following 
 
 -   "On-premises" Active Directory environment consisting of a single domain controller (DC1) and one domain member server (APP1), running Windows Server 2016 operating system. 
 
--   Contoso Azure AD tenant.
+-   Contoso Azure AD tenant
 
--   Fabrikam Azure AD tenant.
+-   Fabrikam Azure AD tenant
 
     ![High level architecture consisting of the on-premises environment represented by a rectangle on the left-hand side, two cloud outlines representing the Azure AD tenant of Contoso and Fabrikam on the right-hand side, and the Microsoft Intune icon in the middle. The on-premises environment contains an icon representing Active Directory domain controllers, providing such functionality as Azure AD Connect-based synchronization with attribute level filtering and password writeback, Azure AD Application Proxy with its on-premises connector, Service Connection Point for Hybrid Azure AD join, and Password Protection DC Agent. There is also a web server icon, representing the hybrid Azure AD joined server hosting the APP1 application, used also as the Password Application Proxy. The Contoso Azure AD tenant provides such functionality as Azure AD application proxy, My Apps portal, Automatic Intune enrollment, Enterprise State Roaming, Conditional Access, Azure AD Identity Protection, Azure AD Privileged Identity Management, Azure AD MFA, and Self-Service Password Reset.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/HOL_Architecture_Overview.png)
 
@@ -111,7 +104,7 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
 -   Organization name: **Contoso**
 
--   Initial domain name: any valid, unique domain name
+-   Initial domain name: any valid, unique domain name.
 
 -   Country or region: **United States**
 
@@ -119,7 +112,7 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
 2. When prompted, sign into the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises.
 
-3. On the lab computer, in the Azure portal, select **+ Create a resource**
+3. On the lab computer, in the Azure portal, select **+ Create a resource**.
 
 4. On the **New** blade, in the **Search the Marketplace** text box, type **Azure Active Directory** and, in the list of results, select **Azure Active Directory**.
 
@@ -129,7 +122,7 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
     -   Organization name: **Contoso**
 
-    -   Initial domain name: any valid, unique domain name
+    -   Initial domain name: any valid, unique domain name.
 
     -   Country or region: **United States**
 
@@ -186,11 +179,11 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
 
 8. On the **Update license assignments** blade, enable the **Enterprise Mobility + Security E5** checkbox, ensure that all the corresponding license options are enabled, and select **Save**.
 
-9.  On the **Users - All users** blade, select **+ New user**
+9.  On the **Users - All users** blade, select **+ New user**.
 
 10. On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, and select **Create**:
 
-    - User name: **john.doe\@*your Azure AD tenant domain name*** where ***your Azure AD tenant domain name*** is the domain name you specified when creating the Contoso Azure AD tenant
+    - User name: **john.doe\@*your Azure AD tenant domain name*** where ***your Azure AD tenant domain name*** is the domain name you specified when creating the Contoso Azure AD tenant.
 
     - Name: **john.doe**
 
@@ -218,7 +211,7 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
 
 11. On the **Users - All users** blade, select the entry representing the newly created user account.
 
-12. On the **john.doe - Profile** blade, select **Licenses**
+12. On the **john.doe - Profile** blade, select **Licenses**.
 
 13. On the **john.doe - Licenses** blade, select **+ Assignments**.
 
@@ -231,7 +224,7 @@ In this task, you will purchase a custom DNS domain name by leveraging the funct
 
 1. From the lab computer, in the browser displaying the Azure portal, verify that you are signed in to the Azure AD tenant associated with the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises. If not, select the **Directory + Subscription** icon in the toolbar of the Azure portal (to the right of the **Cloud Shell** icon) to switch to the correct Azure AD tenant. 
 
-2. In the Azure portal, select **+ Create a resource**
+2. In the Azure portal, select **+ Create a resource**.
 
 3. On the **New** blade, in the **Search the Marketplace** text box, type **Web App** and, in the list of results, select **Web App**.
 
@@ -239,11 +232,11 @@ In this task, you will purchase a custom DNS domain name by leveraging the funct
 
 5. On the **Basics** tab of the **Web App** blade, specify the following settings and select **Next: Monitoring**:
 
-    - Subscription: the name of the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises
+    - Subscription: the name of the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises.
 
-    - Resource Group: the name of a new resource group **contosohilab-RG**
+    - Resource Group: the name of a new resource group **contosohilab-RG**.
 
-    - Name: any valid, globally unique name
+    - Name: any valid, globally unique name.
     
     - Publish: **Code**
 
@@ -251,11 +244,11 @@ In this task, you will purchase a custom DNS domain name by leveraging the funct
 
     - Operating system: **Windows**
 
-    - Region: any Azure region in which you can create Azure Web Apps in the target subscription
+    - Region: any Azure region in which you can create Azure Web Apps in the target subscription.
 
-    - App Service plan: accept the default
+    - App Service plan: accept the default.
 
-    - Sku and size: **Shared D1**
+    - SKU and size: **Shared D1**
   
 6. On the **Monitoring** tab of the **Web App** blade, specify the following setting and select **Review + create**:
 
@@ -265,7 +258,7 @@ In this task, you will purchase a custom DNS domain name by leveraging the funct
 
 8. In the Azure portal, navigate to the blade of the newly provisioned Azure web app and select **Custom domains**.
 
-9.  On the **Custom domains** blade, select **+ Buy Domain**
+9.  On the **Custom domains** blade, select **+ Buy Domain**.
 
 10. On the **App Service Domain** blade, in the **Search for domain** text box, type the domain name you want to purchase and select the checkbox next to one of the available domain names listed below.
 
@@ -314,7 +307,7 @@ In this task, you will assign a newly purchased custom DNS domain name to the Co
 
     - TTL unit: **Hours**
 
-    - Value: the value of **DESTINATION OR POINTS TO ADDRESS** entry you identified on the custom domain name blade
+    - Value: the value of **DESTINATION OR POINTS TO ADDRESS** entry you identified on the custom domain name blade.
 
 13. Switch back to the browser window displaying the custom domain name blade and select **Verify**.
 
@@ -375,7 +368,7 @@ In this task, you will install Azure AD Connect.
 
 6. If presented with the **Welcome to Microsoft Azure** dialog box, select **Maybe later**. 
 
-7. in the Azure portal, search for **Azure Directory** and use the search results to navigate to the **Contoso - Overview** blade.
+7. In the Azure portal, search for **Azure Directory** and use the search results to navigate to the **Contoso - Overview** blade.
 
 8. On the **Contoso - Overview** blade, select **Azure AD Connect**.
 
@@ -549,7 +542,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     ![On the description page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_DescriptionCatchAll.png)
 
-10. On the **Scoping filer** page, select **Next**
+10. On the **Scoping filer** page, select **Next**.
 
     ![On the scoping filter page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_ScopingFilterCatchAll.png)
 
@@ -604,7 +597,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
 14. In the Azure portal, navigate to the **Contoso - Azure AD Connect** blade and review its settings. Verify Azure AD Connect Sync Status (enabled), Last Sync timestamp, Password Hash Sync (disabled), as well as the user sign-in configuration (Federation disabled, Seamless single sign-on enabled for 1 domain, and Pass-through authentication enabled with 1 agent).
 
-   > **Note**: In a production environment, you would install additional agents for redundancy. For more information, refer to <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-pta-quick-start>
+   > **Note**: In a production environment, you would install additional agents for redundancy. For more information, refer to <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-pta-quick-start>.
 
 
 ### Task 10: Configure Hybrid Azure AD join
@@ -637,7 +630,7 @@ In this task, you will configure Azure AD Connect device synchronization options
 
 12. On the **Configuration complete** page verify that the task completed successfully and select **Exit**.
 
-   > **Note**: For more information regarding configuring hybrid Azure Active Directory join for managed domains, refer to <https://docs.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-managed-domains#configure-hybrid-azure-ad-join>
+   > **Note**: For more information regarding configuring hybrid Azure Active Directory join for managed domains, refer to <https://docs.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-managed-domains#configure-hybrid-azure-ad-join>.
 
 
 ### Task 11: Perform Hybrid Azure AD join
@@ -726,7 +719,7 @@ In this task, you will configure Azure AD Connect device synchronization options
 
    > **Note**: You might need to wait until the Azure AD registration status is correctly reported and its Azure AD object appears in the Azure portal.
 
-    ![In the Azure portal, on the Devices - All devices blade, an entry representing the APP1 server is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/APP1_HybridAzureADjoined.png)
+   ![In the Azure portal, on the Devices - All devices blade, an entry representing the APP1 server is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/APP1_HybridAzureADjoined.png)
 
 
 ### Summary
@@ -891,7 +884,7 @@ In this task, you will enable password writeback and Self-Service Password Reset
 
 12. On the **Contoso - Overview** blade, select **Password reset**. 
 
-13. On the **Password reset - Properties** blade, set **Self-service password reset enabled** to **Selected**, select **Select group**, on the **Default password reset policy**, select **Engineering**, select **Select**, and select **Save**.
+13. On the **Password reset - Properties** blade, set **Self-service password reset enabled** to **Selected**, choose **Select group**, on the **Default password reset policy**, select **Engineering**, choose **Select**, and select **Save**.
 
 14. On the **Password reset - Properties** blade, select **Authentication methods**.
 
@@ -901,7 +894,7 @@ In this task, you will enable password writeback and Self-Service Password Reset
 
 17. Set **Number of security questions required to register** and **Number of questions required to reset** to **3**. 
 
-18. Select **Select security questions**, on the **Select security questions** blade, select **+ Predefined**, on the **Add predefined security questions** blade, select any 5 questions, select **OK** twice, and, back on the **Password reset - Authentication methods** blade, select **Save**.
+18. Choose **Select security questions**, on the **Select security questions** blade, select **+ Predefined**, on the **Add predefined security questions** blade, select any 5 questions, select **OK** twice, and, back on the **Password reset - Authentication methods** blade, select **Save**.
 
 19. On the **Password reset - Authentication methods**, select **Registration** and ensure that **Require users to register when signing in** is set to **Yes** and that **Number of days before users are asked to re-confirm their authentication information** is set to **180**.
 
@@ -998,15 +991,15 @@ In this task, you will enable Azure AD Identity Protection
 
 10. On the **Azure AD Identity Protection - MFA registration policy** blade, in the **Assignments** section, select **Users**. 
 
-11. On the **Users** blade, on the **Include** blade, select **Select individual users and groups**, select **Select users**, on the **Select users** blade, in the **Select** text box, type **Engineering**, in the list of results, select **Engineering** and select **Select**.
+11. On the **Users** blade, on the **Include** blade, choose **Select individual users and groups**, then **Select users**, on the **Select users** blade, in the **Select** text box, type **Engineering**, in the list of results, select **Engineering** and choose **Select**.
 
     ![In the Azure portal, on the Include tab of the Users blade, the group included in the scope of the MFA registration policy is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_MFAregistrationpolicy_UsersInclude.png)
 
-12. On the **Users** blade, on the **Exclude** blade, select **Select excluded users**, on the **Select users** blade, in the **Select** text box, type **Engineering - Mandatory MFA**, in the list of results, select **Engineering - Mandatory MFA**, select **Select**, and, back on the **Users** blade, select **Done**.
+12. On the **Users** blade, on the **Exclude** blade, choose **Select excluded users**, on the **Select users** blade, in the **Select** text box, type **Engineering - Mandatory MFA**, in the list of results, select **Engineering - Mandatory MFA**, choose **Select**, and, back on the **Users** blade, select **Done**.
 
     ![In the Azure portal, on the Exclude tab of the Users blade, the group excluded from the scope of the MFA registration policy is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_MFAregistrationpolicy_UsersExclude.png)
 
-13. Back on the **Azure AD Identity Protection - MFA registration policy** blade, in the **Controls** section, select **Access**, on the **Access** blade, ensure that the **Require Azure MFA registration** is selected, and select **Select**.
+13. Back on the **Azure AD Identity Protection - MFA registration policy** blade, in the **Controls** section, select **Access**, on the **Access** blade, ensure that the **Require Azure MFA registration** is selected, and choose **Select**.
 
 14. Back on the **Azure AD Identity Protection - MFA registration policy** blade, set **Enforce Policy** to **On** and select **Save**
 
@@ -1093,17 +1086,17 @@ In this task, you will implement Azure AD Conditional Access Policies
 
 8. Navigate back to the **Security - Getting started** blade and select **Conditional Access**.
 
-9.  On the **Conditional Access - Policies** blade, select **+ New policy**
+9.  On the **Conditional Access - Policies** blade, select **+ New policy**.
 
 10. On the **New** blade, in the **Name** text box, type **Contoso Engineering On-Premises Conditional Access Policy**.
 
 11. On the **New** blade, in the **Assignments** section, select **Users and groups**
 
-12. On the **Users and groups** blade, on the **Include** tab, choose the **Select users and groups** option, select the **Users and groups** checkbox, on the **Select** blade, type **Engineering**, in the list of results, select **Engineering**, and select **Select**.
+12. On the **Users and groups** blade, on the **Include** tab, choose the **Select users and groups** option, select the **Users and groups** checkbox, on the **Select** blade, type **Engineering**, in the list of results, select **Engineering**, and choose **Select**.
 
     ![In the Azure portal, on the Users and groups blade, on the Include tab, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_UsersandGroupsInclude.png)
 
-13. On the **Users and groups** blade, on the **Exclude** tab, choose the **Select users and groups** option, select the **Users and groups** checkbox, on the **Select** blade, type **Engineering**, in the list of results, select **Engineering - Mandatory MFA**, and select **Select**.
+13. On the **Users and groups** blade, on the **Exclude** tab, choose the **Select users and groups** option, select the **Users and groups** checkbox, on the **Select** blade, type **Engineering**, in the list of results, select **Engineering - Mandatory MFA**, and choose **Select**.
 
     ![In the Azure portal, on the Users and groups blade, on the Exclude tab, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_UsersandGroupsExclude.png)
 
@@ -1111,7 +1104,7 @@ In this task, you will implement Azure AD Conditional Access Policies
 
 15. On the **New** blade, in the **Assignments** section, select **Cloud apps or actions**
 
-16. On the **Cloud apps or actions** blade, on the **Include** tab, choose the **Select apps** option, on the **Select** blade, select the **Microsoft Azure Management** checkbox, select **Select**, and then select **Done**.
+16. On the **Cloud apps or actions** blade, on the **Include** tab, choose the **Select apps** option, on the **Select** blade, select the **Microsoft Azure Management** checkbox, choose **Select**, and then select **Done**.
 
     ![In the Azure portal, on the Cloud apps or actions blade, on the Include tab, the selected app is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_CloudppsandActionsInclude.png)
 
@@ -1119,15 +1112,15 @@ In this task, you will implement Azure AD Conditional Access Policies
 
 18. On the **New** blade, in the **Assignments** section, select **Conditions**.
 
-19. On the **Conditions** blade, select **Sign-in risk**, set **Configure** to **Yes**, enable the **No risk** checkboxes, and select **Select**.
+19. On the **Conditions** blade, select **Sign-in risk**, set **Configure** to **Yes**, enable the **No risk** checkboxes, and choose **Select**.
 
     ![In the Azure portal, on the Sign-in risk blade, the settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_SigninRisk.png)
 
-20. Back on the **Conditions** blade, select **Device platforms**, on the **Device platforms** blade, set **Configure** to **Yes**, on the **Include** tab, select **Select device platforms**, enable the **Windows** checkbox, and select **Done**.
+20. Back on the **Conditions** blade, select **Device platforms**, on the **Device platforms** blade, set **Configure** to **Yes**, on the **Include** tab, choose **Select device platforms**, enable the **Windows** checkbox, and select **Done**.
 
     ![In the Azure portal, on the Device platforms blade, the settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_DevicePlatforms.png)
 
-21. Back on the **Conditions** blade, select **Locations**, on the **Locations** blade, set **Configure** to **Yes**, on the **Include** tab, select **Selected locations**, select **Select**, on the **Select** blade, enable the **Contoso Headquarters** checkbox, select **Select**, and then, on the **Locations** blade, select **Done**.
+21. Back on the **Conditions** blade, select **Locations**, on the **Locations** blade, set **Configure** to **Yes**, on the **Include** tab, choose **Selected locations**, then **Select**, on the **Select** blade, enable the **Contoso Headquarters** checkbox, choose **Select**, and then, on the **Locations** blade, select **Done**.
 
     ![In the Azure portal, on the Locations blade, the settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Locations.png)
 
@@ -1143,7 +1136,7 @@ In this task, you will implement Azure AD Conditional Access Policies
 
 25. Back on the **New** blade, in the **Access controls** section, select **Grant**.
 
-26. On the **Grant** blade, ensure that the **Grant access** option is selected, enable the checkbox **Require Hybrid Azure AD joined device**, accept the default choice of **Require all the selected controls** for multiple controls, and select **Select**.
+26. On the **Grant** blade, ensure that the **Grant access** option is selected, enable the checkbox **Require Hybrid Azure AD joined device**, accept the default choice of **Require all the selected controls** for multiple controls, and choose **Select**.
 
     > **Note**: Review the warning **Don't lock yourself out! Make sure that your device is Hybrid Azure AD Joined**.
 
