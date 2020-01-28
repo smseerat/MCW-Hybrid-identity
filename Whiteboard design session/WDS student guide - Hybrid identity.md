@@ -1,4 +1,4 @@
-﻿![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+﻿![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Hybrid identity
@@ -9,7 +9,7 @@ Whiteboard design session student guide
 </div>
 
 <div class="MCWHeader3">
-December 2019
+January 2020
 </div>
 
 
@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+© 2020 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -68,37 +68,37 @@ Directions:  With all participants in the session, the facilitator/SME presents 
 
 Contoso is a medium size financial services company with its headquarters in New York and a branch office in San Francisco. It is currently operating entirely on-premises, with majority of its infrastructure running on the Windows platform. 
 
-Contoso is facing some challenges related to increased mobility of its workforce. In particular, in order to drive down its office space costs, Contoso management is considering implementing a flexible work arrangement policy which would allow its employees to work on designated days from home, using either corporate- and employee-owned devices. However, the Contoso's Information Security team expressed concerns about insufficient controls that would prevent access from unauthorized or non-compliant systems. In addition, there are concerns regarding using traditional VPN technologies or DirectAccess, which tend to provide excessive access to on-promises infrastructure. 
+Contoso is facing some challenges related to increased mobility of its workforce. In particular, in order to drive down its office space costs, Contoso management is considering implementing a flexible work arrangement policy which would allow its employees to work on designated days from home, using either corporate- and employee-owned devices. However, the Contoso's Information Security team expressed concerns about insufficient controls that would prevent access from unauthorized or non-compliant systems. In addition, there are concerns regarding using traditional VPN technologies or DirectAccess, which tend to provide excessive access to on-premises infrastructure. 
  
 **Existing Contoso Active Directory environment**
 
 Contoso has a single domain Active Directory forest which was implemented over a decade ago. The domain was assigned a non-routable DNS name contoso.local. While the Directory Services team considered renaming the domain, this has never been implemented due to potential negative implications of such change. Contoso does own a publicly routable DNS domain name contoso.com.
 
-Contoso has recently upgraded its Active Directory environment to Windows Server 2016 and it is in the process of migrating its desktops from Windows 7 to Windows 10. Majority of servers are running either Windows Server 2012 R2 or Windows Server 2016. 
+Contoso has recently upgraded its Active Directory environment to Windows Server 2016 and it is in the process of migrating its desktops from Windows 7 to Windows 10. The majority of their servers are running either Windows Server 2012 R2 or Windows Server 2016. 
 
 **Customer objectives**
 
-Contoso is exploring the option of transitioning its operations into a more Internet-open model which would facilitate support for mobile workforce and integration with business partners, while, at the same time, support current security and manageability controls. Given its current environment, which is heavily dependent on Active Directory and undergoes migration to Windows 10 devices, Contoso intends to evaluate Azure Active Directory and Microsoft Intune as potential identity and management components of the target design.
+Contoso is exploring the option of transitioning its operations into a more internet-open model which would facilitate support for mobile workforce and integration with business partners, while, at the same time, support current security and manageability controls. Given its current environment, which is heavily dependent on Active Directory and undergoes migration to Windows 10 devices, Contoso intends to evaluate Azure Active Directory and Microsoft Intune as potential identity and management components of the target design.
 
 The identity component of the target design should facilitate step-up authentication and per-application permissions based not only on the properties of users' accounts but also on the state of these users' devices. To maximize security, Contoso wants to minimize or even eliminate persistent assignments of privileged roles for identity management, but, at the same time, such arrangement must account for break-glass scenarios, allowing for a non-gated emergency use of privileged accounts. For obvious reasons, such accounts need to be closely monitored and audited.
  
 Another Information Security concern is accidental exposure of users' passwords. Contoso would like to minimize their use in lieu of more secure authentication methods. In situations where passwords are required, users should also be able to both change and reset them without having to rely on HelpDesk services. At the same time, any on-premises Active Directory user account restrictions, such as allowed sign-in hours must be honored. Similarly, the existing Active Directory password policies must apply, although the head of Information Security would like to enhance them by preventing use of common terms within password values.
  
-Besides enhancing self-service user capabilities, Contoso wants to optimize end-user experience, especially in environment where users might be using several different devices. The user-defined settings, such as accessibility or app customization should be consistent across all devices.
+Besides enhancing self-service user capabilities, Contoso wants to optimize end-user experience, especially in environments where users might be using several different devices. The user-defined settings, such as accessibility or app customization should be consistent across all devices.
  
 In addition, Contoso needs to expand its customer base through partnership with other financial institutions and providing direct access to its services to external clients. As part of this effort, Contoso established business relationship with Fabrikam, which manages an extensive portfolio of mortgage related products. Contoso intends to provide Fabrikam with access to its internal Windows Integrated Authentication-based web applications that could be integrated with the existing Fabrikam's products. The access methodology needs to account for the fact that in recent years, Fabrikam has modernized its technology and moved its operations almost entirely to Microsoft Azure.
  
-To facilitate the expansion of customer base, Contoso started developing a number of applications intended to be available both via web and from mobile devices. Historically, such applications were hosted in on-premises data centers and relied on an internally developed identity management product. Going forward, Contoso wants to minimize the effort managing customer identities.
+To facilitate the expansion of their customer base, Contoso started developing a number of applications intended to be available both via web and from mobile devices. Historically, such applications were hosted in on-premises data centers, and relied on an internally developed identity management product. Going forward, Contoso wants to minimize the effort managing customer identities.
 
-The management team of Contoso, including its CIO, Andrew Cross emphasized the need for resiliency and Service Level Agreements associated with each of the identity-related components that are part of the target design. At the same time, they are also interested in minimizing additional infrastructure requirements to implement the design.
+The management team of Contoso, including its CIO, Andrew Cross, emphasized the need for resiliency and Service Level Agreements associated with each of the identity-related components that are part of the target design. At the same time, they are also interested in minimizing additional infrastructure requirements to implement the design.
 
 ### Customer needs 
 
-1.  Remote users must be able to sign in to their devices by using their Active Directory credentials.
+1.  Remote users must be able to sign in to their devices using their Active Directory credentials.
 
 2.  Existing Active Directory user sign-in hours and password policies must be preserved (although allowed password values could be further restricted). 
 
-3.  User sing-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
+3.  User sign-in experience should be simplified by minimizing the number of sign-in prompts and limiting the use passwords in lieu of more secure authentication methods. 
 
 4.  User device configuration should be simplified by leveraging a mobile device management solution and roaming user-specific settings across multiple devices.
 
@@ -123,7 +123,7 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 
 1.  Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory.
 
-2.  We have heard that it is not possible to run simultaneously multiple instance of Azure AD Connect. All identity services components in our environment must provide resiliency and support failover.
+2.  We have heard that it is not possible to run multiple instance of Azure AD Connect simultaneously. All identity services components in our environment must provide resiliency and support failover.
 
 3.  If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
 
@@ -156,7 +156,9 @@ The management team of Contoso, including its CIO, Andrew Cross emphasized the n
 ### Infographic for common scenarios
 
 ![Azure AD hybrid identity password-hash synchronization.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image2.png) "Azure AD hybrid identity password-hash synchronization")
+
 ![Azure AD hybrid identity pass-through authentication.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image3.png) "Azure AD hybrid identity pass-through authentication")
+
 ![Azure AD hybrid identity federation.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image4.png) "Azure AD hybrid identity federation")
 
 ## Step 2: Design a proof of concept solution
@@ -203,33 +205,33 @@ Directions: With all participants at your table, respond to the following questi
 
 1.  What features will allow to optimize authentication in your solution to satisfy the following customer requirements?
 
--   multi-factor authentication
+    -   multi-factor authentication
 
--   self-service password reset
+    -   self-service password reset
 
--   replacing password-based authentication with biometrics-based sign-in
+    -   replacing password-based authentication with biometrics-based sign-in
 
 *Optimizing authorization configuration*
 
 1.  What features will allow to optimize authorization in your solution to satisfy the following customer requirements?
 
--   privileged identity management
+    -   privileged identity management
 
--   identity protection
+    -   identity protection
 
 *Optimizing access control and management of applications and devices*
 
 1.  What features will allow to optimize access control and management of applications and devices to satisfy the following customer requirements?
 
--   mobile device management
+    -   mobile device management
 
--   conditional access
+    -   conditional access
 
--   remote access to on-premises applications integrated with Active Directory
+    -   remote access to on-premises applications integrated with Active Directory
 
--   B2B
+    -   B2B
 
--   B2C
+    -   B2C
 
 
 **Prepare**
