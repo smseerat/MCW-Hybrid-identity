@@ -150,13 +150,13 @@ Timeframe: 150 minutes
 
     -   Admin Password: **demo@pass123**
 
-    -   Deploy Client Vm: **No**
+    -   Deploy Client VM: **No**
 
-    -   Client Vhd Uri: leave blank
+    -   Client VHD URI: leave blank
 
-    -   Vm Size: **Standard_D8s_v3**
+    -   VM Size: **Standard_D8s_v3**
 
-    -   Dns Label Prefix: any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).
+    -   DNS Label Prefix: any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).
 
     -   _artifacts Location: accept the default
 
