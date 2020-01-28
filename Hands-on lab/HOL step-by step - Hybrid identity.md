@@ -1239,13 +1239,9 @@ In this task, you will implement Azure AD Privileged Identity Management.
 
         - Note that you have the option of using **app password** and select **Done**.
 
-> **Note**:
-
 16. When prompted again to provide additional information, select **Next**, on the **confirm your current password** page, select **re-enter my password**, and, when prompted, provide the password for the Active Directory user account of **Ann G. Ayers**.
 
 17. When prompted, type the code sent to the mobile phone you specified previously and select **Verify**.
-
-   > **Note**: 
 
 18. On the **don't lose access to your account!** page, select **Verify** next to the **Authentication Phone** entry and then select **text me**. Next, type the code send to your mobile phone and select **verify**.
 
@@ -1374,7 +1370,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 
     - Delegated Login Identity: **User principal name**
 
-   > **Note**: The HTTP service class is one of the built-in services that act as an alias to the HOST SPN. For more information, refer to **How to use SPNs when you configure Web applications that are hosted on Internet Information Services** at <https://support.microsoft.com/en-us/help/929650/how-to-use-spns-when-you-configure-web-applications-that-are-hosted-on> and 
+   > **Note**: The HTTP service class is one of the built-in services that act as an alias to the HOST SPN. For more information, refer to **How to use SPNs when you configure Web applications that are hosted on Internet Information Services** at <https://support.microsoft.com/en-us/help/929650/how-to-use-spns-when-you-configure-web-applications-that-are-hosted-on>
 
 13. Within the Remote Desktop session to **DC1**, in the Server Manager console, select **Tools** and then select **Active Directory Users and Computers**. 
 
