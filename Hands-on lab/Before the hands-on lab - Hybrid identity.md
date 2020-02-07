@@ -32,11 +32,10 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Before the hands-on lab](#before-the-hands-on-lab)
     - [Task 1: Review the relevant Microsoft documentation](#task-1-review-the-relevant-microsoft-documentation)
     - [Task 2: Validate the role in the Azure subscription](#task-2-validate-the-role-in-the-azure-subscription)
-    - [Task 3: Validate sufficient number of vCPU cores](#task-3-validate-sufficient-number-of-vcpu-cores)
-    - [Task 4: Deploy the lab environment Azure VMs](#task-4-deploy-the-lab-environment-azure-vms)
-    - [Task 5: Configure the lab environment Azure VMs](#task-5-configure-the-lab-environment-azure-vms)
-    - [Task 6: Restart the Azure VMs](#task-6-restart-the-azure-vms)
-    - [Task 7: Configure contoso.local Active Directory](#task-7-configure-contosolocal-active-directory)
+    - [Task 3: Deploy the lab environment Azure VMs](#task-3-deploy-the-lab-environment-azure-vms)
+    - [Task 4: Configure the lab environment Azure VMs](#task-4-configure-the-lab-environment-azure-vms)
+    - [Task 5: Restart the Azure VMs](#task-5-restart-the-azure-vms)
+    - [Task 6: Configure contoso.local Active Directory](#task-6-configure-contosolocal-active-directory)
 
 <!-- /TOC -->
 
@@ -64,7 +63,9 @@ Timeframe: 150 minutes
 
 ### Task 2: Validate the role in the Azure subscription
 
-1. Login to the Azure portal at <http://portal.azure.com>, select  **All services** and, in the list of services, select **Subscriptions**.
+1. Login to the Azure portal at <http://portal.azure.com>, select  **All services**. Then search for and select **Subscriptions**.
+
+     ![](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectSubscriptions.png)
 
 2. On the **Subscriptions** blade, select the name of the subscription you intend to use for this lab.
 
@@ -73,58 +74,7 @@ Timeframe: 150 minutes
 4. Review the list of user accounts, and verify that your user account has the Owner or Contributor role assigned to it.
 
 
-### Task 3: Validate sufficient number of vCPU cores
-
-1. In the Azure Portal, start a PowerShell session in Cloud Shell. 
-
-    > **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
-
-2. In the Azure portal, in the **Cloud Shell**, at the PowerShell prompt, run the following: where `<Azure_region>` designates the target Azure region that you intend to use for this lab (e.g. `eastus`):
-
-    ```
-    Get-AzVMUsage -Location eastus | Where-Object {$_.Name.Value -eq 'StandardDSv3Family'}
-    ``` 
-
-    > **Note**: To identify the names of Azure regions, in the **Cloud Shell**, at the Bash prompt, run `(Get-AzLocation).Location`
-   
-3. Review the output of the command executed in the previous step and ensure that you have at least 18 available vCPUs in the **Standard DSv3 Family** in the target Azure region.
-
-4. If the number of vCPUs is not sufficient, in the Azure portal, navigate back to the subscription blade, and select **Usage + quotas**. 
-
-5. On the subscription's **Usage + quotas** blade, select **Request Increase**.
-
-6. On the **Basic** blade, specify the following and select **Next**:
-
-    -   Issue type: **Service and subscription limits (quotas)**
-
-    -   Subscription: the name of the Azure subscription you will be using in this lab.
-
-    -   Quota type: **Compute/VM (cores/vCPUs) subscription limit increases**
-
-    -   Support plan: the name of the support plan associated with the target subscription.
-
-7. On the **Details** blade, select the **Provide details** blade. 
-
-8. On the **Quota details** blade, specify the following and select **Save and continue**:
-
-    -   Severity: **C - Minimal impact**
-
-    -   Preferred contact method: choose your preferred option.
-
-    -   Deployment model: **Resource Manager**
-
-    -   Location: the target Azure region you intend to use in this lab.
-
-    -   SKU family: **DSv3 Series**
-
-9.  On the **Problem** blade, specify the following and select **Next**:
-
-10. On the **Contact Information** blade, provide your contact details and select **Create**.
-
-   > **Note**: Quota increase requests are typically completed during the same business day.
-
-
-### Task 4: Deploy the lab environment Azure VMs
+### Task 3: Deploy the lab environment Azure VMs
 
 1. In the browser window displaying the Azure portal, navigate to: <https://github.com/maxskunkworks/TLG/tree/master/tlg-base-config_3-vm>.
 
@@ -136,7 +86,7 @@ Timeframe: 150 minutes
 
     -   Subscription: the name of the target Azure subscription where you want to provision the lab environment Azure VMs.
 
-    -   Resource group: **hybrididentity-RG**
+    -   Resource group: (Create new) **hybrididentity-RG**
 
     -   Location: the name of the Azure region that will host the lab environment Azure VMs.
 
@@ -154,7 +104,9 @@ Timeframe: 150 minutes
 
     -   Client VHD URI: leave blank
 
-    -   VM Size: **Standard_D8s_v3**
+    -   VM Size: **Standard_D2s_v3**
+   
+    **Note**: Use a similar VM size if your subscription does not support the listed size. Documentation is linked here. <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes>
 
     -   DNS Label Prefix: any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).
 
@@ -162,14 +114,16 @@ Timeframe: 150 minutes
 
     -   _artifacts Location Sas Token: leave blank
 
+    ![](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DeploymentConfig.png)
+
 4. Wait for the deployment to complete. This might take about 60 minutes.
 
 
-### Task 5: Configure the lab environment Azure VMs
+### Task 4: Configure the lab environment Azure VMs
 
 1. In the browser window displaying the Azure portal, navigate to the **DC1** Azure VM and connect to it via Remote Desktop. When prompted, sign in by using the following credentials:
 
-    -   Username: **CONTOSO\\demouser**
+    -   Username: **demouser**
 
     -   Password: **demo\@pass123**
 
@@ -182,6 +136,10 @@ Timeframe: 150 minutes
     Invoke-Command -ComputerName $vmNames {Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}" -Name "IsInstalled" -Value 0}
     Invoke-Command -ComputerName $vmNames {Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "ConsentPromptBehaviorAdmin" -Value 00000000}
     ```
+
+    **Note:** To run multiple PowerShell scripts in the same file, you can highlight a specific script and click **Run Selection** next to the green play button. 
+
+    ![](images/Hands-onlabstep-bystep-HybridIdentityImages/media/PSScript.png)
 
 3.  Within the **Windows PowerShell ISE** window  add the following script to the script pane, and run it to install Remote Server Administration Tools on both **DC1* and **APP1** Azure VMs:
 
@@ -213,7 +171,7 @@ Timeframe: 150 minutes
     Invoke-Command -ComputerName $vmNames {Set-WebConfigurationProperty -Filter "/system.webServer/security/authentication/windowsAuthentication" -Name Enabled -Value True -PSPath IIS:\ -Location "Default Web Site"}
     ```
 
-### Task 6: Restart the Azure VMs
+### Task 5: Restart the Azure VMs
 
 1. Within the **Windows PowerShell ISE** window, from the console pane, run the following to restart **APP1**:
 
@@ -228,19 +186,21 @@ Timeframe: 150 minutes
     Restart-Computer -ComputerName 'DC1'
     ```
 
-### Task 7: Configure contoso.local Active Directory
+### Task 6: Configure contoso.local Active Directory
 
-1. Connect again to **DC1** Azure VM via Remote Desktop. When prompted, sign in by using the following credentials:
+1. Connect again to the **DC1** Azure VM via Remote Desktop. When prompted, sign in by using the following credentials:
 
-    -   Username: **CONTOSO\\demouser**
+    -   Username: **demouser**
 
     -   Password: **demo\@pass123**
 
-2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the TechNet Script Center page titled **Create Users/Group for Active Directory Demo/Test Environment** at: <https://gallery.technet.microsoft.com/scriptcenter/Create-UsersGroup-for-9ee1de26>.
+2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the TechNet Script Center page titled **Create Users/Group for Active Directory Demo/Test Environment** linked here. <https://gallery.technet.microsoft.com/scriptcenter/Create-UsersGroup-for-9ee1de26>
 
 3. On the **Create Users/Group for Active Directory Demo/Test Environment** page, select the **CreateDemoUsers.ps1** link, accept the licensing terms, and save the corresponding script to the local file system.
 
 4. On the **Create Users/Group for Active Directory Demo/Test Environment** page, select the **CreateDemoUsers.csv** link (directly above the PowerShell code section) and save the corresponding csv file to the same location as the **CreateDemoUsers.ps1** file.
+
+    ![](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SaveCSVFile.png)
 
 5. Within the Remote Desktop session to **DC1**, start File Explorer, navigate to the folder where you downloaded both files, right-click on the file **CreateDemoUsers.ps1**, select **Properties**, in the **CreateDemoUsers.ps1 Properties** dialog box, check the **Unblock** checkbox and select **OK.
 
@@ -257,7 +217,7 @@ Timeframe: 150 minutes
     $UserCount = 2500 #Up to 2500 can be created
     ```
 
-8. In the **Windows PowerShell ISE** window, save the change and run the **CreateDemoUsers.ps1** script it to create a lab environment organizational unit hierarchy and populate it with test user accounts. 
+8. In the **Windows PowerShell ISE** window, save the change and run the **CreateDemoUsers.ps1** script to create a lab environment organizational unit hierarchy and populate it with test user accounts. 
 
 9.  Within the **Windows PowerShell ISE** window, add the following script to the script pane, and run it to modify settings of the AD user accounts you will use in this lab to **demo@pass123**:
 
