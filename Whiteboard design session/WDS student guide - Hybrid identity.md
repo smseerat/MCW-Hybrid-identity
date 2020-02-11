@@ -116,8 +116,7 @@ The management team of Contoso, including its CIO, Andrew Cross, emphasized the 
 
 11.  Resiliency must be maximized whenever possible.
 
-12.  Infrastructure requirements must be minimized
-
+12.  Infrastructure requirements must be minimized.
 
 ### Customer objections 
 
