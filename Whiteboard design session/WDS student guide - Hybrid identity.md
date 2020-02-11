@@ -9,7 +9,7 @@ Whiteboard design session student guide
 </div>
 
 <div class="MCWHeader3">
-January 2020
+February 2020
 </div>
 
 
@@ -68,7 +68,7 @@ Directions:  With all participants in the session, the facilitator/SME presents 
 
 Contoso is a medium size financial services company with its headquarters in New York and a branch office in San Francisco. It is currently operating entirely on-premises, with majority of its infrastructure running on the Windows platform. 
 
-Contoso is facing some challenges related to increased mobility of its workforce. In particular, in order to drive down its office space costs, Contoso management is considering implementing a flexible work arrangement policy which would allow its employees to work on designated days from home, using either corporate- and employee-owned devices. However, the Contoso's Information Security team expressed concerns about insufficient controls that would prevent access from unauthorized or non-compliant systems. In addition, there are concerns regarding using traditional VPN technologies or DirectAccess, which tend to provide excessive access to on-premises infrastructure. 
+Contoso is facing challenges related to increased mobility of its workforce. In particular, in order to drive down its office space costs, Contoso management is considering implementing a flexible work arrangement policy which would allow its employees to work on designated days from home, using either corporate- and employee-owned devices. However, the Contoso's Information Security team expressed concerns about insufficient controls that would prevent access from unauthorized or non-compliant systems. In addition, there are concerns regarding using traditional VPN technologies or DirectAccess, which tend to provide excessive access to on-premises infrastructure. 
  
 **Existing Contoso Active Directory environment**
 
@@ -94,7 +94,7 @@ The management team of Contoso, including its CIO, Andrew Cross, emphasized the 
 
 ### Customer needs 
 
-1.  Remote users must be able to sign in to their devices using their Active Directory credentials.
+1.  Remote users must be able to sign into their devices using their Active Directory credentials.
 
 2.  Existing Active Directory user sign-in hours and password policies must be preserved (although allowed password values could be further restricted). 
 
