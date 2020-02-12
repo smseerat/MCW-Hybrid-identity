@@ -1,4 +1,4 @@
-﻿![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+﻿![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Hybrid identity
@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-December 2019
+February 2020
 </div>
 
 
@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+© 2020 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -44,7 +44,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Step 3: Present the solution](#step-3-present-the-solution)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
-- [Hybrid Identity whiteboard design session trainer guide](#hybrid-identity-whiteboard-design-session-trainer-guide)
+- [Hybrid identity whiteboard design session trainer guide](#hybrid-identity-whiteboard-design-session-trainer-guide)
     - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
     - [Step 3: Present the solution](#step-3-present-the-solution-1)
@@ -194,13 +194,13 @@ Directions:  With all participants in the session, the facilitator/SME presents 
 
 Contoso is a medium size financial services company with its headquarters in New York and a branch office in San Francisco. It is currently operating entirely on-premises, with majority of its infrastructure running on the Windows platform. 
 
-Contoso is facing some challenges related to increased mobility of its workforce. In particular, in order to drive down its office space costs, Contoso management is considering implementing a flexible work arrangement policy which would allow its employees to work on designated days from home, using either corporate- and employee-owned devices. However, the Contoso's Information Security team expressed concerns about insufficient controls that would prevent access from unauthorized or non-compliant systems. In addition, there are concerns regarding using traditional VPN technologies or DirectAccess, which tend to provide excessive access to on-premises infrastructure. 
+Contoso is facing challenges related to increased mobility of its workforce. In particular, in order to drive down its office space costs, Contoso management is considering implementing a flexible work arrangement policy which would allow its employees to work on designated days from home, using either corporate- and employee-owned devices. However, the Contoso's Information Security team expressed concerns about insufficient controls that would prevent access from unauthorized or non-compliant systems. In addition, there are concerns regarding using traditional VPN technologies or DirectAccess, which tend to provide excessive access to on-premises infrastructure. 
  
 **Existing Contoso Active Directory environment**
 
 Contoso has a single domain Active Directory forest which was implemented over a decade ago. The domain was assigned a non-routable DNS name contoso.local. While the Directory Services team considered renaming the domain, this has never been implemented due to potential negative implications of such change. Contoso does own a publicly routable DNS domain name contoso.com.
 
-Contoso has recently upgraded its Active Directory environment to Windows Server 2016 and it is in the process of migrating its desktops from Windows 7 to Windows 10. The majority of their servers are running either Windows Server 2012 R2 or Windows Server 2016. 
+Contoso has recently upgraded its Active Directory environment to Windows Server 2016 and it is in the process of migrating its desktops from Windows 7 to Windows 10. The majority of their servers are running either Windows Server 2012 R2 or Windows Server 2016.  
 
 **Customer objectives**
 
@@ -220,7 +220,7 @@ The management team of Contoso, including its CIO, Andrew Cross, emphasized the 
 
 ### Customer needs 
 
-1.  Remote users must be able to sign in to their devices using their Active Directory credentials.
+1.  Remote users must be able to sign into their devices using their Active Directory credentials.
 
 2.  Existing Active Directory user sign-in hours and password policies must be preserved (although allowed password values could be further restricted). 
 
@@ -242,8 +242,7 @@ The management team of Contoso, including its CIO, Andrew Cross, emphasized the 
 
 11.  Resiliency must be maximized whenever possible.
 
-12.  Infrastructure requirements must be minimized
-
+12.  Infrastructure requirements must be minimized.
 
 ### Customer objections 
 
@@ -397,7 +396,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Azure Active Directory B2C documentation | <https://docs.microsoft.com/en-us/azure/active-directory-b2c/>  |
 
 
-# Hybrid Identity whiteboard design session trainer guide
+# Hybrid identity whiteboard design session trainer guide
 
 ## Step 1: Review the customer case study
 
@@ -463,7 +462,7 @@ Have the table attendees reconvene with the larger session group to hear a subje
 
 *Requirements Recap*
 
-1.  Remote users must be able to sign in to their devices by using their Active Directory credentials.
+1.  Remote users must be able to sign into their devices by using their Active Directory credentials.
 
 2.  Existing Active Directory user sign-in hours and password policies must be preserved (although allowed password values could be further restricted). 
 
@@ -494,9 +493,9 @@ Have the table attendees reconvene with the larger session group to hear a subje
 
     The solution illustrates a wide range of benefits of implementing the hybrid identity model. In the current state:
 
-      - Contoso is using a single-domain Active Directory forest using a non-routable DNS domain name
+      - Contoso is using a single-domain Active Directory forest using a non-routable DNS domain name.
 
-      - Contoso has not implemented any cloud-based services, including an Azure AD tenant and an Azure subscription
+      - Contoso has not implemented any cloud-based services, including an Azure AD tenant and an Azure subscription.
 
     Implementing the hybrid identity model will allows Contoso to take advantage of such technologies and capabilities as: 
 
@@ -564,7 +563,7 @@ Have the table attendees reconvene with the larger session group to hear a subje
 
       - Another authentication option facilitated by Azure AD Connect is based on federation, which allows for enforcing on-premises AD password policies and restrictions when authenticating Azure AD accounts, but it has a significantly larger infrastructure footprint and it is relatively complex to configure and operate. Unlike the first two, it also supports third-party multifactor authentication (including smartcards), but that was not stipulated as one of Contoso's requirements.
 
-      - In order to minimize the use of passwords, Contoso will implement Windows Hello for Business. Windows Hello for Business replaces passwords with strong two-factor authentication on Windows 10 devices. This authentication consists of a new type of user credential that is tied to a device and uses a biometric or PIN. Windows Hello for Business lets user authenticate to an Active Directory or Azure Active Directory account. In hybrid deployments, Windows Hello for Business can leverage Hybrid Azure AD joined computers, so Contoso will start by configuring Hybrid Azure AD join for its on-premises computers. Considering that Contoso is not planning on using federated authentication, this implies the choice of Windows Hello for Business hybrid key trust deployment model. For more information regarding this topic, refer to *Configure Device Registration for Hybrid key trust Windows Hello for Business* at <https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-key-trust-devreg>
+      - In order to minimize the use of passwords, Contoso will implement Windows Hello for Business. Windows Hello for Business replaces passwords with strong two-factor authentication on Windows 10 devices. This authentication consists of a new type of user credential that is tied to a device and uses a biometric or PIN. Windows Hello for Business lets users authenticate to an Active Directory or Azure Active Directory account. In hybrid deployments, Windows Hello for Business can leverage Hybrid Azure AD joined computers, so Contoso will start by configuring Hybrid Azure AD join for its on-premises computers. Considering that Contoso is not planning on using federated authentication, this implies the choice of Windows Hello for Business hybrid key trust deployment model. For more information regarding this topic, refer to *Configure Device Registration for Hybrid key trust Windows Hello for Business* at <https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-key-trust-devreg>.
 
 *Implementing a hybrid identity solution*
 
@@ -749,7 +748,7 @@ deploy additional domain controllers of the on-premises Active Directory domain 
             - In order to facilitate provisions that require eliminating single points of failure, in regard to the Azure AD Connect synchronization engine, customers have the option of deploying an additional server hosting the sync engine operating in the staging mode (this is one of the options available directly from the installation wizard interface).
 In this mode, the sync engine imports and synchronizes data the same way as the active instance, but it does not export anything to Azure AD or AD. Since a server in the staging mode continues to receive changes from Active Directory and Azure AD, it can quickly take over the responsibilities of a failed active server. Password sync and password writeback features of Azure AD Connect are disabled while in staging mode. 
 
-        - Azure AD Connect passthrough authentication agent
+        - Azure AD Connect pass-through authentication agent
 
             - For pass-through authentication, you can install two or more (three are recommended) lightweight Authentication Agents on your on-premises computers running Windows Servers 2012 R2 or newer with TLS 1.2 enabled. Installing multiple Pass-through Authentication Agents ensures high availability, but not deterministic load balancing between the Authentication Agents. To determine how many Authentication Agents you need for your tenant, consider the peak and average load of sign-in requests that you expect to see on your tenant. A single Authentication Agent can handle typically between 300 to 400 authentications per second on a standard 4-core CPU, 16-GB RAM server. 
 
@@ -762,9 +761,9 @@ In this mode, the sync engine imports and synchronizes data the same way as the 
         - Azure AD Application Proxy connector
 
             - Customers should deploy two or more connectors and organize them into connector groups, with each group handling traffic to specific applications. Connector groups not only provide high availability but also facilitate improving latency when accessing applications hosted in different regions, since it is possible to create location-based connector groups to serve only local applications.
-It is important to provision sufficient number of connectors to handle the expected volume of application traffic. It is recommended that each connector group has at least two connectors to provide high availability and scale. Having three connectors accounts for maintenance windows necessary to service servers hosting the connectors. For details regarding sizing of the servers hosting connectors, refer to *Understand Azure AD Application Proxy connectors* at <https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/application-proxy-connectors>
+It is important to provision sufficient number of connectors to handle the expected volume of application traffic. It is recommended that each connector group has at least two connectors to provide high availability and scale. Having three connectors accounts for maintenance windows necessary to service servers hosting the connectors. For details regarding sizing of the servers hosting connectors, refer to *Understand Azure AD Application Proxy connectors* at <https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/application-proxy-connectors>.
 
-              Note that Azure AD Password Protection Proxy and Application Proxy install different versions of the Microsoft Azure AD Connect Agent Updater service. These different versions are incompatible when installed side by side, so it is not recommended to install Azure AD Password Protection Proxy and Application Proxy side by side on the same machine.
+              **Note**:  Azure AD Password Protection Proxy and Application Proxy install different versions of the Microsoft Azure AD Connect Agent Updater service. These different versions are incompatible when installed side by side, so it is not recommended to install Azure AD Password Protection Proxy and Application Proxy side by side on the same machine.
 
 2.  What is the failover process for components that operate in the active/passive mode?
 
@@ -792,113 +791,113 @@ It is important to provision sufficient number of connectors to handle the expec
 
 1.  What features will allow you to optimize authentication in your solution to satisfy the following customer requirements?
 
--   multi-factor authentication
+    - multi-factor authentication
 
--   self-service password reset
+    - self-service password reset
 
--   replacing password-based authentication with biometrics-based sign-in
+    - replacing password-based authentication with biometrics-based sign-in
 
-   - Multi-Factor Authentication
+    - Multi-Factor Authentication
 
-       - Azure Multi-Factor Authentication (MFA) helps safeguard access to data and applications. It provides an additional layer of security using a second form of authentication. MFA can be used in combination with Conditional Access and Azure AD Identity Protection. It is also an essential part of configuring Self-Service Password Reset (SSPR). 
+      - Azure Multi-Factor Authentication (MFA) helps safeguard access to data and applications. It provides an additional layer of security using a second form of authentication. MFA can be used in combination with Conditional Access and Azure AD Identity Protection. It is also an essential part of configuring Self-Service Password Reset (SSPR). 
 
-   - Self-Service Password Reset
+    - Self-Service Password Reset
+    
+      - Self-Service Password Reset (SSPR) allows users to reset their password in a secure way using the same methods they use for multi-factor authentication. Combining Self-Service Password Reset with password writeback that can be enabled by using Azure AD Connect allows users to reset passwords of their Active Directory accounts.
 
-       - Self-Service Password Reset (SSPR) allows users to reset their password in a secure way using the same methods they use for multi-factor authentication. Combining Self-Service Password Reset with password writeback that can be enabled by using Azure AD Connect allows users to reset passwords of their Active Directory accounts.
+    - Windows Hello for Business
 
-   - Windows Hello for Business
+      - In Windows 10, you can use Windows Hello for Business to replace passwords with strong two-factor authentication. This authentication consists of a new type of user credential that is tied to a device and uses a biometric or PIN. Windows Hello for Business lets user authenticate to an Active Directory or Azure Active Directory account.
 
-       - In Windows 10, you can use Windows Hello for Business to replace passwords with strong two-factor authentication. This authentication consists of a new type of user credential that is tied to a device and uses a biometric or PIN. Windows Hello for Business lets user authenticate to an Active Directory or Azure Active Directory account.
+        While Windows Hello for Business can be implemented exclusively in on-premises environments, its deployment can be simplified by leveraging Azure AD and Azure AD Connect in hybrid scenarios. Considering that one of design objectives in our proposed solution was minimizing infrastructure footprint, the recommended approach in this case is to use Hybrid Azure AD joined Key Trust Deployment, which can be implemented in combination with Azure AD pass-through authentication (eliminating the need for federation servers). 
 
-         While Windows Hello for Business can be implemented exclusively in on-premises environments, its deployment can be simplified by leveraging Azure AD and Azure AD Connect in hybrid scenarios. Considering that one of design objectives in our proposed solution was minimizing infrastructure footprint, the recommended approach in this case is to use Hybrid Azure AD joined Key Trust Deployment, which can be implemented in combination with Azure AD pass-through authentication (eliminating the need for federation servers). 
+        **Note**: Windows Hello for Business with a key does not support RDP. RDP does not support authentication with a key or a self-signed certificate. RDP with Windows Hello for Business is supported with certificate-based deployments.
 
-         Note that Windows Hello for Business with a key does not support RDP. RDP does not support authentication with a key or a self-signed certificate. RDP with Windows Hello for Business is supported with certificate-based deployments.
+        One of the prerequisites for implementing Hybrid Azure AD joined Key Trust Deployment of Windows Hello for Business is registration of Windows 10 client devices in Azure Active Directory. In the proposed solution, this is performed by leveraging the functionality of Azure AD Connect, which starting with version 1.1.819.0, includes a wizard that significantly simplifies the registration process. The wizard configures the Active Directory service connection points (SCPs) for device registration.
 
-         One of the prerequisites for implementing Hybrid Azure AD joined Key Trust Deployment of Windows Hello for Business is registration of Windows 10 client devices in Azure Active Directory. In the proposed solution, this is performed by leveraging the functionality of Azure AD Connect, which starting with version 1.1.819.0, includes a wizard that significantly simplifies the registration process. The wizard configures the Active Directory service connection points (SCPs) for device registration.
-
-         For the information regarding other prerequisites and the process of implementing Hybrid Azure AD joined Key Trust Deployment of Windows Hello for Business, refer to *Hybrid Azure AD joined Key Trust Deployment* at <https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-key-trust>.
+        For the information regarding other prerequisites and the process of implementing Hybrid Azure AD joined Key Trust Deployment of Windows Hello for Business, refer to *Hybrid Azure AD joined Key Trust Deployment* at <https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-key-trust>.
 
 *Optimizing authorization configuration*
 
 1.  What features will allow to optimize authorization in your solution to satisfy the following customer requirements?
 
--   privileged identity management
+    - Privileged Identity Management
 
--   identity protection
+    - identity protection
 
-   - Privileged Identity Management
+    - Privileged Identity Management
 
-       - Azure AD Privileged Identity Management (PIM) is a service that facilitates managing, controlling, and monitoring access to cloud resources, including Azure AD, Azure, and other Microsoft Online Services, such as Office 365 and Microsoft Intune.
+      - Azure AD Privileged Identity Management (PIM) is a service that facilitates managing, controlling, and monitoring access to cloud resources, including Azure AD, Azure, and other Microsoft Online Services, such as Office 365 and Microsoft Intune.
 
-       - Privileged Identity Management provides time-based and approval-based role activation to mitigate the risks of excessive, unnecessary, or misused access permissions on cloud resources, including the following capabilities:
+      - Privileged Identity Management provides time-based and approval-based role activation to mitigate the risks of excessive, unnecessary, or misused access permissions on cloud resources, including the following capabilities:
 
-            - Provide just-in-time privileged access to Azure AD and Azure resources
+        - Provide just-in-time privileged access to Azure AD and Azure resources
 
-            - Assign time-bound access to resources
+        - Assign time-bound access to resources
 
-            - Require approval to activate privileged roles
+        - Require approval to activate privileged roles
 
-            - Enforce multi-factor authentication to activate any role
+        - Enforce multi-factor authentication to activate any roles
+        
+        - Ensure that a rationale is provided as part of elevation approval process 
 
-            - Ensure that a rationale is provided as part of elevation approval process 
+        - Configure notifications triggered by activation of privileged roles
 
-            - Configure notifications triggered by activation of privileged roles
+        - Facilitate access reviews to validate whether users still are eligible for role assignment or elevation
 
-            - Facilitate access reviews to validate whether users still are eligible for role assignment or elevation
+        - Track elevation events
 
-            - Track elevation events
-
-          Note that Privileged Identity Management requires Azure AD Premium P2 licensing. 
+          **Note**: Privileged Identity Management requires Azure AD Premium P2 licensing. 
 
 *Optimizing access control and management of applications and devices*
 
 1.  What features will allow optimization of access control and management of applications and devices to satisfy the following customer requirements?
 
--   Mobile device management
+    - Mobile device management
 
--   Conditional access
+    - Conditional access
 
--   Remote access to on-premises applications integrated with Active Directory
+    - Remote access to on-premises applications integrated with Active Directory
 
--   B2B
+    - B2B
 
--   B2C
+    - B2C
 
-   - Mobile Device Management
+    - Mobile Device Management
 
-       - With a growing number of Windows 10 devices, Contoso will need a mobile device management solution, such as Microsoft Intune, that integrates with the proposed hybrid identity model. Microsoft Intune leverages Azure AD as its identity provider and supports automatic enrollment as devices are joined to Azure AD. It provides a wide range of device and application management features, including configuration and compliance policies, software deployment, remote administration, and support for multi-identity (which separates corporate and personal data).
+      - With a growing number of Windows 10 devices, Contoso will need a mobile device management solution, such as Microsoft Intune, that integrates with the proposed hybrid identity model. Microsoft Intune leverages Azure AD as its identity provider and supports automatic enrollment as devices are joined to Azure AD. It provides a wide range of device and application management features, including configuration and compliance policies, software deployment, remote administration, and support for multi-identity (which separates corporate and personal data).
 
-         Microsoft Intune licensing is included in the Enterprise Mobility + Security (EMS) suite (along with the Azure AD Premium P2 licensing). 
+        Microsoft Intune licensing is included in the Enterprise Mobility + Security (EMS) suite (along with the Azure AD Premium P2 licensing). 
 
-   - Azure AD Conditional Access
+    - Azure AD Conditional Access
 
-       - As mentioned earlier, Azure AD Conditional Access policy allows customers to restrict access to resources that integrate with Azure AD based on a wide range of criteria, including Azure AD group membership, target resource, device platform and state (such as Hybrid Azure AD join), network location, client application being used to access the resource, sign-in risk (evaluated by relying on Azure AD Identity Protection), and device compliance (evaluated by using Microsoft Intune compliance policies).
+      - As mentioned earlier, Azure AD Conditional Access policy allows customers to restrict access to resources that integrate with Azure AD based on a wide range of criteria, including Azure AD group membership, target resource, device platform and state (such as Hybrid Azure AD join), network location, client application being used to access the resource, sign-in risk (evaluated by relying on Azure AD Identity Protection), and device compliance (evaluated by using Microsoft Intune compliance policies).
 
-   - Azure AD Application Proxy
+    - Azure AD Application Proxy
 
-       - As mentioned earlier, Azure AD Application Proxy provides seamless access to on-premises line of business (LOB) applications, Office 365, or any other SaaS-based application integrated with Azure AD. 
+      - As mentioned earlier, Azure AD Application Proxy provides seamless access to on-premises line of business (LOB) applications, Office 365, or any other SaaS-based application integrated with Azure AD. 
 
-   - Azure AD B2B
+    - Azure AD B2B
 
-       - Azure AD business-to-business (B2B) functionality allows customers to grant access to applications and services integrated with their individual Azure AD tenants to guest users from other organizations. The capabilities available to guest accounts mirror, for the most part, those available to users that belong to the same Azure AD tenant. Guest accounts are provisioned via a straightforward invitation and redemption process, allowing invitees use their own credentials to authenticate. Since the partner organizations continue to rely on their own identity management solutions, additional administrative overhead is minimized. 
+      - Azure AD business-to-business (B2B) functionality allows customers to grant access to applications and services integrated with their individual Azure AD tenants to guest users from other organizations. The capabilities available to guest accounts mirror, for the most part, those available to users that belong to the same Azure AD tenant. Guest accounts are provisioned via a straightforward invitation and redemption process, allowing invitees use their own credentials to authenticate. Since the partner organizations continue to rely on their own identity management solutions, additional administrative overhead is minimized. 
 
-         While the partner guest accounts are stored in the same Azure AD tenant as the user accounts of members of the organizations that provide access to its resources, they are easy to distinguish since their **userType** attribute is set to **Guest**. However, the process of granting access to cloud-based apps is the same. In addition, you have the option of granting guest accounts access to on-premises apps. Details depend on the authentication capabilities of the apps. 
+        While the partner guest accounts are stored in the same Azure AD tenant as the user accounts of members of the organizations that provide access to its resources, they are easy to distinguish since their **userType** attribute is set to **Guest**. However, the process of granting access to cloud-based apps is the same. In addition, you have the option of granting guest accounts access to on-premises apps. Details depend on the authentication capabilities of the apps. 
 
-            - SAML: if on-premises apps use SAML-based authentication, these apps can be made available to Azure AD B2B guests directly from the Azure portal by adding them to Azure AD based on the non-gallery application template and then using Azure AD Application Proxy to publish them, with Azure AD configured as the authentication source
+           - SAML: if on-premises apps use SAML-based authentication, these apps can be made available to Azure AD B2B guests directly from the Azure portal by adding them to Azure AD based on the non-gallery application template and then using Azure AD Application Proxy to publish them, with Azure AD configured as the authentication source
 
-            - Integrated Windows Authentication (IWA) and Kerberos Constrained Delegation (KCD): if on-premises apps rely on Active Directory for authentication, then they not only need to be added to Azure AD and published via the Azure AD Application Proxy, but the B2B guest users must be added as users to Active Directory. There are two methods available that can be used to create the guest user objects that are required for authorization in the on-premises directory:
+           - Integrated Windows Authentication (IWA) and Kerberos Constrained Delegation (KCD): if on-premises apps rely on Active Directory for authentication, then they not only need to be added to Azure AD and published via the Azure AD Application Proxy, but the B2B guest users must be added as users to Active Directory. There are two methods available that can be used to create the guest user objects that are required for authorization in the on-premises directory:
 
-                - Microsoft Identity Manager (MIM) and the MIM management agent for Microsoft Graph.
+               - Microsoft Identity Manager (MIM) and the MIM management agent for Microsoft Graph.
 
-                - A PowerShell script. Using the script is a more lightweight solution that does not require MIM.
+               - A PowerShell script. Using the script is a more lightweight solution that does not require MIM.
 
-              For more information regarding this subject, refer to *Grant B2B users in Azure AD access to your on-premises applications* at <https://docs.microsoft.com/en-us/azure/active-directory/b2b/hybrid-cloud-to-on-premises>
+              For more information regarding this subject, refer to *Grant B2B users in Azure AD access to your on-premises applications* at <https://docs.microsoft.com/en-us/azure/active-directory/b2b/hybrid-cloud-to-on-premises>.
 
-   - Azure AD B2C
+    - Azure AD B2C
 
-       - Azure Active Directory B2C provides business-to-customer identity as a service. Customers can use their preferred social, enterprise, or local account identities to authenticate in order to access applications and APIs offered by your organization. B2C requires an Azure AD tenant separate from the one used by organization's users and applications (and, consequently, different from the one that is used in B2B scenarios). In order to make your applications and APIs available via an Azure AD B2C tenant, you need to register them with that tenant.
+      - Azure Active Directory B2C provides business-to-customer identity as a service. Customers can use their preferred social, enterprise, or local account identities to authenticate in order to access applications and APIs offered by your organization. B2C requires an Azure AD tenant separate from the one used by organization's users and applications (and, consequently, different from the one that is used in B2B scenarios). In order to make your applications and APIs available via an Azure AD B2C tenant, you need to register them with that tenant.
 
-         For more information regarding this subject, refer to *Technical and feature overview of Azure Active Directory B2C* at <https://docs.microsoft.com/en-us/azure/active-directory-b2c/technical-overview>
+        For more information regarding this subject, refer to *Technical and feature overview of Azure Active Directory B2C* at <https://docs.microsoft.com/en-us/azure/active-directory-b2c/technical-overview>
 
 
 ## Checklist of preferred objection handling
@@ -925,15 +924,15 @@ It is important to provision sufficient number of connectors to handle the expec
 
     Application Proxy works with:
 
-   - Web applications that use Integrated Windows Authentication for authentication
+    - Web applications that use Integrated Windows Authentication for authentication
 
-   - Web applications that use form-based or header-based access
+    - Web applications that use form-based or header-based access
 
-   - Web APIs that you want to expose to rich applications on different devices
+    - Web APIs that you want to expose to rich applications on different devices
 
-   - Applications hosted behind a Remote Desktop Gateway
+    - Applications hosted behind a Remote Desktop Gateway
 
-   - Rich client apps that are integrated with the Active Directory Authentication Library (ADAL)
+    - Rich client apps that are integrated with the Active Directory Authentication Library (ADAL)
  
 ## Customer quote (to be read back to the attendees at the end)
 
