@@ -1261,7 +1261,7 @@ In this task, you will implement Azure AD Conditional Access Policies.
 
     - IP address: **The public IP address of the APP1 Azure VM**
 
-    - Country: **United States**
+    - Country or region: **United States**
 
     - Device platform: **Windows**
 
