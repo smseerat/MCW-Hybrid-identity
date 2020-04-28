@@ -28,50 +28,50 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Hybrid identity hands-on lab step-by-step](#hybrid-identity-hands-on-lab-step-by-step)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Overview](#overview)
-    - [Solution architecture](#solution-architecture)
-    - [Exercise 1: Integrate an Active Directory forest with an Azure Active Directory tenant](#exercise-1-integrate-an-active-directory-forest-with-an-azure-active-directory-tenant)
-        - [Overview](#overview-1)
-        - [Task 1: Create an Azure Active Directory tenant and activate an EMS E5 trial](#task-1-create-an-azure-active-directory-tenant-and-activate-an-ems-e5-trial)
-        - [Task 2: Create and configure Azure AD users](#task-2-create-and-configure-azure-ad-users)
-        - [Task 3: Purchase a custom domain name](#task-3-purchase-a-custom-domain-name)
-        - [Task 4: Assign a custom domain name to the Contoso Azure AD tenant](#task-4-assign-a-custom-domain-name-to-the-contoso-azure-ad-tenant)
-        - [Task 5: Configure DNS suffix in the Contoso Active Directory forest](#task-5-configure-dns-suffix-in-the-contoso-active-directory-forest)
-        - [Task 6: Install Azure AD Connect](#task-6-install-azure-ad-connect)
-        - [Task 7: Enable Active Directory Recycle Bin](#task-7-enable-active-directory-recycle-bin)
-        - [Task 8: Configure Azure AD Connect attribute-level filtering](#task-8-configure-azure-ad-connect-attribute-level-filtering)
-        - [Task 9: Initiate and verify directory synchronization](#task-9-initiate-and-verify-directory-synchronization)
-        - [Task 10: Configure Hybrid Azure AD join](#task-10-configure-hybrid-azure-ad-join)
-        - [Task 11: Perform Hybrid Azure AD join](#task-11-perform-hybrid-azure-ad-join)
-        - [Summary](#summary)
-    - [Exercise 2: Manage Authentication, Authorization, and Access Control in Hybrid Scenarios](#exercise-2-manage-authentication-authorization-and-access-control-in-hybrid-scenarios)
-        - [Overview](#overview-2)
-        - [Task 1: Create Active Directory groups](#task-1-create-active-directory-groups)
-        - [Task 2: Assign EMS E5 licenses to Azure AD users](#task-2-assign-ems-e5-licenses-to-azure-ad-users)
-        - [Task 3: Enable Azure AD Multi-Factor Authentication](#task-3-enable-azure-ad-multi-factor-authentication)
-        - [Task 4: Enable password writeback and Self-Service Password Reset](#task-4-enable-password-writeback-and-self-service-password-reset)
-        - [Task 5: Implement Azure AD Password Protection for Windows Server Active Directory](#task-5-implement-azure-ad-password-protection-for-windows-server-active-directory)
-        - [Task 6: Enable Azure Active Directory Identity Protection](#task-6-enable-azure-active-directory-identity-protection)
-        - [Task 7: Enable Automatic Intune Enrollment](#task-7-enable-automatic-intune-enrollment)
-        - [Task 8: Enable Enterprise-State-Roaming](#task-8-enable-enterprise-state-roaming)
-        - [Task 9: Implement Azure AD Conditional Access Policies](#task-9-implement-azure-ad-conditional-access-policies)
-        - [Task 10: Implement Azure AD Privileged Identity Management](#task-10-implement-azure-ad-privileged-identity-management)
-        - [Summary](#summary-1)
-    - [Exercise 3: Configure application access in hybrid scenarios](#exercise-3-configure-application-access-in-hybrid-scenarios)
-        - [Overview](#overview-3)
-        - [Task 1: Install and configure Azure AD Application Proxy](#task-1-install-and-configure-azure-ad-application-proxy)
-        - [Task 2: Configure an Azure AD Application Proxy application](#task-2-configure-an-azure-ad-application-proxy-application)
-        - [Task 3: Test an Azure AD Application Proxy application](#task-3-test-an-azure-ad-application-proxy-application)
-        - [Task 4: Create an Azure Active Directory tenant and activate an EMS E5 trial](#task-4-create-an-azure-active-directory-tenant-and-activate-an-ems-e5-trial)
-        - [Task 5: Create and configure Azure AD users](#task-5-create-and-configure-azure-ad-users)
-        - [Task 6: Create and configure Azure AD guest user and group accounts](#task-6-create-and-configure-azure-ad-guest-user-and-group-accounts)
-        - [Task 7: Configure an Azure AD Application Proxy application for B2B access](#task-7-configure-an-azure-ad-application-proxy-application-for-b2b-access)
-        - [Task 8: Test an Azure AD Application Proxy application](#task-8-test-an-azure-ad-application-proxy-application)
-        - [Summary](#summary-2)
-    - [Lab summary](#lab-summary)
-    - [After the hands-on lab](#after-the-hands-on-lab)
-        - [Task 1: Delete resources](#task-1-delete-resources)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Overview](#overview)
+  - [Solution architecture](#solution-architecture)
+  - [Exercise 1: Integrate an Active Directory forest with an Azure Active Directory tenant](#exercise-1-integrate-an-active-directory-forest-with-an-azure-active-directory-tenant)
+    - [Overview](#overview-1)
+    - [Task 1: Create an Azure Active Directory tenant and activate an EMS E5 trial](#task-1-create-an-azure-active-directory-tenant-and-activate-an-ems-e5-trial)
+    - [Task 2: Create and configure Azure AD users](#task-2-create-and-configure-azure-ad-users)
+    - [Task 3: Purchase a custom domain name](#task-3-purchase-a-custom-domain-name)
+    - [Task 4: Assign a custom domain name to the Contoso Azure AD tenant](#task-4-assign-a-custom-domain-name-to-the-contoso-azure-ad-tenant)
+    - [Task 5: Configure DNS suffix in the Contoso Active Directory forest](#task-5-configure-dns-suffix-in-the-contoso-active-directory-forest)
+    - [Task 6: Install Azure AD Connect](#task-6-install-azure-ad-connect)
+    - [Task 7: Enable Active Directory Recycle Bin](#task-7-enable-active-directory-recycle-bin)
+    - [Task 8: Configure Azure AD Connect attribute-level filtering](#task-8-configure-azure-ad-connect-attribute-level-filtering)
+    - [Task 9: Initiate and verify directory synchronization](#task-9-initiate-and-verify-directory-synchronization)
+    - [Task 10: Configure Hybrid Azure AD join](#task-10-configure-hybrid-azure-ad-join)
+    - [Task 11: Perform Hybrid Azure AD join](#task-11-perform-hybrid-azure-ad-join)
+    - [Summary](#summary)
+  - [Exercise 2: Manage Authentication, Authorization, and Access Control in Hybrid Scenarios](#exercise-2-manage-authentication-authorization-and-access-control-in-hybrid-scenarios)
+    - [Overview](#overview-2)
+    - [Task 1: Create Active Directory groups](#task-1-create-active-directory-groups)
+    - [Task 2: Assign EMS E5 licenses to Azure AD users](#task-2-assign-ems-e5-licenses-to-azure-ad-users)
+    - [Task 3: Enable Azure AD Multi-Factor Authentication](#task-3-enable-azure-ad-multi-factor-authentication)
+    - [Task 4: Enable password writeback and Self-Service Password Reset](#task-4-enable-password-writeback-and-self-service-password-reset)
+    - [Task 5: Implement Azure AD Password Protection for Windows Server Active Directory](#task-5-implement-azure-ad-password-protection-for-windows-server-active-directory)
+    - [Task 6: Enable Azure Active Directory Identity Protection](#task-6-enable-azure-active-directory-identity-protection)
+    - [Task 7: Enable Automatic Intune Enrollment](#task-7-enable-automatic-intune-enrollment)
+    - [Task 8: Enable Enterprise-State-Roaming](#task-8-enable-enterprise-state-roaming)
+    - [Task 9: Implement Azure AD Conditional Access Policies](#task-9-implement-azure-ad-conditional-access-policies)
+    - [Task 10: Implement Azure AD Privileged Identity Management](#task-10-implement-azure-ad-privileged-identity-management)
+    - [Summary](#summary-1)
+  - [Exercise 3: Configure application access in hybrid scenarios](#exercise-3-configure-application-access-in-hybrid-scenarios)
+    - [Overview](#overview-3)
+    - [Task 1: Install and configure Azure AD Application Proxy](#task-1-install-and-configure-azure-ad-application-proxy)
+    - [Task 2: Configure an Azure AD Application Proxy application](#task-2-configure-an-azure-ad-application-proxy-application)
+    - [Task 3: Test an Azure AD Application Proxy application](#task-3-test-an-azure-ad-application-proxy-application)
+    - [Task 4: Create an Azure Active Directory tenant and activate an EMS E5 trial](#task-4-create-an-azure-active-directory-tenant-and-activate-an-ems-e5-trial)
+    - [Task 5: Create and configure Azure AD users](#task-5-create-and-configure-azure-ad-users)
+    - [Task 6: Create and configure Azure AD guest user and group accounts](#task-6-create-and-configure-azure-ad-guest-user-and-group-accounts)
+    - [Task 7: Configure an Azure AD Application Proxy application for B2B access](#task-7-configure-an-azure-ad-application-proxy-application-for-b2b-access)
+    - [Task 8: Test an Azure AD Application Proxy application](#task-8-test-an-azure-ad-application-proxy-application)
+    - [Summary](#summary-2)
+  - [Lab summary](#lab-summary)
+  - [After the hands-on lab](#after-the-hands-on-lab)
+    - [Task 1: Delete resources](#task-1-delete-resources)
 
 <!-- /TOC -->
 
@@ -553,13 +553,13 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     ![On the description page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_Description.png "Sync Rule Description")
 
-4. On the **Scoping filter** page, select **Add Group**, select **Add clause** specify the following, and select **Next**:
+4. On the **Create inbound scoping filter** page, select **Add Group**, select **Add clause** specify the following, and select **Next**:
 
     - Attribute: **userPrincipalName**
 
     - Operator: **ENDSWITH**
 
-    - Value: **@*<your custom domain name>***
+    - Value: **\@\<your custom domain name>**
 
     ![On the scoping filter page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_ScopingFilter.png "Scoping Filter")
 
@@ -579,7 +579,9 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
    > **Note**: This should bring you back to the View and manage your synchronization rules interface, with the new rule listed at the top of the rule list. 
 
-8. Back in the Synchronization Rules Editor window, on the **View and manage your synchronization rules** page, ensure that **Inbound** appears in the **Direction** drop-down list and select **Add new rule** again. This will launch the **Create inbound synchronization rule** wizard.
+    ![](images/2020-04-27-23-44-31.png)
+
+8. Back in the **Synchronization Rules Editor** window, on the **View and manage your synchronization rules** page, ensure that **Inbound** appears in the **Direction** drop-down list and select **Add new rule** again. This will launch the **Create inbound synchronization rule** wizard.
 
 9.  On the **Description** page, specify the following settings and select **Next**:
 
