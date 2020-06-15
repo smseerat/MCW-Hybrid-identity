@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-February 2020
+June 2020
 </div>
 
 
@@ -145,11 +145,11 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
 9.  In the portal's left navigation, select **Azure Active Directory**. 
 
-10. In the **Azure Active Directory** blade, select **Switch directory** then select **Contoso**. 
+10. In the **Azure Active Directory** blade, select **Switch tenant** then select **Contoso**. 
 
     **Note:** It may take a few minutes for everything to display properly.
 
-    ![Switch to the Contoso directory](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectContoso.png "Switch to Contoso")
+    ![Switch to the Contoso directory](images/Hands-onlabstep-bystep-HybridIdentityImages/media/line148Update.png "Switch to Contoso")
 
 11. On the **Contoso - Overview** blade, select **Licenses** under **Manage** on the left navigation.
 
@@ -259,7 +259,7 @@ In this task, you will purchase a custom DNS domain name by leveraging the funct
 
 1. From the lab computer, in the browser displaying the Azure portal, navigate to your subscription blade and select **Change directory**. In the **Change the directory** blade on the right, select **Default Directory** in the dropdown and select **Change**. 
    
-2. Return to the **Azure Active Directory** overview blade. Select **Switch directory** and select the **Default Directory** associated with the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises. 
+2. Return to the **Azure Active Directory** overview blade. Select **Switch tenant** and select the **Default Directory** associated with the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises. 
 
 3. In the Azure portal's left navigation, select **+ Create a resource**.
 
@@ -277,7 +277,7 @@ In this task, you will purchase a custom DNS domain name by leveraging the funct
     
     - Publish: **Code**
 
-    - Runtime stack: **.NET Core 3.0 (Current)**
+    - Runtime stack: **.NET Core 3.1 (LTS)**
 
     - Operating system: **Windows**
 
@@ -287,7 +287,8 @@ In this task, you will purchase a custom DNS domain name by leveraging the funct
 
     - SKU and size: **Shared D1** (If necessary, select **Change size**, select Dev/Test, select **D1** and select **Apply**)
 
-    ![Configure the Web App basics blade](images/Hands-onlabstep-bystep-HybridIdentityImages/media/WebAppBasics.png "Web app  basics")
+
+    ![Configure the Web App basics blade](images/Hands-onlabstep-bystep-HybridIdentityImages/media/15juneupdate2.png "Web app  basics")
   
 6. On the **Monitoring** tab of the **Web App** blade, specify the following setting and select **Review + create** then **Create**:
 
@@ -993,7 +994,7 @@ In this task, you will enable password writeback and Self-Service Password Reset
 
 18. On the **Password reset - Authentication methods** blade, select **Registration** on the left and ensure that **Require users to register when signing in** is set to **Yes** and that **Number of days before users are asked to re-confirm their authentication information** is set to **180**.
 
-19. On the **Password reset - Registration** blade, select **On-premises integration** on the left and verify that the **Write back passwords to your on-premises directory** setting is set to **Yes**. Note that you have the option to **Allow users to unlock accounts without resetting their passwords**.
+19. On the **Password reset** blade, select **On-premises integration** on the left and verify that the **Write back passwords to your on-premises directory** setting is set to **Yes**. Note that you have the option to **Allow users to unlock accounts without resetting their passwords**.
 
 
 ### Task 5: Implement Azure AD Password Protection for Windows Server Active Directory
@@ -1040,28 +1041,28 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 11. Within the Remote Desktop session to **APP1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at <https://www.microsoft.com/download/details.aspx?id=57071> and download **AzureADPasswordProtectionProxySetup.exe**. Run the installation of the **Azure AD Password Protection Proxy Bundle** with the default options.
 
-    **Note:** You mau have to enable file download on Internet Explorer. To do this, select **Tools** in the top right of the window and select **Internet Options**. From there select the **Security** tab then select **Custom level**. In the pop-up, scroll to the downloads section. Select **Enable** under **File download** and then select **OK**. Select **Yes** at the confirmation prompt then select **OK** again. 
+    **Note:** You may have to enable file download on Internet Explorer. To do this, select **Tools** in the top right of the window and select **Internet Options**. From there select the **Security** tab then select **Custom level**. In the pop-up, scroll to the downloads section. Select **Enable** under **File download** and then select **OK**. Select **Yes** at the confirmation prompt then select **OK** again. 
 
 12.  Within the Remote Desktop session to **APP1**, start Windows PowerShell ISE as Administrator and, from the console pane, run the following to register the proxy (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant). When prompted, sign in to the Contoso Azure AD tenant using credentials of the **john.doe** user account.
-
+13.  
     ```pwsh
     Import-Module AzureADPasswordProtection
     Register-AzureADPasswordProtectionProxy -AccountUpn 'john.doe@<domain_name>.onmicrosoft.com'
     ```
 
-13. From the Administrator: Windows PowerShell ISE console, run the following to register the Active Directory forest (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant):
+14. From the Administrator: Windows PowerShell ISE console, run the following to register the Active Directory forest (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant):
 
     ```pwsh
     Register-AzureADPasswordProtectionForest -AccountUpn 'john.doe@<domain_name>.onmicrosoft.com'
     ```
 
-14. Switch to the Remote Desktop session to **DC1** virtual machine, where you are signed in as the user **CONTOSO\demouser** with the **demo@pass123** password. 
+15. Switch to the Remote Desktop session to **DC1** virtual machine, where you are signed in as the user **CONTOSO\demouser** with the **demo@pass123** password. 
 
-15. Within the Remote Desktop session to **DC1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at <https://www.microsoft.com/download/details.aspx?id=57071> and download **AzureADPasswordProtectionDCAgentSetup.exe**. Run the **Azure AD Password Protection DC Agent Setup** installation with the default options.
+16. Within the Remote Desktop session to **DC1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at <https://www.microsoft.com/download/details.aspx?id=57071> and download **AzureADPasswordProtectionDCAgentSetup.exe**. Run the **Azure AD Password Protection DC Agent Setup** installation with the default options.
 
     **Note:** You may have to perform the instructions to enable file download on Internet Explorer listed earlier. 
 
-16. Restart DC1 once the setup completes.
+17. Restart DC1 once the setup completes.
 
 
 ### Task 6: Enable Azure Active Directory Identity Protection
@@ -1306,7 +1307,7 @@ In this task, you will implement Azure AD Privileged Identity Management.
 
         - Use the code in the text message you received, select **Verify**, and following successful verification, select **Done**.
 
-    ![Security Verification](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SecuirtyVerification.png "Security Verification")
+    ![Security Verification](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SecurityVerification.png "Security Verification")
 
 6. Navigate back to the **Privileged Identity Management** blade, select **Consent to PIM**, select **Consent**, when prompted for a confirmation to proceed, select **Yes**, and refresh the Internet Explorer window.
 
@@ -1316,21 +1317,23 @@ In this task, you will implement Azure AD Privileged Identity Management.
 
 9.  On the **Azure AD roles - Overview** blade, select **Roles** under **Manage** on the left.
 
-10. On the **Azure AD roles - Roles** blade, select **Add member**.
+10. On the **Azure AD roles - Roles** blade, select **Add assignments**.
 
-11. On the **Add managed members** blade, specify the following settings to designate **Ann G. Ayers** as an eligible member of the **Authentication Administrator** role then select **OK**. 
+11. On the **Add assignments** blade, specify the following settings to designate **Ann G. Ayers** as an eligible member of the **Authentication Administrator** role then select **OK**. 
 
-    - Select a role: **Authentication Administrator**
+    - Select role: **Authentication Administrator**
 
     - Select members: **Ann G. Ayers**
+  
+    - Assignment type: **Eligible**
 
    > **Note**: **Authentication Administrator** role grants privileges to set or reset non-password credentials and update passwords for all users. Authentication Administrators can require users to re-register against existing non-password credential (for example, MFA or FIDO) and revoke remember MFA on the device, which prompts for MFA on the next sign-in.
 
-13. On the **Azure AD roles - Roles** blade, select **Members** under **Manage** on the left and note that **Ann G. Ayers** is listed as eligible for the **Authentication Administrator** role.
+12. On the **Azure AD roles - Roles** blade, select **Assignments** under **Manage** on the left and note that **Ann G. Ayers** is listed as eligible for the **Authentication Administrator** role.
 
-14. Switch to the Remote Desktop session to **APP1**, start Internet Explorer, and browse to the Azure portal at [**http://portal.azure.com**](http://portal.azure.com. From here sign-in as Ann G. Ayers. The username can be found on the **Users - All users** page in the Azure portal window on the lab computer. The password will be **demo@pass123**. 
+13. Switch to the Remote Desktop session to **APP1**, start Internet Explorer, and browse to the Azure portal at [**http://portal.azure.com**](http://portal.azure.com). From here sign-in as Ann G. Ayers. The username can be found on the **Users - All users** page in the Azure portal window on the lab computer. The password will be **demo@pass123**. 
 
-15. When prompted to provide additional information, select **Next**, on the **Additional security verification** page, specify the following settings:
+14. When prompted to provide additional information, select **Next**, on the **Additional security verification** page, specify the following settings:
 
     - **Step 1: How should we contact you?**
 
@@ -1346,37 +1349,37 @@ In this task, you will implement Azure AD Privileged Identity Management.
 
         - Note that you have the option of using **app password** and select **Done**.
 
-16. When prompted again to provide additional information, select **Next**, on the **confirm your current password** page, select **re-enter my password**, and, when prompted, provide the password for the Active Directory user account of **Ann G. Ayers**.
+15. When prompted again to provide additional information, select **Next**, on the **confirm your current password** page, select **re-enter my password**, and, when prompted, provide the password for the Active Directory user account of **Ann G. Ayers**.
 
-17. When prompted, type the code sent to the mobile phone you specified previously and select **Verify**.
+16. When prompted, type the code sent to the mobile phone you specified previously and select **Verify**.
 
-18. If brought to the **don't lose access to your account!** page, select **Verify** next to the **Authentication Phone** entry and then select **text me**. Next, type the code send to your mobile phone and select **verify**.
+17. If brought to the **don't lose access to your account!** page, select **Verify** next to the **Authentication Phone** entry and then select **text me**. Next, type the code send to your mobile phone and select **verify**.
 
-19. On the **don't lose access to your account!** page, select **Set it up now** next to the **Authentication Email is not configured** entry. Next, in the **Authentication Email** text box, type an email address that you want to use for verification and select **email me**.
+18. On the **don't lose access to your account!** page, select **Set it up now** next to the **Authentication Email is not configured** entry. Next, in the **Authentication Email** text box, type an email address that you want to use for verification and select **email me**.
 
-20. Retrieve the email with the code, type it in the textbox next to the **verify** button, and select **verify**
+19. Retrieve the email with the code, type it in the textbox next to the **verify** button, and select **verify**
 
-21. On the **don't lose access to your account!** page, select **Set them up now** next to the **Security Questions are not configured** entry. Next, select each security question, provide the corresponding answer, and select **save answers**.
+20. On the **don't lose access to your account!** page, select **Set them up now** next to the **Security Questions are not configured** entry. Next, select each security question, provide the corresponding answer, and select **save answers**.
 
-22. On the **don't lose access to your account!** page, select **finish**. You will be redirected to the Azure portal.
+21. On the **don't lose access to your account!** page, select **finish**. You will be redirected to the Azure portal.
 
-23. In the Azure portal, navigate to the **Privileged Identity Management - Quick start** blade. 
+22. In the Azure portal, navigate to the **Privileged Identity Management - Quick start** blade. 
 
-24. On the **Privileged Identity Management - Quick start** blade, select **My roles** on the left.
+23. On the **Privileged Identity Management - Quick start** blade, select **My roles** on the left.
 
-25. On the **My roles - Azure AD roles** blade, on the **Eligible roles** tab, select **Activate** next to the **Authentication Administrator** role entry. 
+24. On the **My roles - Azure AD roles** blade, on the **Eligible roles** tab, select **Activate** next to the **Authentication Administrator** role entry. 
 
-26. On the **Authentication Administrator** blade, select **Activate**.
+25. On the **Authentication Administrator** blade, select **Activate**.
 
-27. On the **Activation** blade, accept the default activation start time and duration (1 hour) type a reason for the activation in the **Activation reason** text box, and select **Activate**.
+26. On the **Activation** blade, accept the default activation start time and duration (1 hour) type a reason for the activation in the **Activation reason** text box, and select **Activate**.
 
     ![Activate role](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActivateRole.png "Role activation")
 
-28. On the **Activation status**, monitor changes to your activation request. Once the activation is completed, select the **Sign out** link and then sign in back to the Azure portal to start using your newly activated role.
+27. On the **Activation status**, monitor changes to your activation request. Once the activation is completed, select the **Sign out** link and then sign in back to the Azure portal to start using your newly activated role.
 
-29. In the Azure portal, navigate back to the **My roles - Azure AD roles** blade.
+28. In the Azure portal, navigate back to the **My roles - Azure AD roles** blade.
 
-30. On the **My roles - Azure AD roles** blade, on the **Active roles** tab, note that the role assignment has been activated. 
+29. On the **My roles - Azure AD roles** blade, on the **Active roles** tab, note that the role assignment has been activated. 
 
 ### Summary
 
@@ -1535,7 +1538,7 @@ In this task, you will create another Azure Active Directory tenant representing
 
 4. On the **New** blade, in the **Search the Marketplace** text box, type **Azure Active Directory** and, in the list of results, select **Azure Active Directory**.
 
-5. On the **Azure Active Directory** blade, select **Create**.
+5. On the **Azure Active Directory** blade, select **Create a tenant**.
 
 6. On the **Create directory** blade, specify the following settings and select **Create**:
 
@@ -1695,7 +1698,7 @@ In this task, you will create and configure Azure AD guest accounts in the Conto
 
     -  Membership type: **Assigned**
 
-    -  Owners: **Now owners selected**
+    -  Owners: **No owners selected**
 
     -  Members: **fabrikam-jane.doe**
 

@@ -9,7 +9,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-February 2020
+June 2020
 </div>
 
 
@@ -114,7 +114,8 @@ Timeframe: 150 minutes
 
     -   _artifacts Location Sas Token: leave blank
 
-    ![](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DeploymentConfig.png)
+    ![](images/Hands-onlabstep-bystep-HybridIdentityImages/media/15juneupdate.png)
+
 
 4. Wait for the deployment to complete. This might take about 60 minutes.
 
