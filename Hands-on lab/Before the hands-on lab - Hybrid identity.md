@@ -65,7 +65,7 @@ Timeframe: 150 minutes
 
 1. Login to the Azure portal at <http://portal.azure.com>, select  **All services**. Then search for and select **Subscriptions**.
 
-     ![](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectSubscriptions.png)
+     ![The Azure portal with sub typed into the search bar and subscriptions highlighted in the results.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectSubscriptions.png "Azure portal search.")
 
 2. On the **Subscriptions** blade, select the name of the subscription you intend to use for this lab.
 
@@ -114,7 +114,7 @@ Timeframe: 150 minutes
 
     -   _artifacts Location Sas Token: leave blank
 
-    ![](images/Hands-onlabstep-bystep-HybridIdentityImages/media/15juneupdate.png)
+    ![The custom deployment blade with each parameter value field highlighted and each value is set too the values stated above.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/15juneupdate.png "Customer template deployment.")
 
 
 4. Wait for the deployment to complete. This might take about 60 minutes.
@@ -138,9 +138,9 @@ Timeframe: 150 minutes
     Invoke-Command -ComputerName $vmNames {Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "ConsentPromptBehaviorAdmin" -Value 00000000}
     ```
 
-    **Note:** To run multiple PowerShell scripts in the same file, you can highlight a specific script and click **Run Selection** next to the green play button. 
+    **Note:** To run multiple PowerShell scripts in the same file, you can highlight a specific script and select **Run Selection** next to the green play button. 
 
-    ![](images/Hands-onlabstep-bystep-HybridIdentityImages/media/PSScript.png)
+    ![The PowerShell ISE application with the script pasted into it.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/PSScript.png "PowerShell ISE.")
 
 3.  Within the **Windows PowerShell ISE** window  add the following script to the script pane, and run it to install Remote Server Administration Tools on both **DC1* and **APP1** Azure VMs:
 
@@ -201,7 +201,7 @@ Timeframe: 150 minutes
 
 4. On the **Create Users/Group for Active Directory Demo/Test Environment** page, select the **CreateDemoUsers.csv** link (directly above the PowerShell code section) and save the corresponding csv file to the same location as the **CreateDemoUsers.ps1** file.
 
-    ![](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SaveCSVFile.png)
+    ![The create users/group for Active Directory Demo/test environment screen with the CreateDemoUsers link highlighted near the bottom of the page.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SaveCSVFile.png "Create users and groups in Azure Active Directory.")
 
 5. Within the Remote Desktop session to **DC1**, start File Explorer, navigate to the folder where you downloaded both files, right-click on the file **CreateDemoUsers.ps1**, select **Properties**, in the **CreateDemoUsers.ps1 Properties** dialog box, check the **Unblock** checkbox and select **OK.
 
