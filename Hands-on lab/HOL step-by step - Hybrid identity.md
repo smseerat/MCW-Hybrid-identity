@@ -380,7 +380,7 @@ In this task, you will configure the DNS suffix of the Contoso Active Directory 
 
 5. In the **Active Directory Domains and Trusts** console, right-click the **Active Directory Domains and Trusts [DC1.contoso.local]** node and, in the right-click menu, select **Properties**.
 
-    ![Right click node and click Properties](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeProperties.png "Node properties")
+    ![Right-click node and select Properties](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeProperties.png "Node properties")
 
 6. On the **UPN Suffixes** tab of the **Active Directory Domains and Trusts [DC1.contoso.local]** window, in the **Alternative UPN suffixes** textbox, type the name of the custom domain you verified in the previous task, select **Add**, and then select **OK**.
 
@@ -440,7 +440,7 @@ In this task, you will install Azure AD Connect.
 
 12. On the **Welcome to Azure AD Connect** page, enable the **I agree to the license terms and privacy notice** checkbox and select **Continue**.
 
-    ![Agree to terms and click Next](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ADCWelcomeWizard.png "Agree to terms and click Next")
+    ![Agree to terms and select Next](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ADCWelcomeWizard.png "Agree to terms and select Next")
 
 13. On the **Express Settings** page, select the **Customize** button.
 
@@ -580,7 +580,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
    > **Note**: This should bring you back to the View and manage your synchronization rules interface, with the new rule listed at the top of the rule list. 
 
-    ![](images/2020-04-27-23-44-31.png)
+    ![The synchronization rules editor with the Custom in from AD - UPN Filter highlighted.](images/2020-04-27-23-44-31.png "Synchronization rules editor")
 
 8. Back in the **Synchronization Rules Editor** window, on the **View and manage your synchronization rules** page, ensure that **Inbound** appears in the **Direction** drop-down list and select **Add new rule** again. This will launch the **Create inbound synchronization rule** wizard.
 
@@ -665,7 +665,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Azure AD Connect Sync Status: **Enabled** 
   
-    - Last Sync: **The should be a timestamp of some sort** 
+    - Last Sync: **This should be a timestamp of some sort** 
   
     - Password Hash Sync: **Disabled** 
   
@@ -1003,7 +1003,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 1. Within the Remote Desktop session to **DC1**, from the **Server Manager** window, under **Tools** start **Group Policy Management** console. 
 
-2. In the **Group Policy Management** console, navigate to the **Forest: contoso.local > Domains > contoso.local** node, right select **Default Domain Policy** and, in the right-click menu, select **Edit**. 
+2. In the **Group Policy Management** console, navigate to the **Forest: contoso.local > Domains > contoso.local** node, right-click **Default Domain Policy** and, in the right-click menu, select **Edit**. 
 
     ![Edit default domain policy](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EditDefaultDomainPolicy.png "Edit default domain policy")
 
@@ -1011,7 +1011,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 4. Set the value of the **Account lockout threshold** to **10** and select **OK** and accept the settings in the **Suggested Value Changes**. 
 
-    ![In the Group Policy Management Editor, the Account Lockout policy settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADPasswordProtectionPolicy_ADLockout.png)
+    ![In the Group Policy Management Editor, the Account Lockout policy settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADPasswordProtectionPolicy_ADLockout.png "Group policy management")
 
 5. Within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Contoso - Overview** blade of the Contoso Azure AD tenant.
 
