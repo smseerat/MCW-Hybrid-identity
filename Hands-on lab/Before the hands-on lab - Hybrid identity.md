@@ -203,7 +203,7 @@ Timeframe: 150 minutes
 
     ![The create users/group for Active Directory Demo/test environment screen with the CreateDemoUsers link highlighted near the bottom of the page.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SaveCSVFile.png "Create users and groups in Azure Active Directory.")
 
-5. Within the Remote Desktop session to **DC1**, start File Explorer, navigate to the folder where you downloaded both files, right-click on the file **CreateDemoUsers.ps1**, select **Properties**, in the **CreateDemoUsers.ps1 Properties** dialog box, check the **Unblock** checkbox and select **OK.
+5. Within the Remote Desktop session to **DC1**, start File Explorer, navigate to the folder where you downloaded both files, right-click on the file **CreateDemoUsers.ps1**, select **Properties**, in the **CreateDemoUsers.ps1 Properties** dialog box, check the **Unblock** checkbox and select **OK**.
 
 6. Within the File Explorer window, right-click on the file **CreateDemoUsers.ps1** again and select **Edit**. 
 
