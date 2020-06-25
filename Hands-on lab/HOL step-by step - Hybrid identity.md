@@ -32,7 +32,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Overview](#overview)
   - [Solution architecture](#solution-architecture)
   - [Exercise 1: Integrate an Active Directory forest with an Azure Active Directory tenant](#exercise-1-integrate-an-active-directory-forest-with-an-azure-active-directory-tenant)
-    - [Overview](#overview-1)
     - [Task 1: Create an Azure Active Directory tenant and activate an EMS E5 trial](#task-1-create-an-azure-active-directory-tenant-and-activate-an-ems-e5-trial)
     - [Task 2: Create and configure Azure AD users](#task-2-create-and-configure-azure-ad-users)
     - [Task 3: Purchase a custom domain name](#task-3-purchase-a-custom-domain-name)
@@ -44,9 +43,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 9: Initiate and verify directory synchronization](#task-9-initiate-and-verify-directory-synchronization)
     - [Task 10: Configure Hybrid Azure AD join](#task-10-configure-hybrid-azure-ad-join)
     - [Task 11: Perform Hybrid Azure AD join](#task-11-perform-hybrid-azure-ad-join)
-    - [Summary](#summary)
   - [Exercise 2: Manage Authentication, Authorization, and Access Control in Hybrid Scenarios](#exercise-2-manage-authentication-authorization-and-access-control-in-hybrid-scenarios)
-    - [Overview](#overview-2)
     - [Task 1: Create Active Directory groups](#task-1-create-active-directory-groups)
     - [Task 2: Assign EMS E5 licenses to Azure AD users](#task-2-assign-ems-e5-licenses-to-azure-ad-users)
     - [Task 3: Enable Azure AD Multi-Factor Authentication](#task-3-enable-azure-ad-multi-factor-authentication)
@@ -57,9 +54,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 8: Enable Enterprise-State-Roaming](#task-8-enable-enterprise-state-roaming)
     - [Task 9: Implement Azure AD Conditional Access Policies](#task-9-implement-azure-ad-conditional-access-policies)
     - [Task 10: Implement Azure AD Privileged Identity Management](#task-10-implement-azure-ad-privileged-identity-management)
-    - [Summary](#summary-1)
   - [Exercise 3: Configure application access in hybrid scenarios](#exercise-3-configure-application-access-in-hybrid-scenarios)
-    - [Overview](#overview-3)
     - [Task 1: Install and configure Azure AD Application Proxy](#task-1-install-and-configure-azure-ad-application-proxy)
     - [Task 2: Configure an Azure AD Application Proxy application](#task-2-configure-an-azure-ad-application-proxy-application)
     - [Task 3: Test an Azure AD Application Proxy application](#task-3-test-an-azure-ad-application-proxy-application)
@@ -68,7 +63,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 6: Create and configure Azure AD guest user and group accounts](#task-6-create-and-configure-azure-ad-guest-user-and-group-accounts)
     - [Task 7: Configure an Azure AD Application Proxy application for B2B access](#task-7-configure-an-azure-ad-application-proxy-application-for-b2b-access)
     - [Task 8: Test an Azure AD Application Proxy application](#task-8-test-an-azure-ad-application-proxy-application)
-    - [Summary](#summary-2)
   - [Lab summary](#lab-summary)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Delete resources](#task-1-delete-resources)
@@ -89,7 +83,7 @@ Contoso has asked you to integrate their on-premises Active Directory single-dom
 
 From the architectural standpoint, the deployment will consist of the following components:
 
--   "On-premises" Active Directory environment consisting of a single domain controller (DC1) and one domain member server (APP1), running Windows Server 2016 operating system. 
+-   On-premises Active Directory environment consisting of a single domain controller (DC1) and one domain member server (APP1), running Windows Server 2016 operating system. 
 
 -   Contoso Azure AD tenant
 
@@ -135,7 +129,7 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
     -   Country or region: **United States**
 
-7. Once it's created, navigate to your subscription blade. Select **Change directory**
+7. Once it's created, navigate to your subscription blade. Select **Change directory**.
 
     !['Change directory' is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ChangeDirectory.png "Select Change Directory")
 
@@ -147,7 +141,7 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
 10. In the **Azure Active Directory** blade, select **Switch tenant** then select **Contoso**. 
 
-    **Note:** It may take a few minutes for everything to display properly.
+    >**Note:** It may take a few minutes for everything to display properly.
 
     ![Switch to the Contoso directory](images/Hands-onlabstep-bystep-HybridIdentityImages/media/line148Update.png "Switch to Contoso")
 
@@ -1103,7 +1097,7 @@ In this task, you will enable Azure AD Identity Protection
 
 13. Back on the **Azure AD Identity Protection - MFA registration policy** blade, in the **Controls** section, select **Access**. On the **Access** blade, ensure that the **Require Azure MFA registration** checkbox is selected, and choose **Select**.
 
-14. Back on the **Azure AD Identity Protection - MFA registration policy** blade, set **Enforce Policy** to **On** and select **Save**
+14. Back on the **Azure AD Identity Protection - MFA registration policy** blade, set **Enforce Policy** to **On** and select **Save**.
 
     ![In the Azure portal, the MFA registration policy settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_MFAregistrationpolicy_EnforcePolicy.png "Enforce policy")
 
@@ -1178,7 +1172,7 @@ In this task, you will implement Azure AD Conditional Access Policies.
 
     - Mark as trusted location: **enabled**
 
-    - IP ranges: **The public IP address of the APP1 Azure VM (this can be found on it's page in the portal) in the CIDR notation (i.e. x.x.x.x/32).**
+    - IP ranges: **The public IP address of the APP1 Azure VM (this can be found on its page in the portal) in the CIDR notation (i.e. x.x.x.x/32).**
 
     ![In the Azure portal, named location settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Namedlocations.png "Named Location settings")
 
@@ -1250,7 +1244,7 @@ In this task, you will implement Azure AD Conditional Access Policies.
 
 28. Review the **Session** blade settings but do not modify them. Close it when you are finished.
 
-29. On the **New** blade, set **Enable policy** to **On** and select **Create**
+29. On the **New** blade, set **Enable policy** to **On** and select **Create**.
 
     ![In the Azure portal, the final settings of the new conditional access policy are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Final.png "Conditional access enable policy")
 
