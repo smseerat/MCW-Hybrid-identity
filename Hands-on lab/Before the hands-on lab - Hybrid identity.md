@@ -82,7 +82,7 @@ Timeframe: 150 minutes
 
    > **Note**: The 3 VM Base Configuration provisions a Windows Server 2016 Active Directory domain controller named DC1 using the domain name you specify and a domain member server named APP1 running Windows Server 2016. It also offers an option to provision a client VM running Windows 10, however we will not be using it in our lab (primarily due to licensing requirements applicable when running Windows 10 VMs in Azure). The domain member server (APP1) has automatically installed .NET 4.5 and IIS.
 
-3. On the **Custom deployment** blade, specify the following settings, select the checkbox **I agree to the terms and conditions stated above** and select **Purchase**:
+3. On the **Custom deployment** blade, specify the following settings, then select **Review + Create** then **Create**.
 
     -   Subscription: the name of the target Azure subscription where you want to provision the lab environment Azure VMs.
 
