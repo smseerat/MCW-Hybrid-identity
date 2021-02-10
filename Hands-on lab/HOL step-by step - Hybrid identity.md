@@ -123,7 +123,7 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
 4. On the **New** blade, in the **Search the Marketplace** text box, type **Azure Active Directory** and, in the list of results, select **Azure Active Directory**.
 
-    ![Azure Active Directory was selected from the search results.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SearchAD.png "Search for Azure AD")
+    ![Azure Active Directory was selected from the search results.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SearchAD.png "Search for and select Azure Active Directory")
 
 5. On the **Azure Active Directory** blade, select **Create**.
 
@@ -137,19 +137,19 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
 7. Once it's created, navigate to your subscription blade. Select **Change directory**.
 
-    !['Change directory' is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ChangeDirectory.png "Select Change Directory")
+    !['Change directory' is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ChangeDirectory.png "Select the Change Directory button")
 
 8. In the **Change the directory** blade on the right, select **Contoso** in the dropdown and select **Change**. 
 
-    ![Contoso is selected and 'Change' is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ChangeContoso.png "Select Change")
+    ![Contoso is selected and 'Change' is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ChangeContoso.png "Select Contoso and the Change button")
 
 9. In the portal's left navigation, select **Azure Active Directory**. 
 
-10. In the **Azure Active Directory** blade, select **Switch tenant** then select **Contoso**. 
+10. In the **Azure Active Directory** blade, select **Switch tenant** then select the **Contoso** box and select **Switch**. 
 
     >**Note:** It may take a few minutes for everything to display properly.
 
-    ![Switch to the Contoso directory](images/Hands-onlabstep-bystep-HybridIdentityImages/media/line148Update.png "Switch to Contoso")
+    ![Switch to the Contoso directory](images/Hands-onlabstep-bystep-HybridIdentityImages/media/line148Update.png "Switch to the Contoso directory")
 
 11. On the **Contoso - Overview** blade, select **Licenses** under **Manage** on the left navigation.
 
@@ -157,7 +157,7 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
 13. On the **Activate** blade, in the **ENTERPRISE MOBILITY + SECURITY E5** section, select **Free trial** and then select **Activate**
 
-    ![Activate free trial](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActivateTrial.png "Activate free trial")
+    ![Activate Enterprise Mobility + Security E5 free trial](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActivateTrial.png "Activate Enterprise Mobility + Security E5 free trial")
 
    > **Note**: Activation typically takes about 5 minutes.
 
@@ -194,13 +194,13 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
 
 3. On the **Users - All users** blade, select the entry representing your user account.
 
-4. On the **Profile** blade of your user account, in the **Settings** section, select **edit**.
+4. On the **Profile** blade of your user account, select **Edit**.
 
-    ![Select edit in the Settings section](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectEdit.png "Select edit")
+    ![Select Edit in the Profile blade](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectEdit.png "Select Edit on the user account Profile blade")
 
 5. In the **Settings** section, in the **Usage location** drop-down list, select the **United States** entry and select **Save**.
 
-    ![Select United States in the dropdown](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SettingsUsageLocation.png "Select United States")
+    ![Select United States in the dropdown](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SettingsUsageLocation.png "Select United States for the Usage location")
 
 6. On the **Profile** blade of your user account, select **Licenses** under **Manage** on the left. 
 
@@ -210,7 +210,7 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
 
     ![Update the license assignments](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UpdateLicenseAssignments.png "Update license assignments")
 
-9.  On the **Users - All users** blade, select **+ New user**.
+9. On the **Users - All users** blade, select **+ New user**.
 
 10. On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, and select **Create**:
 
@@ -234,11 +234,11 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
     
     - Usage location: **United States**
     
-    - Job title: leave blank
+    - Job title: **leave blank**
     
-    - Department: leave blank
+    - Department: **leave blank**
 
-    ![Add a new user](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NewUser.png "Add new user")
+    ![Add a new user](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NewUser.png "Add a new user with the listed settings")
 
     > **Note**: Copy the **User name** and **Password** values into Notepad. You will need them later in this lab.
 

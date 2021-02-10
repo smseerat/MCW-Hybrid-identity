@@ -102,17 +102,17 @@ Timeframe: 150 minutes
 
     -   Deploy Client VM: **No**
 
-    -   Client VHD URI: leave blank
+    -   Client VHD URI: **leave blank**
 
     -   VM Size: **Standard_D2s_v3**
    
     **Note**: Use a similar VM size if your subscription does not support the listed size. Documentation is linked here. <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes>
 
-    -   DNS Label Prefix: any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).
+    -   DNS Label Prefix: **any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).**
 
-    -   _artifacts Location: accept the default
+    -   _artifacts Location: **accept the default**
 
-    -   _artifacts Location Sas Token: leave blank
+    -   _artifacts Location Sas Token: **leave blank**
 
     ![The custom deployment blade with each parameter value field highlighted and each value is set too the values stated above.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/15juneupdate.png "The custom deployment blade with all the information listed above entered")
 
