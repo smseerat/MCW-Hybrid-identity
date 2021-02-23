@@ -252,7 +252,6 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
 
     ![Update the license assignments](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UpdateLicenseAssignments2.png "Update license assignments")
 
-
 ### Task 3: Purchase a custom domain name
 
 In this task, you will purchase a custom DNS domain name by leveraging the functionality described at <https://docs.microsoft.com/en-us/azure/app-service/manage-custom-dns-buy-domain>.
@@ -496,17 +495,15 @@ In this task, you will install Azure AD Connect.
 
 In this task, you will enable Recycle Bin in the Contoso Active Directory domain. 
 
-1. Within the Remote Desktop session to **DC1**, from the Tools menu in the Server Manager console, start **Active Directory Administrative Center**.
+1. Within the Remote Desktop session to **DC1**, on the Tools menu in the Server Manager console, start **Active Directory Administrative Center**.
 
     ![Start Active Directory Administrative Center](images/Hands-onlabstep-bystep-HybridIdentityImages/media/StartADAC.png "Start Active Directory Administrative Center")
 
-2. In the **Active Directory Administrative Center** console, right-click the node representing the contoso.local domain and, in the context sensitive menu, select **Enable Recycle Bin**.
+2. In the **Active Directory Administrative Center** console, right-click **contoso (local)** on the left and select **Enable Recycle Bin**. When prompted to confirm, select **OK**.
 
-    ![In the Active Directory Administrative Center console, the **Enable Recycle Bin** option is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AD_EnableRecycleBin.png "Enable Recycle Bin")
+    ![In the Active Directory Administrative Center console, the Enable Recycle Bin option is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AD_EnableRecycleBin.png "Select Enable Recycle Bin for the local domain")
 
-3. When prompted to confirm, select **OK**.
-
-4. When prompted to refresh AD Administrative Center, select **OK**.
+3. When prompted to refresh AD Administrative Center, select **OK**.
 
    > **Note**: For information regarding benefits of the Recycle Bin in hybrid scenarios, refer to <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-recycle-bin>
 
@@ -519,11 +516,11 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
 1. Within the Remote Desktop session to **DC1**, start **Synchronization Rules Editor** under **Azure AD Connect** in the Start menu.
 
-    ![Open Synchronization Rules Editor](images/Hands-onlabstep-bystep-HybridIdentityImages/media/StartSRE.png "Synchronization Rules Editor")
+    ![Open Synchronization Rules Editor](images/Hands-onlabstep-bystep-HybridIdentityImages/media/StartSRE.png "Open Synchronization Rules Editor")
 
 2. In the Synchronization Rules Editor window, on the **View and manage your synchronization rules** page, ensure that **Inbound** appears in the **Direction** drop-down list and select **Add new rule**. This will launch the **Create inbound synchronization rule** wizard.
 
-    ![In the Synchronization Rules Editor, Inbound rules are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SynchronizationRulesEditor_AddNewRule.png "Add New Rule")
+    ![In the Synchronization Rules Editor, Inbound rules are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SynchronizationRulesEditor_AddNewRule.png "Add New Inbound Rule")
 
 3. On the **Create inbound synchronization rule - Description** page, specify the following settings and select **Next**:
 
@@ -547,7 +544,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Disabled: Leave empty
 
-    ![On the description page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_Description.png "Sync Rule Description")
+    ![On the description page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_Description.png "Enter Sync Rule Description information")
 
 4. On the **Create inbound scoping filter** page, select **Add Group**, select **Add clause** specify the following, and select **Next**:
 
@@ -557,7 +554,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Value: **\@\<your custom domain name>**
 
-    ![On the scoping filter page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_ScopingFilter.png "Scoping Filter")
+    ![On the scoping filter page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_ScopingFilter.png "Create inbound scoping filter")
 
 5. On the **Join Rules** page, select **Next**.
 
@@ -569,17 +566,17 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Source: **False**
 
-    ![On the Transformations page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_Transformations.png "Transformations")
+    ![On the Transformations page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_Transformations.png "Add transformation")
 
-7. When presented with a **Warning** dialog box displaying message stating that **A full import and full synchronization will be run on 'contoso.local' during your next synchronization cycle**, select **OK**.
+7. When presented with a **Warning** dialog box displaying that message stating that **A full import and full synchronization will be run on 'contoso.local' during your next synchronization cycle**, select **OK**.
 
    > **Note**: This should bring you back to the View and manage your synchronization rules interface, with the new rule listed at the top of the rule list. 
 
-    ![The synchronization rules editor with the Custom in from AD - UPN Filter highlighted.](images/2020-04-27-23-44-31.png "Synchronization rules editor")
+    ![The synchronization rules editor with the Custom in from AD - UPN Filter highlighted.](images/2020-04-27-23-44-31.png "View new rule")
 
 8. Back in the **Synchronization Rules Editor** window, on the **View and manage your synchronization rules** page, ensure that **Inbound** appears in the **Direction** drop-down list and select **Add new rule** again. This will launch the **Create inbound synchronization rule** wizard.
 
-9.  On the **Description** page, specify the following settings and select **Next**:
+9. On the **Description** page, specify the following settings and select **Next**:
 
     - Name: **Custom In from AD - Catch-all Filter**
 
@@ -601,7 +598,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Disabled: Leave empty
 
-    ![On the description page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_DescriptionCatchAll.png "Catch All Description")
+    ![On the description page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_DescriptionCatchAll.png "Create Catch All Description inbound sync rule")
 
 10. On the **Scoping filer** page, select **Next**.
 
@@ -615,9 +612,9 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Source: **True**
 
-    ![On the Transformations page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_TransformationsCatchAll.png "Transformation configuration settings")
+    ![On the Transformations page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_TransformationsCatchAll.png "Add transformation to rule")
 
-13. When presented with a **Warning** dialog box displaying message stating that **A full import and full synchronization will be run on 'contoso.local' during your next synchronization cycle**, select **OK**.
+13. When presented with a **Warning** dialog box displaying a message stating that **A full import and full synchronization will be run on 'contoso.local' during your next synchronization cycle**, select **OK**.
 
     >**Note**: This should bring you back to the **View and manage your synchronization rules** interface, with the new rules listed at the top of the rule list. 
 
@@ -654,6 +651,8 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
 12. On the **Users - All users** blade, note that the list of user objects includes all user accounts with the UPN suffix matching the custom domain name of the Azure AD tenant. 
 
+    ![User objects with custom domain UPN suffix](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UserObjects.png "User objects shown with custom domain UPN suffixes")
+
 13. In the Azure portal, navigate to the **Groups - All groups** blade of the Contoso Azure AD tenant and note that all of the contoso.local domain groups have been synchronized as well. 
 
 14. In the Azure portal, navigate to the **Contoso - Azure AD Connect** blade and select **Azure AD Connect** on the left. Verify that the following settings are set: 
@@ -689,15 +688,15 @@ In this task, you will configure Azure AD Connect device synchronization options
 
 6. On the **Device options** page, ensure that the **Configure Hybrid Azure AD join** option is selected and select **Next**. 
 
-    ![Configure Hybrid Azure AD join](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ConfigureHybridAzureADJoin.png "Configure Hybrid Azure AD join")
+    ![Select Configure Hybrid Azure AD join](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ConfigureHybridAzureADJoin.png "Configure Hybrid Azure AD join option is selected")
 
 7. On the **Device operating system** page, select the **Windows 10 or later domain-joined devices** and **Supported Windows down-level domain-joined devices** checkboxes, and select **Next**. 
 
    > **Note**: Windows down-level devices are supported only if you are using Seamless SSO for managed domains or a federation service such as AD FS for federated domains.
 
-8. On the **SCP configuration** page, enable the checkbox for the **contoso.local** Active Directory forest, select **Azure Active Directory** entry in the **Authentication Service** dropdown list, and select **Add**.
+8. On the **SCP configuration** page, check the **contoso.local** Active Directory forest box, select the **Azure Active Directory** entry in the **Authentication Service** dropdown list, and select **Add**.
 
-    ![SCP configuration](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SCPConfig.png "SCP configuration")
+    ![SCP configuration page](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SCPConfig.png "SCP configuration page with proper selections")
 
 9.  When prompted for Enterprise Admin Credentials for contoso.local, in the **Windows Security** dialog box, sign in with the **CONTOSO\\demouser** user name and **demo\@pass123** password.
 
@@ -712,13 +711,13 @@ In this task, you will configure Azure AD Connect device synchronization options
 
 ### Task 11: Perform Hybrid Azure AD join
 
-1. From the lab computer, in the Azure portal, verify that you are signed in to the Azure AD tenant associated with the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises (the **Default directory**). If not, select the **Directory + Subscription** icon in the toolbar of the Azure portal (to the right of the **Cloud Shell** icon) to switch to that Azure AD tenant. 
+1. On the lab computer, in the Azure portal, verify that you are signed in to the Azure AD tenant associated with the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises (the **Default directory**). If not, select the **Directory + Subscription** icon in the toolbar of the Azure portal (to the right of the **Cloud Shell** icon) to switch to that Azure AD tenant. 
 
 2. In the Azure portal, navigate to the blade of the **APP1** virtual machine.
 
-3. From the **APP1** virtual machine blade, connect to **APP1** via Remote Desktop. When prompted to sign in, use the **AGAyers\@<custom_domain_name>** user name with the **demo@pass123** password (where **<custom_domain_name>** placeholder represents the custom DNS domain name you assigned to the Contoso Azure AD tenant earlier in this exercise.
+3. On the **APP1** virtual machine blade, connect to **APP1** via Remote Desktop. When prompted to sign in, use the **AGAyers\@<custom_domain_name>** user name with the **demo@pass123** password (where **<custom_domain_name>** placeholder represents the custom DNS domain name you assigned to the Contoso Azure AD tenant earlier in this exercise.
 
-4. Within Remote Desktop session to **APP1**, from the **Server Manager** window, start **Task Scheduler** under **Tools**. 
+4. Within the Remote Desktop session to **APP1**, on the **Server Manager** window, start **Task Scheduler** under **Tools**. 
 
     ![Start task scheduler](images/Hands-onlabstep-bystep-HybridIdentityImages/media/TaskScheduler.png "Task scheduler")
 
