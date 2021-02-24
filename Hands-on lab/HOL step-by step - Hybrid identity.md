@@ -649,13 +649,13 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
 11. Within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Users - All users** blade of the Contoso Azure AD tenant.
 
-12. On the **Users - All users** blade, note that the list of user objects includes all user accounts with the UPN suffix matching the custom domain name of the Azure AD tenant. 
+12. On the **Users - All users** blade, note that the list of user objects includes all user accounts with the UPN suffix matching the custom domain name of the Azure AD tenant. You may need to refresh the page or wait a few minutes to see the change.
 
     ![User objects with custom domain UPN suffix](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UserObjects.png "User objects shown with custom domain UPN suffixes")
 
-13. In the Azure portal, navigate to the **Groups - All groups** blade of the Contoso Azure AD tenant and note that all of the contoso.local domain groups have been synchronized as well. 
+1.  In the Azure portal, navigate to the **Groups - All groups** blade of the Contoso Azure AD tenant and note that all of the contoso.local domain groups have been synchronized as well. 
 
-14. In the Azure portal, navigate to the **Contoso - Azure AD Connect** blade and select **Azure AD Connect** on the left. Verify that the following settings are set: 
+2.  In the Azure portal, navigate to the **Contoso - Azure AD Connect** blade and select **Azure AD Connect** on the left. Verify that the following settings are set: 
 
     - Azure AD Connect Sync Status: **Enabled** 
   
@@ -719,11 +719,11 @@ In this task, you will configure Azure AD Connect device synchronization options
 
 4. Within the Remote Desktop session to **APP1**, on the **Server Manager** window, start **Task Scheduler** under **Tools**. 
 
-    ![Start task scheduler](images/Hands-onlabstep-bystep-HybridIdentityImages/media/TaskScheduler.png "Task scheduler")
+    ![Start task scheduler](images/Hands-onlabstep-bystep-HybridIdentityImages/media/TaskScheduler.png "Star Task scheduler via Server Manager")
 
 5. In the **Task Scheduler** console, navigate to **Task Scheduler Library** > **Microsoft** > **Windows** > **Workplace Join**. From there, enable then run the **Automatic-Device-Join** task. 
 
-    ![Start device join task](images/Hands-onlabstep-bystep-HybridIdentityImages/media/StartDeviceJoin.png "Start device join task")
+    ![Start device join task](images/Hands-onlabstep-bystep-HybridIdentityImages/media/StartDeviceJoin.png "Start device join task in Task Scheduler")
 
 6. Switch to the Remote Desktop session to **DC1** and, from the console pane of the Windows PowerShell ISE window, start Azure AD Connect delta synchronization by running the following:
 
@@ -741,7 +741,7 @@ In this task, you will configure Azure AD Connect device synchronization options
    dsregcmd /status
    ```
 
-9.  Verify that the output of the command resembles the following:
+9. Verify that the output of the command resembles the following:
 
    ```
    +----------------------------------------------------------------------+
@@ -799,7 +799,7 @@ In this task, you will configure Azure AD Connect device synchronization options
 
    > **Note**: You might need to wait until the Azure AD registration status is correctly reported and its Azure AD object appears in the Azure portal.
 
-   ![In the Azure portal, on the Devices - All devices blade, an entry representing the APP1 server is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/APP1_HybridAzureADjoined.png "APP1 server entry")
+   ![In the Azure portal, on the Devices - All devices blade, an entry representing the APP1 server is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/APP1_HybridAzureADjoined.png "APP1 server entry is shown")
 
 
 ### Summary
@@ -820,11 +820,11 @@ In this exercise, you will optimize authentication, authorization, and access co
 
 In this task, you will create and configure Active Directory groups that will be used to control authentication, authorization, and access control and synchronize them to the Contoso Azure AD tenant. 
 
-1. Within the Remote Desktop session to **DC1**, from the **Server Manager** window, under **Tools** start the **Active Directory Users and Computers** console. 
+1. Within the Remote Desktop session to **DC1**, on the **Server Manager** window, under **Tools** start the **Active Directory Users and Computers** console. 
 
-2. In the **Active Directory Users and Computers** console, expand the **contoso.local** node and navigate to the **Demo Accounts > Groups**. 
+2. In the **Active Directory Users and Computers** console, expand **contoso.local** on the left and navigate to **Demo Accounts > Groups**. 
 
-    ![Navigate to Demo Accounts > Groups](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeNavigation.png "DemoAccounts > Groups")
+    ![Navigate to Demo Accounts > Groups](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeNavigation.png "Navigate to DemoAccounts > Groups in Active Directory Users and Computers")
 
 3. In the **Groups** directory, right-click then select **New** then select **Group**. Create a new group with the following settings and select **OK**:
 
@@ -836,11 +836,11 @@ In this task, you will create and configure Active Directory groups that will be
 
     - Group type: **Security**
 
-    ![Create a new group.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateGroup.png "Create new group")
+    ![Create a new group.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateGroupDirectory.png "Create new group in directory")
 
 4. Open the **Properties** window of the **Engineering - Mandatory MFA** group, in the **Description** text box, type **Engineering users with user state-based MFA enforcement (without Conditional Access)** then select **Apply** then **OK**.
 
-5. Within the Remote Desktop session to **DC1**, from the Script pane of the Windows PowerShell ISE window, run the following to add designated users to the newly created group (replace the placeholder `<custom_domain_name>` with the actual name of the custom verified domain name you assigned to the Contoso Azure AD tenant).
+5. Within the Remote Desktop session to **DC1**, on the Script pane of the Windows PowerShell ISE window, run the following to add designated users to the newly created group (replace the placeholder `<custom_domain_name>` with the actual name of the custom verified domain name you assigned to the Contoso Azure AD tenant).
 
     ```pwsh
     $domainName = '<custom_domain_name>'
@@ -851,7 +851,7 @@ In this task, you will create and configure Active Directory groups that will be
     }
     ```
 
-6. From the console pane of the Windows PowerShell ISE window, start Azure AD Connect delta synchronization by running the following:
+6. On the console pane of the Windows PowerShell ISE window, start Azure AD Connect delta synchronization by running the following:
 
    ```pwsh
    Import-Module -Name 'C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1'
@@ -868,25 +868,25 @@ In this task, you will create and configure Active Directory groups that will be
 
 In this task, you assign a value to the **UsageLocation** attribute of each user account and assign an Azure AD Premium license to each user. This is necessary in order to implement Azure AD-based Multi-Factor Authentication for these users.
 
-1. Within the Remote Desktop session to **DC1**, from the Script pane of the Windows PowerShell ISE window, run the following to install Azure AD Graph PowerShell module for Graph (select **Yes to All** when prompted whether to proceed with the installation):
+1. Within the Remote Desktop session to **DC1**, on the Script pane of the Windows PowerShell ISE window, run the following to install Azure AD Graph PowerShell module for Graph (select **Yes to All** when prompted whether to proceed with the installation):
 
     ```pwsh
     Install-Module AzureAD
     ```
 
-2. From the Script pane of the Windows PowerShell ISE window, run the following to sign in to the Contoso Azure AD tenant. When prompted, sign in with the **john.doe** Azure AD user account, which you created in the previous exercise.
+2. On the Script pane of the Windows PowerShell ISE window, run the following to sign in to the Contoso Azure AD tenant. When prompted, sign in with the **john.doe** Azure AD user account, which you created in the previous exercise.
 
     ```pwsh
     Connect-AzureAD
     ```
 
-3. From the Script pane of the Windows PowerShell ISE window, run the following to set the **Location** attribute to **United States** for all Azure AD user accounts with the UPN suffix matching the custom verified domain name of the Contoso Azure AD tenant. 
+3. On the Script pane of the Windows PowerShell ISE window, run the following to set the **Location** attribute to **United States** for all Azure AD user accounts with the UPN suffix matching the custom verified domain name of the Contoso Azure AD tenant. 
 
     ```pwsh
     $domainName = (Get-AzureADDomain | Where-Object IsDefault -eq 'True').Name
     Get-AzureADUser | Where-Object {$_.UserPrincipalName -like "*@$domainName"} | Set-AzureADUser -UsageLocation 'US'
     ```
-4. From the Script pane of the Windows PowerShell ISE window, run the following to assign the EM+S E5 trial licenses to all Azure AD user accounts with the UPN suffix matching the custom verified domain name of the Contoso Azure AD tenant. 
+4. On the Script pane of the Windows PowerShell ISE window, run the following to assign the EM+S E5 trial licenses to all Azure AD user accounts with the UPN suffix matching the custom verified domain name of the Contoso Azure AD tenant. 
 
     ```pwsh
     $license = New-Object -TypeName Microsoft.Open.AzureAD.Model.AssignedLicense
@@ -905,19 +905,19 @@ In this task, you will configure user state-based Azure AD Multi-Factor Authenti
 
    > **Note**: In general, enabling Azure Multi-Factor Authentication using Conditional Access policies is the recommended approach, since it offers more flexibility. Setting Multi-Factor Authentication by modifying the user state requires users to perform two-step verification every time they sign in and overrides Conditional Access policies. On the other hand, this approach might be required if existing licensing arrangement does not include Conditional Access.
 
-1. Within the Remote Desktop session to **DC1**, from the Script pane of the Windows PowerShell ISE window, run the following to install Azure AD MSOnline PowerShell module for Graph (select **Yes to All** when prompted whether to proceed with the installation):
+1. Within the Remote Desktop session to **DC1**, on the Script pane of the Windows PowerShell ISE window, run the following to install Azure AD MSOnline PowerShell module for Graph (select **Yes to All** when prompted whether to proceed with the installation):
 
     ```pwsh
     Install-Module MSOnline
     ```
 
-2. From the Script pane of the Windows PowerShell ISE window, run the following to sign in to the Contoso Azure AD tenant. When prompted, sign in with the **john.doe** Azure AD user account, which you created in the previous exercise.
+2. On the Script pane of the Windows PowerShell ISE window, run the following to sign in to the Contoso Azure AD tenant. When prompted, sign in with the **john.doe** Azure AD user account, which you created in the previous exercise.
 
     ```pwsh
     Connect-MsolService
     ```
 
-3. From the Script pane of the Windows PowerShell ISE window, run the following to enable Azure AD Multi-Factor Authentication for all Azure AD user accounts with the UPN suffix matching the custom verified domain name of the Contoso Azure AD tenant. 
+3. On the Script pane of the Windows PowerShell ISE window, run the following to enable Azure AD Multi-Factor Authentication for all Azure AD user accounts with the UPN suffix matching the custom verified domain name of the Contoso Azure AD tenant. 
 
     ```pwsh
     $objectIdGUID = (Get-MsolGroup | Where-Object {$_.DisplayName -eq 'Engineering - Mandatory MFA'}).objectId.Guid
@@ -935,7 +935,7 @@ In this task, you will configure user state-based Azure AD Multi-Factor Authenti
 
     ![Selecting Multi-Factor Authentication](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectMFA.png "Select Multi-Factor Authentication")
 
-5. In the **multi-factor authentication** portal, on the **users** tab, ensure that all users have the **MULTI-FACTOR AUTH STATUS** set to **Enabled**. If all or some do not have multi-factor authentication enabled, select all users, then select **Enable** on the right. Select **enable multi-factor auth** when prompted. Wait for the operation to complete. 
+5. In the **multi-factor authentication** portal, on the **users** tab, ensure that all users have the **MULTI-FACTOR AUTH STATUS** set to **Enabled**. If all or some do not have multi-factor authentication enabled, select all users that have it disabled, then select **Enable** on the right. Select **enable multi-factor auth** when prompted. Wait for the operation to complete. 
 
     ![Enabling MFA](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EnableMFA.png "Enabling MFA")
 
@@ -956,7 +956,7 @@ In this task, you will enable password writeback and Self-Service Password Reset
 
 6. On the **Domain and OU filtering** page, select **Next**. 
 
-7. On the **Optional features** page, select the **Password writeback** checkbox and select **Next**.
+7. On the **Optional features** page, check the **Password writeback** box and select **Next**.
 
 8. On the **Enable single sign-on** page, select **Next**.
 
@@ -968,21 +968,21 @@ In this task, you will enable password writeback and Self-Service Password Reset
 
 12. On the **Contoso - Overview** blade, select **Password reset** on the left under **Manage**. 
 
-13. On the **Password reset - Properties** blade, set **Self-service password reset enabled** to **Selected**, choose **Select group**, on the **Default password reset policy**, select **Engineering**, choose **Select**, and select **Save**.
+13. On the **Password reset - Properties** blade, set **Self-service password reset enabled** to **Selected**, choose **No groups selected**. On the **Default password reset policy** blade that appears on the right, select **Engineering**, choose **Select**, and select **Save**.
 
 14. On the **Password reset - Properties** blade, select **Authentication methods** on the left under **Manage**.
 
 15. On the **Password reset - Authentication methods** blade, set **Number of methods required to reset** to **2**, enable all **Methods available to users**, including **Mobile app notification**, **Mobile app code**, **Email**, **Mobile phone (SMS only)**, and **Security questions**. 
 
-    ![Setting the authentication methods](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SettingAuthenticationMethods.png "Setting authentication methods")
+    ![Setting the authentication methods](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SettingAuthenticationMethods.png "Setting authentication methods and requirements")
 
    > **Note**: The **Office phone** method is not available in trial subscriptions.
 
 16. Set **Number of security questions required to register** and **Number of questions required to reset** to **3**. 
 
-    ![Setting security questions](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SetSecurityQuestions.png "Set security questions")
+    ![Setting security questions](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SetSecurityQuestions.png "Set security questions and requirements")
 
-17. Choose **Select security questions**. On the **Select security questions** blade, select **+ Predefined**, on the **Add predefined security questions** blade, select any 5 questions, select **OK** twice, and, back on the **Password reset - Authentication methods** blade, select **Save**.
+17. Choose **No security questions configured**. On the **Select security questions** blade that appears, select **+ Predefined**. On the **Add predefined security questions** blade that appears on the right, select any 5 questions, select **OK** twice, and, back on the **Password reset - Authentication methods** blade, select **Save**.
 
     ![Selecting security questions](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectSecurityQuestions.png "Select security questions")
 
