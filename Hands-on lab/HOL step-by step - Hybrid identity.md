@@ -995,9 +995,9 @@ In this task, you will enable password writeback and Self-Service Password Reset
 
 In this task, you will implement Azure AD password Protection for Windows Server Active Directory.
 
-1. Within the Remote Desktop session to **DC1**, from the **Server Manager** window, under **Tools** start **Group Policy Management** console. 
+1. Within the Remote Desktop session to **DC1**, on the **Server Manager** window, under **Tools** start **Group Policy Management** console. 
 
-2. In the **Group Policy Management** console, navigate to the **Forest: contoso.local > Domains > contoso.local** node, right-click **Default Domain Policy** and, in the right-click menu, select **Edit**. 
+2. In the **Group Policy Management** console, navigate to **Forest: contoso.local > Domains > contoso.local** on the left, right-click **Default Domain Policy** and select **Edit**. 
 
     ![Edit default domain policy](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EditDefaultDomainPolicy.png "Edit default domain policy")
 
@@ -1013,7 +1013,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 7. On the **Security - Getting started** blade, select **Authentication methods** under **Manage** on the left.
 
-8. On the **Authentication methods - Authentication methods policy (Preview)** blade, select **Password protection** under **Manage** on the left.
+8. On the **Authentication methods - Polcicies** blade, select **Password protection** under **Manage** on the left.
 
 9.  On the **Authentication methods - Password protection** blade, specify the following settings and select **Save**:
 
@@ -1033,18 +1033,22 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 10. Switch to the Remote Desktop session to **APP1** virtual machine, where you are signed in as the user **AGAyers** with the **demo@pass123** password. 
 
-11. Within the Remote Desktop session to **APP1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at <https://www.microsoft.com/download/details.aspx?id=57071> and download **AzureADPasswordProtectionProxySetup.exe**. Run the installation of the **Azure AD Password Protection Proxy Bundle** with the default options.
+11. Within the Remote Desktop session to **APP1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at the below listed url. Click **Download** under **Azure AD Password Protection for Windows Server Active Directory**. Download and install **AzureADPasswordProtectionProxySetup.exe** with the default options.
 
-    **Note:** You may have to enable file download on Internet Explorer. To do this, select **Tools** in the top right of the window and select **Internet Options**. From there select the **Security** tab then select **Custom level**. In the pop-up, scroll to the downloads section. Select **Enable** under **File download** and then select **OK**. Select **Yes** at the confirmation prompt then select **OK** again. 
+    ```
+    https://www.microsoft.com/download/details.aspx?id=57071
+    ```
 
-12.  Within the Remote Desktop session to **APP1**, start Windows PowerShell ISE as Administrator and, from the console pane, run the following to register the proxy (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant). When prompted, sign in to the Contoso Azure AD tenant using credentials of the **john.doe** user account.
+    **Note:** You may have to enable file download on Internet Explorer. To do this, select the **Tools** icon that's shaped like a gear in the top right of the window and select **Internet Options**. From there select the **Security** tab then select **Custom level**. In the pop-up, scroll to the downloads section. Select **Enable** under **File download** and then select **OK**. Select **Yes** at the confirmation prompt then select **OK** again. 
+
+12.  Within the Remote Desktop session to **APP1**, start Windows PowerShell ISE as Administrator and, on the scripting pane, run the following to register the proxy (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant). When prompted, sign in to the Contoso Azure AD tenant using the credentials of the **john.doe** user account.
 13.  
     ```pwsh
     Import-Module AzureADPasswordProtection
     Register-AzureADPasswordProtectionProxy -AccountUpn 'john.doe@<domain_name>.onmicrosoft.com'
     ```
 
-14. From the Administrator: Windows PowerShell ISE console, run the following to register the Active Directory forest (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant):
+14. On the Windows PowerShell ISE console, run the following to register the Active Directory forest (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant):
 
     ```pwsh
     Register-AzureADPasswordProtectionForest -AccountUpn 'john.doe@<domain_name>.onmicrosoft.com'
@@ -1052,26 +1056,33 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 15. Switch to the Remote Desktop session to **DC1** virtual machine, where you are signed in as the user **CONTOSO\demouser** with the **demo@pass123** password. 
 
-16. Within the Remote Desktop session to **DC1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at <https://www.microsoft.com/download/details.aspx?id=57071> and download **AzureADPasswordProtectionDCAgentSetup.exe**. Run the **Azure AD Password Protection DC Agent Setup** installation with the default options.
+16. Within the Remote Desktop session to **DC1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at the below listed url. Click **Download** under **Azure AD Password Protection for Windows Server Active Directory**. Download and install **AzureADPasswordProtectionProxySetup.exe** with the default options.
+
+    ```
+    https://www.microsoft.com/download/details.aspx?id=57071
+    ```
 
     **Note:** You may have to perform the instructions to enable file download on Internet Explorer listed earlier. 
 
 17. Restart DC1 once the setup completes.
 
-
 ### Task 6: Enable Azure Active Directory Identity Protection
 
 In this task, you will enable Azure AD Identity Protection
 
-1. From the lab computer, in the Azure portal, navigate to the blade of the **DC1** virtual machine. You will need to be in the **Default Directory**. 
+1. On the lab computer, in the Azure portal, navigate to the blade of the **DC1** virtual machine. You will need to be in the **Default Directory**. 
 
 2. From the **DC1** virtual machine blade, connect to **DC1** via Remote Desktop. When prompted to sign in, use the **demouser** name with the **demo\@pass123** password. 
 
-3. Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the Azure portal at <https://portal.azure.com>.
+3. Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the Azure portal at the below url.
 
-4. When prompted to sign in, provide the credentials of the **john.doe** Azure AD user account, which you copied into Notepad earlier in this exercise.
+    ```
+    portal.azure.com
+    ```
 
-5. In the Azure portal, select **+ Create a resource**.
+4. When prompted to sign in, enter the credentials of the **john.doe** Azure AD user account, which you copied into Notepad earlier in this exercise.
+
+5. In the Azure portal, expand the left navigation and select **+ Create a resource**.
 
 6. On the **New** blade, in the **Search the Marketplace** text box, type **Identity Protection** and, in the list of search results, select **Azure AD Identity Protection**. 
 
