@@ -1082,39 +1082,31 @@ In this task, you will enable Azure AD Identity Protection
 
 4. When prompted to sign in, enter the credentials of the **john.doe** Azure AD user account, which you copied into Notepad earlier in this exercise.
 
-5. In the Azure portal, expand the left navigation and select **+ Create a resource**.
+5. In the Azure portal, search for and select **Azure AD Identity Protection** in the search bar at the top of the page.
 
-6. On the **New** blade, in the **Search the Marketplace** text box, type **Identity Protection** and, in the list of search results, select **Azure AD Identity Protection**. 
+6. On the **Azure AD Identity Protection** blade, select **MFA registration policy** on the left under **Protect**.
 
-    ![Search for and select Azure AD Identity Protection](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SearchSelectIdentityProtection.png "Select Azure Identity Protection")
+7.  On the **Azure AD Identity Protection - MFA registration policy** blade, in the **Assignments** section, select **All users**. 
 
-7. On the **Azure AD Identity Protection** blade, select **Create** twice.
+    ![Select Users in the Assignments section](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectUsers.png "Select All users")
 
-8. In the Azure portal, navigate to the **All services** blade, in the **Search All** text box, type **Azure AD Identity Protection** blade, and, in the list of results, select **Azure AD Identity Protection**.
-
-9.  On the **Azure AD Identity Protection** blade, select **MFA registration policy** on the left under **Protect**.
-
-10. On the **Azure AD Identity Protection - MFA registration policy** blade, in the **Assignments** section, select **Users**. 
-
-    ![Select Users in the Assignments section](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectUsers.png "Select Users")
-
-11. On the **Users** blade, on the **Include** tab, choose **Select individual users and groups**, then **Select users**, on the **Select users** blade, in the **Select** text box, type **Engineering**, in the list of results, select **Engineering** and choose **Select**.
+8.  On the **Users** blade, on the **Include** tab, choose **Select individual users and groups**. On the **Select users** blade, in the **Select** text box, type **Engineering**, in the list of results, select **Engineering** and choose **Select**.
 
     ![In the Azure portal, on the Include tab of the Users blade, the group included in the scope of the MFA registration policy is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_MFAregistrationpolicy_UsersInclude.png "Include Engineering group")
 
-12. On the **Users** blade, on the **Exclude** tab, choose **Select excluded users**, on the **Select users** blade, in the **Select** text box, type **Engineering - Mandatory MFA**, in the list of results, select **Engineering - Mandatory MFA**, choose **Select**, and, back on the **Users** blade, select **Done**.
+9.  On the **Users** blade, on the **Exclude** tab, choose **0 users and groups selected**. On the **Select users** blade, in the **Select** text box, type **Engineering - Mandatory MFA**, in the list of results, select **Engineering - Mandatory MFA**, choose **Select**, and, back on the **Users** blade, select **Save**.
 
     ![In the Azure portal, on the Exclude tab of the Users blade, the group excluded from the scope of the MFA registration policy is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_MFAregistrationpolicy_UsersExclude.png "Exclude group")
 
-13. Back on the **Azure AD Identity Protection - MFA registration policy** blade, in the **Controls** section, select **Access**. On the **Access** blade, ensure that the **Require Azure MFA registration** checkbox is selected, and choose **Select**.
+10. Back on the **Azure AD Identity Protection - MFA registration policy** blade, in the **Controls** section, ensure that the **Require Azure MFA registration** checkbox is selected.
 
-14. Back on the **Azure AD Identity Protection - MFA registration policy** blade, set **Enforce Policy** to **On** and select **Save**.
+11. Set **Enforce Policy** to **On** and select **Save**.
 
     ![In the Azure portal, the MFA registration policy settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_MFAregistrationpolicy_EnforcePolicy.png "Enforce policy")
 
-15. On the **Azure AD Identity Protection** blade, select **User risk policy** on the left under **Protect**.
+12. On the **Azure AD Identity Protection** blade, select **User risk policy** on the left under **Protect**.
 
-16. On the **Azure AD Identity Protection - User risk policy** blade, configure the **User risk remediation policy** with the following settings and save your configuration:
+13. On the **Azure AD Identity Protection - User risk policy** blade, configure the **User risk remediation policy** with the following settings and save your configuration:
 
     - Assignments: 
 
