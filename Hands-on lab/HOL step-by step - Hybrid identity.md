@@ -1193,11 +1193,11 @@ In this task, you will implement Azure AD Conditional Access Policies.
 
 12. On the **New** blade, in the **Assignments** section, select **0 users and groups selected**.
 
-13. On the **Users and groups** blade, on the **Include** tab, choose the **Select users and groups** option, select the **Users and groups** checkbox. On the **Select** blade, type **Engineering**, in the list of results, select **Engineering**, and choose **Select**.
+13. On the **Include** tab, choose the **Select users and groups** option, select the **Users and groups** checkbox. On the **Select** blade, type **Engineering**, in the list of results, select **Engineering**, and choose **Select**.
 
     ![In the Azure portal, on the Users and groups blade, on the Include tab, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_UsersandGroupsInclude.png "Include Configuration Settings")
 
-14. On the **Exclude** tab that appears, select the **Users and groups** checkbox. On the **Select excluded users** blade, type **Engineering**. In the list of results, select **Engineering - Mandatory MFA**, and choose **Select**.
+14. On the **Exclude**, select the **Users and groups** checkbox. On the **Select excluded users** blade, type **Engineering**. In the list of results, select **Engineering - Mandatory MFA**, and choose **Select**.
 
     ![In the Azure portal, on the Exclude tab, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_UsersandGroupsExclude.png "Exclude configuration settings and selections")
 
@@ -1219,8 +1219,7 @@ In this task, you will implement Azure AD Conditional Access Policies.
 
     ![In the Azure portal, on the Device platforms blade, the settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_DevicePlatforms.png "Device platform settings")
 
-19. Select **Not configured** under **Locations**. On the blade that appears, set **Configure** to **Yes**. On the **Include** tab, choose **Selected locations**. On the **Select** blade, check the **Contoso Headquarters** box, choose **Select**, and then, on the **Locations** blade, choose **Select**.
-
+19. Select **Not configured** under **Locations**. On the blade that appears, set **Configure** to **Yes**. On the **Include** tab, choose **Selected locations**. On the **Select** blade, check the **Contoso Headquarters** box, choose **Select**.
     ![In the Azure portal, on the Locations blade, the settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Locations.png "Select conditional access locations")
 
 20. Select **Not configured** under **Client apps**, on the **Client apps** blade, set **Configure** to **Yes**. Check the **Browser**, **Mobile apps and desktop clients**, **Exchange ActiveSync clients**, and **Other clients** boxes, and select **Done**.
@@ -1261,7 +1260,7 @@ In this task, you will implement Azure AD Conditional Access Policies.
 
     - Device platform: **Windows**
 
-    - Client apps (Preview): **Browser**
+    - Client apps: **Browser**
 
     - Device state (Preview): **Device Hybrid AD Joined**
 
@@ -1282,51 +1281,27 @@ In this task, you will implement Azure AD Privileged Identity Management.
 
 2. In the search text box, type **Privileged Identity Management** and, in the list of results, select **Azure AD Privileged Identity Management**.
 
-3. On the **Privileged Identity Management** blade, select **Consent to PIM** on the left.
+3. On the **Privileged Identity Management** blade, select **Azure AD roles** under **Manage** on the left. 
 
-4. On the **Privileged Identity Management - Consent to PIM** blade, select **Verify my identity**. 
+4. On the **Contoso - Quick start** blade, select **Assign eligibility**.
 
-5. When prompted to provide additional information, select **Next**, on the **Additional security verification** page, specify the following settings:
+5. On the **Contoso - Roles** blade, select **+ Add assignments**.
 
-    - **Step 1: How should we contact you?**
-
-        - Authentication phone: select your country or region and specify a mobile phone number you intend to use in this lab.
-
-        - Method: **Send me a code by text message**
-
-        - Select **Next**
-
-    - **Step 2: We've sent a text message to your phone**
-
-        - Use the code in the text message you received, select **Verify**, and following successful verification, select **Done**.
-
-    ![Security Verification](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SecurityVerification.png "Security Verification")
-
-6. Navigate back to the **Privileged Identity Management** blade, select **Consent to PIM**, select **Consent**, when prompted for a confirmation to proceed, select **Yes**, and refresh the Internet Explorer window.
-
-7. In the Azure portal, from the **Privileged Identity Management** blade, select **Azure AD roles** under **Manage** on the left. 
-
-8. On the **Azure AD roles - Quick start** blade, select **Sign up PIM for Azure AD Roles** on the left, select **Sign up**, when prompted for a confirmation, select **Yes**, and refresh the Internet Explorer window.
-
-9.  On the **Azure AD roles - Overview** blade, select **Roles** under **Manage** on the left.
-
-10. On the **Azure AD roles - Roles** blade, select **Add assignments**.
-
-11. On the **Add assignments** blade, specify the following settings to designate **Ann G. Ayers** as an eligible member of the **Authentication Administrator** role then select **OK**. 
+6. On the **Add assignments** blade, specify the following settings to designate **Ann G. Ayers** as an eligible member of the **Authentication Administrator** role then select **Next** then **Assign**. 
 
     - Select role: **Authentication Administrator**
 
     - Select members: **Ann G. Ayers**
-  
-    - Assignment type: **Eligible**
 
    > **Note**: **Authentication Administrator** role grants privileges to set or reset non-password credentials and update passwords for all users. Authentication Administrators can require users to re-register against existing non-password credential (for example, MFA or FIDO) and revoke remember MFA on the device, which prompts for MFA on the next sign-in.
 
-12. On the **Azure AD roles - Roles** blade, select **Assignments** under **Manage** on the left and note that **Ann G. Ayers** is listed as eligible for the **Authentication Administrator** role.
+   ![Add assignments](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AddAAAssignment.png "Adding the Authentication Administrator role assignment")
 
-13. Switch to the Remote Desktop session to **APP1**, start Internet Explorer, and browse to the Azure portal at [**http://portal.azure.com**](http://portal.azure.com). From here sign-in as Ann G. Ayers. The username can be found on the **Users - All users** page in the Azure portal window on the lab computer. The password will be **demo@pass123**. 
+7. On the **Contoso - Roles** blade, select **Assignments** under **Manage** on the left and note that **Ann G. Ayers** is listed as eligible for the **Authentication Administrator** role.
 
-14. When prompted to provide additional information, select **Next**, on the **Additional security verification** page, specify the following settings:
+8. Switch to the Remote Desktop session to **APP1**, start Internet Explorer, and browse to the Azure portal at [**http://portal.azure.com**](http://portal.azure.com). From here sign-in as Ann G. Ayers. The username can be found on the **Users - All users** page in the Azure portal window on the lab computer. The password will be **demo@pass123**. 
+
+9. When prompted to provide additional information, select **Next**, on the **Additional security verification** page, specify the following settings:
 
     - **Step 1: How should we contact you?**
 
@@ -1342,37 +1317,37 @@ In this task, you will implement Azure AD Privileged Identity Management.
 
         - Note that you have the option of using **app password** and select **Done**.
 
-15. When prompted again to provide additional information, select **Next**, on the **confirm your current password** page, select **re-enter my password**, and, when prompted, provide the password for the Active Directory user account of **Ann G. Ayers**.
+10. When prompted again to provide additional information, select **Next**, on the **confirm your current password** page, select **re-enter my password**, and, when prompted, provide the password for the Active Directory user account of **Ann G. Ayers**.
 
-16. When prompted, type the code sent to the mobile phone you specified previously and select **Verify**.
+11. When prompted, type the code sent to the mobile phone you specified previously and select **Verify**.
 
-17. If brought to the **don't lose access to your account!** page, select **Verify** next to the **Authentication Phone** entry and then select **text me**. Next, type the code send to your mobile phone and select **verify**.
+12. If brought to the **don't lose access to your account!** page, select **Verify** next to the **Authentication Phone** entry and then select **text me**. Next, type the code send to your mobile phone and select **verify**.
 
-18. On the **don't lose access to your account!** page, select **Set it up now** next to the **Authentication Email is not configured** entry. Next, in the **Authentication Email** text box, type an email address that you want to use for verification and select **email me**.
+13. On the **don't lose access to your account!** page, select **Set it up now** next to the **Authentication Email is not configured** entry. Next, in the **Authentication Email** text box, type an email address that you want to use for verification and select **email me**.
 
-19. Retrieve the email with the code, type it in the textbox next to the **verify** button, and select **verify**
+14. Retrieve the email with the code, type it in the textbox next to the **verify** button, and select **verify**
 
-20. On the **don't lose access to your account!** page, select **Set them up now** next to the **Security Questions are not configured** entry. Next, select each security question, provide the corresponding answer, and select **save answers**.
+15. On the **don't lose access to your account!** page, select **Set them up now** next to the **Security Questions are not configured** entry. Next, select each security question, provide the corresponding answer, and select **save answers**.
 
-21. On the **don't lose access to your account!** page, select **finish**. You will be redirected to the Azure portal.
+16. On the **don't lose access to your account!** page, select **finish**. You will be redirected to the Azure portal.
 
-22. In the Azure portal, navigate to the **Privileged Identity Management - Quick start** blade. 
+17. In the Azure portal, navigate to the **Privileged Identity Management - Quick start** blade. 
 
-23. On the **Privileged Identity Management - Quick start** blade, select **My roles** on the left.
+18. On the **Privileged Identity Management - Quick start** blade, select **My roles** on the left.
 
-24. On the **My roles - Azure AD roles** blade, on the **Eligible roles** tab, select **Activate** next to the **Authentication Administrator** role entry. 
+19. On the **My roles - Azure AD roles** blade, on the **Eligible roles** tab, select **Activate** next to the **Authentication Administrator** role entry. 
 
-25. On the **Authentication Administrator** blade, select **Activate**.
+20. On the **Authentication Administrator** blade, select **Activate**.
 
-26. On the **Activation** blade, accept the default activation start time and duration (1 hour) type a reason for the activation in the **Activation reason** text box, and select **Activate**.
+21. On the **Activation** blade, accept the default activation start time and duration (1 hour) type a reason for the activation in the **Activation reason** text box, and select **Activate**.
 
     ![Activate role](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActivateRole.png "Role activation")
 
-27. On the **Activation status**, monitor changes to your activation request. Once the activation is completed, select the **Sign out** link and then sign in back to the Azure portal to start using your newly activated role.
+22. On the **Activation status**, monitor changes to your activation request. Once the activation is completed, select the **Sign out** link and then sign in back to the Azure portal to start using your newly activated role.
 
-28. In the Azure portal, navigate back to the **My roles - Azure AD roles** blade.
+23. In the Azure portal, navigate back to the **My roles - Azure AD roles** blade.
 
-29. On the **My roles - Azure AD roles** blade, on the **Active roles** tab, note that the role assignment has been activated. 
+24. On the **My roles - Azure AD roles** blade, on the **Active roles** tab, note that the role assignment has been activated. 
 
 ### Summary
 
