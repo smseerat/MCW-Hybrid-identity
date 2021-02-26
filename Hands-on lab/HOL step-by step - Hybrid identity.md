@@ -1301,53 +1301,35 @@ In this task, you will implement Azure AD Privileged Identity Management.
 
 8. Switch to the Remote Desktop session to **APP1**, start Internet Explorer, and browse to the Azure portal at [**http://portal.azure.com**](http://portal.azure.com). From here sign-in as Ann G. Ayers. The username can be found on the **Users - All users** page in the Azure portal window on the lab computer. The password will be **demo@pass123**. 
 
-9. When prompted to provide additional information, select **Next**, on the **Additional security verification** page, specify the following settings:
+9. When prompted to provide additional information, select **Next**, on the **Keep your account secure** page, select **I want to set up a different method**. At the **Choose a different method** dialog, select **Phone** on the dropdown then select **Confirm**. 
 
-    - **Step 1: How should we contact you?**
+    - On the **Phone** page, enter your phone number and select **Next**
 
-        - Authentication phone: select your country or region and specify a mobile phone number you intend to use in this lab.
+    - Enter the code in the email you received, select **Next**.
 
-        - Method: **Send me a code by text message**
+10. When prompted again to provide additional information, select **Next**, on the **Keep your account secure** page, select **I want to set up a different method**. At the **Choose a different method** dialog, select **Email** on the dropdown then select **Confirm**. 
 
-    - **Step 2: We've sent a text message to your phone**
+    - On the **Email** page, enter an email address you can access and select **Next**
 
-        - Use the code in the text message you received, select **Verify**.
+    - Enter the code in the text message you received, select **Next**.
 
-    - **Step 3: Keep using your existing application**
+11. Back on the **Keep your account secured** page, select **Done**. You will now be able to use to Azure portal. 
 
-        - Note that you have the option of using **app password** and select **Done**.
+12. In the Azure portal, navigate to the **Privileged Identity Management - Quick start** blade. 
 
-10. When prompted again to provide additional information, select **Next**, on the **confirm your current password** page, select **re-enter my password**, and, when prompted, provide the password for the Active Directory user account of **Ann G. Ayers**.
+13. On the **Privileged Identity Management - Quick start** blade, select **My roles** under **Tasks** on the left.
 
-11. When prompted, type the code sent to the mobile phone you specified previously and select **Verify**.
+14. On the **My roles - Azure AD roles** blade, on the **Eligible assignments** tab, select **Activate** next to the **Authentication Administrator** role entry. 
 
-12. If brought to the **don't lose access to your account!** page, select **Verify** next to the **Authentication Phone** entry and then select **text me**. Next, type the code send to your mobile phone and select **verify**.
+15. On the **Activate - Authentication Administrator** blade, enter some random next in the **Reason** box then select **Activate**.
 
-13. On the **don't lose access to your account!** page, select **Set it up now** next to the **Authentication Email is not configured** entry. Next, in the **Authentication Email** text box, type an email address that you want to use for verification and select **email me**.
+16. On the **Activation status**, monitor changes to your activation request. Once the activation is completed, select the **Sign out** link and then sign in back to the Azure portal to start using your newly activated role.
 
-14. Retrieve the email with the code, type it in the textbox next to the **verify** button, and select **verify**
+17. In the Azure portal, navigate back to the **My roles - Azure AD roles** blade.
 
-15. On the **don't lose access to your account!** page, select **Set them up now** next to the **Security Questions are not configured** entry. Next, select each security question, provide the corresponding answer, and select **save answers**.
+18. On the **My roles - Azure AD roles** blade, on the **Active assignments** tab, note that the role assignment has been activated. 
 
-16. On the **don't lose access to your account!** page, select **finish**. You will be redirected to the Azure portal.
-
-17. In the Azure portal, navigate to the **Privileged Identity Management - Quick start** blade. 
-
-18. On the **Privileged Identity Management - Quick start** blade, select **My roles** on the left.
-
-19. On the **My roles - Azure AD roles** blade, on the **Eligible roles** tab, select **Activate** next to the **Authentication Administrator** role entry. 
-
-20. On the **Authentication Administrator** blade, select **Activate**.
-
-21. On the **Activation** blade, accept the default activation start time and duration (1 hour) type a reason for the activation in the **Activation reason** text box, and select **Activate**.
-
-    ![Activate role](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActivateRole.png "Role activation")
-
-22. On the **Activation status**, monitor changes to your activation request. Once the activation is completed, select the **Sign out** link and then sign in back to the Azure portal to start using your newly activated role.
-
-23. In the Azure portal, navigate back to the **My roles - Azure AD roles** blade.
-
-24. On the **My roles - Azure AD roles** blade, on the **Active roles** tab, note that the role assignment has been activated. 
+    ![Active assignment](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActiveAssignment.png "The role assignment is active")
 
 ### Summary
 
