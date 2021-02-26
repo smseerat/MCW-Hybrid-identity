@@ -1353,7 +1353,7 @@ In this task, you will install and configure Azure AD Application Proxy.
 
 2. On the **Contoso - Overview** blade of the Contoso Azure AD tenant, select **Application proxy** under **Manage** on the left.
 
-3. On the **Contoso - Application proxy** blade, select **Download connector service** link.
+3. On the **Contoso - Application proxy** blade, select **Download connector service**.
 
 4. On the **Application Proxy Connector Download** blade on the right, review the system requirements and select **Accept terms & Download**.
 
@@ -1361,14 +1361,13 @@ In this task, you will install and configure Azure AD Application Proxy.
 
    > **Note**: In a production environment, you would install the connector on a domain member server. We are using a domain controller strictly for simplicity.
 
-6. Install Microsoft Azure Active Directory Application Proxy Connector with default settings. When prompted to sign in, provide the credentials of the **john.doe** Azure AD user account, which you created in the first exercise of this lab.
+6. Install Microsoft Azure Active Directory Application Proxy Connector with default settings. When prompted to sign in, enter the credentials of the **john.doe** Azure AD user account, which you created in the first exercise of this lab.
 
-7. Refresh the Internet Explorer page displaying the **Contoso - Application proxy** blade and verify that it includes the **DC1.contoso.local** entry in the **Default** connector group.
+7. Once the installation completes, refresh the Internet Explorer page displaying the **Contoso - Application proxy** blade and verify that it includes the **DC1.contoso.local** entry in the **Default** connector group.
 
-    ![Verify the connector](images/Hands-onlabstep-bystep-HybridIdentityImages/media/VerifyConnector.png "Verify connector")
+    ![Verify the connector](images/Hands-onlabstep-bystep-HybridIdentityImages/media/VerifyConnector.png "Verify that the connector is present")
 
 8. On the **Contoso - Application proxy** blade, select **Enable application proxy** and, when prompted for confirmation, select **Yes**.
-
 
 ### Task 2: Configure an Azure AD Application Proxy application
 
@@ -1402,13 +1401,13 @@ In this task, you will configure an Azure AD Application Proxy application.
 
     ![Add on-premises application settings](images/Hands-onlabstep-bystep-HybridIdentityImages/media/OnPremAppSettings.png "On-prem app settings")
 
-3. You will be automatically redirected to the **APP1 Default Web Site - Overview** blade.
+3. In the search bar at the top of the Azure portal, search for and select **Enterprise applications**. In the list of applications, select **APP1 Default Web Site**.
 
 4. On the **APP1 Default Web Site - Overview** blade, in the **Getting Started** section, select **Assign users and groups**.
 
     ![Select Assign users and groups](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectAssignUsersGroups.png "Select Assign users and groups")
 
-5. On the **APP1 Default Web Site - Users and groups** blade, select **+ Add user**.
+5. On the **APP1 Default Web Site - Users and groups** blade, select **+ Add user/group**.
 
 6. On the **Add Assignment** blade, specify the following settings and select **Assign**:
 
@@ -1416,13 +1415,13 @@ In this task, you will configure an Azure AD Application Proxy application.
 
     - Select Role: **User**
 
-    ![Add assignment blade](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AddAssignment.png "Add assignment blade")
+    ![Add assignment blade](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AddAssignment.png "Add assignment blade and group selection")
 
 7. On the **APP1 Default Web Site - Users and groups** blade, select **Single sign-on** under **Manage** on the left.
 
 8. On the **APP1 Default Web Site - Single sign-on** blade, select **Windows Integrated Authentication**.
 
-9.  Within the Remote Desktop session to **DC1**, start a **Command Prompt** and, from the **Command Prompt**, run the following to identify Service Principal Names associated with the APP1 computer account.
+9. Within the Remote Desktop session to **DC1**, start a **Command Prompt**. On the **Command Prompt**, run the following to identify Service Principal Names associated with the APP1 computer account.
 
     ```
     setspn -L APP1
@@ -1442,9 +1441,9 @@ In this task, you will configure an Azure AD Application Proxy application.
 
 13. In the **Active Directory Users and Computers** console, select **View** and, in the **View** menu, enable **Advanced Features**.
 
-    ![Enable Advanced Features](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EnableAdvancedFeatures.png "Enable Advanced Features")
+    ![Enable Advanced Features](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EnableAdvancedFeatures.png "Enable Advanced Features in the console")
 
-14. In the **Active Directory Users and Computers** console, locate the computer account hosting the Azure AD Application Proxy connector (**DC1** in our case) under **Domain Controllers** and display its **Properties** window.
+14. In the **Active Directory Users and Computers** console, locate the computer account hosting the Azure AD Application Proxy connector (**DC1** in our case) under **Domain Controllers** within **contoso.local** and display its **Properties** window.
 
     ![Display computer properties](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DisplayComputerProperties.png "Display computer properties")
 
@@ -1460,12 +1459,15 @@ In this task, you will configure an Azure AD Application Proxy application.
 
 18. Back in the **DC1 Properties** window, select **OK**.
 
-
 ### Task 3: Test an Azure AD Application Proxy application
 
-1. From the lab computer, start a browser in Private mode and browse to <https://myapps.microsoft.com>. When prompted to sign in, use the **AGAyers\@<custom_domain_name>** user name with the **demo@pass123** password (where **<custom_domain_name>** placeholder represents the custom DNS domain name you assigned to the Contoso Azure AD tenant in the first exercise of this lab.
+1. From the lab computer, start a browser in Private mode and browse to the below url. When prompted to sign in, use the **AGAyers\@<custom_domain_name>** user name with the **demo@pass123** password (where **<custom_domain_name>** placeholder represents the custom DNS domain name you assigned to the Contoso Azure AD tenant in the first exercise of this lab.
 
-2. When prompted to enter a code, type the code which was texted to the mobile phone number that you provided in the previous exercise.
+    ```
+    https://myapps.microsoft.com
+    ```
+
+2. When prompted to enter a code, type the code which was texted to the mobile phone number that you entered in the previous exercise.
 
 3. On the **Apps** page of the **Application Access Panel**, select the **APP1 Default Web Site** icon. This will automatically open a new browser tab displaying the Default Web Site page on APP1.
 
