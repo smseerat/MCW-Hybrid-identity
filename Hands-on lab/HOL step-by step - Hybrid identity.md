@@ -1399,7 +1399,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 
     - Translate URLs in Application Body: **No**
 
-    ![Add on-premises application settings](images/Hands-onlabstep-bystep-HybridIdentityImages/media/OnPremAppSettings.png "On-prem app settings")
+    ![Add on-premises application settings](images/Hands-onlabstep-bystep-HybridIdentityImages/media/OnPremAppSettings.png "Enter On-prem app settings")
 
 3. In the search bar at the top of the Azure portal, search for and select **Enterprise applications**. In the list of applications, select **APP1 Default Web Site**.
 
@@ -1419,7 +1419,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 
 7. On the **APP1 Default Web Site - Users and groups** blade, select **Single sign-on** under **Manage** on the left.
 
-8. On the **APP1 Default Web Site - Single sign-on** blade, select **Windows Integrated Authentication**.
+8. On the **APP1 Default Web Site - Single sign-on** blade, select **Windows Integrated Authentication** if your not brought there automatically.
 
 9. Within the Remote Desktop session to **DC1**, start a **Command Prompt**. On the **Command Prompt**, run the following to identify Service Principal Names associated with the APP1 computer account.
 
