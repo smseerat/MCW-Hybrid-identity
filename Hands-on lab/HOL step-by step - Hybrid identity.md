@@ -452,7 +452,7 @@ In this task, you will install Azure AD Connect.
 
 18. Back on the **Connect your directories** page, select **Next**.
 
-19. On the **Azure AD sign-in configuration** page, ensure that your custom domain name is listed as the verified **Active Directory UPN Suffix**, and that the **userPrincipalName** entry appears in the **USER PRINCIPAL NAME** drop-down list. Note the warning stating **Users will not be able to sign-in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**. Checl the **Continue without matching all UPN suffixes to verified domain** box and select **Next**. 
+19. On the **Azure AD sign-in configuration** page, ensure that your custom domain name is listed as the verified **Active Directory UPN Suffix**, and that the **userPrincipalName** entry appears in the **USER PRINCIPAL NAME** drop-down list. Note the warning stating **Users will not be able to sign-in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**. Check the **Continue without matching all UPN suffixes to verified domain** box and select **Next**. 
 
     >**Note**: This is expected, since some users are still configured with the **contoso.local** UPN suffix, which is not routable and cannot be configured as a verified custom domain name of an Azure AD tenant.
 
@@ -1131,7 +1131,7 @@ In this task, you will enable automatic enrollment of hybrid Azure AD devices in
     ```
 2. On the **Microsoft Endpoint Manager admin center** page, select **Devices** on the left navigation.
 
-3. On the **Devices** blade, select **Enrolle devices** under **Device enrollment** on the left.
+3. On the **Devices** blade, select **Enrolled devices** under **Device enrollment** on the left.
 
 4. On the **Windows enrollment** blade, select **Automatic Enrollment**.
 
@@ -1724,7 +1724,7 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
 17. If prompted, sign in with the credentials of the **john.doe** Contoso Azure AD user account and, on the **Permissions requested Accept for your organization** page, select **Accept**.
 
-18. Review the status of the permissions listed in the **Configured permissions** section on the **Sync B2B users - API permissions** blade and ensure that they arelisted as **Granted for Contoso**.
+18. Review the status of the permissions listed in the **Configured permissions** section on the **Sync B2B users - API permissions** blade and ensure that they are listed as **Granted for Contoso**.
 
     ![Permissions granted for Contoso](images/Hands-onlabstep-bystep-HybridIdentityImages/media/GrantedForContoso.png "Permissions granted for Contoso")
 
