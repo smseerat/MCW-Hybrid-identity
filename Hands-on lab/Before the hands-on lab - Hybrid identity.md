@@ -195,7 +195,11 @@ Timeframe: 150 minutes
 
     -   Password: **demo\@pass123**
 
-2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the TechNet Script Center page titled **Create Users/Group for Active Directory Demo/Test Environment** linked here. <https://gallery.technet.microsoft.com/scriptcenter/Create-UsersGroup-for-9ee1de26>
+2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the below link.
+
+    ```
+    https://github.com/microsoft/MCW-Hybrid-identity/tree/master/Hands-on%20lab/studentfiles
+    ```
 
 3. On the **Create Users/Group for Active Directory Demo/Test Environment** page, select the **CreateDemoUsers.ps1** link, accept the licensing terms, and save the corresponding script to the local file system.
 
