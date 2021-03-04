@@ -195,11 +195,11 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
 
 4. On the **Profile** blade of your user account, select **Edit**.
 
-    ![Select Edit in the Profile blade](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectEdit.png "Select Edit on the user account Profile blade")
+    ![Screenshot that depicts the Profile blade with the Edit button select](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectEdit.png "Select Edit on the user account Profile blade")
 
 5. In the **Settings** section, in the **Usage location** drop-down list, select the **United States** entry and select **Save**.
 
-    ![Select United States in the dropdown](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SettingsUsageLocation.png "Select United States for the Usage location")
+    ![Screenshot that depicts United States being selected in the Usage location dropdown menu of the Profile blade](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SettingsUsageLocation.png "Select United States for the Usage location")
 
 6. On the **Profile** blade of your user account, select **Licenses** under **Manage** on the left. 
 
@@ -207,7 +207,7 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
 
 8. On the **Update license assignments** blade, enable the **Enterprise Mobility + Security E5** checkbox, ensure that all the corresponding license options are enabled, and select **Save**.
 
-    ![Update the license assignments](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UpdateLicenseAssignments.png "Update license assignments")
+    ![Screenshot that depicts the Update license assignments blade with Enterprise Mobility + Security E5 and it's subsequent license options selected. The Save button is also selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UpdateLicenseAssignments.png "Update license assignments")
 
 9. On the **Users - All users** blade, select **+ New user**.
 
@@ -237,7 +237,7 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
     
     - Department: **leave blank**
 
-    ![Add a new user](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NewUser.png "Add a new user with the listed settings")
+    ![Screenshot that depicts the New user blade with all the specified settings selected and the Create button selected](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NewUser.png "Add a new user with the listed settings")
 
     > **Note**: Copy the **User name** and **Password** values into Notepad. You will need them later in this lab.
 
@@ -249,7 +249,7 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
 
 14. On the **Update license assignments** blade, enable the **Enterprise Mobility + Security E5** checkbox, ensure that all the corresponding license options are enabled, and select **Save**.
 
-    ![Update the license assignments](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UpdateLicenseAssignments2.png "Update license assignments")
+    ![Screenshot that depicts the Update license assignments blade with Enterprise Mobility + Security E5 and it's subsequent license options selected. The Save button is also selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UpdateLicenseAssignments2.png "Update license assignments")
 
 ### Task 3: Purchase a custom domain name
 
