@@ -263,7 +263,7 @@ In this task, you will purchase a custom DNS domain name by leveraging the funct
 
 4. On the **New** blade, select **Web App**.
 
-    ![Select web app](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectWebApp.png "Select web app resource")
+    ![Screenshot that depicts the New blade with 'Web App' selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectWebApp.png "Select web app resource")
 
 5. On the **Basics** tab of the **Web App** blade, specify the following settings and select **Next: Monitoring**:
 
@@ -285,7 +285,7 @@ In this task, you will purchase a custom DNS domain name by leveraging the funct
 
     - SKU and size: **Shared D1** (If necessary, select **Change size**, select Dev/Test, select **D1** and select **Apply**)
 
-    ![Configure the Web App basics blade](images/Hands-onlabstep-bystep-HybridIdentityImages/media/15juneupdate2.png "Web app basics information")
+    ![Screenshot that depicts the Basics tab of the Web App blade with the above listed settings selected and the Next: Monitoring button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/15juneupdate2.png "Web app basics information")
   
 6. On the **Monitoring** tab of the **Web App** blade, specify the following setting and select **Review + create** then **Create**:
 
@@ -293,15 +293,15 @@ In this task, you will purchase a custom DNS domain name by leveraging the funct
 
 7. In the Azure portal, search for and select **App Service Domains** on the top search bar.
 
-    ![Search and Select App Service Domains](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ASD.png "Select App Service Domains service")
+    ![Screenshot that depicts the Azure portal with App Service Domains searched for and selected at the top of the search bar.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ASD.png "Select App Service Domains service")
 
 8. On the **App Service Domains** blade, select **Create App Service Domain**.
 
-    ![Create App Service Domain](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectBuyDomain.png "Create App Service Domain page")
+    ![Screenshot that depicts the App Service Domains blade with the Create App Service Domain button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectBuyDomain.png "Create App Service Domain page")
 
 9. On the **Create App Service Domains** blade, select the **contosohilab-RG** resource group. Then in the **Search for domains...** text box, type the domain name you want to purchase and select the box next to one of the available domain names listed below the text box. Make sure you make note of the domain you choose. 
 
-    ![Select a domain from the list](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DomainList.png "Select domain from list of available domains")
+    ![Screenshot that depicts the Create App Service Domains blade with the required settings selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DomainList.png "Select domain from list of available domains")
 
 10. Select **Next: Contact information**, type required information.
 
