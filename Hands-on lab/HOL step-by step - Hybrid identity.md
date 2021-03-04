@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-June 2020
+March 2021
 </div>
 
 
@@ -95,7 +95,7 @@ From the architectural standpoint, the deployment will consist of the following 
 
 -   Fabrikam Azure AD tenant
 
-    ![High level architecture consisting of the on-premises environment represented by a rectangle on the left-hand side, two cloud outlines representing the Azure AD tenant of Contoso and Fabrikam on the right-hand side, and the Microsoft Intune icon in the middle. The on-premises environment contains an icon representing Active Directory domain controllers, providing such functionality as Azure AD Connect-based synchronization with attribute level filtering and password writeback, Azure AD Application Proxy with its on-premises connector, Service Connection Point for Hybrid Azure AD join, and Password Protection DC Agent. There is also a web server icon, representing the hybrid Azure AD joined server hosting the APP1 application, used also as the Password Application Proxy. The Contoso Azure AD tenant provides such functionality as Azure AD application proxy, My Apps portal, Automatic Intune enrollment, Enterprise State Roaming, Conditional Access, Azure AD Identity Protection, Azure AD Privileged Identity Management, Azure AD MFA, and Self-Service Password Reset.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/HOL_Architecture_Overview.png)
+    ![High level architecture consisting of the on-premises environment represented by a rectangle on the left-hand side, two cloud outlines representing the Azure AD tenant of Contoso and Fabrikam on the right-hand side, and the Microsoft Intune icon in the middle. The on-premises environment contains an icon representing Active Directory domain controllers, providing such functionality as Azure AD Connect-based synchronization with attribute level filtering and password writeback, Azure AD Application Proxy with its on-premises connector, Service Connection Point for Hybrid Azure AD join, and Password Protection DC Agent. There is also a web server icon, representing the hybrid Azure AD joined server hosting the APP1 application, used also as the Password Application Proxy. The Contoso Azure AD tenant provides such functionality as Azure AD application proxy, My Apps portal, Automatic Intune enrollment, Enterprise State Roaming, Conditional Access, Azure AD Identity Protection, Azure AD Privileged Identity Management, Azure AD MFA, and Self-Service Password Reset.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/HOL_Architecture_Overview.png "Architecture Overview")
 
 ## Exercise 1: Integrate an Active Directory forest with an Azure Active Directory tenant
 
@@ -123,7 +123,7 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
 4. On the **New** blade, in the **Search the Marketplace** text box, type **Azure Active Directory** and, in the list of results, select **Azure Active Directory**.
 
-    ![Azure Active Directory was selected from the search results.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SearchAD.png "Search for and select Azure Active Directory")
+    ![A screenshot that depicts the New blade. In the New blade, Azure Active Directory is searched for in the Search the Marketplace text box and selected from the search results.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SearchAD.png "Search for and select Azure Active Directory")
 
 5. On the **Azure Active Directory** blade, select **Create**.
 
@@ -137,11 +137,11 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
 7. Once it's created, navigate to your subscription blade. Select **Change directory**.
 
-    !['Change directory' is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ChangeDirectory.png "Select the Change Directory button")
+    ![A screenshot that depicts the Subscription page. On the Subscription page, the 'Change directory' button is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ChangeDirectory.png "Select the Change Directory button")
 
 8. In the **Change the directory** blade on the right, select **Contoso** in the dropdown and select **Change**. 
 
-    ![Contoso is selected and 'Change' is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ChangeContoso.png "Select Contoso and the Change button")
+    ![A screenshot that depicts the Change the Directory blade. On the Change the Directory blade, Contoso is selected in the dropdown and the 'Change' button is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ChangeContoso.png "Select Contoso and the Change button")
 
 9. In the portal's left navigation, select **Azure Active Directory**. 
 
@@ -149,7 +149,7 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
     >**Note:** It may take a few minutes for everything to display properly.
 
-    ![Switch to the Contoso directory](images/Hands-onlabstep-bystep-HybridIdentityImages/media/line148Update.png "Switch to the Contoso directory")
+    ![A screenshot that depicts the 'Switch tenant' blade. On the 'Switch tenant' blade, the Contoso directory is selected and the Switch button is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/line148Update.png "Switch to the Contoso directory")
 
 11. On the **Contoso - Overview** blade, select **Licenses** under **Manage** on the left navigation.
 
@@ -157,10 +157,9 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
 13. On the **Activate** blade, in the **ENTERPRISE MOBILITY + SECURITY E5** section, select **Free trial** and then select **Activate**
 
-    ![Activate Enterprise Mobility + Security E5 free trial](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActivateTrial.png "Activate Enterprise Mobility + Security E5 free trial")
+    ![A screenshot that depicts the Licenses - All products blade with the Active blade open. On the Active blade, under 'Enterprise Mobility + Security E5 free trial', then Activate button is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActivateTrial.png "Activate Enterprise Mobility + Security E5 free trial")
 
    > **Note**: Activation typically takes about 5 minutes.
-
 
 ### Task 2: Create and configure Azure AD users
 
