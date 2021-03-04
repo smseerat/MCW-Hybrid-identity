@@ -315,7 +315,7 @@ In this task, you will assign a newly purchased custom DNS domain name to the Co
 
 1. On the lab computer, in the Azure portal, select the **Directory + Subscription** icon in the toolbar of the Azure portal (to the right of the **Cloud Shell** icon) and switch to the Contoso Azure AD tenant. 
    
-   ![Switch to the Contoso directory](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ContosoSwitch.png "Contoso directory switch")
+   ![In this screenshot, the Directory + Subscription blade is depicted with the Contoso directory selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ContosoSwitch.png "Contoso directory switch")
 
 2. In the Azure portal's left navigation, select **Azure Active Directory** to navigate to the **Contoso - Overview** blade.
 
@@ -333,7 +333,7 @@ In this task, you will assign a newly purchased custom DNS domain name to the Co
 
 9.  In the Azure portal, select **All services** in the portal's left navigation. In the **Search All** textbox, type **DNS zones**, and then select the **DNS zones** entry in the listing of search results.
 
-    ![Search for and select DNS Zones](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SearchDNSZones.png "DNS Zones search and select")
+    ![In this screenshot, the All services blade is depicted with DNS zones searched for in the search box and selected in the search results.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SearchDNSZones.png "DNS Zones search and select")
 
 10. On the **DNS zones** blade, select the entry with the name matching the custom domain name you purchased in the previous task.
 
@@ -355,7 +355,7 @@ In this task, you will assign a newly purchased custom DNS domain name to the Co
 
 14. Select **Make primary** and confirm the change when prompted. 
 
-    ![Select Make primary](images/Hands-onlabstep-bystep-HybridIdentityImages/media/MakePrimary.png "Select Make primary on Custom domain name blade")
+    ![In this screenshot, the Custom domain name blade is depicted with the Make primary button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/MakePrimary.png "Select Make primary on Custom domain name blade")
 
 ### Task 5: Configure DNS suffix in the Contoso Active Directory forest
 
@@ -369,23 +369,23 @@ In this task, you will configure the DNS suffix of the Contoso Active Directory 
 
 4. Within the Remote Desktop session to **DC1**, on the **Server Manager** window, start the **Active Directory Domains and Trusts** console under **Tools**. 
 
-    ![Start the Active Directory Domains and Trusts console](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ADDTConsole.png "Stare Active Directory Domains and trusts console on Server Manager window")
+    ![In this screenshot, Server Manager is depicted with the Active Directory Domains and Trusts console selected on the Tools dropdown menu.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ADDTConsole.png "Stare Active Directory Domains and trusts console on Server Manager window")
 
 5. In the **Active Directory Domains and Trusts** console, right-click **Active Directory Domains and Trusts [DC1.contoso.local]** on the left and select **Properties**.
 
-    ![Open Active Directory Domains and Trusts Properties](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeProperties.png "Open Active Directory Domains and Trusts Properties")
+    ![In this screenshot, the Active Directory Domains and Trusts console is depicted with 'Active Directory Domains and Trusts' right-clicked on the left with the Properties button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeProperties.png "Open Active Directory Domains and Trusts Properties")
 
 6. On the **UPN Suffixes** tab of the **Active Directory Domains and Trusts [DC1.contoso.local]** window, in the **Alternative UPN suffixes** textbox, type the name of the custom domain you verified in the previous task, select **Add**, and then select **OK**.
 
-    ![Add UPN Suffix](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UPNSuffix.png "Add UPN suffix")
+    ![In this screenshot, the Active Directory Domains and Trusts [DC1.contoso.local] window is depicted with the custom domain verified in the previous task added to the Alternative UPN suffixes selected. The OK button is then selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UPNSuffix.png "Add UPN suffix")
 
 7. Within the Remote Desktop session to **DC1**, on the **Server Manager** window, start the **Active Directory Users and Computers** console under **Tools**. 
 
-    ![Start the Active Directory Users and Computers console on Server Manager](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ADUCConsole.png "Start Active Directory Users and Computers console on Server Manager window")
+    ![In this screenshot, Server Manager is depicted with the Active Directory Users and Computers console selected on the Tools dropdown menu.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ADUCConsole.png "Start Active Directory Users and Computers console on Server Manager window")
 
 8. In the **Active Directory Users and Computers** console, expand **contoso.local** on the left and examine the organizational unit hierarchy of the domain and the group membership of the domain groups. 
 
-    ![Examine domain and group hirearchy](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeHierarchy.png "Domain and group hierarchy")
+    ![In this screenshot, on the Active Directory Users and Computers console, constoso.local under Active Directory Users and Computers on the left is expanded. The Domain and group hierarchy an now be viewed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeHierarchy.png "Domain and group hierarchy")
 
 9.  Within the Remote Desktop session to **DC1**, start Windows PowerShell ISE and, on the Script pane, run the following to replace the UPN suffix of all users who are members of the **Engineering** group with the one matching the custom verified domain name of the Contoso Azure AD tenant (replace the placeholder `<custom_domain_name>` with the actual name of the custom verified domain name you assigned to the Contoso Azure AD tenant). 
 
@@ -425,7 +425,7 @@ In this task, you will install Azure AD Connect.
 
 9.  On the **Azure AD Connect** blade, select the **Download Azure AD Connect** link.
 
-    ![Download Azure AD Connect](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DownloadADC.png "Download Azure AD Connect")
+    ![In this screenshot, the Azure AD Connect blade is depicted with the Download Azure AD Connect link selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DownloadADC.png "Download Azure AD Connect")
 
 10. On the **Microsoft Azure Active Directory Connect** web page of the Microsoft Downloads site, select **Download**.
 
@@ -433,7 +433,7 @@ In this task, you will install Azure AD Connect.
 
 12. On the **Welcome to Azure AD Connect** page, check the **I agree to the license terms and privacy notice** box and select **Continue**.
 
-    ![Agree to terms and select Next](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ADCWelcomeWizard.png "Agree to terms and select Next")
+    ![In this screenshot, the Welcome to Azure AD Connect page is depicted with the 'I agree to the license terms and privacy notice' box checked and the Continue button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ADCWelcomeWizard.png "Agree to terms and select Next")
 
 13. On the **Express Settings** page, select the **Customize** button.
 
@@ -441,13 +441,13 @@ In this task, you will install Azure AD Connect.
 
 15. On the **User sign-in** page, select the **Pass-through authentication** option and the **Enable single sign-on** checkboxes, and select **Next**.
 
-    ![On the User sign-in page of Microsoft Azure AD Connect wizard, the Pass-through authentication option and the Enable single sign-on checkboxes are selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_UserSign-in.png "Select sign-in options and select Next")
+    ![In this screenshot, the User sign-in page of the Microsoft Azure AD Connect wizard is depicted with the Pass-through authentication option and the Enable single sign-on checkboxes selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_UserSign-in.png "Select sign-in options and select Next")
 
 16. On the **Connect to Azure AD** page, sign in by using the credentials of the **john.doe** account and select **Next**.
 
 17. On the **Connect your directories** page, ensure that the **contoso.local** entry appears in the **FOREST** drop-down list and select **Add Directory**. In the **AD forest account**, ensure that the **Create new AD account** option is selected, in the **ENTERPRISE ADMIN USERNAME** textbox, type **CONTOSO\\demouser**, in the **PASSWORD** textbox, type **demo\@pass123**, and select **OK**.
 
-    ![On the Connect your directories page of Microsoft Azure AD Connect wizard, contoso.local has been added.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_ConnectyourDirectories.png "Connect your Contoso directory")
+    ![In this screenshot, the Connect your directories page of the Microsoft Azure AD Connect wizard is depicted with contoso.local having been added.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_ConnectyourDirectories.png "Connect your Contoso directory")
 
 18. Back on the **Connect your directories** page, select **Next**.
 
@@ -455,31 +455,31 @@ In this task, you will install Azure AD Connect.
 
     >**Note**: This is expected, since some users are still configured with the **contoso.local** UPN suffix, which is not routable and cannot be configured as a verified custom domain name of an Azure AD tenant.
 
-    ![On the Azure AD sign-in configuration page of Microsoft Azure AD Connect wizard, the custom domain name is listed as verified, and the userPrincipalName is listed as the attribute to use as the AzureAD username.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_AzureADsign-inconfiguration.png "Configure sign-in and select Next")
+    ![In this screenshot, the Azure AD sign-in configuration page of the Microsoft Azure AD Connect wizard is depicted with the custom domain name listed as verified, and the userPrincipalName is listed as the attribute to use as the AzureAD username. The Next button is then selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_AzureADsign-inconfiguration.png "Configure sign-in and select Next")
 
 20. On the **Domain and OU filtering** page, ensure that only the **DemoAccounts** OU and all of its children OUs are selected and select **Next**. 
 
-    ![On the Domain and OU filtering page of Microsoft Azure AD Connect wizard, Demo Accounts OU and all of its child OUs are selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_DomainandOUFiltering.png "Select Demo Accounts and Child OUs then select Next")
+    ![In this screenshot, on the Domain and OU filtering page of the Microsoft Azure AD Connect wizard, the Demo Accounts OU and all of its child OUs are selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_DomainandOUFiltering.png "Select Demo Accounts and Child OUs then select Next")
 
 21. On the **Uniquely identifying your users** page, accept the default settings and select **Next**. 
 
-    ![On the Uniquely identifying your users page of Microsoft Azure AD Connect wizard, the default settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_UniquelyIdentifyingyourusers.png "Uniquely Identifying your Users")
+    ![In this screenshot, on the Uniquely identifying your users page of the Microsoft Azure AD Connect wizard, the default settings are displayed. The Next button is then selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_UniquelyIdentifyingyourusers.png "Uniquely Identifying your Users")
 
 22. On the **Filter users and devices** page, accept the default settings and select **Next**. 
 
-    ![On the Filter users and devices page of Microsoft Azure AD Connect wizard, the default settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_FilterUsersandDevices.png "Filter Users and Devices")
+    ![In this screenshot, on the Filter users and devices page of Microsoft Azure AD Connect wizard, the default settings are displayed. The Next button is then selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_FilterUsersandDevices.png "Filter Users and Devices")
 
 23. On the **Optional features** page, accept the default settings and select **Next**.
 
-    ![On the Optional features page of Microsoft Azure AD Connect wizard, the default settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_OptionalFeatures.png "Optional Features")
+    ![In this screenshot, on the Optional features page of the Microsoft Azure AD Connect wizard, the default settings are displayed. The Next button is then selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_OptionalFeatures.png "Optional Features")
 
 24. On the **Enable single sign-on** page, select **Enter credentials**, in the **Forest credentials** dialog box, sign in with the **CONTOSO\\demouser** username and **demo\@pass123** password, and select **Next**.
 
-    ![On the Enable single sign-on page of Microsoft Azure AD Connect wizard, the prompt for forest credentials is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_EnableSingleSign-on.png "Enable Single Sign-on")
+    ![In this screenshot, on the Enable single sign-on page of the Microsoft Azure AD Connect wizard, the prompt for forest credentials is displayed with the credentials listed above entered.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_EnableSingleSign-on.png "Enable Single Sign-on")
 
 25. On the **Ready to configure** page, ensure that the **Start the synchronization process when configuration completes** checkbox is **NOT** selected and select **Install**.
 
-    ![On the Enable single sign-on page of Microsoft Azure AD Connect wizard, the Start the synchronization process when configuration completes is cleared.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_ReadytoConfigure.png "Ready to Configure")
+    ![In this screenshot, on the Enable single sign-on page of the Microsoft Azure AD Connect wizard, the Start the synchronization process when configuration completes is not selected and the Install button is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_ReadytoConfigure.png "Ready to Configure")
 
    > **Note**: You will configure attribute-level filtering before enabling the synchronization process.
 
@@ -487,7 +487,7 @@ In this task, you will install Azure AD Connect.
 
 26. On the **Configuration complete** page, select **Exit**.
 
-    ![On the Configuration complete page of Microsoft Azure AD Connect wizard, the status of the installation is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_ConfigurationComplete.png "Configuration Complete")
+    ![In this screenshot, on the Configuration complete page of the Microsoft Azure AD Connect wizard, the status of the installation is displayed as Complete and the Exit button is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_ConfigurationComplete.png "Configuration Complete")
 
 
 ### Task 7: Enable Active Directory Recycle Bin
