@@ -496,16 +496,15 @@ In this task, you will enable Recycle Bin in the Contoso Active Directory domain
 
 1. Within the Remote Desktop session to **DC1**, on the Tools menu in the Server Manager console, start **Active Directory Administrative Center**.
 
-    ![Start Active Directory Administrative Center](images/Hands-onlabstep-bystep-HybridIdentityImages/media/StartADAC.png "Start Active Directory Administrative Center")
+    ![In this screenshot, the Server Manager console is depicted with the Tools menu open and the Start Active Directory Administrative Center console selected in the Tools menu dropdown.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/StartADAC.png "Start Active Directory Administrative Center")
 
 2. In the **Active Directory Administrative Center** console, right-click **contoso (local)** on the left and select **Enable Recycle Bin**. When prompted to confirm, select **OK**.
 
-    ![In the Active Directory Administrative Center console, the Enable Recycle Bin option is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AD_EnableRecycleBin.png "Select Enable Recycle Bin for the local domain")
+    ![In this screenshot, the Active Directory Administrative Center console is depicted with 'contoso (local)' right-clicked and the Enable Recycle Bin option selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AD_EnableRecycleBin.png "Select Enable Recycle Bin for the local domain")
 
 3. When prompted to refresh AD Administrative Center, select **OK**.
 
    > **Note**: For information regarding benefits of the Recycle Bin in hybrid scenarios, refer to <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-recycle-bin>
-
 
 ### Task 8: Configure Azure AD Connect attribute-level filtering
 
@@ -515,11 +514,11 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
 1. Within the Remote Desktop session to **DC1**, start **Synchronization Rules Editor** under **Azure AD Connect** in the Start menu.
 
-    ![Open Synchronization Rules Editor](images/Hands-onlabstep-bystep-HybridIdentityImages/media/StartSRE.png "Open Synchronization Rules Editor")
+    ![In this screenshot, the Start menu is open within the Remote Desktop session to DC1 and under Azure AD Connect, Synchronization Rules Editor is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/StartSRE.png "Open Synchronization Rules Editor")
 
 2. In the Synchronization Rules Editor window, on the **View and manage your synchronization rules** page, ensure that **Inbound** appears in the **Direction** drop-down list and select **Add new rule**. This will launch the **Create inbound synchronization rule** wizard.
 
-    ![In the Synchronization Rules Editor, Inbound rules are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SynchronizationRulesEditor_AddNewRule.png "Add New Inbound Rule")
+    ![In this screenshot, the Synchronization Rules Editor window is depicted with the Inbound rules displayed, Inbound selected on the Direction dropdown menu, and the 'Add new rule' button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SynchronizationRulesEditor_AddNewRule.png "Add New Inbound Rule")
 
 3. On the **Create inbound synchronization rule - Description** page, specify the following settings and select **Next**:
 
@@ -543,7 +542,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Disabled: Leave empty
 
-    ![On the description page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_Description.png "Enter Sync Rule Description information")
+    ![In this screenshot, the description page of the Create inbound synchronization rule wizard is depicted with the required configuration settings and the Next button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_Description.png "Enter Sync Rule Description information")
 
 4. On the **Create inbound scoping filter** page, select **Add Group**, select **Add clause** specify the following, and select **Next**:
 
@@ -553,7 +552,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Value: **\@\<your custom domain name>**
 
-    ![On the scoping filter page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_ScopingFilter.png "Create inbound scoping filter")
+    ![In this screenshot, the scoping filter page of the Create inbound synchronization rule wizard is depicted with the require the configuration settings and the Next button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_ScopingFilter.png "Create inbound scoping filter")
 
 5. On the **Join Rules** page, select **Next**.
 
@@ -565,13 +564,13 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Source: **False**
 
-    ![On the Transformations page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_Transformations.png "Add transformation")
+    ![In this screenshot, the Transformations page of the Create inbound synchronization rule wizard is depicted with the required configuration settings selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_Transformations.png "Add transformation")
 
 7. When presented with a **Warning** dialog box displaying that message stating that **A full import and full synchronization will be run on 'contoso.local' during your next synchronization cycle**, select **OK**.
 
    > **Note**: This should bring you back to the View and manage your synchronization rules interface, with the new rule listed at the top of the rule list. 
 
-    ![The synchronization rules editor with the Custom in from AD - UPN Filter highlighted.](images/2020-04-27-23-44-31.png "View new rule")
+    ![In this screenshot, the synchronization rules editor with the newly created Custom in from AD - UPN Filter rule is highlighted.](images/2020-04-27-23-44-31.png "View new rule")
 
 8. Back in the **Synchronization Rules Editor** window, on the **View and manage your synchronization rules** page, ensure that **Inbound** appears in the **Direction** drop-down list and select **Add new rule** again. This will launch the **Create inbound synchronization rule** wizard.
 
@@ -597,7 +596,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Disabled: Leave empty
 
-    ![On the description page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_DescriptionCatchAll.png "Create Catch All Description inbound sync rule")
+    ![In this screenshot, the description page of the Create inbound synchronization rule wizard is depicted, with the configuration settings selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_DescriptionCatchAll.png "Create Catch All Description inbound sync rule")
 
 10. On the **Scoping filer** page, select **Next**.
 
@@ -611,14 +610,13 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Source: **True**
 
-    ![On the Transformations page of the Create inbound synchronization rule wizard, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_TransformationsCatchAll.png "Add transformation to rule")
+    ![In this screenshot, the Transformations page of the Create inbound synchronization rule wizard is depicted with the required configuration settings selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_TransformationsCatchAll.png "Add transformation to rule")
 
 13. When presented with a **Warning** dialog box displaying a message stating that **A full import and full synchronization will be run on 'contoso.local' during your next synchronization cycle**, select **OK**.
 
     >**Note**: This should bring you back to the **View and manage your synchronization rules** interface, with the new rules listed at the top of the rule list. 
 
-    ![In the Synchronization Rules Editor, Inbound rules, including the two new rules, are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SynchronizationRulesEditor_AddNewRule_withRules.png "Displayed rules")
-
+    ![In this screenshot, the Synchronization Rules Editor is depicted displaying Inbound rules, including the two newly created inbound rules.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SynchronizationRulesEditor_AddNewRule_withRules.png "Displayed rules")
 
 ### Task 9: Initiate and verify directory synchronization
 
@@ -628,7 +626,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
 3. On the **Additional tasks** page, select **Customize synchronization options** and select **Next**.
 
-    ![Select the Customize synchronization options task](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CustomizeSyncOptions.png "Customize synchronization options task")
+    ![In this screenshot, the 'Additional tasks' page of the Azure AD Connect wizard is depicted with the 'Customize synchronization options' option and Next button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CustomizeSyncOptions.png "Customize synchronization options task")
 
 4. On the **Connect to Azure AD** page, sign in by using the credentials of the **john.doe** account and select **Next**.
 
@@ -640,9 +638,9 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
 8. On the **Enable single sign-on** page, select **Next**.
 
-9.  On the **Ready to configure** page, select the **Start the synchronization process when configuration completes** checkbox and select **Configure**.
+9. On the **Ready to configure** page, select the **Start the synchronization process when configuration completes** checkbox and select **Configure**.
 
-    ![Ready to configure page](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ReadyConfigurePage.png "Ready to configure page")
+    ![In this screenshot, the 'Ready to configure' page of the Azure AD Connect wizard is depicted with the 'Start the synchronization process when configuration completes' checkbox and the Configure button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ReadyConfigurePage.png "Ready to configure page")
 
 10. On the **Configuration complete** page, select **Exit**.
 
@@ -650,11 +648,11 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
 12. On the **Users - All users** blade, note that the list of user objects includes all user accounts with the UPN suffix matching the custom domain name of the Azure AD tenant. You may need to refresh the page or wait a few minutes to see the change.
 
-    ![User objects with custom domain UPN suffix](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UserObjects.png "User objects shown with custom domain UPN suffixes")
+    ![In this screenshot, the 'Users - All users' blade of the Azure portal is depicted with all the user objects with the custom domain UPN suffixes listed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UserObjects.png "User objects shown with custom domain UPN suffixes")
 
-1.  In the Azure portal, navigate to the **Groups - All groups** blade of the Contoso Azure AD tenant and note that all of the contoso.local domain groups have been synchronized as well. 
+13. In the Azure portal, navigate to the **Groups - All groups** blade of the Contoso Azure AD tenant and note that all of the contoso.local domain groups have been synchronized as well. 
 
-2.  In the Azure portal, navigate to the **Contoso - Azure AD Connect** blade and select **Azure AD Connect** on the left. Verify that the following settings are set: 
+14. In the Azure portal, navigate to the **Contoso - Azure AD Connect** blade and select **Azure AD Connect** on the left. Verify that the following settings are set: 
 
     - Azure AD Connect Sync Status: **Enabled** 
   
@@ -669,7 +667,6 @@ In this task, you will configure Azure AD Connect attribute level filtering that
     - Pass-through authentication: **Enabled with 1 agent**
 
    > **Note**: In a production environment, you would install additional agents for redundancy. For more information, refer to <https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-pta-quick-start>.
-
 
 ### Task 10: Configure Hybrid Azure AD join
 
@@ -687,7 +684,7 @@ In this task, you will configure Azure AD Connect device synchronization options
 
 6. On the **Device options** page, ensure that the **Configure Hybrid Azure AD join** option is selected and select **Next**. 
 
-    ![Select Configure Hybrid Azure AD join](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ConfigureHybridAzureADJoin.png "Configure Hybrid Azure AD join option is selected")
+    ![In this screenshot, the 'Device options' page of the Azure AD Connect configuration wizard is depicted with the 'Configure Hybrid Azure AD join' option and the Next button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ConfigureHybridAzureADJoin.png "Configure Hybrid Azure AD join option is selected")
 
 7. On the **Device operating system** page, select the **Windows 10 or later domain-joined devices** and **Supported Windows down-level domain-joined devices** checkboxes, and select **Next**. 
 
@@ -695,9 +692,9 @@ In this task, you will configure Azure AD Connect device synchronization options
 
 8. On the **SCP configuration** page, check the **contoso.local** Active Directory forest box, select the **Azure Active Directory** entry in the **Authentication Service** dropdown list, and select **Add**.
 
-    ![SCP configuration page](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SCPConfig.png "SCP configuration page with proper selections")
+    ![In this screenshot, the 'SCP configuration' page of the Azure AD Connect configuration wizard is depicted with the required settings and the Add button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SCPConfig.png "SCP configuration page with proper selections")
 
-9.  When prompted for Enterprise Admin Credentials for contoso.local, in the **Windows Security** dialog box, sign in with the **CONTOSO\\demouser** user name and **demo\@pass123** password.
+9. When prompted for Enterprise Admin Credentials for contoso.local, in the **Windows Security** dialog box, sign in with the **CONTOSO\\demouser** user name and **demo\@pass123** password.
 
 10. Back on the **SCP configuration** page, select **Next**.
 
@@ -718,11 +715,11 @@ In this task, you will configure Azure AD Connect device synchronization options
 
 4. Within the Remote Desktop session to **APP1**, on the **Server Manager** window, start **Task Scheduler** under **Tools**. 
 
-    ![Start task scheduler](images/Hands-onlabstep-bystep-HybridIdentityImages/media/TaskScheduler.png "Star Task scheduler via Server Manager")
+    ![In this screenshot, the Server Manager window on the Remote Desktop connection to APP1 is depicted with the Tools menu open and the Task Scheduler option selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/TaskScheduler.png "Star Task scheduler via Server Manager")
 
 5. In the **Task Scheduler** console, navigate to **Task Scheduler Library** > **Microsoft** > **Windows** > **Workplace Join**. From there, enable then run the **Automatic-Device-Join** task. 
 
-    ![Start device join task](images/Hands-onlabstep-bystep-HybridIdentityImages/media/StartDeviceJoin.png "Start device join task in Task Scheduler")
+    ![In this screenshot, the Task Scheduler console window is depicted with the Workplace Join node selected on the left and the 'Start device join' task and the Enable button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/StartDeviceJoin.png "Start device join task in Task Scheduler")
 
 6. Switch to the Remote Desktop session to **DC1** and, from the console pane of the Windows PowerShell ISE window, start Azure AD Connect delta synchronization by running the following:
 
@@ -798,7 +795,7 @@ In this task, you will configure Azure AD Connect device synchronization options
 
    > **Note**: You might need to wait until the Azure AD registration status is correctly reported and its Azure AD object appears in the Azure portal.
 
-   ![In the Azure portal, on the Devices - All devices blade, an entry representing the APP1 server is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/APP1_HybridAzureADjoined.png "APP1 server entry is shown")
+   ![In this screenshot, the 'Devices - All devices' blade of the Azure portal is depicted with an entry representing the APP1 server with the 'Join Type' set to 'Hybrid Azure AD joined'](images/Hands-onlabstep-bystep-HybridIdentityImages/media/APP1_HybridAzureADjoined.png "APP1 server entry is shown")
 
 
 ### Summary
@@ -823,7 +820,7 @@ In this task, you will create and configure Active Directory groups that will be
 
 2. In the **Active Directory Users and Computers** console, expand **contoso.local** on the left and navigate to **Demo Accounts > Groups**. 
 
-    ![Navigate to Demo Accounts > Groups](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeNavigation.png "Navigate to DemoAccounts > Groups in Active Directory Users and Computers")
+    ![In this screenshot, the Active Directory Users and Computers console is depicted with the left navigation expanded to 'contoso.local' > 'Demo Accounts' > 'Groups' with 'Groups' selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeNavigation.png "Navigate to DemoAccounts > Groups in Active Directory Users and Computers")
 
 3. In the **Groups** directory, right-click then select **New** then select **Group**. Create a new group with the following settings and select **OK**:
 
@@ -835,7 +832,7 @@ In this task, you will create and configure Active Directory groups that will be
 
     - Group type: **Security**
 
-    ![Create a new group.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateGroupDirectory.png "Create new group in directory")
+    ![In this screenshot, the 'New Object - Group' dialog is depicted with the required settings selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateGroupDirectory.png "Create new group in directory")
 
 4. Open the **Properties** window of the **Engineering - Mandatory MFA** group, in the **Description** text box, type **Engineering users with user state-based MFA enforcement (without Conditional Access)** then select **Apply** then **OK**.
 
@@ -932,11 +929,11 @@ In this task, you will configure user state-based Azure AD Multi-Factor Authenti
 
 4. To verify the outcome, within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Users - All users** blade of the Contoso Azure AD tenant and select **Multi-Factor Authentication** (you might need to select **...** first). This will open a new tab in the Internet Explorer window displaying the **multi-factor authentication** portal.
 
-    ![Selecting Multi-Factor Authentication](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectMFA.png "Select Multi-Factor Authentication")
+    ![In this screenshot, the 'Users - All users' blade of the Azure portal is depicted with the '...' icon selected and the 'Multi-Factor Authentication' option selected in the dropdown menu.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectMFA.png "Select Multi-Factor Authentication")
 
 5. In the **multi-factor authentication** portal, on the **users** tab, ensure that all users have the **MULTI-FACTOR AUTH STATUS** set to **Enabled**. If all or some do not have multi-factor authentication enabled, select all users that have it disabled, then select **Enable** on the right. Select **enable multi-factor auth** when prompted. Wait for the operation to complete. 
 
-    ![Enabling MFA](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EnableMFA.png "Enabling MFA")
+    ![In this screenshot, the 'multi-factor authentication' portal's users tab is depicted with all users without multi-factor authentication enabled selected and the Enable button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EnableMFA.png "Enabling MFA")
 
 
 ### Task 4: Enable password writeback and Self-Service Password Reset
@@ -973,17 +970,17 @@ In this task, you will enable password writeback and Self-Service Password Reset
 
 15. On the **Password reset - Authentication methods** blade, set **Number of methods required to reset** to **2**, enable all **Methods available to users**, including **Mobile app notification**, **Mobile app code**, **Email**, **Mobile phone (SMS only)**, and **Security questions**. 
 
-    ![Setting the authentication methods](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SettingAuthenticationMethods.png "Setting authentication methods and requirements")
+    ![In this screenshot, the 'Password reset - Authentication methods' blade of the Azure portal is depicted with the required authentication method settings listed above are selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SettingAuthenticationMethods.png "Setting authentication methods and requirements")
 
    > **Note**: The **Office phone** method is not available in trial subscriptions.
 
 16. Set **Number of security questions required to register** and **Number of questions required to reset** to **3**. 
 
-    ![Setting security questions](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SetSecurityQuestions.png "Set security questions and requirements")
+    ![In this screenshot, the 'Password reset - Authentication methods' blade of the Azure portal is depicted with the required authentication method settings listed above are selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SetSecurityQuestions.png "Set security questions and requirements")
 
 17. Choose **No security questions configured**. On the **Select security questions** blade that appears, select **+ Predefined**. On the **Add predefined security questions** blade that appears on the right, select any 5 questions, select **OK** twice, and, back on the **Password reset - Authentication methods** blade, select **Save**.
 
-    ![Selecting security questions](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectSecurityQuestions.png "Select security questions")
+    ![In this screenshot, the 'Select security questions' blade of the Azure portal is depicted with the '+ Predefined' button selected with the required predefined security questions selected on the 'Add predefined security questions' blade on the right.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectSecurityQuestions.png "Select security questions")
 
 18. On the **Password reset - Authentication methods** blade, select **Registration** on the left and ensure that **Require users to register when signing in** is set to **Yes** and that **Number of days before users are asked to re-confirm their authentication information** is set to **180**.
 
@@ -998,13 +995,13 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 2. In the **Group Policy Management** console, navigate to **Forest: contoso.local > Domains > contoso.local** on the left, right-click **Default Domain Policy** and select **Edit**. 
 
-    ![Edit default domain policy](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EditDefaultDomainPolicy.png "Edit default domain policy")
+    ![In this screenshot, the Group Policy Management console window is depicted with 'Forest: contoso.local' > 'Domains' > 'contoso.local' expanded on the left navigation and 'Default Domain Policy' right-clicked with the Edit option selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EditDefaultDomainPolicy.png "Edit default domain policy")
 
 3. In the **Group Policy Management Editor**, navigate to **Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Account Lockout Policy**. 
 
 4. Set the value of the **Account lockout threshold** to **10** and select **OK** and accept the settings in the **Suggested Value Changes**. 
 
-    ![In the Group Policy Management Editor, the Account Lockout policy settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADPasswordProtectionPolicy_ADLockout.png "Group policy management")
+    ![In this screenshot, the Group Policy Management Editor is depicted with the 'Account lockout threshold properties' dialog open with the required settings selected and the 'Suggested Value Changes' dialog open with the OK button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADPasswordProtectionPolicy_ADLockout.png "Group policy management")
 
 5. Within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Contoso - Overview** blade of the Contoso Azure AD tenant.
 
@@ -1028,7 +1025,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
     - Mode: **Audit**
 
-    ![Setting password protection](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SetPasswordProtection.png "Set password protection")
+    ![In this screenshot, the 'Authentication methods - Password protection' blade in the Azure portal is depicted with the required settings and the Save button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SetPasswordProtection.png "Set password protection")
 
 10. Switch to the Remote Desktop session to **APP1** virtual machine, where you are signed in as the user **AGAyers** with the **demo@pass123** password. 
 
@@ -1087,19 +1084,19 @@ In this task, you will enable Azure AD Identity Protection
 
 7. On the **Azure AD Identity Protection - MFA registration policy** blade, in the **Assignments** section, select **All users**. 
 
-    ![Select Users in the Assignments section](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectUsers.png "Select All users")
+    ![In this screenshot, the 'Azure AD Identity Protection - MFA registration policy' blade of the Azure portal is depicted with the 'All users' button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectUsers.png "Select All users")
 
 8. On the **Include** tab that opens on the right, choose **Select individual users and groups**. On the **Select users** blade, in the **Select** text box, type **Engineering**, in the list of results, select **Engineering** and choose **Select**.
 
-    ![In the Azure portal, on the Include tab of the Users blade, the group included in the scope of the MFA registration policy is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_MFAregistrationpolicy_UsersInclude.png "Include Engineering group")
+    ![In this screenshot, the 'Azure AD Identity Protection - MFA registration policy' blade of the Azure portal is depicted with the Include tab of the Users blade selected with the 'Select individual users and groups' option selected and the 'Select users' blade open with the 'Engineering' group and 'Select' button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_MFAregistrationpolicy_UsersInclude.png "Include Engineering group")
 
 9. On the **Exclude** tab, choose **0 users and groups selected**. On the **Select users** blade, in the **Select** text box, type **Engineering - Mandatory MFA**, in the list of results, select **Engineering - Mandatory MFA**, choose **Select**.
 
-    ![In the Azure portal, on the Exclude tab of the Users blade, the group excluded from the scope of the MFA registration policy is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_MFAregistrationpolicy_UsersExclude.png "Exclude groups settings")
+    ![In this screenshot, the 'Azure AD Identity Protection - MFA registration policy' blade of the Azure portal is depicted with the Exclude tab of the Users blade selected with the '0 users and groups selected' button selected and the 'Select users' blade open with the 'Engineering - Mandatory MFA' group and 'Select' button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_MFAregistrationpolicy_UsersExclude.png "Exclude groups settings")
 
 10. Back on the **Azure AD Identity Protection - MFA registration policy** blade, in the **Controls** section, ensure that the **Require Azure MFA registration** checkbox is selected. Set **Enforce Policy** to **On** and select **Save**.
 
-    ![In the Azure portal, the MFA registration policy settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_MFAregistrationpolicy_EnforcePolicy.png "Enforce policy and require MFA registration")
+    ![In this screenshot, the 'Azure AD Identity Protection - MFA registration policy' blade of the Azure portal is depicted with the 'Require Azure MFA registration' checkbox selected and the 'Enforce Policy' set to On.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_MFAregistrationpolicy_EnforcePolicy.png "Enforce policy and require MFA registration")
 
 11. On the **Azure AD Identity Protection** blade, select **User risk policy** on the left under **Protect**.
 
@@ -1117,7 +1114,7 @@ In this task, you will enable Azure AD Identity Protection
 
     - Enforce Policy: **On**
 
-    ![In the Azure portal, the User risk policy settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_UserRiskPolicy.png "Set the user risk policy")
+    ![In this screenshot, the 'Azure AD Identity Protection - User risk policy' blade of the Azure portal is depicted with the required settings and the Save button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/IdentityProtection_UserRiskPolicy.png "Set the user risk policy")
 
 ### Task 7: Enable Automatic Intune Enrollment
 
@@ -1136,7 +1133,7 @@ In this task, you will enable automatic enrollment of hybrid Azure AD devices in
 
 5. On the **Configure** blade, set **MDM user scope** to **All** and select **Save**.
 
-    ![Set MDM user scope](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SetMDMUserScope.png "Set MDM user scope on Configure blade")
+    ![In this screenshot, the Configure blade of the Azure portal is depicted with the 'MDM user scope" setting set to all and the Save button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SetMDMUserScope.png "Set MDM user scope on Configure blade")
 
 ### Task 8: Enable Enterprise-State-Roaming
 
@@ -1148,7 +1145,7 @@ In this task, you will enable automatic enrollment of hybrid Azure AD devices in
 
 4. On the **Devices - Enterprise State Roaming** blade, for **Users may sync settings and app data across devices**, select **Selected**. Choose **No member selected** below. Select **+ Add** then select the **Engineering** group from the list of Azure AD tenant users and groups that appears on the right. Choose **Select**, then **Ok**, then **Save**. 
 
-    ![Select the Engineering group](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectEngineering.png "Select Engineering group")
+    ![In this screenshot, the 'Members allowed to sync settings and app data' blade is depicted with the '+ Add' button selected and the 'Add members' blade open with the Engineering group searched for and selected along with the Select button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectEngineering.png "Select Engineering group")
 
 ### Task 9: Implement Azure AD Conditional Access Policies
 
