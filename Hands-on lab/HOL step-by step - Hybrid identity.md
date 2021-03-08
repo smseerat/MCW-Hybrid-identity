@@ -1155,7 +1155,7 @@ In this task, you will implement Azure AD Conditional Access Policies.
 
 2. On the **Contoso - Overview** blade, select **Properties** under **Manage** on the left. Select **Manage Security defaults**. On the **Enable security defaults** blade that appears on the right, select **No** under **Enable security defaults** then check the other box and enter some random characters. Then select **Save**. Return to the **Contoso - Overview** blade.
 
-    ![Disabling security defaults](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DisableSD.png "Disabling the security defaults")
+    ![In this screenshot, the 'Contoso - Overview' blade is depicted with the Properties and 'Manage security defaults' buttons selected and with the 'Enable security defaults' blade open on the right with the required configuration listed above selected along with the Save button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DisableSD.png "Disabling the security defaults")
 
 3. On the **Contoso - Overview** blade, select **Security** under **Manage** on the left.
 
@@ -1173,11 +1173,11 @@ In this task, you will implement Azure AD Conditional Access Policies.
 
     - IP ranges: **The public IP address of the APP1 Azure VM (this can be found on its page in the portal) in the CIDR notation (i.e. x.x.x.x/32).**
 
-    ![In the Azure portal, named location settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Namedlocations.png "Named Location settings")
+    ![In this screenshot, the 'New named location' blade of the Azure portal is depicted with the required settings listed above selected and the Create button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Namedlocations.png "Named Location settings")
 
 7. On the **Security - Named locations** blade, select **Configure MFA trusted IPs**. This will open a new tab in the Internet Explorer window displaying the **service settings** tab of the **multi-factor authentication** portal.
 
-    ![In the MFA portal, service settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_MFA_servicesettings.png "MFA Service Settings")
+    ![In this screenshot, the MFA portal is depicted with the 'service settings' tab selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_MFA_servicesettings.png "MFA Service Settings")
 
 8. On the **service settings** tab, in the **trusted ip** text box, type the same public IP address of the APP1 Azure VM (this can be found on its page in the portal) in the CIDR notation (i.e. x.x.x.x/32). and select **Save** at the bottom.
 
@@ -1191,60 +1191,61 @@ In this task, you will implement Azure AD Conditional Access Policies.
 
 13. On the **Include** tab, choose the **Select users and groups** option, select the **Users and groups** checkbox. On the **Select** blade, type **Engineering**, in the list of results, select **Engineering**, and choose **Select**.
 
-    ![In the Azure portal, on the Users and groups blade, on the Include tab, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_UsersandGroupsInclude.png "Include Configuration Settings")
+    ![In this screenshot, the New blade is depicted with the Include tab selected along with the 'Select users and groups' and 'Users and groups' options and the Select blade is open with the Engineering group searched for and selected along with the Select button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_UsersandGroupsInclude.png "Include Configuration Settings")
 
-14. On the **Exclude**, select the **Users and groups** checkbox. On the **Select excluded users** blade, type **Engineering**. In the list of results, select **Engineering - Mandatory MFA**, and choose **Select**.
+14. On the **Exclude** tab, select the **Users and groups** checkbox. On the **Select excluded users** blade, type **Engineering**. In the list of results, select **Engineering - Mandatory MFA**, and choose **Select**.
 
-    ![In the Azure portal, on the Exclude tab, the configuration settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_UsersandGroupsExclude.png "Exclude configuration settings and selections")
+    ![In this screenshot, the New blade is depicted with the Exclude tab selected along with the 'Users and groups' option and the Select blade is open with the 'Engineering - Mandatory MFA' group searched for and selected along with the Select button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_UsersandGroupsExclude.png "Exclude configuration settings and selections")
 
 15. On the **New** blade, in the **Assignments** section, select **No cloud apps or actions selected**.
 
 16. On the **Include** tab that appears, choose the **Select apps** option. On the **Select** blade, select the **Microsoft Azure Management** checkbox, choose **Select**.
 
-    ![In the Azure portal, on the Cloud apps or actions blade, on the Include tab, the selected app is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_CloudppsandActionsInclude.png "Select the Microsoft Azure Management app")
+    ![In this screenshot, the Include tab is depicted with the 'Select apps' option selected and the Select blade is open with the 'Microsoft Azure Management' a[[]] searched for and selected along with the Select button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_CloudppsandActionsInclude.png "Select the Microsoft Azure Management app")
 
    > **Note**: Review the warning stating **Don't lock yourself out! This policy impacts the Azure portal. Before you continue, ensure that you or someone else will be able to get back into the portal**. Disregard this warning if you are configuring persistent browser session policy that works correctly only if "All cloud apps" are selected.
 
-16. On the **New** blade, in the **Assignments** section, select **0 conditions selected**.
+17. On the **New** blade, in the **Assignments** section, select **0 conditions selected**.
 
-17. Select **Not configured** under **Sign-in risk**. In the **Sign-in risk** blade, set **Configure** to **Yes**, check the **No risk** box, and choose **Select**.
+18. Select **Not configured** under **Sign-in risk**. In the **Sign-in risk** blade, set **Configure** to **Yes**, check the **No risk** box, and choose **Select**.
 
-    ![In the Azure portal, on the Sign-in risk blade, the settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_SigninRisk.png "Configure sign-in risk settings")
+    ![In this screenshot, 'Not configured' under 'Sign-in risk' is selected and the 'Sign-in risk' blade is open with the Configure and 'No risk' options selected along with the Select button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_SigninRisk.png "Configure sign-in risk settings")
 
-18. Select **Not configured** under **Device platforms**. On the **Device platforms** blade, set **Configure** to **Yes**, on the **Include** tab, choose **Select device platforms**. Check the **Windows** box, and select **Done**.
+19. Select **Not configured** under **Device platforms**. On the **Device platforms** blade, set **Configure** to **Yes**, on the **Include** tab, choose **Select device platforms**. Check the **Windows** box, and select **Done**.
 
-    ![In the Azure portal, on the Device platforms blade, the settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_DevicePlatforms.png "Device platform settings")
+    ![In this screenshot, 'Not configured' under 'Device platforms' is selected and the 'Device platforms' blade is open with the Configure, 'Select device platform', and 'Windows' options selected under the Include tab along with the Done button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_DevicePlatforms.png "Device platform settings")
 
-19. Select **Not configured** under **Locations**. On the blade that appears, set **Configure** to **Yes**. On the **Include** tab, choose **Selected locations**. On the **Select** blade, check the **Contoso Headquarters** box, choose **Select**.
-    ![In the Azure portal, on the Locations blade, the settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Locations.png "Select conditional access locations")
+20. Select **Not configured** under **Locations**. On the blade that appears, set **Configure** to **Yes**. On the **Include** tab, choose **Selected locations**. On the **Select** blade, check the **Contoso Headquarters** box, choose **Select**.
+    
+    ![In this screenshot, the Select blade of the Azure portal is depicted with the Contoso Headquarters box checked and the Select button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Locations.png "Select conditional access locations")
 
-20. Select **Not configured** under **Client apps**, on the **Client apps** blade, set **Configure** to **Yes**. Check the **Browser**, **Mobile apps and desktop clients**, **Exchange ActiveSync clients**, and **Other clients** boxes, and select **Done**.
+21. Select **Not configured** under **Client apps**, on the **Client apps** blade, set **Configure** to **Yes**. Check the **Browser**, **Mobile apps and desktop clients**, **Exchange ActiveSync clients**, and **Other clients** boxes, and select **Done**.
 
-    ![In the Azure portal, on the Client apps (Preview) blade, the settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Clientapps.png "Conditional access client apps selections")
+    ![In this screenshot, 'Not configured' under 'Client apps' is selected and the 'Client apps' blade is open on the right with Configure set to Yes and the options listed above selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Clientapps.png "Conditional access client apps selections")
 
-21. Select **Not configured** under **Device state (Preview)**. On the **Device state (Preview)** blade, set **Configure** to **Yes**, on the **Include** tab, select the **All device state** option and select **Done**.
+22. Select **Not configured** under **Device state (Preview)**. On the **Device state (Preview)** blade, set **Configure** to **Yes**, on the **Include** tab, select the **All device state** option and select **Done**.
 
-    ![In the Azure portal, on the Device state (Preview) blade, the settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Devicestate.png "Conditional access device state settings")
+    ![In this screenshot, 'Not configured' under 'Device state (Preview)' is selected and the 'Device state (Preview)' blade is open on the right with Configure set to Yes and the Include tab is selected with the All 'device state' option.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Devicestate.png "Conditional access device state settings")
 
-22. Back on the **New** blade, in the **Access controls** section, select **0 controls selected** under **Grant**.
+23. Back on the **New** blade, in the **Access controls** section, select **0 controls selected** under **Grant**.
 
-23. On the **Grant** blade, ensure that the **Grant access** option is selected. Check the **Require Hybrid Azure AD joined device** box, accept the default choice of **Require all the selected controls** under **For multiple controls** and choose **Select**.
+24. On the **Grant** blade, ensure that the **Grant access** option is selected. Check the **Require Hybrid Azure AD joined device** box, accept the default choice of **Require all the selected controls** under **For multiple controls** and choose **Select**.
 
     > **Note**: Review the warning **Don't lock yourself out! Make sure that your device is Hybrid Azure AD Joined**.
 
-    ![In the Azure portal, on the Grant blade, the settings and the warning are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_AccesscontrolsGrant.png "Access controls Grant settings")
+    ![In this screenshot, the New blade of the Azure portal is depicted with the '0 controls selected' button selected and the Grant blade open with the required options listed above selected along with the Select button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_AccesscontrolsGrant.png "Access controls Grant settings")
 
-24. Back on the **New** blade, in the **Access controls** section, select **0 controls selected** under **Session**. 
+25. Back on the **New** blade, in the **Access controls** section, select **0 controls selected** under **Session**. 
 
-25. Review the **Session** blade settings but do not modify them. Close it when you are finished.
+26. Review the **Session** blade settings but do not modify them. Close it when you are finished.
 
-26. On the **New** blade, set **Enable policy** to **On** and select **Create**.
+27. On the **New** blade, set **Enable policy** to **On** and select **Create**.
 
-    ![In the Azure portal, the final settings of the new conditional access policy are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Final.png "Conditional access enable policy and create")
+    ![In this screenshot, the New blade of the Azure portal is depicted with 'Enable policy' set to On and the Create button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Final.png "Conditional access enable policy and create")
 
-27. Back on the **Conditional Access - Policies** blade, select **What If**.
+28. Back on the **Conditional Access - Policies** blade, select **What If**.
 
-28. On the **What If** blade, specify the following settings and select **What If**:
+29. On the **What If** blade, specify the following settings and select **What If**:
 
     - User: **Teresa F. Bell**
 
@@ -1262,11 +1263,11 @@ In this task, you will implement Azure AD Conditional Access Policies.
 
     - Sign-in risk: **No risk**
 
-29. Review the evaluation results and note the policy and the grant controls that will apply.
+30. Review the evaluation results and note the policy and the grant controls that will apply.
 
-    ![In the Azure portal, the What If settings and the evaluation results of the new conditional access policy are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_WhatIf_parameters.png "What if settings and results")
+    ![In this screenshot, within the Azure portal the What If settings and the evaluation results of the newly created conditional access policy are depicted.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_WhatIf_parameters.png "What if settings and results")
 
-30. Re-run the evaluation but first change the **Sign-in risk** to **Low** and review the evaluation results.
+31. Re-run the evaluation but first change the **Sign-in risk** to **Low** and review the evaluation results.
 
 
 ### Task 10: Implement Azure AD Privileged Identity Management
@@ -1291,7 +1292,7 @@ In this task, you will implement Azure AD Privileged Identity Management.
 
    > **Note**: **Authentication Administrator** role grants privileges to set or reset non-password credentials and update passwords for all users. Authentication Administrators can require users to re-register against existing non-password credential (for example, MFA or FIDO) and revoke remember MFA on the device, which prompts for MFA on the next sign-in.
 
-   ![Add assignments](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AddAAAssignment.png "Adding the Authentication Administrator role assignment")
+   ![In this screenshot, the 'Add assignments' blade of the Azure portal is depicted with the required settings listed above configured and the Next button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AddAAAssignment.png "Adding the Authentication Administrator role assignment")
 
 7. On the **Contoso - Roles** blade, select **Assignments** under **Manage** on the left and note that **Ann G. Ayers** is listed as eligible for the **Authentication Administrator** role.
 
@@ -1325,7 +1326,7 @@ In this task, you will implement Azure AD Privileged Identity Management.
 
 18. On the **My roles - Azure AD roles** blade, on the **Active assignments** tab, note that the role assignment has been activated. 
 
-    ![Active assignment](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActiveAssignment.png "The role assignment is active")
+    ![In this screenshot, the 'My roles - Azure AD roles' blade of the Azure portal is depicted with the 'Active assignments' tab selected and the Activated state of the role assignment highlighted.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActiveAssignment.png "The role assignment is active")
 
 ### Summary
 
