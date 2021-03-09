@@ -1701,7 +1701,7 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
     - Redirect URI (Optional): **Web** and **https://loopback**
 
-    ![Register an application blade](images/Hands-onlabstep-bystep-HybridIdentityImages/media/RegisterApplication.png "Register an application")
+    ![In this screenshot, the 'Register an application' blade of the Azure portal is depicted with the required settings listed above selected along with the Register button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/RegisterApplication.png "Register an application")
 
 11. You will be automatically redirected to the **Sync B2B users** blade.
 
@@ -1711,11 +1711,11 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
 14. On the **Request API permission** blade that appears on the right, switch to the **APIs my organization uses** tab, in the search text box, type **Windows Azure Active Directory**, in the list of results, select **Windows Azure Active Directory**, and then select **Application permissions**.
 
-    ![Request API permissions](images/Hands-onlabstep-bystep-HybridIdentityImages/media/RequestAPIPermissions.png "Request API permissions blade")
+    ![In this screenshot, the 'Request API permission' blade of the Azure portal is depicted with the 'APIs my organization uses' tab selected with 'Windows Azure Active Directory' searched for and selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/RequestAPIPermissions.png "Request API permissions blade")
 
-15. On the **Request API permission** blade, in the **Select permissions** section, expand the **Directory** subsection, check the **Directory.Read.All** box, and select **Add permissions**.
+15. On the **Request API permissions** blade, in the **Select permissions** section, expand the **Directory** subsection, check the **Directory.Read.All** box, and select **Add permissions**.
 
-    ![In the Azure portal, the API permission settings are displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SyncB2BUsers_RequestAPIpermissions.png "API permission request settings")
+    ![In this screenshot, the 'Request API permissions' blade of the Azure portal is depicted with the Directory.Read.All permission under the Directory subsection checked and the 'Add permissions' button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SyncB2BUsers_RequestAPIpermissions.png "API permission request settings")
 
 16. Back on the **Sync B2B users - API permissions** blade, in the **Configured permissions** section, select **Grant admin consent for Contoso**. Select **Yes** when prompted.
 
@@ -1723,7 +1723,7 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
 18. Review the status of the permissions listed in the **Configured permissions** section on the **Sync B2B users - API permissions** blade and ensure that they are listed as **Granted for Contoso**.
 
-    ![Permissions granted for Contoso](images/Hands-onlabstep-bystep-HybridIdentityImages/media/GrantedForContoso.png "Permissions granted for Contoso")
+    ![In this screenshot, the 'Sync B2B users - API permissions' blade of the Azure portal is depicted with the configured permissions listed with a status of 'Granted for Contoso'.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/GrantedForContoso.png "Permissions granted for Contoso")
 
 19. On the **Sync B2B users - API permission** blade, select **Certificates & secrets** under **Manage** on the left.
 
@@ -1747,7 +1747,7 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
 26. In the **Active Directory Users and Computers** console, expand **contoso.local** on the left, create an organizational unit named **Demo B2B Accounts** directly in the root of the domain with two child organizational units named **Enabled** and **Disabled**.
 
-    ![Create an organizational unit.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateOU.png "Create an organizational unit")
+    ![In this screenshot, the 'Active Directory Users and Computers' console is depicted with the 'contoso.local' node right-selected with New then Organizational Unit selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateOU.png "Create an organizational unit")
 
     > **Note**: These OUs must NOT be synchronized back to the Azure AD tenant using Azure AD Connect. Make sure not to include the guest user objects in the synchronization scope.
 
@@ -1788,7 +1788,7 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
     > **Note**: In a production environment, you could provide access to Integrated Windows Authentication apps by leveraging Microsoft Identity Manager. You can also provide access to on-premises apps that support SAML-based authentication directly from the Azure portal. For more information, refer to Grant B2B users in Azure AD access to your on-premises applications at <https://docs.microsoft.com/en-us/azure/active-directory/b2b/hybrid-cloud-to-on-premises>.
 
-    ![User account verification](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UserAccountVerification.png "User account verification")
+    ![In this screenshot, the 'Active Directory Users and Computers' console is depicted with the 'jane.doe' user account listed in the 'Demo B2B Accounts\Enabled' organizational unit.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UserAccountVerification.png "User account verification")
 
 
 ### Task 8: Test an Azure AD Application Proxy application
