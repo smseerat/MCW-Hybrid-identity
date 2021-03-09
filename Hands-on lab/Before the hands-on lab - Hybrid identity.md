@@ -9,7 +9,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-June 2020
+March 2021
 </div>
 
 
@@ -65,7 +65,7 @@ Timeframe: 150 minutes
 
 1. Login to the Azure portal at <http://portal.azure.com>, select  **All services**. Then search for and select **Subscriptions**.
 
-     ![The Azure portal with sub typed into the search bar and subscriptions highlighted in the results.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectSubscriptions.png "Azure portal search.")
+     ![In this screenshot, the Azure portal is depicted with 'sub' typed into the search bar and 'subscriptions' highlighted in the results.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectSubscriptions.png "Search for and select Subscriptions in the Azure portal")
 
 2. On the **Subscriptions** blade, select the name of the subscription you intend to use for this lab.
 
@@ -82,7 +82,7 @@ Timeframe: 150 minutes
 
    > **Note**: The 3 VM Base Configuration provisions a Windows Server 2016 Active Directory domain controller named DC1 using the domain name you specify and a domain member server named APP1 running Windows Server 2016. It also offers an option to provision a client VM running Windows 10, however we will not be using it in our lab (primarily due to licensing requirements applicable when running Windows 10 VMs in Azure). The domain member server (APP1) has automatically installed .NET 4.5 and IIS.
 
-3. On the **Custom deployment** blade, specify the following settings, select the checkbox **I agree to the terms and conditions stated above** and select **Purchase**:
+3. On the **Custom deployment** blade, specify the following settings, then select **Review + Create** then **Create**.
 
     -   Subscription: the name of the target Azure subscription where you want to provision the lab environment Azure VMs.
 
@@ -102,19 +102,19 @@ Timeframe: 150 minutes
 
     -   Deploy Client VM: **No**
 
-    -   Client VHD URI: leave blank
+    -   Client VHD URI: **leave blank**
 
     -   VM Size: **Standard_D2s_v3**
    
     **Note**: Use a similar VM size if your subscription does not support the listed size. Documentation is linked here. <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes>
 
-    -   DNS Label Prefix: any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).
+    -   DNS Label Prefix: **any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).**
 
-    -   _artifacts Location: accept the default
+    -   _artifacts Location: **accept the default**
 
-    -   _artifacts Location Sas Token: leave blank
+    -   _artifacts Location Sas Token: **leave blank**
 
-    ![The custom deployment blade with each parameter value field highlighted and each value is set too the values stated above.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/15juneupdate.png "Customer template deployment.")
+    ![In this screenshot, the 'Custom deployment' blade of the Azure portal is depicted with each parameter value field highlighted and each value set to the values stated above.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/15juneupdate.png "The custom deployment blade with all the information listed above entered")
 
 
 4. Wait for the deployment to complete. This might take about 60 minutes.
@@ -140,7 +140,7 @@ Timeframe: 150 minutes
 
     **Note:** To run multiple PowerShell scripts in the same file, you can highlight a specific script and select **Run Selection** next to the green play button. 
 
-    ![The PowerShell ISE application with the script pasted into it.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/PSScript.png "PowerShell ISE.")
+    ![In this screenshot, the PowerShell ISE application is depicted with the script listed above pasted into it.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/PSScript.png "PowerShell ISE with the script pasted into it")
 
 3.  Within the **Windows PowerShell ISE** window  add the following script to the script pane, and run it to install Remote Server Administration Tools on both **DC1* and **APP1** Azure VMs:
 
@@ -195,13 +195,17 @@ Timeframe: 150 minutes
 
     -   Password: **demo\@pass123**
 
-2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the TechNet Script Center page titled **Create Users/Group for Active Directory Demo/Test Environment** linked here. <https://gallery.technet.microsoft.com/scriptcenter/Create-UsersGroup-for-9ee1de26>
+2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the below link.
+
+    ```
+    https://github.com/microsoft/MCW-Hybrid-identity/tree/master/Hands-on%20lab/studentfiles
+    ```
 
 3. On the **Create Users/Group for Active Directory Demo/Test Environment** page, select the **CreateDemoUsers.ps1** link, accept the licensing terms, and save the corresponding script to the local file system.
 
 4. On the **Create Users/Group for Active Directory Demo/Test Environment** page, select the **CreateDemoUsers.csv** link (directly above the PowerShell code section) and save the corresponding csv file to the same location as the **CreateDemoUsers.ps1** file.
 
-    ![The create users/group for Active Directory Demo/test environment screen with the CreateDemoUsers link highlighted near the bottom of the page.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SaveCSVFile.png "Create users and groups in Azure Active Directory.")
+    ![In this screenshot, the 'Create Users/Group for Active Directory Demo/Test Environment screen is depicted with the 'CreateDemoUsers' file link highlighted near the bottom of the page.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SaveCSVFile.png "Create users and groups in Azure Active Directory page where you select the link to the CreateDemoUsers.csv file")
 
 5. Within the Remote Desktop session to **DC1**, start File Explorer, navigate to the folder where you downloaded both files, right-click on the file **CreateDemoUsers.ps1**, select **Properties**, in the **CreateDemoUsers.ps1 Properties** dialog box, check the **Unblock** checkbox and select **OK**.
 
@@ -220,7 +224,7 @@ Timeframe: 150 minutes
 
 8. In the **Windows PowerShell ISE** window, save the change and run the **CreateDemoUsers.ps1** script to create a lab environment organizational unit hierarchy and populate it with test user accounts. 
 
-9.  Within the **Windows PowerShell ISE** window, add the following script to the script pane, and run it to modify settings of the AD user accounts you will use in this lab to **demo@pass123**:
+9.  Within the **Windows PowerShell ISE** window, add the following script to the script pane, and run it to modify settings of the AD user accounts you will use in this lab:
 
     ```pwsh
 
