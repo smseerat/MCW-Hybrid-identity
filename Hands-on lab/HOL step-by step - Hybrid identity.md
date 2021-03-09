@@ -1362,7 +1362,7 @@ In this task, you will install and configure Azure AD Application Proxy.
 
 7. Once the installation completes, refresh the Internet Explorer page displaying the **Contoso - Application proxy** blade and verify that it includes the **DC1.contoso.local** entry in the **Default** connector group.
 
-    ![Verify the connector](images/Hands-onlabstep-bystep-HybridIdentityImages/media/VerifyConnector.png "Verify that the connector is present")
+    ![In this screenshot, the 'Contoso - Application proxy' blade of the Azure portal is depicted with the 'DC1.contoso.local' entry listed under the Default connector group.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/VerifyConnector.png "Verify that the connector is present")
 
 8. On the **Contoso - Application proxy** blade, select **Enable application proxy** and, when prompted for confirmation, select **Yes**.
 
@@ -1396,13 +1396,13 @@ In this task, you will configure an Azure AD Application Proxy application.
 
     - Translate URLs in Application Body: **No**
 
-    ![Add on-premises application settings](images/Hands-onlabstep-bystep-HybridIdentityImages/media/OnPremAppSettings.png "Enter On-prem app settings")
+    ![In this screenshot, the 'Add your own on-premises application' blade of the Azure portal is depicted with the required settings listed above and the '+ Add' button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/OnPremAppSettings.png "Enter On-prem app settings")
 
 3. In the search bar at the top of the Azure portal, search for and select **Enterprise applications**. In the list of applications, select **APP1 Default Web Site**.
 
 4. On the **APP1 Default Web Site - Overview** blade, in the **Getting Started** section, select **Assign users and groups**.
 
-    ![Select Assign users and groups](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectAssignUsersGroups.png "Select Assign users and groups")
+    ![In this screenshot, the 'APP1 Default Web Site - Overview' blade of the Azure portal is depicted with the 'Assign users and groups' button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SelectAssignUsersGroups.png "Select Assign users and groups")
 
 5. On the **APP1 Default Web Site - Users and groups** blade, select **+ Add user/group**.
 
@@ -1412,7 +1412,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 
     - Select Role: **User**
 
-    ![Add assignment blade](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AddAssignment.png "Add assignment blade and group selection")
+    ![In this screenshot, the 'Add Assignment' blade of the Azure portal is depicted with the required settings listed above and the Assign button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AddAssignment.png "Add assignment blade and group selection")
 
 7. On the **APP1 Default Web Site - Users and groups** blade, select **Single sign-on** under **Manage** on the left.
 
@@ -1424,13 +1424,13 @@ In this task, you will configure an Azure AD Application Proxy application.
     setspn -L APP1
     ```
 
-10. Review the output, switch back to the Internet Explorer window displaying the Azure portal, and, on the **APP1 Default Web Site - Configure Integrated Windows Authentication (IWA)**, specify the following settings and select **Save**.
+10. Review the output, switch back to the Internet Explorer window displaying the Azure portal, and, on the **APP1 Default Web Site - Configure Integrated Windows Authentication (IWA)** blade, specify the following settings and select **Save**.
 
     - Internal Application SPN: **HTTP/APP1.contoso.local**
 
     - Delegated Login Identity: **User principal name**
 
-    ![Configure Integrated Windows Authentication](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ConfigureIWA.png "Configure IWA")
+    ![In this screenshot, the 'APP1 Default Web Site - Configure Integrated Windows Authentication (IWA)' blade is depicted with the settings listed above specified and the 'Save' button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ConfigureIWA.png "Configure IWA")
 
    > **Note**: The HTTP service class is one of the built-in services that act as an alias to the HOST SPN. For more information, refer to **How to use SPNs when you configure Web applications that are hosted on Internet Information Services** at <https://support.microsoft.com/en-us/help/929650/how-to-use-spns-when-you-configure-web-applications-that-are-hosted-on>
 
@@ -1438,21 +1438,21 @@ In this task, you will configure an Azure AD Application Proxy application.
 
 13. In the **Active Directory Users and Computers** console, select **View** and, in the **View** menu, enable **Advanced Features**.
 
-    ![Enable Advanced Features](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EnableAdvancedFeatures.png "Enable Advanced Features in the console")
+    ![In this screenshot, the 'Active Directory Users and Computers' console is depicted with the View menu open and the Advanced Features button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EnableAdvancedFeatures.png "Enable Advanced Features in the console")
 
 14. In the **Active Directory Users and Computers** console, locate the computer account hosting the Azure AD Application Proxy connector (**DC1** in our case) under **Domain Controllers** within **contoso.local** and display its **Properties** window.
 
-    ![Display computer properties](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DisplayComputerProperties.png "Display computer properties")
+    ![In this screenshot, the 'Active Directory Users and Computers' console is depicted with the Domain Controllers node selected on the left and the DC1 computer account right-selected with the Properties menu option selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DisplayComputerProperties.png "Display computer properties")
 
 15. In the **DC1 Properties** window, switch to the **Delegation** tab and select the option **Trust this computer for delegation to specified services only**.
 
 16. Select the option **Use any authentication protocol**, select **Add**, in the **Add Services** window, select **Users or Computers**, in the **Select Users or Computers** dialog box, in the **Enter the object names to select** text box, type **APP1** and select **OK**. 
 
-    ![Delegation configuration](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DelegationConfiguration.png "Delegation configuration")
+    ![In this screenshot, the 'DC1 Properties' window is depicted with the Delegation tab selected with the 'Trust this computer for delegation to specified services only' and 'Use any authentication protocol' options and the 'Add' button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DelegationConfiguration.png "Delegation configuration")
 
 17. Back in the **Add Services** window, select the **http** entry and select **OK**. 
 
-    ![In the Active Directory Users and Computers console, the Kerberos Constrained Delegation configuration is displayed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADApplicationProxy_Delegation_http.png "Delegation http")
+    ![In this screenshot, 'Add Services' window is depicted with the 'http' entry selected along with the OK button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADApplicationProxy_Delegation_http.png "Delegation http")
 
 18. Back in the **DC1 Properties** window, select **OK**.
 
@@ -1497,7 +1497,7 @@ In this task, you will create another Azure Active Directory tenant representing
 
     -   Country or region: **United States**
 
-    ![Create tenant configuration](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateDirectoryConfiguration.png "Create tenant configuration form")
+    ![In this screenshot, the 'Create tenant' blade of the Azure portal is depicted with the required settings listed above and the Create button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateDirectoryConfiguration.png "Create tenant configuration form")
 
 7. In the Azure portal, navigate to the blade of the newly created Azure Active Directory tenant. It may take a few minutes for the **Fabrikam** directory to show up under **Directory + Subscription**. 
 
@@ -1507,7 +1507,7 @@ In this task, you will create another Azure Active Directory tenant representing
 
 10. On the **Activate** blade, in the **ENTERPRISE MOBILITY + SECURITY E5** section, select **Free trial** and then select **Activate**.
 
-    ![Activate free trial](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActivateFreeTrial.png "Active free trial")
+    ![In this screenshot, the Activate blade of the Azure portal is selected with the 'ENTERPRISE MOBILITY + SECURITY E5' section open with 'Free trial' selected along with the Activate button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActivateFreeTrial.png "Active free trial")
 
 
 ### Task 5: Create and configure Azure AD users
@@ -1544,11 +1544,11 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
 
 4. On the **Profile** blade of your user account, in the **Settings** section, select **Edit**.
 
-    ![Edit Settings](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EditProfileSettings.png "Editing Settings")
+    ![In this screenshot, the user Profile blade in the Azure portal is depicted with the Edit button selected in the Settings section.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EditProfileSettings.png "Editing Settings")
 
 5. In the **Settings** section, in the **Usage location** drop-down list, select the **United States** entry and select **Save**.
 
-    ![Usage location dropdown](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UsageLocationDropdown.png "Usage location dropdown selection")
+    ![In this screenshot, the user Profile blade in the Azure portal is depicted with United States selected in the 'Usage location' dropdown of the Settings section and the Save button is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UsageLocationDropdown.png "Usage location dropdown selection")
 
 6. On the **Profile** blade of your user account, select **Licenses** under **Manage** on the left.
 
@@ -1587,7 +1587,7 @@ In this task, you will configure Azure AD user accounts in the newly created Azu
     - Department: leave blank
     
 
-    ![New user blade](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateNewUser.png "New user blade with selected configuration")
+    ![In this screenshot, the 'New user' blade of the Azure portal is depicted with the 'Create user' option selected along with the required settings listed above and the Create button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateNewUser.png "New user blade with selected configuration")
 
 11. On the **Users - All users** blade, select the entry representing the newly created user account.
 
@@ -1631,7 +1631,7 @@ In this task, you will create and configure Azure AD guest accounts in the Conto
 
     -  Department : **Not set**
 
-    ![Invite new user](images/Hands-onlabstep-bystep-HybridIdentityImages/media/InviteNewUser.png "Invite new user settings")
+    ![In this screenshot, the 'New user' blade of the Azure portal is depicted with the 'Invite user' option selected along with the required settings listed above and the Invite button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/InviteNewUser.png "Invite new user settings")
 
 5. In the Azure portal navigate back to the **Contoso - Overview** blade of the Contoso Azure AD tenant and select **Groups** under **Manage** on the left.
 
@@ -1651,7 +1651,7 @@ In this task, you will create and configure Azure AD guest accounts in the Conto
 
     -  Members: **fabrikam-jane.doe**
 
-    ![Create new group](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateGroup.png "Create new group")
+    ![In this screenshot, the 'New group' blade is depicted with the required settings listed above selected along with the Create button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateGroup.png "Create new group")
 
 8. On the **Groups - All groups** blade, select the newly created group and, on the **Fabrikam B2B users** group, copy its **Object id** value and paste it into Notepad. You will need it later in this exercise.
 
