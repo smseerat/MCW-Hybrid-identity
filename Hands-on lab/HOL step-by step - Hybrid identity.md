@@ -148,7 +148,7 @@ In this task, you will create an Azure Active Directory tenant with the followin
 
 12. On the **Contoso - Licenses**, blade, select **All Products** and select **+ Try/Buy**.
 
-13. On the **Activate** blade, in the **ENTERPRISE MOBILITY + SECURITY E5** section, select **Free trial** and then select **Activate**
+13. On the **Activate** blade, in the **ENTERPRISE MOBILITY + SECURITY E5** section, select **Free trial** and then select **Activate**.
 
     ![A screenshot that depicts the Licenses - All products blade with the Active blade open. On the Active blade, under 'Enterprise Mobility + Security E5 free trial', then Activate button is selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActivateTrial.png "Activate Enterprise Mobility + Security E5 free trial")
 
@@ -649,7 +649,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Azure AD Connect Sync Status: **Enabled** 
   
-    - Last Sync: **This should be a timestamp of some sort** 
+    - Last Sync: **This should be a timestamp of some sort**. 
   
     - Password Hash Sync: **Disabled** 
   
@@ -1293,13 +1293,13 @@ In this task, you will implement Azure AD Privileged Identity Management.
 
 9. When prompted to provide additional information, select **Next**, on the **Keep your account secure** page, select **I want to set up a different method**. At the **Choose a different method** dialog, select **Phone** on the dropdown then select **Confirm**. 
 
-    - On the **Phone** page, enter your phone number and select **Next**
+    - On the **Phone** page, enter your phone number and select **Next**.
 
     - Enter the code in the email you received, select **Next**.
 
 10. When prompted again to provide additional information, select **Next**, on the **Keep your account secure** page, select **I want to set up a different method**. At the **Choose a different method** dialog, select **Email** on the dropdown then select **Confirm**. 
 
-    - On the **Email** page, enter an email address you can access and select **Next**
+    - On the **Email** page, enter an email address you can access and select **Next**.
 
     - Enter the code in the text message you received, select **Next**.
 
@@ -1371,7 +1371,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 
     - Internal URL: **http://app1.contoso.local**
 
-    - External URL: **Accept the default value**
+    - External URL: **Accept the default value**.
 
     - Pre Authentication: **Azure Active Directory**
 
@@ -1604,7 +1604,7 @@ In this task, you will create and configure Azure AD guest accounts in the Conto
 
     -  Name: **fabrikam-jane.doe**
 
-    -  Email address: **The email address of the jane.doe user you created earlier**
+    -  Email address: **The email address of the jane.doe user you created earlier**.
 
     -  First name: **Jane**
 
