@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-2020 Microsoft Corporation. All rights reserved.
+© 2021 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -32,7 +32,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Overview](#overview)
   - [Solution architecture](#solution-architecture)
   - [Exercise 1: Integrate an Active Directory forest with an Azure Active Directory tenant](#exercise-1-integrate-an-active-directory-forest-with-an-azure-active-directory-tenant)
-    - [Overview](#overview-1)
     - [Task 1: Create an Azure Active Directory tenant and activate an EMS E5 trial](#task-1-create-an-azure-active-directory-tenant-and-activate-an-ems-e5-trial)
     - [Task 2: Create and configure Azure AD users](#task-2-create-and-configure-azure-ad-users)
     - [Task 3: Purchase a custom domain name](#task-3-purchase-a-custom-domain-name)
@@ -44,9 +43,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 9: Initiate and verify directory synchronization](#task-9-initiate-and-verify-directory-synchronization)
     - [Task 10: Configure Hybrid Azure AD join](#task-10-configure-hybrid-azure-ad-join)
     - [Task 11: Perform Hybrid Azure AD join](#task-11-perform-hybrid-azure-ad-join)
-    - [Summary](#summary)
   - [Exercise 2: Manage Authentication, Authorization, and Access Control in Hybrid Scenarios](#exercise-2-manage-authentication-authorization-and-access-control-in-hybrid-scenarios)
-    - [Overview](#overview-2)
     - [Task 1: Create Active Directory groups](#task-1-create-active-directory-groups)
     - [Task 2: Assign EMS E5 licenses to Azure AD users](#task-2-assign-ems-e5-licenses-to-azure-ad-users)
     - [Task 3: Enable Azure AD Multi-Factor Authentication](#task-3-enable-azure-ad-multi-factor-authentication)
@@ -57,9 +54,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 8: Enable Enterprise-State-Roaming](#task-8-enable-enterprise-state-roaming)
     - [Task 9: Implement Azure AD Conditional Access Policies](#task-9-implement-azure-ad-conditional-access-policies)
     - [Task 10: Implement Azure AD Privileged Identity Management](#task-10-implement-azure-ad-privileged-identity-management)
-    - [Summary](#summary-1)
   - [Exercise 3: Configure application access in hybrid scenarios](#exercise-3-configure-application-access-in-hybrid-scenarios)
-    - [Overview](#overview-3)
     - [Task 1: Install and configure Azure AD Application Proxy](#task-1-install-and-configure-azure-ad-application-proxy)
     - [Task 2: Configure an Azure AD Application Proxy application](#task-2-configure-an-azure-ad-application-proxy-application)
     - [Task 3: Test an Azure AD Application Proxy application](#task-3-test-an-azure-ad-application-proxy-application)
@@ -68,8 +63,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 6: Create and configure Azure AD guest user and group accounts](#task-6-create-and-configure-azure-ad-guest-user-and-group-accounts)
     - [Task 7: Configure an Azure AD Application Proxy application for B2B access](#task-7-configure-an-azure-ad-application-proxy-application-for-b2b-access)
     - [Task 8: Test an Azure AD Application Proxy application](#task-8-test-an-azure-ad-application-proxy-application)
-    - [Summary](#summary-2)
-  - [Lab summary](#lab-summary)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Delete resources](#task-1-delete-resources)
 
@@ -101,7 +94,7 @@ From the architectural standpoint, the deployment will consist of the following 
 
 Duration: 150 minutes
 
-### Overview
+**Overview**
 
 In this exercise, you will integrate an Active Directory forest with an Azure Active Directory tenant by creating an Azure Active Directory tenant and activating an Enterprise Mobility + Security E5 trial, creating and configuring an Azure AD user, purchasing a custom domain name, assigning a custom domain name to the Contoso Azure AD tenant, configuring DNS suffix in the Contoso Active Directory forest, installing Azure AD Connect, enable Active Directory Recycle Bin, configuring Azure AD Connect attribute-level filtering, initiating and verifying directory synchronization, configuring Hybrid Azure AD join, and performing Hybrid Azure AD join of a Windows Server 2016 VM.
 
@@ -361,7 +354,7 @@ In this task, you will assign a newly purchased custom DNS domain name to the Co
 
 In this task, you will configure the DNS suffix of the Contoso Active Directory forest to match the newly verified Azure AD custom domain name.
 
-1. On the lab computer, in the Azure portal, verify that you are signed in to the Azure AD tenant associated with the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises (the **Default Directory**). If not, select the **Directory + Subscription** icon in the toolbar of the Azure portal (to the right of the **Cloud Shell** icon) to switch to that Azure AD tenant. 
+1. On the lab computer, in the Azure portal, verify that you are signed into the Azure AD tenant associated with the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises (the **Default Directory**). If not, select the **Directory + Subscription** icon in the toolbar of the Azure portal (to the right of the **Cloud Shell** icon) to switch to that Azure AD tenant. 
 
 2. In the Azure portal, navigate to the blade of the **DC1** virtual machine.
 
@@ -451,7 +444,7 @@ In this task, you will install Azure AD Connect.
 
 18. Back on the **Connect your directories** page, select **Next**.
 
-19. On the **Azure AD sign-in configuration** page, ensure that your custom domain name is listed as the verified **Active Directory UPN Suffix**, and that the **userPrincipalName** entry appears in the **USER PRINCIPAL NAME** drop-down list. Note the warning stating **Users will not be able to sign-in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**. Check the **Continue without matching all UPN suffixes to verified domain** box and select **Next**. 
+19. On the **Azure AD sign-in configuration** page, ensure that your custom domain name is listed as the verified **Active Directory UPN Suffix**, and that the **userPrincipalName** entry appears in the **USER PRINCIPAL NAME** drop-down list. Note the warning stating **Users will not be able to sign into Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**. Check the **Continue without matching all UPN suffixes to verified domain** box and select **Next**. 
 
     >**Note**: This is expected, since some users are still configured with the **contoso.local** UPN suffix, which is not routable and cannot be configured as a verified custom domain name of an Azure AD tenant.
 
@@ -707,7 +700,7 @@ In this task, you will configure Azure AD Connect device synchronization options
 
 ### Task 11: Perform Hybrid Azure AD join
 
-1. On the lab computer, in the Azure portal, verify that you are signed in to the Azure AD tenant associated with the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises (the **Default directory**). If not, select the **Directory + Subscription** icon in the toolbar of the Azure portal (to the right of the **Cloud Shell** icon) to switch to that Azure AD tenant. 
+1. On the lab computer, in the Azure portal, verify that you are signed into the Azure AD tenant associated with the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises (the **Default directory**). If not, select the **Directory + Subscription** icon in the toolbar of the Azure portal (to the right of the **Cloud Shell** icon) to switch to that Azure AD tenant. 
 
 2. In the Azure portal, navigate to the blade of the **APP1** virtual machine.
 
@@ -798,7 +791,7 @@ In this task, you will configure Azure AD Connect device synchronization options
    ![In this screenshot, the 'Devices - All devices' blade of the Azure portal is depicted with an entry representing the APP1 server with the 'Join Type' set to 'Hybrid Azure AD joined'](images/Hands-onlabstep-bystep-HybridIdentityImages/media/APP1_HybridAzureADjoined.png "APP1 server entry is shown")
 
 
-### Summary
+**Summary**
 
 In this exercise, you integrated an Active Directory forest with an Azure Active Directory tenant by creating an Azure Active Directory tenant and activating an Enterprise Mobility + Security E5 trial, creating and configuring an Azure AD user, purchasing a custom domain name, assigning a custom domain name to the Contoso Azure AD tenant, configuring DNS suffix in the Contoso Active Directory forest, installing Azure AD Connect, enable Active Directory Recycle Bin, configuring Azure AD Connect attribute-level filtering, initiating and verifying directory synchronization, configuring Hybrid Azure AD join, and performing Hybrid Azure AD join of a Windows Server 2016 VM.
 
@@ -807,7 +800,7 @@ In this exercise, you integrated an Active Directory forest with an Azure Active
 
 Duration: 150 minutes
 
-### Overview
+**Overview**
 
 In this exercise, you will optimize authentication, authorization, and access control for Contoso Active Directory environment integrated with the Contoso Azure AD tenant by enabling Azure AD Multi-Factor Authentication, enabling Azure AD password writeback and Self-Service Password Reset, implementing, Azure AD Password Protection, enabling Azure Active Directory Identity Protection, enabling Automatic Intune Enrollment, as well as implementing Azure AD Privileged Identity Management and Azure AD Conditional Access Policies.
 
@@ -870,7 +863,7 @@ In this task, you assign a value to the **UsageLocation** attribute of each user
     Install-Module AzureAD
     ```
 
-2. On the Script pane of the Windows PowerShell ISE window, run the following to sign in to the Contoso Azure AD tenant. When prompted, sign in with the **john.doe** Azure AD user account, which you created in the previous exercise.
+2. On the Script pane of the Windows PowerShell ISE window, run the following to sign into the Contoso Azure AD tenant. When prompted, sign in with the **john.doe** Azure AD user account, which you created in the previous exercise.
 
     ```pwsh
     Connect-AzureAD
@@ -907,7 +900,7 @@ In this task, you will configure user state-based Azure AD Multi-Factor Authenti
     Install-Module MSOnline
     ```
 
-2. On the Script pane of the Windows PowerShell ISE window, run the following to sign in to the Contoso Azure AD tenant. When prompted, sign in with the **john.doe** Azure AD user account, which you created in the previous exercise.
+2. On the Script pane of the Windows PowerShell ISE window, run the following to sign into the Contoso Azure AD tenant. When prompted, sign in with the **john.doe** Azure AD user account, which you created in the previous exercise.
 
     ```pwsh
     Connect-MsolService
@@ -1009,7 +1002,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 7. On the **Security - Getting started** blade, select **Authentication methods** under **Manage** on the left.
 
-8. On the **Authentication methods - Polcicies** blade, select **Password protection** under **Manage** on the left.
+8. On the **Authentication methods - Policies** blade, select **Password protection** under **Manage** on the left.
 
 9.  On the **Authentication methods - Password protection** blade, specify the following settings and select **Save**:
 
@@ -1029,7 +1022,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 10. Switch to the Remote Desktop session to **APP1** virtual machine, where you are signed in as the user **AGAyers** with the **demo@pass123** password. 
 
-11. Within the Remote Desktop session to **APP1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at the below listed url. Click **Download** under **Azure AD Password Protection for Windows Server Active Directory**. Download and install **AzureADPasswordProtectionProxySetup.exe** with the default options.
+11. Within the Remote Desktop session to **APP1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at the below listed URL. Click **Download** under **Azure AD Password Protection for Windows Server Active Directory**. Download and install **AzureADPasswordProtectionProxySetup.exe** with the default options.
 
     ```
     https://www.microsoft.com/download/details.aspx?id=57071
@@ -1037,7 +1030,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
     **Note:** You may have to enable file download on Internet Explorer. To do this, select the **Tools** icon that's shaped like a gear in the top right of the window and select **Internet Options**. From there select the **Security** tab then select **Custom level**. In the pop-up, scroll to the downloads section. Select **Enable** under **File download** and then select **OK**. Select **Yes** at the confirmation prompt then select **OK** again. 
 
-12.  Within the Remote Desktop session to **APP1**, start Windows PowerShell ISE as Administrator and, on the scripting pane, run the following to register the proxy (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant). When prompted, sign in to the Contoso Azure AD tenant using the credentials of the **john.doe** user account.
+12.  Within the Remote Desktop session to **APP1**, start Windows PowerShell ISE as Administrator and, on the scripting pane, run the following to register the proxy (replace the `<domain_name>` placeholder with the name of the default domain name associated with the Contoso Azure AD tenant). When prompted, sign into the Contoso Azure AD tenant using the credentials of the **john.doe** user account.
 13.  
     ```pwsh
     Import-Module AzureADPasswordProtection
@@ -1052,7 +1045,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 15. Switch to the Remote Desktop session to **DC1** virtual machine, where you are signed in as the user **CONTOSO\demouser** with the **demo@pass123** password. 
 
-16. Within the Remote Desktop session to **DC1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at the below listed url. Click **Download** under **Azure AD Password Protection for Windows Server Active Directory**. Download and install **AzureADPasswordProtectionProxySetup.exe** with the default options.
+16. Within the Remote Desktop session to **DC1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at the below listed URL. Click **Download** under **Azure AD Password Protection for Windows Server Active Directory**. Download and install **AzureADPasswordProtectionProxySetup.exe** with the default options.
 
     ```
     https://www.microsoft.com/download/details.aspx?id=57071
@@ -1070,7 +1063,7 @@ In this task, you will enable Azure AD Identity Protection
 
 2. On the **DC1** virtual machine blade, connect to **DC1** via Remote Desktop. When prompted to sign in, use the **demouser** name with the **demo\@pass123** password. 
 
-3. Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the Azure portal at the below url.
+3. Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the Azure portal at the below URL.
 
     ```
     portal.azure.com
@@ -1120,7 +1113,7 @@ In this task, you will enable Azure AD Identity Protection
 
 In this task, you will enable automatic enrollment of hybrid Azure AD devices into Intune. 
 
-1. Within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the following url in a tab. 
+1. Within the Remote Desktop session to **DC1**, in the Internet Explorer window displaying the Azure portal, navigate to the following URL in a tab. 
 
     ```
     https://endpoint.microsoft.com
@@ -1171,7 +1164,7 @@ In this task, you will implement Azure AD Conditional Access Policies.
 
     - Mark as trusted location: **Enabled**
 
-    - IP ranges: **The public IP address of the APP1 Azure VM (this can be found on its page in the portal) in the CIDR notation (i.e. x.x.x.x/32).**
+    - IP ranges: **The public IP address of the APP1 Azure VM (this can be found on its page in the portal) in the CIDR notation (i.e., x.x.x.x/32).**
 
     ![In this screenshot, the 'New named location' blade of the Azure portal is depicted with the required settings listed above selected and the Create button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_Namedlocations.png "Named Location settings")
 
@@ -1179,7 +1172,7 @@ In this task, you will implement Azure AD Conditional Access Policies.
 
     ![In this screenshot, the MFA portal is depicted with the 'service settings' tab selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConditionalAccess_MFA_servicesettings.png "MFA Service Settings")
 
-8. On the **service settings** tab, in the **trusted ip** text box, type the same public IP address of the APP1 Azure VM (this can be found on its page in the portal) in the CIDR notation (i.e. x.x.x.x/32). and select **Save** at the bottom.
+8. On the **service settings** tab, in the **trusted IP** text box, type the same public IP address of the APP1 Azure VM (this can be found on its page in the portal) in the CIDR notation (i.e., x.x.x.x/32). and select **Save** at the bottom.
 
 9.  Navigate back to the **Security - Getting started** blade on the Azure portal and select **Conditional Access** under **Protect** on the left.
 
@@ -1328,7 +1321,7 @@ In this task, you will implement Azure AD Privileged Identity Management.
 
     ![In this screenshot, the 'My roles - Azure AD roles' blade of the Azure portal is depicted with the 'Active assignments' tab selected and the Activated state of the role assignment highlighted.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ActiveAssignment.png "The role assignment is active")
 
-### Summary
+**Summary**
 
 In this exercise, you optimized authentication, authorization, and access protection for Contoso Active Directory environment integrated with the Contoso Azure AD tenant by enabling Azure AD Multi-Factor Authentication, enabling Azure AD password writeback and Self-Service Password Reset, implementing, Azure AD Password Protection, enabling Azure Active Directory Identity Protection, enabling Automatic Intune Enrollment, as well as implementing Azure AD Privileged Identity Management and Azure AD Conditional Access Policies.
 
@@ -1337,7 +1330,7 @@ In this exercise, you optimized authentication, authorization, and access protec
 
 Duration: 90 minutes
 
-### Overview
+**Overview**
 
 In this exercise, you will configure access to on-premises Integrated Windows Authentication app (implemented as the default IIS web site) from the internet by installing and configuring Azure AD Application Proxy. You will test access to this application by using a Contoso Azure AD tenant user account as well as by using a Fabrikam Azure AD tenant user account configured as a guest account in the Contoso Azure AD tenant. 
 
@@ -1376,9 +1369,9 @@ In this task, you will configure an Azure AD Application Proxy application.
 
     - Name: **APP1 Default Web Site**
 
-    - Internal Url: **http://app1.contoso.local**
+    - Internal URL: **http://app1.contoso.local**
 
-    - External Url: **Accept the default value**
+    - External URL: **Accept the default value**
 
     - Pre Authentication: **Azure Active Directory**
 
@@ -1416,7 +1409,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 
 7. On the **APP1 Default Web Site - Users and groups** blade, select **Single sign-on** under **Manage** on the left.
 
-8. On the **APP1 Default Web Site - Single sign-on** blade, select **Windows Integrated Authentication** if your not brought there automatically.
+8. On the **APP1 Default Web Site - Single sign-on** blade, select **Windows Integrated Authentication** if you're not brought there automatically.
 
 9. Within the Remote Desktop session to **DC1**, start a **Command Prompt**. On the **Command Prompt**, run the following to identify Service Principal Names associated with the APP1 computer account.
 
@@ -1458,7 +1451,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 
 ### Task 3: Test an Azure AD Application Proxy application
 
-1. From the lab computer, start a browser in Private mode and browse to the below url. When prompted to sign in, use the **AGAyers\@<custom_domain_name>** user name with the **demo@pass123** password (where **<custom_domain_name>** placeholder represents the custom DNS domain name you assigned to the Contoso Azure AD tenant in the first exercise of this lab.
+1. From the lab computer, start a browser in Private mode and browse to the below URL. When prompted to sign in, use the **AGAyers\@<custom_domain_name>** user name with the **demo@pass123** password (where **<custom_domain_name>** placeholder represents the custom DNS domain name you assigned to the Contoso Azure AD tenant in the first exercise of this lab.
 
     ```
     https://myapps.microsoft.com
@@ -1757,7 +1750,7 @@ In this task, you will configure an Azure AD Application Proxy application for B
     Get-ADForest | Set-ADForest -UPNSuffixes @{Add="<domain_name>.onmicrosoft.com"}
     ```
 
-28. Within the Remote Desktop session to **DC1**, start Internet Explorer and browse to the following url.
+28. Within the Remote Desktop session to **DC1**, start Internet Explorer and browse to the following URL.
 
     ```
     https://www.microsoft.com/en-us/download/details.aspx?id=51495
@@ -1782,7 +1775,7 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
 31. Execute the script and ensure that it did not return any error messages. 
 
-    > **Note**: You can schedule script execution in regular intervals by using Windows Scheduled Tasks. For details, refer to the **Readme - Script to pull Azure AD B2B users on-prem_v1.0.3.pdf** file
+    > **Note**: You can schedule script execution in regular intervals by using Windows Scheduled Tasks. For details, refer to the **Readme - Script to pull Azure AD B2B users on-prem_v1.0.3.pdf** file.
 
 32. Switch back to the Azure Active Directory Users and Computers console and verify that a user account of **jane.doe** is listed in the **Demo B2B Accounts\\Enabled** organizational unit. You may have to refresh the console. 
 
@@ -1793,7 +1786,7 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
 ### Task 8: Test an Azure AD Application Proxy application
 
-1. On the lab computer, start a browser in Private mode and browse to the below url.
+1. On the lab computer, start a browser in Private mode and browse to the below URL.
 
     ```
     https://myapps.microsoft.com
@@ -1806,11 +1799,11 @@ In this task, you will configure an Azure AD Application Proxy application for B
 4. On the **Apps** page of the **Application Access Panel**, select the **APP1 Default Web Site** icon. This will automatically open a new browser tab displaying the Default Web Site page on APP1.
 
 
-### Summary
+**Summary**
 
 In this exercise, you configured access to on-premises Integrated Windows Authentication app (implemented as the default IIS web site) from the internet by installing and configuring Azure AD Application Proxy. You also tested access to this application by using a Contoso Azure AD tenant user account as well as by using a Fabrikam Azure AD tenant user account configured as a guest account in the Contoso Azure AD tenant. 
 
-## Lab summary
+**Lab summary**
 
 In this hands-on lab, you setup and configured a number of different hybrid identity scenarios. The scenarios involved an Active Directory single-domain forest named contoso.local, which in this lab environment, consisted (for simplicity reasons) of a single domain controller named DC1 and a single domain member server named APP1. You explored Azure AD-related capabilities that allowed you to integrate Active Directory with Azure Active Directory, optimized hybrid authentication and authorization, and provided secure access to on-premises resources from Internet for both organizational users and users who are members of partner organizations. 
 
