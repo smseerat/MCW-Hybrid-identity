@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-June 2020
+March 2021
 </div>
 
 
@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2020 Microsoft Corporation. All rights reserved.
+© 2021 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -28,31 +28,31 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Trainer information](#trainer-information)
-    - [Role of the trainer](#role-of-the-trainer)
-    - [Whiteboard design session flow](#whiteboard-design-session-flow)
-    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
-    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
+  - [Role of the trainer](#role-of-the-trainer)
+  - [Whiteboard design session flow](#whiteboard-design-session-flow)
+  - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+  - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Hybrid identity whiteboard design session student guide](#hybrid-identity-whiteboard-design-session-student-guide)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-        - [Customer situation](#customer-situation)
-        - [Customer needs](#customer-needs)
-        - [Customer objections](#customer-objections)
-        - [Key design considerations](#key-design-considerations)
-        - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+    - [Customer situation](#customer-situation)
+    - [Customer needs](#customer-needs)
+    - [Customer objections](#customer-objections)
+    - [Key design considerations](#key-design-considerations)
+    - [Infographic for common scenarios](#infographic-for-common-scenarios)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+  - [Step 3: Present the solution](#step-3-present-the-solution)
+  - [Wrap-up](#wrap-up)
+  - [Additional references](#additional-references)
 - [Hybrid identity whiteboard design session trainer guide](#hybrid-identity-whiteboard-design-session-trainer-guide)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
-    - [Step 3: Present the solution](#step-3-present-the-solution-1)
-    - [Wrap-up](#wrap-up-1)
-    - [Preferred target audience](#preferred-target-audience)
-    - [Preferred solution](#preferred-solution)
-    - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
-    - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
+  - [Step 3: Present the solution](#step-3-present-the-solution-1)
+  - [Wrap-up](#wrap-up-1)
+  - [Preferred target audience](#preferred-target-audience)
+  - [Preferred solution](#preferred-solution)
+  - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
+  - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
 
 <!-- /TOC -->
 
@@ -551,13 +551,13 @@ Have the table attendees reconvene with the larger session group to hear a subje
 
            - Self-service password reset/change/unlock with on-premises writeback (available starting with Azure AD Premium P1). 
 
-     ![High level architecture consisting of the on-premises environment represented by a rectangle on the left hand side, two cloud outlines representing the Azure AD tenant of Contoso and Fabrikam on the right hand side, and the Microsoft Intune icon in the middle. The on-premises environment contains an icons representing Active Directory domain controllers, providing such functionality as Azure AD Connect-based synchronization with attribute level filtering and password writeback, Azure AD Application Proxy with its on-premises connector, Service Connection Point for Hybrid Azure AD join, and Passowrd Protection DC Agent. There is also a web server icon, representing the hybrid Azure AD joined server hosting the APP1 application, used also as the Password Application Proxy. The Contoso Azure AD tenant provides such functionality as Azure AD application proxy, My Apps portal, Automatic Intune enrollment, Enterprise State Roaming, Conditional Access, Azure AD Identity Protection, Azure AD Privileged Identity Management, Azure AD MFA, and Self-Service Password Reset.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/preferred-solution-high-level.png)
+     ![High level architecture consisting of the on-premises environment represented by a rectangle on the left hand side, two cloud outlines representing the Azure AD tenant of Contoso and Fabrikam on the right hand side, and the Microsoft Intune icon in the middle. The on-premises environment contains an icons representing Active Directory domain controllers, providing such functionality as Azure AD Connect-based synchronization with attribute level filtering and password writeback, Azure AD Application Proxy with its on-premises connector, Service Connection Point for Hybrid Azure AD join, and Passowrd Protection DC Agent. There is also a web server icon, representing the hybrid Azure AD joined server hosting the APP1 application, used also as the Password Application Proxy. The Contoso Azure AD tenant provides such functionality as Azure AD application proxy, My Apps portal, Automatic Intune enrollment, Enterprise State Roaming, Conditional Access, Azure AD Identity Protection, Azure AD Privileged Identity Management, Azure AD MFA, and Self-Service Password Reset.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/preferred-solution-high-level.png "Diagram of hybrid infrastructure")
 
     The choice of authentication method: 
 
       - In order to minimize infrastructure footprint required for integration, streamline user experience, and, at the same time, ensure that any on-premises Active Directory user account restrictions, such as allowed sign-in hours must be honored, the proposed solution leverages pass-through authentication with seamless single sign-on (SSO). 
 
-     ![The diagram illustrating Azure AD Hybrid Identity with Pass-through authentication. On the left hand side, there is a cloud shape representing Public Cloud SaaS services, including Azure and Office 365, The user and the user's computer icons are positioned directly underneath. The user signs in to Azure AD represented by a circle containing the Azure AD symbol. On the right-hand side of the slide, there are several icons within the area of the image labeled On-premises.. These icons represent an Active Directory domain controller and Azure AD Connect server that collectively perform identity sync. The domain controller also interacts with Authentication Agents that handle pass-through authentication.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image3.png)
+     ![The diagram illustrating Azure AD Hybrid Identity with Pass-through authentication. On the left hand side, there is a cloud shape representing Public Cloud SaaS services, including Azure and Office 365, The user and the user's computer icons are positioned directly underneath. The user signs in to Azure AD represented by a circle containing the Azure AD symbol. On the right-hand side of the slide, there are several icons within the area of the image labeled On-premises.. These icons represent an Active Directory domain controller and Azure AD Connect server that collectively perform identity sync. The domain controller also interacts with Authentication Agents that handle pass-through authentication.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image3.png "Diagram of hybrid identity with pass-through authentication")
 
       - The need for preserving on-premises Active Directory user account restrictions eliminates the possibility of relying exclusively on Azure AD password hash synchronization, even though this is the simplest way to enable authentication for on-premises directory objects in Azure AD (which also supports seamless SSO), with minimum infrastructure requirements. It is worth noting that the password hash synchronization also does not include expired and locked-out states of Active Directory user accounts.
 
