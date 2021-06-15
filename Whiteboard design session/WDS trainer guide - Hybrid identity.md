@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-March 2021
+June 2021
 </div>
 
 
@@ -200,7 +200,7 @@ Contoso is facing challenges related to increased mobility of its workforce. In 
 
 Contoso has a single domain Active Directory forest which was implemented over a decade ago. The domain was assigned a non-routable DNS name contoso.local. While the Directory Services team considered renaming the domain, this has never been implemented due to potential negative implications of such change. Contoso does own a publicly routable DNS domain name contoso.com.
 
-Contoso has recently upgraded its Active Directory environment to Windows Server 2016 and it is in the process of migrating its desktops from Windows 7 to Windows 10. The majority of their servers are running either Windows Server 2012 R2 or Windows Server 2016.  
+Contoso has recently upgraded its Active Directory environment to Windows Server 2016, and is in the process of migrating its desktops from Windows 7 to Windows 10. The majority of their servers are running either Windows Server 2012 R2 or Windows Server 2016.  
 
 **Customer objectives**
 
@@ -240,7 +240,7 @@ The management team of Contoso, including its CIO, Andrew Cross, emphasized the 
 
 10.  Commercial applications developed by Contoso programmers must be made available to external customers with minimum overhead associated with identity management.
 
-11.  Resiliency must be maximized whenever possible.
+11.  Resiliency must be maximized whenever possible. Users must not lose authentication capabilities or the ability to access on-premises applications.
 
 12.  Infrastructure requirements must be minimized.
 
@@ -248,7 +248,7 @@ The management team of Contoso, including its CIO, Andrew Cross, emphasized the 
 
 1.  Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory.
 
-2.  We have heard that it is not possible to run multiple instance of Azure AD Connect simultaneously. All identity services components in our environment must provide resiliency and support failover.
+2.  We have heard that it is not possible to run multiple instances of Azure AD Connect simultaneously. All identity services components in our environment must provide resiliency and support failover.
 
 3.  If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
 
@@ -273,7 +273,7 @@ The management team of Contoso, including its CIO, Andrew Cross, emphasized the 
 
 7.  The approach to providing Contoso and Fabrikam users access to on-premises web applications that rely on Kerberos-based Windows Integrated Authentication
 
-8.  The approach to providing external customers access to custom-developed applications with minimum overhead associated with identity management.
+8.  The approach to providing external customers access to custom-developed applications with minimum overhead associated with identity management
 
 9.  The method of implementing redundancy in your solution
 
@@ -394,6 +394,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | What is Conditional Access? | <https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview>  |
 | Azure Active Directory B2B documentation | <https://docs.microsoft.com/en-us/azure/active-directory/b2b/>  |
 | Azure Active Directory B2C documentation | <https://docs.microsoft.com/en-us/azure/active-directory-b2c/>  |
+| Microsoft Enterprise Mobility + Security options | <https://www.microsoft.com/en-us/microsoft-365/enterprise-mobility-security/compare-plans-and-pricing>
 
 
 # Hybrid identity whiteboard design session trainer guide
@@ -482,7 +483,7 @@ Have the table attendees reconvene with the larger session group to hear a subje
 
 10.  Commercial applications developed by Contoso programmers must be made available to external customers with minimum overhead associated with identity management.
 
-11.  Resiliency must be maximized whenever possible.
+11.  Resiliency must be maximized whenever possible.  Users must not lose authentication capabilities or the ability to access on-premises applications.
 
 12.  Infrastructure requirements must be minimized
 
@@ -765,7 +766,13 @@ It is important to provision sufficient number of connectors to handle the expec
 
               **Note**:  Azure AD Password Protection Proxy and Application Proxy install different versions of the Microsoft Azure AD Connect Agent Updater service. These different versions are incompatible when installed side by side, so it is not recommended to install Azure AD Password Protection Proxy and Application Proxy side by side on the same machine.
 
-2.  What is the failover process for components that operate in the active/passive mode?
+        - Backup domain controller
+  
+            - In order to increase availability of resources and authentication located on-premises, it is recommended to also add a backup domain controller within the hybrid infrastructure.  This backup domain controller could be a virtual machine in Azure or a physical server on-premises as long as it is able to communicate directly with the primary domain controller.  
+            - This backup domain controller will have Azure AD Connect installed and configured in standby mode and can be made primary if the main domain controller goes offline.
+            - The backup domain controller can also have a pass through authenticator agent installed for redundancy and also configured with the application proxy configuration to maintain resiliency for application access.
+
+1.  What is the failover process for components that operate in the active/passive mode?
 
    - Network connectivity between Active Directory and Azure Active Directory
 
@@ -816,6 +823,11 @@ It is important to provision sufficient number of connectors to handle the expec
         One of the prerequisites for implementing Hybrid Azure AD joined Key Trust Deployment of Windows Hello for Business is registration of Windows 10 client devices in Azure Active Directory. In the proposed solution, this is performed by leveraging the functionality of Azure AD Connect, which starting with version 1.1.819.0, includes a wizard that significantly simplifies the registration process. The wizard configures the Active Directory service connection points (SCPs) for device registration.
 
         For the information regarding other prerequisites and the process of implementing Hybrid Azure AD joined Key Trust Deployment of Windows Hello for Business, refer to *Hybrid Azure AD joined Key Trust Deployment* at <https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-key-trust>.
+
+    - Microsoft Authenticator authentication
+
+      - For users that do not have the capability to use Windows Hello for Business, the Microsoft Authenticator can be used for an additional layer of password-less security.
+      
 
 *Optimizing authorization configuration*
 

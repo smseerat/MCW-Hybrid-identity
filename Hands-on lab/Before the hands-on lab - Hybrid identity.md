@@ -9,7 +9,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-March 2021
+June 2021
 </div>
 
 
@@ -80,7 +80,7 @@ Timeframe: 150 minutes
 
 2. On the **TLG (Test Lab Guide) - 3 VM Base Configuration (v1.0)** page, select **Deploy to Azure**.
 
-   > **Note**: The 3 VM Base Configuration provisions a Windows Server 2016 Active Directory domain controller named DC1 using the domain name you specify and a domain member server named APP1 running Windows Server 2016. It also offers an option to provision a client VM running Windows 10, however we will not be using it in our lab (primarily due to licensing requirements applicable when running Windows 10 VMs in Azure). The domain member server (APP1) has automatically installed .NET 4.5 and IIS.
+   > **Note**: The 3 VM Base Configuration provisions a Windows Server 2016 Active Directory domain controller named DC1 using the domain name you specify, and a domain member server named APP1 running Windows Server 2016. It also offers an option to provision a client VM running Windows 10, however we will not be using it in our lab (primarily due to licensing requirements applicable when running Windows 10 VMs in Azure). The domain member server (APP1) has automatically installed .NET 4.5 and IIS.
 
 3. On the **Custom deployment** blade, specify the following settings, then select **Review + Create** then **Create**.
 
@@ -106,7 +106,7 @@ Timeframe: 150 minutes
 
     -   VM Size: **Standard_D2s_v3**
    
-    **Note**: Use a similar VM size if your subscription does not support the listed size. Documentation is linked here. <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes>
+    **Note**: Use a similar VM size if your subscription does not support the listed size. Documentation is linked here: <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes>.
 
     -   DNS Label Prefix: **any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).**
 

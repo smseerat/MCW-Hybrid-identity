@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-March 2021
+June 2021
 </div>
 
 
@@ -63,6 +63,14 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 6: Create and configure Azure AD guest user and group accounts](#task-6-create-and-configure-azure-ad-guest-user-and-group-accounts)
     - [Task 7: Configure an Azure AD Application Proxy application for B2B access](#task-7-configure-an-azure-ad-application-proxy-application-for-b2b-access)
     - [Task 8: Test an Azure AD Application Proxy application](#task-8-test-an-azure-ad-application-proxy-application)
+  - [Exercise 4: Create resiliency within the Hybrid Identity infrastructure](#exercise-4-create-resiliency-within-the-hybrid-identity-infrastructure)
+    - [Task 1: Create a VM for the secondary domain controller](#task-1-create-a-vm-for-the-secondary-domain-controller)
+    - [Task 2: Promote the VM to a domain controller](#task-2-promote-the-vm-to-a-domain-controller)
+    - [Task 3: Install Azure AD Connect in standby mode](#task-3-install-azure-ad-connect-in-standby-mode)
+    - [Task 4: Install pass through agent](#task-4-install-pass-through-agent)
+    - [Task 5: Configure Azure AD Application Proxy for BDC-1 VM](#task-5-configure-azure-ad-application-proxy-for-bdc-1-vm)
+  - [Exercise 5: Configure Password-less Authentication methods](#exercise-5-configure-password-less-authentication-methods)
+    - [Task 1: Configure Authentication methods](#task-1-configure-authentication-methods)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Delete resources](#task-1-delete-resources)
 
@@ -1022,7 +1030,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 10. Switch to the Remote Desktop session to **APP1** virtual machine, where you are signed in as the user **AGAyers** with the **demo@pass123** password. 
 
-11. Within the Remote Desktop session to **APP1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at the below listed URL. Click **Download** under **Azure AD Password Protection for Windows Server Active Directory**. Download and install **AzureADPasswordProtectionProxySetup.exe** with the default options.
+11. Within the Remote Desktop session to **APP1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at the below listed URL. Select **Download** under **Azure AD Password Protection for Windows Server Active Directory**. Download and install **AzureADPasswordProtectionProxySetup.exe** with the default options.
 
     ```
     https://www.microsoft.com/download/details.aspx?id=57071
@@ -1045,7 +1053,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 15. Switch to the Remote Desktop session to **DC1** virtual machine, where you are signed in as the user **CONTOSO\demouser** with the **demo@pass123** password. 
 
-16. Within the Remote Desktop session to **DC1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at the below listed URL. Click **Download** under **Azure AD Password Protection for Windows Server Active Directory**. Download and install **AzureADPasswordProtectionProxySetup.exe** with the default options.
+16. Within the Remote Desktop session to **DC1**, start Internet Explorer, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at the below listed URL. Select **Download** under **Azure AD Password Protection for Windows Server Active Directory**. Download and install **AzureADPasswordProtectionProxySetup.exe** with the default options.
 
     ```
     https://www.microsoft.com/download/details.aspx?id=57071
@@ -1802,6 +1810,280 @@ In this task, you will configure an Azure AD Application Proxy application for B
 **Summary**
 
 In this exercise, you configured access to on-premises Integrated Windows Authentication app (implemented as the default IIS web site) from the internet by installing and configuring Azure AD Application Proxy. You also tested access to this application by using a Contoso Azure AD tenant user account as well as by using a Fabrikam Azure AD tenant user account configured as a guest account in the Contoso Azure AD tenant. 
+
+## Exercise 4: Create resiliency within the Hybrid Identity infrastructure
+
+Duration: 90 minutes
+
+**Overview**
+
+In this exercise, you will configure a secondary domain controller and install Azure AD Connect in standby mode for fail-over. You will also configure a second pass-through agent and application proxy on the secondary domain controller. 
+
+
+### Task 1: Create a VM for the secondary domain controller
+
+In this task, you will create a VM that will become the backup domain controller within the hybrid infrastructure.
+
+1. From within the Azure portal, select **+ Create a resource**, select **Compute**, and select **Create** under **Virtual machines**.
+
+    ![In this screenshot, you are selecting to create a Virtual machine as a compute resource.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/createvm.png "Create a Virtual machine")
+
+2. Complete the following information for the Virtual machine and select **Next: Disks**:
+   
+    - Resource group: **hybrididentity-RG** 
+  
+    - Virtual machine name: **BDC-1**
+  
+    - Image: **Windows Server 2016 Datacenter - Gen 1** 
+  
+    - Size: **Standard_D2s_v3**
+   
+    - Username: **demouser** 
+  
+    - Password: **demo@pass123**
+  
+    - Public inbound ports: **Allow selected ports**
+  
+    - Select inbound ports: **RDP (3389)**
+
+    ![This screenshot is showing the basic configuration details for the virtual machine.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/createvmdetails.png "Virtual machine basic configuration")
+
+3. Select **Create and attach a new disk**.
+
+4. On the **Create a new disk** tile, select **Change size** and change the disk size to 32 GB.
+
+5. Select **OK** to continue.
+
+    ![This screenshot is showing where to change the disk size before creating a new managed disk for the virtual machine.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/adddisk.png "Change disk size")
+
+6. Select **Next: Networking** and verify the Virtual network is **TlgBaseConfig-01-VNET** and Subnet is **subnet-01**.  This will make sure that the new Virtual machine is on the same network as the primary domain controller, **DC-1**. Keep the default values for the remaining fields.  Select **Review + create**.
+   
+    ![In this screenshot, the networking tile is being configured and we are choosing the existing virtual network and subnet.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/vmnetwork.png "Virtual machine networking")
+
+7. Select **Create** to create the Virtual machine.
+
+### Task 2: Promote the VM to a domain controller
+
+In this task, you will promote the newly created VM to a domain controller and configure it to be the backup to DC1.
+
+1. Navigate to the **hybrididentity-RG** Resource group and select the **BDC-1** Virtual machine.
+   
+2. Select **Connect** and choose **RDP**.
+    
+    ![This screenshot is showing how to connect to the virtual machine using RDP.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/connectrdp.png  "Connect with RDP")
+
+3. Connect to the Virtual machine with the username and password used in the previous task.
+   
+4. From the **Server Manager** dashboard, select **Add roles and features**.
+
+    ![After connecting into the virtual machine, you will configure the server role in server manager as shown in this screenshot.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/addroles.png "Add Server roles and features")
+
+5. Select **Next** in the **Add Roles and Features Wizard**, at the **Server selection** tab, verify that **BDC-1** is selected, then select **Next** for the **Server Roles** tab.
+
+6. Select the **Active Directory Domain Services** checkbox under **Roles**.
+
+    ![In this screenshot, you will select the role of Active Directory Domain Service in the server roles wizard.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/addaddsrole.png "Select server roles")
+
+7. When the **Add features** tile opens, uncheck the box for **Include management tools (if applicable)** and select **Add Features** to continue.
+
+    ![In this screenshot, you unselect the include management tools checkbox and add features.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/addsaddfeatures.png "Add roles and features wizard")
+
+8. Select **Next** through **Features** and **AD DS**.  At the **Confirmation** tile, select **Install**.
+
+    ![This screenshot shows the configurations being complete and ready to install.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/addsinstall.png "Install server roles")
+
+9. Select **Close** when installation completes.
+
+10. Right-select the network connection icon on the taskbar to open the **Network and sharing center**.
+    
+11. Select **Ethernet 2** next to **Connections**.
+    
+12. When the **Ethernet 2 Status** tile opens, select **Properties**.
+    
+13. On the **Ethernet 2 Properties** tile, select **Internet Protocol Version 4 (TCP/IPv4)**, and select **Properties**.
+    
+14. On the **Internet Protocol Version 4 (TCP/IPv4)** tile, select the radio button for **Use the following DNS server addresses** and enter the IP address of **DC-1**. Select **OK** to save the changes. 
+        
+    ![This screenshot shows the steps to follow to add a DNS server to the device network configuration.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/dc1dns.png "Add DNS to Network properties")
+
+15. Restart the **BDC-1** Virtual machine.
+
+16. When **BDC-1** restarts, RDP back into it.  There will be a flag with a notification on the top right of the **Server Manager Dashboard**.  Select this flag for the **Post-deployment Configuration**, and select **Promote this server to a domain controller**.
+
+    ![After the virtual machine restarts, select to promote the server by selecting the flag in the Server Manager, as shown in this screenshot.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/promotedc.png "Promote the server to a DC")
+
+17. Select **Add a domain controller to an existing domain**, select **Select**. 
+
+    ![This screenshot shows the deployment configuration to add an existing domain by selecting select.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/existingdomain.png "Add DC to existing domain")
+
+18. Enter **corp.contoso.com\demouser** for the server username and password **demo@pass123** to authenticate to the domain.
+
+    ![This screenshot shows how to login to the existing domain.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/addcontosodomain.png "Login to existing domain")
+
+1.  Select **corp.contoso.com** and **OK**.
+
+    ![This screenshot shows that you can now select the existing domain for the new backup domain controller.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/contosodomain.png "Select existing domain")
+
+19. Select **Next**.
+
+    ![The existing domain is now populated in the deployment configuration along with the administrator credentials.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/domainconfignext1.png "Existing domain credentials")
+
+20. On **Domain Controller options**, keep **Domain Name System (DNS) server** and **Global Catalog (GC)** checked.  Enter the password **demo@pass123** for the **Directory Services Restore Mode (DSRM)** password.  Select **Next**.
+
+    ![As the screenshot shows, you will need to create a password for directory services restore mode.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/dcoptions.png "DC options")
+
+21. For **DNS options**, select **Next**.
+
+22. On **Additional options**, select **DC1.corp.contoso.com** on the **Replicate from** drop-down and select **Next**.
+
+    ![In this screenshot, you will choose the drop-down arrow and select the primary domain controller to replicate from.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/dc1replica.png "Select primary domain controller")
+
+23. Leave **Paths** the default value and select **Next**.
+
+    ![This screenshot shows the default paths that will remain unchanged.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/dcpaths.png "Default file paths")
+
+24. **Review options** and select **Next**.
+
+    ![This screenshot shows the configuration settings prior to installing the new role.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/dcreviewoptions.png "Review options")
+
+25. Verify that **All prerequisite checks passed successfully** and select **Install**.
+
+    ![This screenshot shows what you should see when the server has passed the prerequisite checks prior to installing the domain controller role.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/checkspassed.png "Pre-requisite check")
+
+26. After installation, the VM will restart, and the **BDC-1** will be configured as your **Backup domain controller**.
+
+27. In order for clients to fail-over to **BDC-1** when **DC-1** is off-line, the IP address of **BDC-1** will need to be added as the **Alternate DNS server** within **Internet Protocol Version 4 (TCP/IPv4) Properties** on all clients.  On each client device, repeat steps 10-15 in this task, but enter the internal IP address of **BDC-1** as the **Alternate DNS server** address.
+
+    ![After the backup domain controller role is installed, device network IP settings must have the IP address added as the Alternate DNS server.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/alternatedns.png "Alternate DNS server IP address")
+
+
+### Task 3: Install Azure AD Connect in standby mode
+
+In this task, you will install and configure Azure AD Connect in standby mode.  This will allow **BDC-1** to take over identity synchronization if **DC-1** goes offline.
+
+1. Since **Azure AD Connect** has already been downloaded and installed from the portal, you need to navigate to the **Microsoft Download Center** to download **Azure AD Connect** for **BDC-1**.
+
+    ```
+    https://www.microsoft.com/en-us/download/confirmation.aspx?id=47594
+    ```
+
+2. Scroll down to find **Microsoft Azure Active Directory Connect** and select **Download**.
+
+    ![In this screenshot, we are navigating to the Microsoft Download Center to download Azure AD Connect.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/azureadconnectdownload.png "Download Azure AD Connect")
+
+3. Download the **AzureADConnect.msi** file by selecting **Click here** under **Download link**.
+
+    ![In this screenshot, we are selecting the link to download the Azure AD Connect msi file.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/azureadconnectdownloadlink.png "Azure AD Connect msi file")
+
+4. When prompted, select the drop-down arrow and choose **Save as** to save the **AzureADConnect.msi** file to the **Downloads** folder.
+
+    ![In this screenshot, we are selecting the save location for the Azure AD Connect msi file.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/azureadconnectsaveas.png "Save file to Download folder")
+
+5. After the download is complete, go to the **Downloads** folder in **File Explorer** and run the **AzureADConnect** installation.
+
+    ![After the download is complete, you will navigate to the downloads folder to select the file to install, as shown in this screenshot.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/azureadconnectfile.png "Run Azure AD Connect installation")
+
+6. After installation, the **Microsoft Azure Active Directory Connect** configuration wizard will start automatically.  Accept the license terms to continue.
+
+    ![This screenshot shows that you are required to agree to the license terms before installing Azure AD Connect.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/azureadconnectterms.png "Agree to license terms")
+
+7. To configure the **BDC-1** backup domain controller as a staging server, select **Customize**.
+
+    ![This screenshot shows that you will not be using Express settings but will need to customize the settings.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/customizesettings.png "Customize settings")
+
+8. Select **Install**.
+
+    ![Install the required components and do not select any of the optional components before selecting install, as shown in this screenshot.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/installazureadconnect.png "Install Azure AD Connect")
+
+9.  Follow the same steps as Exercise 1, Task 6, Steps 15-24.  On the final **Configure** step, un-check the **Start the synchronization process when configuration completes** checkbox, and select the **Enable staging mode** checkbox. Select **Install** to complete the installation of the configuration.
+
+    ![Once Azure AD Connect has been installed and all credentials have been provided, unselect the checkbox for starting synchronization and check the box for enable staging mode as shown in this screenshot.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/readytoconfigure.png "Configure in staging mode")
+
+10. Navigate to the **Windows Start menu** and open **Synchronization Service Manager**.
+
+    ![This screenshot shows the Synchronization service application within the Windows Start menu.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/syncservice.png "Open Synchronization service")
+    
+11. Select **Connectors**, and select the first Connector with the type **Active Directory Domain Services**. Select **Run**, select **Full import**, and **OK**. Do these steps for all Connectors of this type.
+
+    ![After the Synchronization service manager opens, select Connectors on the menu as shown in this screenshot.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/syncconnectors.png "Select Connectors")
+
+12. Select the Connector with type **Azure Active Directory (Microsoft)**. Select **Run**, select **Full import**, and **OK**.
+    
+13. Make sure the tab Connectors is still selected. For each Connector with type **Active Directory Domain Services**, select **Run**, select **Delta Synchronization**, and **OK**.
+    
+14. Select the Connector with type **Azure Active Directory (Microsoft)**. Select **Run**, select **Delta Synchronization**, and **OK**.
+
+
+### Task 4: Install pass through agent 
+
+In this task, you will install and configure the Azure AD Connect pass through agent.
+
+1. Within the Remote Desktop session to **BDC-1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Contoso - Overview** blade of the Contoso Azure AD tenant.
+   
+2. To download the latest version of the Authentication Agent (version 1.5.193.0 or later), sign in to the Azure Active Directory admin center with your tenant's global administrator credentials.
+   
+3. Select Azure Active Directory in the left pane.
+   
+4. Select Azure AD Connect, select Pass-through authentication, and then select Download Agent.
+   
+5. Select the Accept terms & download button.
+   
+6. Run the downloaded Authentication Agent executable and providing your tenant's global administrator credentials when prompted.
+   
+
+### Task 5: Configure Azure AD Application Proxy for BDC-1 VM
+
+In this task, you will configure Azure AD Application Proxy for the BDC-1 VM.
+
+1. Within the Remote Desktop session to **DC1**, in the Server Manager console, select **Tools** and then select **Active Directory Users and Computers**. 
+
+2.  In the **Active Directory Users and Computers** console, select **View** and, in the **View** menu, enable **Advanced Features**.
+
+    ![In this screenshot, the 'Active Directory Users and Computers' console is depicted with the View menu open and the Advanced Features button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EnableAdvancedFeatures.png "Enable Advanced Features in the console")
+
+3.  In the **Active Directory Users and Computers** console, locate the computer account hosting the Azure AD Application Proxy connector (**DC1** in our case) under **Domain Controllers** within **contoso.local** and display its **Properties** window.
+
+    ![In this screenshot, the 'Active Directory Users and Computers' console is depicted with the Domain Controllers node selected on the left and the DC1 computer account right-selected with the Properties menu option selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DisplayComputerProperties.png "Display computer properties")
+
+4.  In the **DC1 Properties** window, switch to the **Delegation** tab and select the option **Trust this computer for delegation to specified services only**.
+
+5.  Select the option **Use any authentication protocol**, select **Add**, in the **Add Services** window, select **Users or Computers**, in the **Select Users or Computers** dialog box, in the **Enter the object names to select** text box, type **APP1** and select **OK**. 
+
+    ![In this screenshot, the 'DC1 Properties' window is depicted with the Delegation tab selected with the 'Trust this computer for delegation to specified services only' and 'Use any authentication protocol' options and the 'Add' button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DelegationConfiguration.png "Delegation configuration")
+
+6.  Back in the **Add Services** window, select the **http** entry and select **OK**. 
+
+    ![In this screenshot, 'Add Services' window is depicted with the 'http' entry selected along with the OK button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADApplicationProxy_Delegation_http.png "Delegation http")
+
+7.  Back in the **DC1 Properties** window, select **OK**.
+
+**Summary** 
+
+In this exercise, you installed and configured a backup domain controller, set it up for Azure AD Connect standby synchronization, and added redundancy with the Azure AD Connect pass through agents and Application proxy.  You have now configured a resilient and available hybrid identity architecture.
+
+## Exercise 5: Configure Password-less Authentication methods
+
+### Task 1: Configure Authentication methods
+
+1. Navigate to Azure Active Directory within the Azure portal.  In the Azure Active Directory menu, select **Security**.
+
+    ![In this screenshot, we navigate to Azure Active Directory and choose Security in the tile menu.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/azureadsecurity.png "Azure AD Security")
+
+2. In the **Security | Getting Started** tile, select **Authentication methods** under the **Manage** section of the left tile menu.
+
+    ![In this screenshot, we are selecting authentication methods under the manage menu.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/authmethods.png "Authentication methods")
+
+3. Under **Method**, select **Microsoft Authenticator**.
+
+4. The details will populate below, select **Yes** for **Enable**, select **Select users** for **Target**.  
+
+5. Select **Add users and groups** and select **Ann G. Ayers** under users.  Select **Save** to add the user.  
+
+6. Select **Save** under **Details** to save the configuration.
+
+    ![In this screenshot, we are configuring the authentication method of Microsoft Authenticator for one of the users in Azure AD.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/configmsftauthenticator.png "Configure Microsoft Authenticator")
+
+7. The next time that **Ann G. Ayers** attempts to login, they will be prompted to configure the **Microsoft Authenticator** app to complete authentication.
 
 **Lab summary**
 

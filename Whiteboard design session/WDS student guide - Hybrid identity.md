@@ -9,7 +9,7 @@ Whiteboard design session student guide
 </div>
 
 <div class="MCWHeader3">
-March 2021
+June 2021
 </div>
 
 
@@ -28,17 +28,17 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Hybrid identity whiteboard design session student guide](#hybrid-identity-whiteboard-design-session-student-guide)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-        - [Customer situation](#customer-situation)
-        - [Customer needs](#customer-needs)
-        - [Customer objections](#customer-objections)
-        - [Key design considerations](#key-design-considerations)
-        - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+    - [Customer situation](#customer-situation)
+    - [Customer needs](#customer-needs)
+    - [Customer objections](#customer-objections)
+    - [Key design considerations](#key-design-considerations)
+    - [Infographic for common scenarios](#infographic-for-common-scenarios)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+  - [Step 3: Present the solution](#step-3-present-the-solution)
+  - [Wrap-up](#wrap-up)
+  - [Additional references](#additional-references)
 
 <!-- /TOC -->
 
@@ -46,7 +46,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Abstract and learning objectives 
 
-In this whiteboard design session, you will learn how to implement different components of a hybrid identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features, including pass-through authentication with Seamless Single Sign-On, Multi-Factor Authentication, Self-Service Password Reset, Azure AD Password Protection for Windows Server Active Directory, Hybrid Azure AD join, Windows Hello for Business, Microsoft Intune automatic enrollment, Azure AD Conditional Access, Azure AD Application Proxy, Azure AD B2B, and Azure AD B2C.
+In this whiteboard design session, you will learn how to implement different components of a hybrid identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features, including pass-through authentication with Seamless Single Sign-On, Multi-Factor Authentication, Self-Service Password Reset, Azure AD Password Protection for Windows Server Active Directory, Hybrid Azure AD join, Windows Hello for Business, Microsoft Authenticator, Microsoft Intune automatic enrollment, Azure AD Conditional Access, Azure AD Application Proxy, Azure AD B2B, and Azure AD B2C.
 
 ## Step 1: Review the customer case study 
 
@@ -74,7 +74,7 @@ Contoso is facing challenges related to increased mobility of its workforce. In 
 
 Contoso has a single domain Active Directory forest which was implemented over a decade ago. The domain was assigned a non-routable DNS name contoso.local. While the Directory Services team considered renaming the domain, this has never been implemented due to potential negative implications of such change. Contoso does own a publicly routable DNS domain name contoso.com.
 
-Contoso has recently upgraded its Active Directory environment to Windows Server 2016 and it is in the process of migrating its desktops from Windows 7 to Windows 10. The majority of their servers are running either Windows Server 2012 R2 or Windows Server 2016. 
+Contoso has recently upgraded its Active Directory environment to Windows Server 2016, and is in the process of migrating its desktops from Windows 7 to Windows 10. The majority of their servers are running either Windows Server 2012 R2 or Windows Server 2016. 
 
 **Customer objectives**
 
@@ -114,7 +114,7 @@ The management team of Contoso, including its CIO, Andrew Cross, emphasized the 
 
 10.  Commercial applications developed by Contoso programmers must be made available to external customers with minimum overhead associated with identity management.
 
-11.  Resiliency must be maximized whenever possible.
+11.  Resiliency must be maximized whenever possible.  Users must not lose authentication capabilities or the ability to access on-premises applications.
 
 12.  Infrastructure requirements must be minimized.
 
@@ -122,7 +122,7 @@ The management team of Contoso, including its CIO, Andrew Cross, emphasized the 
 
 1.  Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory.
 
-2.  We have heard that it is not possible to run multiple instance of Azure AD Connect simultaneously. All identity services components in our environment must provide resiliency and support failover.
+2.  We have heard that it is not possible to run multiple instances of Azure AD Connect simultaneously. All identity services components in our environment must provide resiliency and support failover.
 
 3.  If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
 
@@ -147,14 +147,14 @@ The management team of Contoso, including its CIO, Andrew Cross, emphasized the 
 
 7.  The approach to providing Contoso and Fabrikam users access to on-premises web applications that rely on Kerberos-based Windows Integrated Authentication
 
-8.  The approach to providing external customers access to custom-developed applications with minimum overhead associated with identity management.
+8.  The approach to providing external customers access to custom-developed applications with minimum overhead associated with identity management
 
 9.  The method of implementing redundancy in your solution
 
 
 ### Infographic for common scenarios
 
-![The diagram illustrating Azure AD Hybrid Identity with Password Hash Sync. On the left hand side, there is a cloud shape representing Public Cloud SaaS services, including Azure and Office 365, The user and the user's computer icons are positioned directly underneath. The user signs in to Azure AD represented by a circle containing the Azure AD symbol, which is pointed to by a unidirectional arrow originating from the computer icon labeled Azure AD Connect positioned on the right-hand side of the slide. This icon is connected via a unidirectional arrow to the icon representing an Active Directory domain controller, directly below it..](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image2.png "Azure AD hybrid identity password-hash synchronization")
+![The diagram illustrating Azure AD Hybrid Identity with Password Hash Sync. On the left hand side, there is a cloud shape representing Public Cloud SaaS services, including Azure and Office 365, The user and the user's computer icons are positioned directly underneath. The user signs in to Azure AD represented by a circle containing the Azure AD symbol, which is pointed to by a unidirectional arrow originating from the computer icon labeled Azure AD Connect positioned on the right-hand side of the slide. This icon is connected via a unidirectional arrow to the icon representing an Active Directory domain controller, directly below it.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image2.png "Azure AD hybrid identity password-hash synchronization")
 
 ![The diagram illustrating Azure AD Hybrid Identity with Pass-through authentication. On the left hand side, there is a cloud shape representing Public Cloud SaaS services, including Azure and Office 365, The user and the user's computer icons are positioned directly underneath. The user signs in to Azure AD represented by a circle containing the Azure AD symbol. On the right-hand side of the slide, there are several icons within the area of the image labeled On-premises.. These icons represent an Active Directory domain controller and Azure AD Connect server that collectively perform identity sync. The domain controller also interacts with Authentication Agents that handle pass-through authentication.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image3.png "Azure AD hybrid identity pass-through authentication")
 
@@ -268,3 +268,4 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | What is Conditional Access? | <https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview>  |
 | Azure Active Directory B2B documentation | <https://docs.microsoft.com/en-us/azure/active-directory/b2b/>  |
 | Azure Active Directory B2C documentation | <https://docs.microsoft.com/en-us/azure/active-directory-b2c/>  |
+| Microsoft Enterprise Mobility + Security options | <https://www.microsoft.com/en-us/microsoft-365/enterprise-mobility-security/compare-plans-and-pricing>
