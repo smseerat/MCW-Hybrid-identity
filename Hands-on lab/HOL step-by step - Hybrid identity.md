@@ -1828,11 +1828,11 @@ In this task, you will create a VM that will become the backup domain controller
 
     ![In this screenshot, you are selecting to create a Virtual machine as a compute resource.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/createvm.png "Create a Virtual machine")
 
-2. Complete the following information for the Virtual machine and select **Next: Disks**
+2. Complete the following information for the Virtual machine and select **Next: Disks**:
    
     - Resource group: **hybrididentity-RG** 
   
-    - Virtual machine name: **BDC-1**. 
+    - Virtual machine name: **BDC-1**
   
     - Image: **Windows Server 2016 Datacenter - Gen 1** 
   
@@ -1846,20 +1846,21 @@ In this task, you will create a VM that will become the backup domain controller
   
     - Select inbound ports: **RDP (3389)**
 
-    ![This screenshot is showing the basic configuration details for the virtual machine](images/Hands-onlabstep-bystep-HybridIdentityImages/media/createvmdetails.png "Virtual machine basic configuration")
+    ![This screenshot is showing the basic configuration details for the virtual machine.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/createvmdetails.png "Virtual machine basic configuration")
 
-3. Select **Create and attach a new disk**
+3. Select **Create and attach a new disk**.
+
 4. On the **Create a new disk** tile, select **Change size** and change the disk size to 32 GB.
+
 5. Select **OK** to continue.
 
     ![This screenshot is showing where to change the disk size before creating a new managed disk for the virtual machine.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/adddisk.png "Change disk size")
 
-6. Select **Next: Networking** and verify the Virtual network is **TlgBaseConfig-01-VNET** and Subnet is **subnet-01**.  This will make sure that they new Virtual machine is on the same network as the primary domain controller, **DC-1**. Keep the default values for the remaining fields.  Select **Review + create**.
+6. Select **Next: Networking** and verify the Virtual network is **TlgBaseConfig-01-VNET** and Subnet is **subnet-01**.  This will make sure that the new Virtual machine is on the same network as the primary domain controller, **DC-1**. Keep the default values for the remaining fields.  Select **Review + create**.
    
     ![In this screenshot, the networking tile is being configured and we are choosing the existing virtual network and subnet.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/vmnetwork.png "Virtual machine networking")
 
 7. Select **Create** to create the Virtual machine.
-
 
 ### Task 2: Promote the VM to a domain controller
 
@@ -1867,7 +1868,7 @@ In this task, you will promote the newly created VM to a domain controller and c
 
 1. Navigate to the **hybrididentity-RG** Resource group and select the **BDC-1** Virtual machine.
    
-2. Select **Connect** and choose **RDP**
+2. Select **Connect** and choose **RDP**.
     
     ![This screenshot is showing how to connect to the virtual machine using RDP.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/connectrdp.png  "Connect with RDP")
 
@@ -1879,7 +1880,7 @@ In this task, you will promote the newly created VM to a domain controller and c
 
 5. Select **Next** in the **Add Roles and Features Wizard**, at the **Server selection** tab, verify that **BDC-1** is selected, then select **Next** for the **Server Roles** tab.
 
-6. Select the **Active Directory Domain Services** checkbox under **Roles**
+6. Select the **Active Directory Domain Services** checkbox under **Roles**.
 
     ![In this screenshot, you will select the role of Active Directory Domain Service in the server roles wizard.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/addaddsrole.png "Select server roles")
 
@@ -1897,7 +1898,7 @@ In this task, you will promote the newly created VM to a domain controller and c
     
 11. Select **Ethernet 2** next to **Connections**.
     
-12. When the **Ethernet 2 Status** tile opens, select **Properties**
+12. When the **Ethernet 2 Status** tile opens, select **Properties**.
     
 13. On the **Ethernet 2 Properties** tile, select **Internet Protocol Version 4 (TCP/IPv4)**, and select **Properties**.
     
@@ -1907,7 +1908,7 @@ In this task, you will promote the newly created VM to a domain controller and c
 
 15. Restart the **BDC-1** Virtual machine.
 
-16. When **BDC-1** restarts, RDP back into it.  There will be a flag with with a notification on the top right of the **Server Manager Dashboard**.  Select this flag for the **Post-deployment Configuration**, and select **Promote this server to a domain controller**.
+16. When **BDC-1** restarts, RDP back into it.  There will be a flag with a notification on the top right of the **Server Manager Dashboard**.  Select this flag for the **Post-deployment Configuration**, and select **Promote this server to a domain controller**.
 
     ![After the virtual machine restarts, select to promote the server by selecting the flag in the Server Manager, as shown in this screenshot.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/promotedc.png "Promote the server to a DC")
 
@@ -1949,7 +1950,7 @@ In this task, you will promote the newly created VM to a domain controller and c
 
     ![This screenshot shows what you should see when the server has passed the prerequisite checks prior to installing the domain controller role.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/checkspassed.png "Pre-requisite check")
 
-26. After installation, the VM will restart and the **BDC-1** will be configured as your **Backup domain controller**.
+26. After installation, the VM will restart, and the **BDC-1** will be configured as your **Backup domain controller**.
 
 27. In order for clients to fail-over to **BDC-1** when **DC-1** is off-line, the IP address of **BDC-1** will need to be added as the **Alternate DNS server** within **Internet Protocol Version 4 (TCP/IPv4) Properties** on all clients.  On each client device, repeat steps 10-15 in this task, but enter the internal IP address of **BDC-1** as the **Alternate DNS server** address.
 
@@ -1966,11 +1967,11 @@ In this task, you will install and configure Azure AD Connect in standby mode.  
     https://www.microsoft.com/en-us/download/confirmation.aspx?id=47594
     ```
 
-2. Scroll downn to find **Microsoft Azure Active Directory Connect** and select **Download**.
+2. Scroll down to find **Microsoft Azure Active Directory Connect** and select **Download**.
 
     ![In this screenshot, we are navigating to the Microsoft Download Center to download Azure AD Connect.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/azureadconnectdownload.png "Download Azure AD Connect")
 
-3. Download the **AzureADConnect.msi** file by seleting **Click here** under **Download link**.
+3. Download the **AzureADConnect.msi** file by selecting **Click here** under **Download link**.
 
     ![In this screenshot, we are selecting the link to download the Azure AD Connect msi file.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/azureadconnectdownloadlink.png "Azure AD Connect msi file")
 
@@ -2073,14 +2074,16 @@ In this exercise, you installed and configured a backup domain controller, set i
     ![In this screenshot, we are selecting authentication methods under the manage menu.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/authmethods.png "Authentication methods")
 
 3. Under **Method**, select **Microsoft Authenticator**.
+
 4. The details will populate below, select **Yes** for **Enable**, select **Select users** for **Target**.  
+
 5. Select **Add users and groups** and select **Ann G. Ayers** under users.  Select **Save** to add the user.  
+
 6. Select **Save** under **Details** to save the configuration.
 
     ![In this screenshot, we are configuring the authentication method of Microsoft Authenticator for one of the users in Azure AD.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/configmsftauthenticator.png "Configure Microsoft Authenticator")
 
 7. The next time that **Ann G. Ayers** attempts to login, they will be prompted to configure the **Microsoft Authenticator** app to complete authentication.
-
 
 **Lab summary**
 
