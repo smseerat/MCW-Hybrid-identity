@@ -74,7 +74,7 @@ Contoso is facing challenges related to increased mobility of its workforce. In 
 
 Contoso has a single domain Active Directory forest which was implemented over a decade ago. The domain was assigned a non-routable DNS name contoso.local. While the Directory Services team considered renaming the domain, this has never been implemented due to potential negative implications of such change. Contoso does own a publicly routable DNS domain name contoso.com.
 
-Contoso has recently upgraded its Active Directory environment to Windows Server 2016 and it is in the process of migrating its desktops from Windows 7 to Windows 10. The majority of their servers are running either Windows Server 2012 R2 or Windows Server 2016. 
+Contoso has recently upgraded its Active Directory environment to Windows Server 2016, and is in the process of migrating its desktops from Windows 7 to Windows 10. The majority of their servers are running either Windows Server 2012 R2 or Windows Server 2016. 
 
 **Customer objectives**
 
@@ -122,7 +122,7 @@ The management team of Contoso, including its CIO, Andrew Cross, emphasized the 
 
 1.  Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory.
 
-2.  We have heard that it is not possible to run multiple instance of Azure AD Connect simultaneously. All identity services components in our environment must provide resiliency and support failover.
+2.  We have heard that it is not possible to run multiple instances of Azure AD Connect simultaneously. All identity services components in our environment must provide resiliency and support failover.
 
 3.  If we decide to integrate our Active Directory environment with Azure Active Directory, this must be performed in stages. This is likely to be complex, considering that users in each stage would be members of different Active Directory groups and their accounts might reside in different Active Directory organizational units.
 
@@ -147,14 +147,14 @@ The management team of Contoso, including its CIO, Andrew Cross, emphasized the 
 
 7.  The approach to providing Contoso and Fabrikam users access to on-premises web applications that rely on Kerberos-based Windows Integrated Authentication
 
-8.  The approach to providing external customers access to custom-developed applications with minimum overhead associated with identity management.
+8.  The approach to providing external customers access to custom-developed applications with minimum overhead associated with identity management
 
 9.  The method of implementing redundancy in your solution
 
 
 ### Infographic for common scenarios
 
-![The diagram illustrating Azure AD Hybrid Identity with Password Hash Sync. On the left hand side, there is a cloud shape representing Public Cloud SaaS services, including Azure and Office 365, The user and the user's computer icons are positioned directly underneath. The user signs in to Azure AD represented by a circle containing the Azure AD symbol, which is pointed to by a unidirectional arrow originating from the computer icon labeled Azure AD Connect positioned on the right-hand side of the slide. This icon is connected via a unidirectional arrow to the icon representing an Active Directory domain controller, directly below it..](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image2.png "Azure AD hybrid identity password-hash synchronization")
+![The diagram illustrating Azure AD Hybrid Identity with Password Hash Sync. On the left hand side, there is a cloud shape representing Public Cloud SaaS services, including Azure and Office 365, The user and the user's computer icons are positioned directly underneath. The user signs in to Azure AD represented by a circle containing the Azure AD symbol, which is pointed to by a unidirectional arrow originating from the computer icon labeled Azure AD Connect positioned on the right-hand side of the slide. This icon is connected via a unidirectional arrow to the icon representing an Active Directory domain controller, directly below it.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image2.png "Azure AD hybrid identity password-hash synchronization")
 
 ![The diagram illustrating Azure AD Hybrid Identity with Pass-through authentication. On the left hand side, there is a cloud shape representing Public Cloud SaaS services, including Azure and Office 365, The user and the user's computer icons are positioned directly underneath. The user signs in to Azure AD represented by a circle containing the Azure AD symbol. On the right-hand side of the slide, there are several icons within the area of the image labeled On-premises.. These icons represent an Active Directory domain controller and Azure AD Connect server that collectively perform identity sync. The domain controller also interacts with Authentication Agents that handle pass-through authentication.](images/Whiteboarddesignsessiontrainerguide-HybridIdentityimages/media/azure-ad-authn-image3.png "Azure AD hybrid identity pass-through authentication")
 
