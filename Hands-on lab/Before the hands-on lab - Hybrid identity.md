@@ -76,7 +76,7 @@ Timeframe: 150 minutes
 
 ### Task 3: Deploy the lab environment Azure VMs
 
-1. In the browser window displaying the Azure portal, navigate to: <https://github.com/maxskunkworks/TLG/tree/master/tlg-base-config_3-vm>.
+1. In the browser window displaying the Azure portal, navigate to: <https://github.com/maxskunkworks/TLG/tree/main/tlg-base-config_3-vm>.
 
 2. On the **TLG (Test Lab Guide) - 3 VM Base Configuration (v1.0)** page, select **Deploy to Azure**.
 
@@ -198,7 +198,7 @@ Timeframe: 150 minutes
 2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the below link.
 
     ```
-    https://github.com/microsoft/MCW-Hybrid-identity/tree/master/Hands-on%20lab/studentfiles
+    https://github.com/microsoft/MCW-Hybrid-identity/tree/main/Hands-on%20lab/studentfiles
     ```
 
 3. On the **Create Users/Group for Active Directory Demo/Test Environment** page, select the **CreateDemoUsers.ps1** link, accept the licensing terms, and save the corresponding script to the local file system.
