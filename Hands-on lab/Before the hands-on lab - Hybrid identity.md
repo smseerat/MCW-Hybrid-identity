@@ -76,7 +76,7 @@ Timeframe: 150 minutes
 
 ### Task 3: Deploy the lab environment Azure VMs
 
-1. In the browser window displaying the Azure portal, navigate to: <https://github.com/maxskunkworks/TLG/tree/main/tlg-base-config_3-vm>.
+1. In the browser window displaying the Azure portal, navigate to: <https://github.com/maxskunkworks/TLG/tree/master/tlg-base-config_3-vm>.
 
 2. On the **TLG (Test Lab Guide) - 3 VM Base Configuration (v1.0)** page, select **Deploy to Azure**.
 
