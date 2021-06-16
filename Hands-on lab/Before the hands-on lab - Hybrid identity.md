@@ -198,7 +198,7 @@ Timeframe: 150 minutes
 2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the below link.
 
     ```
-    https://github.com/microsoft/MCW-Hybrid-identity/tree/master/Hands-on%20lab/studentfiles
+    https://github.com/microsoft/MCW-Hybrid-identity/tree/main/Hands-on%20lab/studentfiles
     ```
 
 3. On the **Create Users/Group for Active Directory Demo/Test Environment** page, select the **CreateDemoUsers.ps1** link, accept the licensing terms, and save the corresponding script to the local file system.
