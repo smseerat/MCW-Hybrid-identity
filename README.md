@@ -20,9 +20,9 @@ June 2021
 
 ### Workshop
 
-In this workshop, you will learn to setup and configure a hybrid identity solution that integrates an existing on-premises identity solution with Azure. You will learn how to secure the virtual network by deploying a network virtual appliance and configure firewall rules and route tables. Additionally, you will set up access to the virtual network with a jump box and a site-to-site VPN connection.
+In this workshop, you will learn how to implement different components of a hybrid identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features.
 
-At the end of the workshop, you will be better able to plan and design virtual networks in Azure with multiple subnets to filter and control network traffic. In addition, you will learn to create a virtual network and provision subnets, create route tables with required routes, build a management jump box, configure firewalls to control traffic flow, and configure site-to-site connectivity.
+At the end of this workshop, you will be able to plan, design, and deploy a hybrid identity architecture. The architecture will include a secure, available, and resilient hybrid identity infrastructure for identity and access management. 
 
 ### Whiteboard Design Session
 
