@@ -22,7 +22,7 @@ June 2021
 
 In this workshop, you will learn how to implement different components of a hybrid identity solution that integrates an Active Directory forest with an Azure Active Directory tenant and leverages a number of Azure Active Directory features.
 
-At the end of this workshop, you will be able to plan, design, and deploy a hybrid identity architecture. The architecture will include a secure, available, and resiliant hybrid identity infrastructure for identity and access management. 
+At the end of this workshop, you will be able to plan, design, and deploy a hybrid identity architecture. The architecture will include a secure, available, and resilient hybrid identity infrastructure for identity and access management. 
 
 ### Whiteboard Design Session
 
