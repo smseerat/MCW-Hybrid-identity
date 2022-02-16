@@ -270,7 +270,7 @@ In this task, you will purchase a custom DNS domain name by leveraging the funct
 
     - Subscription: The name of the Azure subscription into which you deployed resources in the Before Hands-On Lab exercises.
 
-    - Resource Group: **(Create new)ncontosohilab-RG**.
+    - Resource Group: **(Create new) contosohilab-RG**.
 
     - Name: Any valid, globally unique name.
     
