@@ -88,9 +88,9 @@ Another Information Security concern is accidental exposure of users' passwords.
  
 Besides enhancing self-service user capabilities, Contoso wants to optimize end-user experience, especially in environments where users might be using several different devices. The user-defined settings, such as accessibility or app customization should be consistent across all devices.
  
-In addition, Contoso needs to expand its customer base through partnership with other financial institutions and providing direct access to its services to external clients. As part of this effort, Contoso established business relationship with Fabrikam, which manages an extensive portfolio of mortgage related products. Contoso intends to provide Fabrikam with access to its internal Windows Integrated Authentication-based web applications that could be integrated with the existing Fabrikam's products. The access methodology needs to account for the fact that in recent years, Fabrikam has modernized its technology and moved its operations almost entirely to Microsoft Azure.
+In addition, Contoso needs to expand its customer base through partnership with other financial institutions and providing direct access to its services to external clients. As part of this effort, Contoso established a business relationship with Fabrikam, which manages an extensive portfolio of mortgage related products. Contoso intends to provide Fabrikam with access to its internal Windows Integrated Authentication-based web applications that could be integrated with the existing Fabrikam's products. The access methodology needs to account for the fact that in recent years, Fabrikam has modernized its technology and moved its operations almost entirely to Microsoft Azure.
  
-To facilitate the expansion of their customer base, Contoso started developing a number of applications intended to be available both via web and from mobile devices. Historically, such applications were hosted in on-premises data centers, and relied on an internally developed identity management product. Going forward, Contoso wants to minimize the effort managing customer identities.
+To facilitate the expansion of their customer base, Contoso started developing a number of applications intended to be available both via web and from mobile devices. Historically, such applications were hosted in on-premises data centers and relied on an internally developed identity management product. Going forward, Contoso wants to minimize the effort managing customer identities.
 
 The management team of Contoso, including its CIO, Andrew Cross, emphasized the need for resiliency and Service Level Agreements associated with each of the identity-related components that are part of the target design. At the same time, they are also interested in minimizing additional infrastructure requirements to implement the design.
 
@@ -186,7 +186,7 @@ Directions: With your team, respond to the following questions:
 
 1.  Using the features of Azure Active Directory and the requirements from the customer, how would you design a Hybrid Identity solution?
 
-2.  How does your design accounts for customer objectives and objections?
+2.  How does your design account for customer objectives and objections?
 
 *Architecting a hybrid authentication solution*
 
