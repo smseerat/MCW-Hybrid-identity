@@ -50,8 +50,6 @@ In this whiteboard design session, you will learn how to implement different com
 
 ## Step 1: Review the customer case study 
 
-## Step 1: Review the customer case study 
-
 **Outcome**
 
 Analyze your customer's needs.
