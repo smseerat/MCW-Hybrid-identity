@@ -43,7 +43,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Requirements
 
--   A Microsoft Azure subscription with at least 16 vCPU available in the Azure region where the Azure VMs deployed in this lab will reside.
+-   A Microsoft Azure subscription with at least 16 vCPUs available in the Azure region where the Azure VMs deployed in this lab will reside.
 
     -   DC1 and APP1 VMs -- 2 x D8s\_v3: 2 x 8 vCPUs = 16 vCPUs
 
@@ -58,7 +58,7 @@ Timeframe: 150 minutes
 
 ### Task 1: Review the relevant Microsoft documentation 
 
-1. Review online documentation regarding Azure Active Directory at <https://docs.microsoft.com/en-us/azure/active-directory/> focusing in particular on its integration with Active Directory and its B2B capabilities.
+1. Review online documentation regarding Azure Active Directory at <https://docs.microsoft.com/en-us/azure/active-directory/> focusing on its integration with Active Directory and its B2B capabilities.
 
 
 ### Task 2: Validate the role in the Azure subscription
@@ -84,11 +84,11 @@ Timeframe: 150 minutes
 
 3. On the **Custom deployment** blade, specify the following settings, then select **Review + Create** then **Create**.
 
-    -   Subscription: the name of the target Azure subscription where you want to provision the lab environment Azure VMs.
+    -   Subscription: The name of the target Azure subscription where you want to provision the lab environment Azure VMs.
 
     -   Resource group: (Create new) **hybrididentity-RG**
 
-    -   Location: the name of the Azure region that will host the lab environment Azure VMs.
+    -   Location: The name of the Azure region that will host the lab environment Azure VMs.
 
     -   Config Name: **TlgBaseConfig-01**
 
@@ -108,9 +108,9 @@ Timeframe: 150 minutes
    
     **Note**: Use a similar VM size if your subscription does not support the listed size. Documentation is linked here: <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes>.
 
-    -   DNS Label Prefix: **any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).**
+    -   DNS Label Prefix: **Any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).**
 
-    -   _artifacts Location: **accept the default**
+    -   _artifacts Location: **Accept the default**
 
     -   _artifacts Location Sas Token: **leave blank**
 
@@ -204,7 +204,7 @@ Timeframe: 150 minutes
 
     -   Password: **demo\@pass123**
 
-2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the below link.
+2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the link below.
 
     ```
     https://github.com/microsoft/MCW-Hybrid-identity/tree/main/Hands-on%20lab/studentfiles
