@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-June 2021
+February 2022
 </div>
 
 
@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2021 Microsoft Corporation. All rights reserved.
+© 2022 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -212,9 +212,9 @@ Another Information Security concern is accidental exposure of users' passwords.
  
 Besides enhancing self-service user capabilities, Contoso wants to optimize end-user experience, especially in environments where users might be using several different devices. The user-defined settings, such as accessibility or app customization should be consistent across all devices.
  
-In addition, Contoso needs to expand its customer base through partnership with other financial institutions and providing direct access to its services to external clients. As part of this effort, Contoso established business relationship with Fabrikam, which manages an extensive portfolio of mortgage related products. Contoso intends to provide Fabrikam with access to its internal Windows Integrated Authentication-based web applications that could be integrated with the existing Fabrikam's products. The access methodology needs to account for the fact that in recent years, Fabrikam has modernized its technology and moved its operations almost entirely to Microsoft Azure.
+In addition, Contoso needs to expand its customer base through partnership with other financial institutions and providing direct access to its services to external clients. As part of this effort, Contoso established a business relationship with Fabrikam, which manages an extensive portfolio of mortgage related products. Contoso intends to provide Fabrikam with access to its internal Windows Integrated Authentication-based web applications that could be integrated with the existing Fabrikam's products. The access methodology needs to account for the fact that in recent years, Fabrikam has modernized its technology and moved its operations almost entirely to Microsoft Azure.
  
-To facilitate the expansion of their customer base, Contoso started developing a number of applications intended to be available both via web and from mobile devices. Historically, such applications were hosted in on-premises data centers, and relied on an internally developed identity management product. Going forward, Contoso wants to minimize the effort managing customer identities.
+To facilitate the expansion of their customer base, Contoso started developing a number of applications intended to be available both via web and from mobile devices. Historically, such applications were hosted in on-premises data centers and relied on an internally developed identity management product. Going forward, Contoso wants to minimize the effort managing customer identities.
 
 The management team of Contoso, including its CIO, Andrew Cross, emphasized the need for resiliency and Service Level Agreements associated with each of the identity-related components that are part of the target design. At the same time, they are also interested in minimizing additional infrastructure requirements to implement the design.
 
@@ -310,7 +310,7 @@ Directions: With your team, respond to the following questions:
 
 1.  Using the features of Azure Active Directory and the requirements from the customer, how would you design a Hybrid Identity solution?
 
-2.  How does your design accounts for customer objectives and objections?
+2.  How does your design account for customer objectives and objections?
 
 *Architecting a hybrid authentication solution*
 
@@ -498,7 +498,7 @@ Have the table attendees reconvene with the larger session group to hear a subje
 
       - Contoso has not implemented any cloud-based services, including an Azure AD tenant and an Azure subscription.
 
-    Implementing the hybrid identity model will allows Contoso to take advantage of such technologies and capabilities as: 
+    Implementing the hybrid identity model will allow Contoso to take advantage of such technologies and capabilities as: 
 
       - Passthrough authentication with Seamless Single Sign-On
 
@@ -534,7 +534,7 @@ Have the table attendees reconvene with the larger session group to hear a subje
 
     The prerequisites: 
 
-      - Contoso will provision a new Azure Active Directory tenant with a custom, publicly routable domain name and use Azure AD Connect in order to integrate it with on-premises Active Directory environment. 
+      - Contoso will provision a new Azure Active Directory tenant with a custom, publicly routable domain name and use Azure AD Connect in order to integrate it with an on-premises Active Directory environment. 
 
       - Contoso will purchase Azure AD Premium P2 licenses for its users, in order to provide the ability to implement: 
 
@@ -792,7 +792,7 @@ It is important to provision sufficient number of connectors to handle the expec
 
    - Azure AD Application Proxy connector
 
-       - Application connection requests are dynamically load balanced across all available connectors, so no explicit failover is required. The connectors and the Azure AD Application Proxy service automatically handle all high availability tasks. They can be added or removed dynamically. Each time a new request arrives it is routed to one of currently available connectors. If a connector is temporarily unavailable, it is excluded from request distribution. Connectors also poll the service to determine whether there is a newer version of the connector software and, if one is found, they trigger an automatic update.
+       - Application connection requests are dynamically load balanced across all available connectors, so no explicit failover is required. The connectors and the Azure AD Application Proxy service automatically handle all high availability tasks. They can be added or removed dynamically. Each time a new request arrives it is routed to one of the currently available connectors. If a connector is temporarily unavailable, it is excluded from request distribution. Connectors also poll the service to determine whether there is a newer version of the connector software and, if one is found, they trigger an automatic update.
 
 *Optimizing authentication configuration*
 
@@ -814,7 +814,7 @@ It is important to provision sufficient number of connectors to handle the expec
 
     - Windows Hello for Business
 
-      - In Windows 10, you can use Windows Hello for Business to replace passwords with strong two-factor authentication. This authentication consists of a new type of user credential that is tied to a device and uses a biometric or PIN. Windows Hello for Business lets user authenticate to an Active Directory or Azure Active Directory account.
+      - In Windows 10, you can use Windows Hello for Business to replace passwords with strong two-factor authentication. This authentication consists of a new type of user credential that is tied to a device and uses a biometric or PIN. Windows Hello for Business lets users authenticate to an Active Directory or Azure Active Directory account.
 
         While Windows Hello for Business can be implemented exclusively in on-premises environments, its deployment can be simplified by leveraging Azure AD and Azure AD Connect in hybrid scenarios. Considering that one of design objectives in our proposed solution was minimizing infrastructure footprint, the recommended approach in this case is to use Hybrid Azure AD joined Key Trust Deployment, which can be implemented in combination with Azure AD pass-through authentication (eliminating the need for federation servers). 
 
@@ -891,7 +891,7 @@ It is important to provision sufficient number of connectors to handle the expec
 
     - Azure AD B2B
 
-      - Azure AD business-to-business (B2B) functionality allows customers to grant access to applications and services integrated with their individual Azure AD tenants to guest users from other organizations. The capabilities available to guest accounts mirror, for the most part, those available to users that belong to the same Azure AD tenant. Guest accounts are provisioned via a straightforward invitation and redemption process, allowing invitees use their own credentials to authenticate. Since the partner organizations continue to rely on their own identity management solutions, additional administrative overhead is minimized. 
+      - Azure AD business-to-business (B2B) functionality allows customers to grant access to applications and services integrated with their individual Azure AD tenants to guest users from other organizations. The capabilities available to guest accounts mirror, for the most part, those available to users that belong to the same Azure AD tenant. Guest accounts are provisioned via a straightforward invitation and redemption process, allowing invitees to use their own credentials to authenticate. Since the partner organizations continue to rely on their own identity management solutions, additional administrative overhead is minimized. 
 
         While the partner guest accounts are stored in the same Azure AD tenant as the user accounts of members of the organizations that provide access to its resources, they are easy to distinguish since their **userType** attribute is set to **Guest**. However, the process of granting access to cloud-based apps is the same. In addition, you have the option of granting guest accounts access to on-premises apps. Details depend on the authentication capabilities of the apps. 
 
@@ -916,7 +916,7 @@ It is important to provision sufficient number of connectors to handle the expec
 
 1.  Our Active Directory domain is using a non-routable domain name. We cannot risk renaming it in order to implement single sign-on with Azure Active Directory. 
 
-    **Potential Answer:** Contoso does not have to rename their Active Directory domain in order to integrate with an Azure Active Directory tenant. Such integration is possible regardless of the DNS name of the Active Directory domain. What's important in order to ensure single sign-on experience for Active Directory users accessing cloud-based resources is to ensure that there is a match between the userPrincipalName in Active Directory and Azure AD. This is the Microsoft's recommended approach. It is also possible to configure **Alternate Login ID**, which makes it possible to choose another attribute to designate the sign-in user names. The impact of this choice differs depending on the authentication method. For more information regarding **Alternate Login ID**, refer to Microsoft Docs at <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configuring-alternate-login-id>.
+    **Potential Answer:** Contoso does not have to rename their Active Directory domain in order to integrate with an Azure Active Directory tenant. Such integration is possible regardless of the DNS name of the Active Directory domain. What's important in order to ensure single sign-on experience for Active Directory users accessing cloud-based resources is to ensure that there is a match between the userPrincipalName in Active Directory and Azure AD. This is Microsoft's recommended approach. It is also possible to configure **Alternate Login ID**, which makes it possible to choose another attribute to designate the sign-in user names. The impact of this choice differs depending on the authentication method. For more information regarding **Alternate Login ID**, refer to Microsoft Docs at <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configuring-alternate-login-id>.
 
 2.  We have heard that it is not possible to run multiple instances of Azure AD Connect simultaneously. All identity services components in our environment must provide resiliency and support failover.
 

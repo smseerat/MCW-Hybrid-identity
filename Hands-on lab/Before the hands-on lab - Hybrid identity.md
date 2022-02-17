@@ -9,7 +9,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-June 2021
+February 2022
 </div>
 
 
@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2021 Microsoft Corporation. All rights reserved.
+© 2022 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -43,7 +43,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Requirements
 
--   A Microsoft Azure subscription with at least 16 vCPU available in the Azure region where the Azure VMs deployed in this lab will reside.
+-   A Microsoft Azure subscription with at least 16 vCPUs available in the Azure region where the Azure VMs deployed in this lab will reside.
 
     -   DC1 and APP1 VMs -- 2 x D8s\_v3: 2 x 8 vCPUs = 16 vCPUs
 
@@ -58,7 +58,7 @@ Timeframe: 150 minutes
 
 ### Task 1: Review the relevant Microsoft documentation 
 
-1. Review online documentation regarding Azure Active Directory at <https://docs.microsoft.com/en-us/azure/active-directory/> focusing in particular on its integration with Active Directory and its B2B capabilities.
+1. Review online documentation regarding Azure Active Directory at <https://docs.microsoft.com/en-us/azure/active-directory/> focusing on its integration with Active Directory and its B2B capabilities.
 
 
 ### Task 2: Validate the role in the Azure subscription
@@ -84,15 +84,15 @@ Timeframe: 150 minutes
 
 3. On the **Custom deployment** blade, specify the following settings, then select **Review + Create** then **Create**.
 
-    -   Subscription: the name of the target Azure subscription where you want to provision the lab environment Azure VMs.
+    -   Subscription: The name of the target Azure subscription where you want to provision the lab environment Azure VMs.
 
     -   Resource group: (Create new) **hybrididentity-RG**
 
-    -   Location: the name of the Azure region that will host the lab environment Azure VMs.
+    -   Location: The name of the Azure region that will host the lab environment Azure VMs.
 
     -   Config Name: **TlgBaseConfig-01**
 
-    -   Domain Name: **contoso.local**
+    -   Domain Name: **corp.contoso.com**
 
     -   Server OS: **2016-Datacenter**
 
@@ -108,16 +108,25 @@ Timeframe: 150 minutes
    
     **Note**: Use a similar VM size if your subscription does not support the listed size. Documentation is linked here: <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes>.
 
-    -   DNS Label Prefix: **any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).**
+    -   DNS Label Prefix: **Any valid, globally unique DNS name (a unique string consisting of letters, digits, and hyphens, starting with a letter and up to 47 characters long).**
 
-    -   _artifacts Location: **accept the default**
+    -   _artifacts Location: **Accept the default**
 
     -   _artifacts Location Sas Token: **leave blank**
 
-    ![In this screenshot, the 'Custom deployment' blade of the Azure portal is depicted with each parameter value field highlighted and each value set to the values stated above.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/15juneupdate.png "The custom deployment blade with all the information listed above entered")
+    ![In this screenshot, the 'Custom deployment' blade of the Azure portal is depicted with each parameter value field highlighted and each value set to the values stated above.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/BHOL-feb2022-update.png "The custom deployment blade with all the information listed above entered")
 
 
-4. Wait for the deployment to complete. This might take about 60 minutes.
+4. Select **Review + Create**.
+
+5. After validation has passed, select **Create**.
+
+    ![In this screenshot, the configuration for the deployment that you did on the previous tile is summarized and validated.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/BHOL-feb2022-create-add.png "The custom deployment summarize and create tile")
+
+
+6. Wait for the deployment to complete. This might take about 60 minutes.
+
+    ![In this screenshot, the deployment is complete and you can go directly to the resource group using the go to resource group button.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/BHOL-feb2022-deployment-complete.png "The custom deployment blade with all the information listed above entered")
 
 
 ### Task 4: Configure the lab environment Azure VMs
@@ -195,7 +204,7 @@ Timeframe: 150 minutes
 
     -   Password: **demo\@pass123**
 
-2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the below link.
+2.  Within the Remote Desktop session to **DC1**, start Internet Explorer and navigate to the link below.
 
     ```
     https://github.com/microsoft/MCW-Hybrid-identity/tree/main/Hands-on%20lab/studentfiles
