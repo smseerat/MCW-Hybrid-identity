@@ -847,7 +847,7 @@ In this task, you will create and configure Active Directory groups that will be
 
     ```pwsh
     $domainName = '<custom_domain_name>'
-    $users = Get-ADGroupMember -Identity 'Engineering' -Recursive | Where-Object {($_.objectClass -eq 'user') -and ($_.distinguishedName -like "*OU=NY,OU=US,OU=Users,OU=Demo Accounts,DC=contoso,DC=local")}
+    $users = Get-ADGroupMember -Identity 'Engineering' -Recursive | Where-Object {($_.objectClass -eq 'user') -and ($_.distinguishedName -like "*OU=NY,OU=US,OU=Users,OU=Demo Accounts,DC=corp,DC=contoso,DC=com")}
     foreach ($user in $users) {
         $user = Get-ADUser -Identity $User.SamAccountName
         Add-ADGroupMember -Identity 'Engineering - Mandatory MFA' -Members $user
@@ -1776,8 +1776,8 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
     ```pwsh
     $B2BGroupSid = "TODO" #Fabrikam B2B users Azure AD group's ObjectID that you identified earlier in this exercise.
-    $ShadowAccountOU = "OU=Enabled,OU=Demo B2B Accounts,DC=contoso,DC=local" #Organizational Unit for placing shadow accounts
-    $ShadowAccountOUArchive = "OU=Disabled,OU=Demo B2B Accounts,DC=contoso,DC=local" #Organizational Unit for moving disabled shadows
+    $ShadowAccountOU = "OU=Enabled,OU=Demo B2B Accounts,DC=corp,DC=contoso,DC=com" #Organizational Unit for placing shadow accounts
+    $ShadowAccountOUArchive = "OU=Disabled,OU=Demo B2B Accounts,DC=corp,DC=contoso,DC=com" #Organizational Unit for moving disabled shadows
 
     # Requires Azure AD configuration - refer to documentation
     $appID = "TODO" #The value of Client ID parameter of the Sync B2B user application you identified earlier in this exercise
