@@ -80,11 +80,11 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Abstract and learning objectives 
 
-In this hands-on lab you will setup and configure a number of different hybrid identity scenarios. The scenarios involve an Active Directory single-domain forest named contoso.local, which in this lab environment, consists (for simplicity reasons) of a single domain controller named DC1 and a single domain member server named APP1. The intention is to explore Azure AD-related capabilities that allow you to integrate Active Directory with Azure Active Directory, optimize hybrid authentication and authorization, and provide secure access to on-premises resources from Internet for both organizational users and users who are members of partner organizations. 
+In this hands-on lab you will setup and configure a number of different hybrid identity scenarios. The scenarios involve an Active Directory single-domain forest named corp.contoso.com, which in this lab environment, consists (for simplicity reasons) of a single domain controller named DC1 and a single domain member server named APP1. The intention is to explore Azure AD-related capabilities that allow you to integrate Active Directory with Azure Active Directory, optimize hybrid authentication and authorization, and provide secure access to on-premises resources from Internet for both organizational users and users who are members of partner organizations. 
 
 ## Overview
 
-Contoso has asked you to integrate their on-premises Active Directory single-domain forest named contoso.local with Azure AD and implement all necessary prerequisites to allow them to benefit from such Azure AD features as single sign-on to cloud and on-premises applications, enhanced sign-in security with Multi-Factor Authentication and Windows Hello for Business, Hybrid Azure AD join, Self-Service Password Reset and Password Protection, automatic enrollment of Windows 10 devices into Microsoft Intune, and Azure AD Privileged Identity Protection. They want to also provide secure access to their on-premises, Windows Integrated Authentication-based applications from Internet for both organizational users and users who are members of partner organizations, although they also want to be able to loosen restrictions when access originates from Hybrid Azure AD joined computers residing in their on-premises data centers. The same applications also need to be made available to Contoso's business partners. 
+Contoso has asked you to integrate their on-premises Active Directory single-domain forest named corp.contoso.com with Azure AD and implement all necessary prerequisites to allow them to benefit from such Azure AD features as single sign-on to cloud and on-premises applications, enhanced sign-in security with Multi-Factor Authentication and Windows Hello for Business, Hybrid Azure AD join, Self-Service Password Reset and Password Protection, automatic enrollment of Windows 10 devices into Microsoft Intune, and Azure AD Privileged Identity Protection. They want to also provide secure access to their on-premises, Windows Integrated Authentication-based applications from Internet for both organizational users and users who are members of partner organizations, although they also want to be able to loosen restrictions when access originates from Hybrid Azure AD joined computers residing in their on-premises data centers. The same applications also need to be made available to Contoso's business partners. 
 
 ## Solution architecture
 
@@ -372,13 +372,13 @@ In this task, you will configure the DNS suffix of the Contoso Active Directory 
 
     ![In this screenshot, Server Manager is depicted with the Active Directory Domains and Trusts console selected on the Tools dropdown menu.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/ADDTConsole.png "Stare Active Directory Domains and trusts console on Server Manager window")
 
-5. In the **Active Directory Domains and Trusts** console, right-click **Active Directory Domains and Trusts [DC1.contoso.local]** on the left and select **Properties**.
+5. In the **Active Directory Domains and Trusts** console, right-click **Active Directory Domains and Trusts [DC1.corp.contoso.com]** on the left and select **Properties**.
 
     ![In this screenshot, the Active Directory Domains and Trusts console is depicted with 'Active Directory Domains and Trusts' right-clicked on the left with the Properties button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeProperties.png "Open Active Directory Domains and Trusts Properties")
 
-6. On the **UPN Suffixes** tab of the **Active Directory Domains and Trusts [DC1.contoso.local]** window, in the **Alternative UPN suffixes** textbox, type the name of the custom domain you verified in the previous task, select **Add**, and then select **OK**.
+6. On the **UPN Suffixes** tab of the **Active Directory Domains and Trusts [DC1.corp.contoso.com]** window, in the **Alternative UPN suffixes** textbox, type the name of the custom domain you verified in the previous task, select **Add**, and then select **OK**.
 
-    ![In this screenshot, the Active Directory Domains and Trusts [DC1.contoso.local] window is depicted with the custom domain verified in the previous task added to the Alternative UPN suffixes selected. The OK button is then selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UPNSuffix.png "Add UPN suffix")
+    ![In this screenshot, the Active Directory Domains and Trusts [DC1.corp.contoso.com] window is depicted with the custom domain verified in the previous task added to the Alternative UPN suffixes selected. The OK button is then selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UPNSuffix.png "Add UPN suffix")
 
 7. Within the Remote Desktop session to **DC1**, on the **Server Manager** window, start the **Active Directory Users and Computers** console under **Tools**. 
 
@@ -452,9 +452,9 @@ In this task, you will install Azure AD Connect.
 
 16. On the **Connect to Azure AD** page, sign in by using the credentials of the **john.doe** account and select **Next**.
 
-17. On the **Connect your directories** page, ensure that the **contoso.local** entry appears in the **FOREST** drop-down list and select **Add Directory**. In the **AD forest account**, ensure that the **Create new AD account** option is selected, in the **ENTERPRISE ADMIN USERNAME** textbox, type **CORP.CONTOSO.COM\\demouser**, in the **PASSWORD** textbox, type **demo\@pass123**, and select **OK**.
+17. On the **Connect your directories** page, ensure that the **corp.contoso.com** entry appears in the **FOREST** drop-down list and select **Add Directory**. In the **AD forest account**, ensure that the **Create new AD account** option is selected, in the **ENTERPRISE ADMIN USERNAME** textbox, type **CORP.CONTOSO.COM\\demouser**, in the **PASSWORD** textbox, type **demo\@pass123**, and select **OK**.
 
-    ![In this screenshot, the Connect your directories page of the Microsoft Azure AD Connect wizard is depicted with contoso.local having been added.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_ConnectyourDirectories1.png "Connect your Contoso directory")
+    ![In this screenshot, the Connect your directories page of the Microsoft Azure AD Connect wizard is depicted with corp.contoso.com having been added.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_ConnectyourDirectories1.png "Connect your Contoso directory")
 
 18. Back on the **Connect your directories** page, select **Next**.
 
@@ -480,7 +480,7 @@ In this task, you will install Azure AD Connect.
 
     ![In this screenshot, on the Optional features page of the Microsoft Azure AD Connect wizard, the default settings are displayed. The Next button is then selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_OptionalFeatures.png "Optional Features")
 
-24. On the **Enable single sign-on** page, select **Enter credentials**, in the **Forest credentials** dialog box, sign in with the **CONTOSO\\demouser** username and **demo\@pass123** password, and select **Next**.
+24. On the **Enable single sign-on** page, select **Enter credentials**, in the **Forest credentials** dialog box, sign in with the **CORP\\demouser** username and **demo\@pass123** password, and select **Next**.
 
     ![In this screenshot, on the Enable single sign-on page of the Microsoft Azure AD Connect wizard, the prompt for forest credentials is displayed with the credentials listed above entered.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AzureADConnect_EnableSingleSign-on.png "Enable Single Sign-on")
 
@@ -505,9 +505,9 @@ In this task, you will enable Recycle Bin in the Contoso Active Directory domain
 
     ![In this screenshot, the Server Manager console is depicted with the Tools menu open and the Start Active Directory Administrative Center console selected in the Tools menu dropdown.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/StartADAC.png "Start Active Directory Administrative Center")
 
-2. In the **Active Directory Administrative Center** console, right-click **contoso (local)** on the left and select **Enable Recycle Bin**. When prompted to confirm, select **OK**.
+2. In the **Active Directory Administrative Center** console, right-click **corp (local)** on the left and select **Enable Recycle Bin**. When prompted to confirm, select **OK**.
 
-    ![In this screenshot, the Active Directory Administrative Center console is depicted with 'contoso (local)' right-clicked and the Enable Recycle Bin option selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AD_EnableRecycleBin.png "Select Enable Recycle Bin for the local domain")
+    ![In this screenshot, the Active Directory Administrative Center console is depicted with 'corp (local)' right-clicked and the Enable Recycle Bin option selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/AD_EnableRecycleBin.png "Select Enable Recycle Bin for the local domain")
 
 3. When prompted to refresh AD Administrative Center, select **OK**.
 
@@ -533,7 +533,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Description: **Custom Inbound Rule - includes users with UPN set to match the Azure AD custom domain**
 
-    - Connected System: **contoso.local**
+    - Connected System: **corp.contoso.com**
 
     - Connected System Object Type: **user**
 
@@ -573,7 +573,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     ![In this screenshot, the Transformations page of the Create inbound synchronization rule wizard is depicted with the required configuration settings selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_Transformations.png "Add transformation")
 
-7. When presented with a **Warning** dialog box displaying that message stating that **A full import and full synchronization will be run on 'contoso.local' during your next synchronization cycle**, select **OK**.
+7. When presented with a **Warning** dialog box displaying that message stating that **A full import and full synchronization will be run on 'corp.contoso.com' during your next synchronization cycle**, select **OK**.
 
    > **Note**: This should bring you back to the View and manage your synchronization rules interface, with the new rule listed at the top of the rule list. 
 
@@ -587,7 +587,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     - Description: **Custom Inbound Rule - excludes all users with UPN not set to match the Azure AD custom domain**
 
-    - Connected System: **contoso.local**
+    - Connected System: **corp.contoso.com**
 
     - Connected System Object Type: **user**
 
@@ -619,7 +619,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     ![In this screenshot, the Transformations page of the Create inbound synchronization rule wizard is depicted with the required configuration settings selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateInboundSynchronizationRule_TransformationsCatchAll.png "Add transformation to rule")
 
-13. When presented with a **Warning** dialog box displaying a message stating that **A full import and full synchronization will be run on 'contoso.local' during your next synchronization cycle**, select **OK**.
+13. When presented with a **Warning** dialog box displaying a message stating that **A full import and full synchronization will be run on 'corp.contoso.com' during your next synchronization cycle**, select **OK**.
 
     >**Note**: This should bring you back to the **View and manage your synchronization rules** interface, with the new rules listed at the top of the rule list. 
 
@@ -657,7 +657,7 @@ In this task, you will configure Azure AD Connect attribute level filtering that
 
     ![In this screenshot, the 'Users - All users' blade of the Azure portal is depicted with all the user objects with the custom domain UPN suffixes listed.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/UserObjects.png "User objects shown with custom domain UPN suffixes")
 
-13. In the Azure portal, navigate to the **Groups - All groups** blade of the Contoso Azure AD tenant and note that all the contoso.local domain groups have been synchronized as well. 
+13. In the Azure portal, navigate to the **Groups - All groups** blade of the Contoso Azure AD tenant and note that all the corp.contoso.com domain groups have been synchronized as well. 
 
 14. In the Azure portal, navigate to the **Contoso - Azure AD Connect** blade and select **Azure AD Connect** on the left. Verify that the following settings are set: 
 
@@ -697,11 +697,11 @@ In this task, you will configure Azure AD Connect device synchronization options
 
    > **Note**: Windows down-level devices are supported only if you are using Seamless SSO for managed domains or a federation service such as AD FS for federated domains.
 
-8. On the **SCP configuration** page, check the **contoso.local** Active Directory forest box, select the **Azure Active Directory** entry in the **Authentication Service** dropdown list, and select **Add**.
+8. On the **SCP configuration** page, check the **corp.contoso.com** Active Directory forest box, select the **Azure Active Directory** entry in the **Authentication Service** dropdown list, and select **Add**.
 
     ![In this screenshot, the 'SCP configuration' page of the Azure AD Connect configuration wizard is depicted with the required settings and the Add button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/SCPConfig.png "SCP configuration page with proper selections")
 
-9. When prompted for Enterprise Admin Credentials for contoso.local, in the **Windows Security** dialog box, sign in with the **CONTOSO\\demouser** user name and **demo\@pass123** password.
+9. When prompted for Enterprise Admin Credentials for corp.contoso.com, in the **Windows Security** dialog box, sign in with the **CORP\\demouser** user name and **demo\@pass123** password.
 
 10. Back on the **SCP configuration** page, select **Next**.
 
@@ -775,7 +775,7 @@ In this task, you will configure Azure AD Connect device synchronization options
             KeySrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/key/
              KeySrvId : urn:ms-drs:enterpriseregistration.windows.net
          DomainJoined : YES
-           DomainName : CONTOSO
+           DomainName : CORP
 
    +----------------------------------------------------------------------+
    | User State                                                           |
@@ -825,9 +825,9 @@ In this task, you will create and configure Active Directory groups that will be
 
 1. Within the Remote Desktop session to **DC1**, on the **Server Manager** window, under **Tools** start the **Active Directory Users and Computers** console. 
 
-2. In the **Active Directory Users and Computers** console, expand **contoso.local** on the left and navigate to **Demo Accounts > Groups**. 
+2. In the **Active Directory Users and Computers** console, expand **corp.contoso.com** on the left and navigate to **Demo Accounts > Groups**. 
 
-    ![In this screenshot, the Active Directory Users and Computers console is depicted with the left navigation expanded to 'contoso.local' > 'Demo Accounts' > 'Groups' with 'Groups' selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeNavigation.png "Navigate to DemoAccounts > Groups in Active Directory Users and Computers")
+    ![In this screenshot, the Active Directory Users and Computers console is depicted with the left navigation expanded to 'corp.contoso.com' > 'Demo Accounts' > 'Groups' with 'Groups' selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/NodeNavigation.png "Navigate to DemoAccounts > Groups in Active Directory Users and Computers")
 
 3. In the **Groups** directory, right-click then select **New** then select **Group**. Create a new group with the following settings and select **OK**:
 
@@ -1000,9 +1000,9 @@ In this task, you will implement Azure AD password Protection for Windows Server
 
 1. Within the Remote Desktop session to **DC1**, on the **Server Manager** window, under **Tools** start **Group Policy Management** console. 
 
-2. In the **Group Policy Management** console, navigate to **Forest: contoso.local > Domains > contoso.local** on the left, right-click **Default Domain Policy** and select **Edit**. 
+2. In the **Group Policy Management** console, navigate to **Forest: corp.contoso.com > Domains > corp.contoso.com** on the left, right-click **Default Domain Policy** and select **Edit**. 
 
-    ![In this screenshot, the Group Policy Management console window is depicted with 'Forest: contoso.local' > 'Domains' > 'contoso.local' expanded on the left navigation and 'Default Domain Policy' right-clicked with the Edit option selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EditDefaultDomainPolicy.png "Edit default domain policy")
+    ![In this screenshot, the Group Policy Management console window is depicted with 'Forest: corp.contoso.com' > 'Domains' > 'corp.contoso.com' expanded on the left navigation and 'Default Domain Policy' right-clicked with the Edit option selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EditDefaultDomainPolicy.png "Edit default domain policy")
 
 3. In the **Group Policy Management Editor**, navigate to **Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Account Lockout Policy**. 
 
@@ -1057,7 +1057,7 @@ In this task, you will implement Azure AD password Protection for Windows Server
     Register-AzureADPasswordProtectionForest -AccountUpn 'john.doe@<domain_name>.onmicrosoft.com'
     ```
 
-15. Switch to the Remote Desktop session to **DC1** virtual machine, where you are signed in as the user **CONTOSO\demouser** with the **demo@pass123** password. 
+15. Switch to the Remote Desktop session to **DC1** virtual machine, where you are signed in as the user **CORP\demouser** with the **demo@pass123** password. 
 
 16. Within the Remote Desktop session to **DC1**, start the Edge browser, navigate to the **Azure AD Password Protection for Windows Server Active Directory** page at the below listed URL. Select **Download** under **Azure AD Password Protection for Windows Server Active Directory**. Download and install **AzureADPasswordProtectionProxySetup.exe** with the default options.
 
@@ -1367,9 +1367,9 @@ In this task, you will install and configure Azure AD Application Proxy.
 
 6. Install Microsoft Azure Active Directory Application Proxy Connector with default settings. When prompted to sign in, enter the credentials of the **john.doe** Azure AD user account, which you created in the first exercise of this lab.
 
-7. Once the installation completes, refresh the Edge browser page displaying the **Contoso - Application proxy** blade and verify that it includes the **DC1.contoso.local** entry in the **Default** connector group.
+7. Once the installation completes, refresh the Edge browser page displaying the **Contoso - Application proxy** blade and verify that it includes the **DC1.corp.contoso.com** entry in the **Default** connector group.
 
-    ![In this screenshot, the 'Contoso - Application proxy' blade of the Azure portal is depicted with the 'DC1.contoso.local' entry listed under the Default connector group.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/VerifyConnector.png "Verify that the connector is present")
+    ![In this screenshot, the 'Contoso - Application proxy' blade of the Azure portal is depicted with the 'DC1.corp.contoso.com' entry listed under the Default connector group.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/VerifyConnector.png "Verify that the connector is present")
 
 8. On the **Contoso - Application proxy** blade, select **Enable application proxy** and, when prompted for confirmation, select **Yes**.
 
@@ -1383,7 +1383,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 
     - Name: **APP1 Default Web Site**
 
-    - Internal URL: **http://app1.contoso.local**
+    - Internal URL: **http://app1.corp.contoso.com**
 
     - External URL: **Accept the default value**.
 
@@ -1433,7 +1433,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 
 10. Review the output, switch back to the Edge browser window displaying the Azure portal, and, on the **APP1 Default Web Site - Configure Integrated Windows Authentication (IWA)** blade, specify the following settings and select **Save**.
 
-    - Internal Application SPN: **HTTP/APP1.contoso.local**
+    - Internal Application SPN: **HTTP/APP1.corp.contoso.com**
 
     - Delegated Login Identity: **User principal name**
 
@@ -1447,7 +1447,7 @@ In this task, you will configure an Azure AD Application Proxy application.
 
     ![In this screenshot, the 'Active Directory Users and Computers' console is depicted with the View menu open and the Advanced Features button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EnableAdvancedFeatures.png "Enable Advanced Features in the console")
 
-14. In the **Active Directory Users and Computers** console, locate the computer account hosting the Azure AD Application Proxy connector (**DC1** in our case) under **Domain Controllers** within **contoso.local** and display its **Properties** window.
+14. In the **Active Directory Users and Computers** console, locate the computer account hosting the Azure AD Application Proxy connector (**DC1** in our case) under **Domain Controllers** within **corp.contoso.com** and display its **Properties** window.
 
     ![In this screenshot, the 'Active Directory Users and Computers' console is depicted with the Domain Controllers node selected on the left and the DC1 computer account right-clicked with the Properties menu option selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DisplayComputerProperties.png "Display computer properties")
 
@@ -1752,9 +1752,9 @@ In this task, you will configure an Azure AD Application Proxy application for B
 
 25. Within the Remote Desktop session to **DC1**, switch to the **Active Directory Users and Computers** console. 
 
-26. In the **Active Directory Users and Computers** console, expand **contoso.local** on the left, create an organizational unit named **Demo B2B Accounts** directly in the root of the domain with two child organizational units named **Enabled** and **Disabled**.
+26. In the **Active Directory Users and Computers** console, expand **corp.contoso.com** on the left, create an organizational unit named **Demo B2B Accounts** directly in the root of the domain with two child organizational units named **Enabled** and **Disabled**.
 
-    ![In this screenshot, the 'Active Directory Users and Computers' console is depicted with the 'contoso.local' node right-clicked with New then Organizational Unit selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateOU.png "Create an organizational unit")
+    ![In this screenshot, the 'Active Directory Users and Computers' console is depicted with the 'corp.contoso.com' node right-clicked with New then Organizational Unit selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/CreateOU.png "Create an organizational unit")
 
     > **Note**: These OUs must NOT be synchronized back to the Azure AD tenant using Azure AD Connect. Make sure not to include the guest user objects in the synchronization scope.
 
@@ -1902,11 +1902,11 @@ In this task, you will promote the newly created VM to a domain controller and c
 
 10. Right-click the network connection icon on the taskbar to open the **Network and sharing center**.
     
-11. Select **Ethernet 2** next to **Connections**.
+11. Select **Ethernet** next to **Connections**.
     
-12. When the **Ethernet 2 Status** tile opens, select **Properties**.
+12. When the **Ethernet Status** tile opens, select **Properties**.
     
-13. On the **Ethernet 2 Properties** tile, select **Internet Protocol Version 4 (TCP/IPv4)**, and select **Properties**.
+13. On the **Ethernet Properties** tile, select **Internet Protocol Version 4 (TCP/IPv4)**, and select **Properties**.
     
 14. On the **Internet Protocol Version 4 (TCP/IPv4)** tile, select the radio button for **Use the following DNS server addresses** and enter the IP address of **DC-1**. Select **OK** to save the changes. 
         
@@ -1958,16 +1958,16 @@ In this task, you will promote the newly created VM to a domain controller and c
 
 26. After installation, the VM will restart, and the **BDC-1** will be configured as your **Backup domain controller**.
 
-27. In order for clients to fail-over to **BDC-1** when **DC-1** is off-line, the IP address of **BDC-1** will need to be added as the **Alternate DNS server** within **Internet Protocol Version 4 (TCP/IPv4) Properties** on all clients.  On each client device, repeat steps 10-15 in this task, but enter the internal IP address of **BDC-1** as the **Alternate DNS server** address.
+27. In order for clients to fail-over to **BDC-1** when **DC-1** is off-line, the IP address of **BDC-1** will need to be added as the **Alternate DNS server** within **Internet Protocol Version 4 (TCP/IPv4) Properties** on all domain joined devices.  On each device, repeat steps 10-15 in this task, but enter the internal IP address of **BDC-1** as the **Alternate DNS server** address.
 
     ![After the backup domain controller role is installed, device network IP settings must have the IP address added as the Alternate DNS server.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/alternatedns.png "Alternate DNS server IP address")
 
 
 ### Task 3: Install Azure AD Connect in standby mode
 
-In this task, you will install and configure Azure AD Connect in standby mode.  This will allow **BDC-1** to take over identity synchronization if **DC-1** goes offline.
+In this task, you will install and configure Azure AD Connect in standby mode.  This will allow **BDC-1** to take over identity synchronization if **DC1** goes offline.
 
-1. Since **Azure AD Connect** has already been downloaded and installed from the portal, you need to navigate to the **Microsoft Download Center** to download **Azure AD Connect** for **BDC-1**.
+1. Since **Azure AD Connect** has already been downloaded and installed from the portal, on **BDC-1** you need to navigate to the **Microsoft Download Center** to download **Azure AD Connect** for **BDC-1**.
 
     ```
     https://www.microsoft.com/en-us/download/confirmation.aspx?id=47594
@@ -2047,7 +2047,7 @@ In this task, you will configure Azure AD Application Proxy for the BDC-1 VM.
 
     ![In this screenshot, the 'Active Directory Users and Computers' console is depicted with the View menu open and the Advanced Features button selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/EnableAdvancedFeatures.png "Enable Advanced Features in the console")
 
-3.  In the **Active Directory Users and Computers** console, locate the computer account hosting the Azure AD Application Proxy connector (**DC1** in our case) under **Domain Controllers** within **contoso.local** and display its **Properties** window.
+3.  In the **Active Directory Users and Computers** console, locate the computer account hosting the Azure AD Application Proxy connector (**DC1** in our case) under **Domain Controllers** within **corp.contoso.com** and display its **Properties** window.
 
     ![In this screenshot, the 'Active Directory Users and Computers' console is depicted with the Domain Controllers node selected on the left and the DC1 computer account right-clicked with the Properties menu option selected.](images/Hands-onlabstep-bystep-HybridIdentityImages/media/DisplayComputerProperties.png "Display computer properties")
 
@@ -2093,7 +2093,7 @@ In this exercise, you installed and configured a backup domain controller, set i
 
 **Lab summary**
 
-In this hands-on lab, you setup and configured a number of different hybrid identity scenarios. The scenarios involved an Active Directory single-domain forest named contoso.local, which in this lab environment, consisted (for simplicity reasons) of a single domain controller named DC1 and a single domain member server named APP1. You explored Azure AD-related capabilities that allowed you to integrate Active Directory with Azure Active Directory, optimized hybrid authentication and authorization, and provided secure access to on-premises resources from Internet for both organizational users and users who are members of partner organizations. 
+In this hands-on lab, you setup and configured a number of different hybrid identity scenarios. The scenarios involved an Active Directory single-domain forest named corp.contoso.com, which in this lab environment, consisted (for simplicity reasons) of a single domain controller named DC1 and a single domain member server named APP1. You explored Azure AD-related capabilities that allowed you to integrate Active Directory with Azure Active Directory, optimized hybrid authentication and authorization, and provided secure access to on-premises resources from Internet for both organizational users and users who are members of partner organizations. 
 
 ## After the hands-on lab
 
