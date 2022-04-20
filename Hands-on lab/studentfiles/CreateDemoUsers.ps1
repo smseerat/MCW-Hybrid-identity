@@ -145,7 +145,7 @@
             $ServiceAccountOU = New-ADOrganizationalUnit -Name "Service Accounts" -Path $ParentOU.DistinguishedName -Verbose -PassThru -Server $Server -ErrorAction Stop
             $ServiceGroupOU = New-ADOrganizationalUnit -Name "Service Groups" -Path $ParentOU.DistinguishedName -Verbose -PassThru -Server $Server -ErrorAction Stop
 
-            $UserCount = 1000 #Up to 2500 can be created
+            $UserCount = 2500 #Up to 2500 can be created
     
             $InitialPassword = "Password1" #Initial Password for all users
     
@@ -205,7 +205,7 @@
                 {
                     If (!(Get-ADOrganizationalUnit -Filter "Name -eq `"$($User.Country)`"" -SearchBase $UserOU.DistinguishedName -Server $Server -ErrorAction SilentlyContinue))
                         {
-                            $CountryOU = New-ADOrganizationalUnit -Name $User.Country -Path $UserOU.DistinguishedName -Country $User.Country -Verbose -Server $Server -PassThru
+Â Â Â Â                         $CountryOU = New-ADOrganizationalUnit -Name $User.Country -Path $UserOU.DistinguishedName -Country $User.Country -Verbose -Server $Server -PassThru
                             Write-Host ""
                         }
                     Else
@@ -215,7 +215,7 @@
    
                     If (!(Get-ADOrganizationalUnit -Filter "Name -eq `"$($User.State)`"" -SearchBase $CountryOU.DistinguishedName -Server $Server -ErrorAction SilentlyContinue))
                         {
-                            $StateOU = New-ADOrganizationalUnit -Name $User.State -Path $CountryOU.DistinguishedName -State $User.State -Country $User.Country -Verbose -Server $Server -PassThru
+Â Â Â Â                         $StateOU = New-ADOrganizationalUnit -Name $User.State -Path $CountryOU.DistinguishedName -State $User.State -Country $User.Country -Verbose -Server $Server -PassThru
                             Write-Host ""
                         }
                     Else
